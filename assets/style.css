@@ -278,3 +278,47 @@ table.cmp td.cat{max-width:230px; white-space:normal}
 .tv figcaption{font-size:11.5px; color:var(--soft); font-weight:700; margin-top:5px; text-align:center}
 
 .pool{display:inline-block; font-size:12px; font-weight:800; color:#0369A1; background:#E5F0FB; border:1px solid #CBE2F7; padding:3px 10px; border-radius:999px; margin:0 0 var(--s2)}
+
+/* ---- v5: favorites, hotel banner, print ---- */
+.rest-top{display:flex; align-items:flex-start; justify-content:space-between; gap:8px}
+.favbtn{flex:none; font-size:11px; font-weight:800; border:1px solid var(--coral); color:var(--coral);
+  background:#fff; padding:4px 9px; border-radius:999px; cursor:pointer; white-space:nowrap}
+.favbtn:hover{background:#FDECE7}
+.favbtn.on{background:var(--coral); color:#fff}
+.stop .favbtn{margin-top:2px}
+.hbanner{width:100%; height:150px; object-fit:cover; display:block; border-bottom:1px solid var(--line)}
+#favPill{position:fixed; right:16px; bottom:76px; z-index:720; display:none; align-items:center; gap:6px;
+  background:var(--coral); color:#fff; border:none; border-radius:999px; padding:12px 18px; font-size:14px; font-weight:800;
+  box-shadow:0 6px 20px rgba(225,90,56,.4); cursor:pointer}
+#favPill b{font-size:15px}
+#favPill:active{transform:scale(.97)}
+
+/* print sheet */
+#printSheet{display:none}
+@media screen{ body.printing #printSheet{display:none} }
+@media print{
+  body.printing>*:not(#printSheet){ display:none !important; }
+  body.printing #printSheet{ display:block; padding:0; color:#111; font-size:11.5px; line-height:1.5 }
+  @page{ margin:14mm 12mm }
+  #printSheet h1{ font-size:19px; margin:0 0 4px }
+  #printSheet .ps-head p{ margin:1px 0; font-size:11px; color:#333 }
+  #printSheet .ps-head{ border-bottom:2px solid #0E7C7B; padding-bottom:6px; margin-bottom:8px }
+  #printSheet .pd{ break-inside:avoid; margin:0 0 8px }
+  #printSheet .pd h3{ font-size:13px; margin:6px 0 2px; color:#0A5A59 }
+  #printSheet ol{ margin:2px 0 2px 18px; padding:0 }
+  #printSheet li{ margin:1px 0 }
+  #printSheet .pg{ color:#666 }
+  #printSheet .pm{ font-size:10.5px; color:#B26B12; margin:2px 0 0 18px }
+  #printSheet table{ width:100%; border-collapse:collapse; font-size:10.5px; margin-top:3px }
+  #printSheet td{ border-bottom:1px solid #ddd; padding:3px 4px }
+  #printSheet .tot td{ border-top:1px solid #111; font-weight:800 }
+  #printSheet .ps-two{ display:flex; gap:16px; margin-top:8px; break-inside:avoid }
+  #printSheet .ps-two>div{ flex:1 }
+  #printSheet h3{ font-size:12px }
+  #printSheet .ps-foot{ margin-top:10px; font-size:9px; color:#888; border-top:1px solid #ddd; padding-top:4px }
+}
+
+/* ---- v5b: hero, illustration note ---- */
+.phero{width:100%; height:180px; object-fit:cover; border-radius:var(--r-sm); margin-bottom:var(--s4); border:1px solid var(--line)}
+@media (max-width:520px){ .phero{height:130px} }
+.thumb, .hbanner, .pop img{background:linear-gradient(135deg,#e7f2f1,#f7f3ea)}

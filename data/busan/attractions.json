@@ -182,7 +182,8 @@
     "rating": 4.32,
     "reviews": 9520,
     "rsource": "naver",
-    "sentiment": "100층 전망 즐거워하나 흔들림 놀랄 수"
+    "sentiment": "100층 전망 즐거워하나 흔들림 놀랄 수",
+    "photo": "assets/img/xthesky.png"
   },
   "science": {
     "name": "국립부산과학관",
@@ -200,7 +201,8 @@
     "rating": 4.55,
     "reviews": 3759,
     "rsource": "naver",
-    "sentiment": "체험 전시 풍부해 아이가 신나게 놀이"
+    "sentiment": "체험 전시 풍부해 아이가 신나게 놀이",
+    "photo": "assets/img/science.png"
   },
   "centum": {
     "name": "신세계 센텀시티",
@@ -232,7 +234,8 @@
     "blurb": "기암절벽을 도는 다누비열차와 유람선. 등대·전망대에서 탁 트인 바다.",
     "kid_fit": "중",
     "naver": "https://map.naver.com/p/search/%ED%83%9C%EC%A2%85%EB%8C%80",
-    "review": "https://map.naver.com/p/search/%ED%83%9C%EC%A2%85%EB%8C%80"
+    "review": "https://map.naver.com/p/search/%ED%83%9C%EC%A2%85%EB%8C%80",
+    "photo": "assets/img/taejongdae.png"
   },
   "oryukdo": {
     "name": "오륙도 스카이워크",
@@ -246,7 +249,8 @@
     "blurb": "바다 위로 튀어나온 유리 전망대. 발밑이 바다라 아이들이 짜릿해함.",
     "kid_fit": "중",
     "naver": "https://map.naver.com/p/search/%EC%98%A4%EB%A5%99%EB%8F%84%20%EC%8A%A4%EC%B9%B4%EC%9D%B4%EC%9B%8C%ED%81%AC",
-    "review": "https://map.naver.com/p/search/%EC%98%A4%EB%A5%99%EB%8F%84%20%EC%8A%A4%EC%B9%B4%EC%9D%B4%EC%9B%8C%ED%81%AC"
+    "review": "https://map.naver.com/p/search/%EC%98%A4%EB%A5%99%EB%8F%84%20%EC%8A%A4%EC%B9%B4%EC%9D%B4%EC%9B%8C%ED%81%AC",
+    "photo": "assets/img/oryukdo.png"
   },
   "songdo-cable": {
     "name": "송도 해상케이블카",
@@ -260,7 +264,8 @@
     "blurb": "바다 위를 가로지르는 케이블카. 크리스탈 캐빈은 발밑이 유리라 스릴 만점.",
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%EC%86%A1%EB%8F%84%20%ED%95%B4%EC%83%81%EC%BC%80%EC%9D%B4%EB%B8%94%EC%B9%B4",
-    "review": "https://map.naver.com/p/search/%EC%86%A1%EB%8F%84%20%ED%95%B4%EC%83%81%EC%BC%80%EC%9D%B4%EB%B8%94%EC%B9%B4"
+    "review": "https://map.naver.com/p/search/%EC%86%A1%EB%8F%84%20%ED%95%B4%EC%83%81%EC%BC%80%EC%9D%B4%EB%B8%94%EC%B9%B4",
+    "photo": "assets/img/songdo-cable.png"
   },
   "igidae-drive": {
     "name": "이기대 해안 드라이브·산책",
@@ -274,6 +279,7 @@
     "blurb": "광안대교가 보이는 해안 드라이브와 갯바위 산책로. 뷰 맛집.",
     "kid_fit": "중",
     "naver": "https://map.naver.com/p/search/%EC%9D%B4%EA%B8%B0%EB%8C%80%20%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C",
-    "review": "https://map.naver.com/p/search/%EC%9D%B4%EA%B8%B0%EB%8C%80"
+    "review": "https://map.naver.com/p/search/%EC%9D%B4%EA%B8%B0%EB%8C%80",
+    "photo": "assets/img/igidae-drive.png"
   }
 }

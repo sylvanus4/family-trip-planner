@@ -11,7 +11,8 @@
     "price_range": "1박 약 70~110만원 (4인, 추정)",
     "family_note": "5성급 리조트, 아쿠아클럽(실내외 풀)·키즈, 최상급 청결·서비스.",
     "img": null,
-    "naver_map": "https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EC%8B%A0%EB%9D%BC%ED%98%B8%ED%85%94"
+    "naver_map": "https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EC%8B%A0%EB%9D%BC%ED%98%B8%ED%85%94",
+    "photo": "assets/img/hotel-pool.png"
   },
   "lotte-jeju": {
     "name": "롯데호텔 제주",
@@ -25,7 +26,8 @@
     "price_range": "1박 약 55~80만원 (4인, 추정)",
     "family_note": "중문 대형 리조트, 실내외 수영장·화산 분수쇼·정원, 가족 인기.",
     "img": null,
-    "naver_map": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC"
+    "naver_map": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC",
+    "photo": "assets/img/hotel-oceanview.png"
   },
   "grand-hyatt-jeju": {
     "name": "그랜드 하얏트 제주",
@@ -39,7 +41,8 @@
     "price_range": "1박 약 48~70만원 (4인, 추정)",
     "family_note": "제주시 노형 최고층, 아일랜더블루 실내외 풀, 신축·청결·공항 근접.",
     "img": null,
-    "naver_map": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC"
+    "naver_map": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC",
+    "photo": "assets/img/hotel-pool.png"
   },
   "parnas-jeju": {
     "name": "파르나스 호텔 제주",
@@ -53,7 +56,8 @@
     "price_range": "1박 약 60~90만원 (4인, 추정)",
     "family_note": "색달해변 신축 럭셔리, 실내외 인피니티 풀·오션뷰, 매우 깨끗함.",
     "img": null,
-    "naver_map": "https://map.naver.com/p/search/%ED%8C%8C%EB%A5%B4%EB%82%98%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC"
+    "naver_map": "https://map.naver.com/p/search/%ED%8C%8C%EB%A5%B4%EB%82%98%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC",
+    "photo": "assets/img/hotel-oceanview.png"
   },
   "haevichi-jeju": {
     "name": "해비치 호텔앤드리조트 제주",
@@ -67,7 +71,8 @@
     "price_range": "1박 약 45~80만원 (4인, 추정)",
     "family_note": "표선 해안 리조트, 실내외 수영장·넓은 오션뷰 객실·아이 패키지.",
     "img": null,
-    "naver_map": "https://map.naver.com/p/search/%ED%95%B4%EB%B9%84%EC%B9%98%20%ED%98%B8%ED%85%94%EC%95%A4%EB%93%9C%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EC%A0%9C%EC%A3%BC"
+    "naver_map": "https://map.naver.com/p/search/%ED%95%B4%EB%B9%84%EC%B9%98%20%ED%98%B8%ED%85%94%EC%95%A4%EB%93%9C%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EC%A0%9C%EC%A3%BC",
+    "photo": "assets/img/hotel-oceanview.png"
   },
   "shinhwa-landing-jeju": {
     "name": "랜딩관 제주신화월드",

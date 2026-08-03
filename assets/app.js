@@ -24,8 +24,9 @@ function leg(a,b){ if(!a||!b||!a.lat||!b.lat) return null;
   return {icon:"🚕",mode:"택시",mins:Math.round(d*3+5),cost,link:kakaoTo(b),linklabel:"카카오T 호출",note:t.has_subway?"택시비(추정)":"택시비 추정 · 렌터카도 편해요"}; }
 
 function nearestRest(target,k,excl){ if(!target) return [];
+  const fav=S.favR||new Set();
   return Object.entries(S.rest).filter(([id,r])=>r.lat&&!excl.has(id))
-    .sort((a,b)=>haversine(target,a[1])-haversine(target,b[1])).slice(0,k).map(x=>x[0]); }
+    .sort((a,b)=>((fav.has(b[0])?1:0)-(fav.has(a[0])?1:0)) || (haversine(target,a[1])-haversine(target,b[1]))).slice(0,k).map(x=>x[0]); }
 
 /* ---------- ratings ---------- */
 function stars(r){ if(r==null) return ""; const f=Math.round(r);
@@ -43,6 +44,34 @@ function reviewLinks(name,kind){ if(!name) return "";
     `<a class="rlnk" href="https://search.naver.com/search.naver?ssc=tab.blog.all&query=${enc(name+" 후기")}" target="_blank" rel="noopener">네이버블로그</a>`+
     `<a class="rlnk" href="https://www.google.com/search?q=${enc(name+" 블로그 후기")}" target="_blank" rel="noopener">구글</a>`+
     `<a class="rlnk" href="${third.u}" target="_blank" rel="noopener">${third.t}</a></div>`; }
+
+/* photo: prefer real Wikimedia (img) then generated illustration (photo) */
+function resolveImg(o){ if(!o) return null; if(o.img) return commons(o.img); if(o.photo) return o.photo; return null; }
+
+/* ---------- favorites → 내 코스 ---------- */
+function favKey(t){ return `fav${t}_${S.city.id}`; }
+function loadFavs(){ try{ S.fav=new Set(JSON.parse(localStorage.getItem(favKey("A"))||"[]")); }catch(e){ S.fav=new Set(); }
+  try{ S.favR=new Set(JSON.parse(localStorage.getItem(favKey("R"))||"[]")); }catch(e){ S.favR=new Set(); } }
+function toggleFav(id,t){ const set=t==="R"?S.favR:S.fav; set.has(id)?set.delete(id):set.add(id);
+  localStorage.setItem(favKey(t),JSON.stringify([...set]));
+  document.querySelectorAll(`[data-fav="${t}:${id}"]`).forEach(b=>{ const on=set.has(id); b.classList.toggle("on",on); b.textContent=on?"✓ 담김":"＋ 내 코스"; });
+  renderFavPill(); }
+function favBtn(id,t){ const on=(t==="R"?S.favR:S.fav).has(id);
+  return `<button class="favbtn${on?' on':''}" data-fav="${t}:${id}">${on?"✓ 담김":"＋ 내 코스"}</button>`; }
+function bindFavs(scope){ (scope||document).querySelectorAll(".favbtn").forEach(b=>b.onclick=e=>{ e.preventDefault(); const [t,id]=b.dataset.fav.split(":"); toggleFav(id,t); }); }
+function renderFavPill(){ let el=$("#favPill"); if(!el){ el=document.createElement("button"); el.id="favPill"; document.body.appendChild(el); }
+  const n=(S.fav?.size||0)+(S.favR?.size||0);
+  if(!n){ el.style.display="none"; return; }
+  el.style.display="flex"; el.innerHTML=`🧩 담은 곳 <b>${n}</b> · 내 코스 만들기 →`;
+  el.onclick=buildFromFavorites; }
+function buildFromFavorites(){
+  const ids=[...(S.fav||[])].filter(id=>S.at[id]);
+  if(ids.length<2){ alert("여행지를 2곳 이상 '＋ 내 코스'로 담아주세요. (맛집은 담으면 해당 코스 식사에 우선 반영됩니다)"); return; }
+  const hotelId=Object.keys(S.hotels)[0];
+  const plan=buildCustomPlan(ids,hotelId,3);
+  localStorage.setItem(`custom_${S.city.id}`,JSON.stringify({ids,hotel:hotelId,days:3}));
+  upsertCustom(plan); renderPlanPicker(); selectPlan("custom");
+}
 
 function renderVideo(){ const el=$("#tripVideo"); if(!el) return; const c=S.city; el.innerHTML="";
   const vids=[[c.intro_video, c.id==="jeju"?"✈️ 비행기 타고 출발":"🚄 SRT 타고 출발"],[c.feel_video,"🌊 이번 여행 미리보기"]].filter(v=>v[0]);
@@ -84,10 +113,10 @@ async function selectCity(id, wantPlan){
     fetch(`${d}/attractions.json`).then(r=>r.json()),
     fetch(`${d}/restaurants.json`).then(r=>r.ok?r.json():{}).catch(()=>({}))]);
   S.plans=plans.plans; S.hotels=hotels; S.at=at; S.rest=rest||{};
-  restoreCustom();
+  loadFavs(); restoreCustom();
   document.querySelectorAll(".city-btn").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
   $("#builder").hidden=true; $("#compare").hidden=true;
-  renderPlanPicker();
+  renderPlanPicker(); renderFavPill();
   selectPlan(wantPlan && S.plans.find(p=>p.id===wantPlan) ? wantPlan : S.plans[0].id);
 }
 
@@ -107,6 +136,7 @@ function selectPlan(id){ S.cur=id; location.hash=`${S.city.id}/${id}`; $("#compa
   window.scrollTo({top:0,behavior:"smooth"}); }
 
 function renderHead(p){ $("#planHead").innerHTML=`
+  ${S.city.hero?`<img class="phero" src="${S.city.hero}" alt="${S.city.name}" onerror="this.style.display='none'">`:""}
   <div class="ph-top"><span class="ph-city">${S.city.emoji} ${S.city.name}</span><span class="ph-arr">${S.city.arrival}</span></div>
   <h2>${p.title}</h2>
   <p class="psub">${p.subtitle||""}</p>
@@ -132,7 +162,7 @@ function renderMap(p){ if(S.map){ S.map.remove(); S.map=null; }
   if(pts.length) map.fitBounds(pts,{padding:[48,48]});
   renderMapActions(p); renderVideo(); setTimeout(()=>map.invalidateSize(),120); }
 
-function popupPoi(a,s){ const img=commons(a.img);
+function popupPoi(a,s){ const img=resolveImg(a);
   return `<div class="pop">${img?`<img src="${img}" alt="${a.name}" onerror="this.style.display='none'">`:""}
     <h4>${s.n}. ${a.name}</h4>${ratingLine(a)}<p class="pm">${a.price_hours||a.blurb||""}</p>
     <div class="pl">${a.naver?`<a href="${a.naver}" target="_blank" rel="noopener">네이버</a>`:""}${a.official?`<a href="${a.official}" target="_blank" rel="noopener">예매</a>`:""}<a href="${kakaoTo(a)}" target="_blank" rel="noopener">🚕</a></div></div>`; }
@@ -146,20 +176,22 @@ function gmapsDir(stops){ const c=stops.map(s=>place(s.ref)).filter(x=>x&&x.lat)
 function renderMapActions(p){ const el=$("#mapActions"); el.innerHTML="";
   const g=gmapsDir(p.days.flatMap(d=>d.stops));
   if(g) el.insertAdjacentHTML("beforeend",`<a href="${g}" target="_blank" rel="noopener">🧭 구글맵 전체 길찾기</a>`);
-  if(p.kml) el.insertAdjacentHTML("beforeend",`<a href="${p.kml}" download>⬇️ KML(구글 마이맵)</a>`); }
+  if(p.kml) el.insertAdjacentHTML("beforeend",`<a href="${p.kml}" download>⬇️ KML(구글 마이맵)</a>`);
+  el.insertAdjacentHTML("beforeend",`<button id="printBtn">🖨️ PDF·인쇄</button>`);
+  $("#printBtn").onclick=()=>openPrint(p); }
 
-function restCard(r){ if(!r) return "";
-  return `<div class="rest"><div class="rest-nm">${r.name}${r.category?` <span class="rest-cat">${r.category}</span>`:""}</div>
+function restCard(id){ const r=S.rest[id]; if(!r) return "";
+  return `<div class="rest"><div class="rest-top"><div class="rest-nm">${r.name}${r.category?` <span class="rest-cat">${r.category}</span>`:""}</div>${favBtn(id,"R")}</div>
     ${ratingLine(r)}${r.menu?`<div class="rest-mn">${r.menu}${r.price?` · ${r.price}`:""}</div>`:""}
     ${r.kid_note?`<div class="rest-kid">👶 ${r.kid_note}</div>`:""}${r.wait?`<div class="rest-wt">⏱️ ${r.wait}</div>`:""}
     <div class="lnks">${r.naver?`<a class="lnk" href="${r.naver}" target="_blank" rel="noopener">네이버</a>`:""}${r.phone?`<a class="lnk" href="tel:${r.phone}">📞 ${r.phone}</a>`:""}<a class="lnk" href="${kakaoTo(r)}" target="_blank" rel="noopener">🚕</a></div>
     ${reviewLinks(r.name,"food")}</div>`; }
-function mealBlock(mm){ return `<div class="meal"><div class="meal-slot">🍽️ ${mm.slot} <span class="meal-near">${mm.near} 근처</span></div>${mm.candidates.map(id=>restCard(S.rest[id])).join("")}</div>`; }
+function mealBlock(mm){ return `<div class="meal"><div class="meal-slot">🍽️ ${mm.slot} <span class="meal-near">${mm.near} 근처</span></div>${mm.candidates.map(id=>restCard(id)).join("")}</div>`; }
 
 function renderSide(p){ const el=$("#side"); el.innerHTML="";
   const h=S.hotels[p.base_hotel];
   if(h) el.insertAdjacentHTML("beforeend",`<div class="card hotel"><div class="hd">🏨 베이스 숙소 · 2박</div>
-    <div class="in"><div class="grow"><p class="nm">${h.name}</p>${ratingLine(h)}${h.pool?`<p class="pool">🏊 ${h.pool}</p>`:""}<p class="meta">${h.family_note||""}</p><p class="price">${h.price_range||""}</p>
+    ${resolveImg(h)?`<img class="hbanner" src="${resolveImg(h)}" alt="${h.name}" onerror="this.style.display='none'">`:""}<div class="in"><div class="grow"><p class="nm">${h.name}</p>${ratingLine(h)}${h.pool?`<p class="pool">🏊 ${h.pool}</p>`:""}<p class="meta">${h.family_note||""}</p><p class="price">${h.price_range||""}</p>
     <div class="lnks">${h.naver_map?`<a class="lnk" href="${h.naver_map}" target="_blank" rel="noopener">네이버 지도</a>`:""}${h.booking?`<a class="lnk" href="${h.booking}" target="_blank" rel="noopener">예약</a>`:""}${h.phone?`<a class="lnk" href="tel:${h.phone}">📞 ${h.phone}</a>`:""}<a class="lnk" href="${kakaoTo(h)}" target="_blank" rel="noopener">🚕 카카오T</a></div>
     ${reviewLinks(h.name,"hotel")}</div></div></div>`);
   el.insertAdjacentHTML("beforeend",bookingCard());
@@ -172,12 +204,12 @@ function renderSide(p){ const el=$("#side"); el.innerHTML="";
     const mealsAfter=i=>(d.meals||[]).filter(m=>m.after===i).map(mealBlock).join("");
     rows+=mealsAfter(-1);
     for(let i=0;i<d.stops.length;i++){ const s=d.stops[i], a=place(s.ref); if(!a) continue;
-      const isH=s.ref.startsWith("hotel:"), label=isH?"🏨":numFor(p,d,i), img=!isH&&a.img?commons(a.img):null;
+      const isH=s.ref.startsWith("hotel:"), label=isH?"🏨":numFor(p,d,i), img=!isH?resolveImg(a):null;
       rows+=`<div class="stop"><div class="num"${isH?' style="background:#111"':''}>${label}</div>
         ${img?`<img class="thumb" src="${img}" alt="${a.name}" onerror="this.style.display='none'">`:""}
         <div class="body"><div class="nmrow">${s.time?`<span class="t">${s.time}</span>`:""}<span class="nm">${a.name}</span>${s.optional?'<span class="lnk opt">선택</span>':''}</div>
         ${ratingLine(a)}${s.note?`<div class="no">${s.note}</div>`:""}
-        <div class="lnks">${(a.naver||a.naver_map)?`<a class="lnk" href="${a.naver||a.naver_map}" target="_blank" rel="noopener">네이버</a>`:""}${a.official?`<a class="lnk" href="${a.official}" target="_blank" rel="noopener">예매</a>`:""}</div>${!isH?reviewLinks(a.name,"spot"):""}</div></div>`;
+        <div class="lnks">${(a.naver||a.naver_map)?`<a class="lnk" href="${a.naver||a.naver_map}" target="_blank" rel="noopener">네이버</a>`:""}${a.official?`<a class="lnk" href="${a.official}" target="_blank" rel="noopener">예매</a>`:""}${(!isH&&!TRANSIT.has(a.category))?favBtn(s.ref,"A"):""}</div>${!isH?reviewLinks(a.name,"spot"):""}</div></div>`;
       if(i<d.stops.length-1){ const b=place(d.stops[i+1].ref), lg=leg(a,b);
         if(lg) rows+=`<div class="leg"><span class="lg-ic">${lg.icon}</span><span class="lg-tx">${lg.mode} · 약 ${lg.mins}분${lg.cost?` · ₩${won(lg.cost)}`:" · 무료"}<span class="lg-no">${lg.note||""}</span></span>${lg.link?`<a class="lg-lk" href="${lg.link}" target="_blank" rel="noopener">${lg.linklabel}</a>`:""}</div>`; }
       rows+=mealsAfter(i);
@@ -186,7 +218,7 @@ function renderSide(p){ const el=$("#side"); el.innerHTML="";
   });
   if(p.highlights&&p.highlights.length) el.insertAdjacentHTML("beforeend",`<div class="card hilite"><div class="hl-hd">✨ 이 여행의 하이라이트</div>${p.highlights.map(x=>`<div class="hl"><b>${x.name}</b> — ${x.blurb}</div>`).join("")}</div>`);
   el.insertAdjacentHTML("beforeend",packingCard());
-  el.querySelectorAll("input[data-k]").forEach(cb=>cb.onchange=()=>{ cb.checked?localStorage.setItem(cb.dataset.k,"1"):localStorage.removeItem(cb.dataset.k); }); }
+  el.querySelectorAll("input[data-k]").forEach(cb=>cb.onchange=()=>{ cb.checked?localStorage.setItem(cb.dataset.k,"1"):localStorage.removeItem(cb.dataset.k); }); bindFavs(el); }
 function numFor(p,day,idx){ let n=0; for(const d of p.days){ for(let i=0;i<d.stops.length;i++){ if(!d.stops[i].ref.startsWith("hotel:")) n++; if(d===day&&i===idx) return n; } } return n; }
 
 function renderCost(p){ const el=$("#cost"); if(!p.cost||!p.cost.length){ el.innerHTML=""; return; }
@@ -282,5 +314,39 @@ function buildCustomPlan(ids,hotelId,ndays){
 function upsertCustom(plan){ const i=S.plans.findIndex(p=>p.id==="custom"); if(i>=0) S.plans[i]=plan; else S.plans.push(plan); }
 function restoreCustom(){ try{ const raw=localStorage.getItem(`custom_${S.city.id}`); if(!raw) return; const {ids,hotel,days}=JSON.parse(raw);
   const valid=ids.filter(id=>S.at[id]); if(valid.length>=2&&S.hotels[hotel]) upsertCustom(buildCustomPlan(valid,hotel,days)); }catch(e){} }
+
+/* ---------- print / PDF (핵심 요약) ---------- */
+function openPrint(p){
+  const c=S.city, h=S.hotels[p.base_hotel];
+  const restName=id=>(S.rest[id]||{}).name||"";
+  let daysHtml="";
+  p.days.forEach(d=>{
+    const meal=slot=>{ const m=(d.meals||[]).find(x=>x.slot===slot); return m?`${slot}: ${m.candidates.map(restName).filter(Boolean).slice(0,2).join(" / ")}`:""; };
+    let stops="";
+    d.stops.forEach(s=>{ const a=place(s.ref); if(!a) return; const isH=s.ref.startsWith("hotel:");
+      stops+=`<li>${s.time?`<b>${s.time}</b> `:""}${isH?"🏨 ":""}${a.name}${s.note?` <span class="pg">— ${s.note}</span>`:""}</li>`; });
+    const meals=["아침","점심","저녁"].map(meal).filter(Boolean).join(" · ");
+    daysHtml+=`<div class="pd"><h3>${d.day}일차 · ${d.label||""}</h3><ol>${stops}</ol>${meals?`<div class="pm">🍽️ ${meals}</div>`:""}</div>`;
+  });
+  const cost=(p.cost||[]).map(x=>`<tr><td>${x.cat}</td><td>${x.detail||""}</td><td style="text-align:right">${won(x.amount)}</td></tr>`).join("");
+  const pk=c.packing?[...c.packing.common,...c.packing.specific]:[];
+  const book=(c.booking||[]).map(x=>x.label).join(", ");
+  let sheet=$("#printSheet"); if(!sheet){ sheet=document.createElement("div"); sheet.id="printSheet"; document.body.appendChild(sheet); }
+  sheet.innerHTML=`
+    <div class="ps-head"><h1>${p.title}</h1>
+      <p>${c.emoji} ${c.name} · 어른 2 + 아이 2 · 2박 3일 · 예상 총경비 <b>${won(p.total)}원</b> (예산 ${won(p.budget)}원 이내)</p>
+      <p>🏨 숙소: ${h?h.name:""}${h&&h.pool?` (${h.pool})`:""} · 🚄/✈️ ${c.arrival}</p></div>
+    <div class="ps-days">${daysHtml}</div>
+    <div class="ps-cost"><h3>💰 경비 (4인)</h3><table>${cost}<tr class="tot"><td>합계</td><td></td><td style="text-align:right">${won(p.total)}원</td></tr></table></div>
+    <div class="ps-two">
+      <div><h3>🎫 예매 & 이동</h3><p>${c.cost.intercity_label}: ${book}</p><p>${c.home_transfer?c.home_transfer.label+" (왕복 약 "+won(c.home_transfer.amount)+"원)":""}</p></div>
+      <div><h3>🧳 준비물</h3><p>${pk.join(" · ")}</p></div>
+    </div>
+    <div class="ps-foot">가족여행 플래너 · 가격·시간은 추정 포함, 예약 전 재확인</div>`;
+  document.body.classList.add("printing");
+  const done=()=>{ document.body.classList.remove("printing"); window.removeEventListener("afterprint",done); };
+  window.addEventListener("afterprint",done);
+  setTimeout(()=>window.print(),200);
+}
 
 boot().catch(e=>{ $("#planHead").innerHTML='<p style="color:#E15A38">데이터 로드 실패: '+e.message+'</p>'; });

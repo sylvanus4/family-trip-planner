@@ -11,7 +11,8 @@
     "price_range": "1박 약 40~55만원 (4인, 추정)",
     "family_note": "해운대 해변 앞 5성급, 실내외 수영장·키즈 프로그램, 깨끗하고 넓은 객실.",
     "img": null,
-    "naver_map": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0"
+    "naver_map": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0",
+    "photo": "assets/img/hotel-oceanview.png"
   },
   "paradise-busan": {
     "name": "파라다이스 호텔 부산",
@@ -39,7 +40,8 @@
     "price_range": "1박 약 55~75만원 (4인, 추정)",
     "family_note": "엘시티 최고층 럭셔리, 실내 수영장·최상급 청결·전 객실 오션뷰.",
     "img": null,
-    "naver_map": "https://map.naver.com/p/search/%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%97%98%20%EB%B6%80%EC%82%B0"
+    "naver_map": "https://map.naver.com/p/search/%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%97%98%20%EB%B6%80%EC%82%B0",
+    "photo": "assets/img/hotel-pool.png"
   },
   "westin-josun-busan": {
     "name": "웨스틴 조선 부산",
@@ -53,7 +55,8 @@
     "price_range": "1박 약 40~55만원 (4인, 추정)",
     "family_note": "동백섬·해운대 해변, 실내 수영장, 넓고 조용해 가족에 좋음.",
     "img": null,
-    "naver_map": "https://map.naver.com/p/search/%EC%9B%A8%EC%8A%A4%ED%8B%B4%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0"
+    "naver_map": "https://map.naver.com/p/search/%EC%9B%A8%EC%8A%A4%ED%8B%B4%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0",
+    "photo": "assets/img/hotel-pool.png"
   },
   "ananti-hilton-busan": {
     "name": "아난티 힐튼 부산",
@@ -81,6 +84,7 @@
     "price_range": "1박 약 35~50만원 (4인, 추정)",
     "family_note": "서면 중심 5성급, 실내 수영장·쇼핑 연결, 접근성 최고.",
     "img": null,
-    "naver_map": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0"
+    "naver_map": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0",
+    "photo": "assets/img/hotel-pool.png"
   }
 }

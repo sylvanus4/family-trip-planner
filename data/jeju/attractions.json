@@ -179,7 +179,8 @@
     "rating": 3.8,
     "reviews": 370,
     "rsource": "kakao",
-    "sentiment": "카트 스릴, 미취학 탑승 제한 확인"
+    "sentiment": "카트 스릴, 미취학 탑승 제한 확인",
+    "photo": "assets/img/park981.png"
   },
   "aerospace": {
     "name": "제주항공우주박물관",
@@ -269,7 +270,8 @@
     "rating": 4.7,
     "reviews": 648,
     "rsource": "kakao",
-    "sentiment": "실내 전시, 사진 좋아 아이들이 좋아함"
+    "sentiment": "실내 전시, 사진 좋아 아이들이 좋아함",
+    "photo": "assets/img/teddybear.png"
   },
   "udo": {
     "name": "우도(성산항 도항선)",
@@ -283,7 +285,8 @@
     "blurb": "배 타고 들어가는 섬 여행. 홍조단괴 백사장·등대, 전기차로 섬 한 바퀴.",
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%EC%9A%B0%EB%8F%84%20%EC%84%B1%EC%82%B0%ED%95%AD%20%EB%8F%84%ED%95%AD%EC%84%A0",
-    "review": "https://map.naver.com/p/search/%EC%9A%B0%EB%8F%84"
+    "review": "https://map.naver.com/p/search/%EC%9A%B0%EB%8F%84",
+    "photo": "assets/img/udo.png"
   },
   "gapado": {
     "name": "가파도(운진항 배)",
@@ -297,7 +300,8 @@
     "blurb": "납작한 섬을 걸어서 한 바퀴. 여름엔 파란 바다와 돌담길 산책.",
     "kid_fit": "중",
     "naver": "https://map.naver.com/p/search/%EA%B0%80%ED%8C%8C%EB%8F%84%20%EC%9A%B4%EC%A7%84%ED%95%AD",
-    "review": "https://map.naver.com/p/search/%EA%B0%80%ED%8C%8C%EB%8F%84"
+    "review": "https://map.naver.com/p/search/%EA%B0%80%ED%8C%8C%EB%8F%84",
+    "photo": "assets/img/gapado.png"
   },
   "aewol-drive": {
     "name": "애월 해안도로 드라이브",
@@ -311,6 +315,7 @@
     "blurb": "에메랄드 바다를 끼고 달리는 인생 드라이브. 중간중간 카페·포토존.",
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C",
-    "review": "https://map.naver.com/p/search/%EC%95%A0%EC%9B%94%20%ED%95%B4%EC%95%88%EB%8F%84%EB%A1%9C"
+    "review": "https://map.naver.com/p/search/%EC%95%A0%EC%9B%94%20%ED%95%B4%EC%95%88%EB%8F%84%EB%A1%9C",
+    "photo": "assets/img/aewol-drive.png"
   }
 }
