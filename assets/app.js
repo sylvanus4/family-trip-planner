@@ -63,7 +63,7 @@ function renderFavPill(){ let el=$("#favPill"); if(!el){ el=document.createEleme
   const n=(S.fav?.size||0)+(S.favR?.size||0);
   if(!n){ el.style.display="none"; return; }
   el.style.display="flex"; el.innerHTML=`🧩 담은 곳 <b>${n}</b> · 내 코스 만들기 →`;
-  el.onclick=buildFromFavorites; }
+  el.onclick=openBuilder; }
 function buildFromFavorites(){
   const ids=[...(S.fav||[])].filter(id=>S.at[id]);
   if(ids.length<2){ alert("여행지를 2곳 이상 '＋ 내 코스'로 담아주세요. (맛집은 담으면 해당 코스 식사에 우선 반영됩니다)"); return; }
@@ -139,7 +139,7 @@ function renderHead(p){ $("#planHead").innerHTML=`
   ${S.city.hero?`<img class="phero" src="${S.city.hero}" alt="${S.city.name}" onerror="this.style.display='none'">`:""}
   <div class="ph-top"><span class="ph-city">${S.city.emoji} ${S.city.name}</span><span class="ph-arr">${S.city.arrival}</span></div>
   <h2>${p.title}</h2>
-  <p class="psub">${p.subtitle||""}</p>
+  <p class="pintro">${p.intro||p.subtitle||""}</p>
   ${p.recommended_for?`<p class="recfor">👨‍👩‍👧‍👧 이런 가족에게 &nbsp;<b>${p.recommended_for}</b></p>`:""}
   <div class="chips">
     ${(p.chips||[]).map(c=>`<span class="chip">${c}</span>`).join("")}
@@ -253,22 +253,26 @@ const CATLABEL={beach:"🏖️ 해변",aquarium:"🐠 아쿠아리움",temple:"�
 function openBuilder(){ $("#compare").hidden=true; const el=$("#builder"); if(!el.hidden){ el.hidden=true; return; }
   const byCat={}; Object.entries(S.at).forEach(([id,a])=>{ if(TRANSIT.has(a.category)) return; (byCat[a.category]=byCat[a.category]||[]).push([id,a]); });
   const hotelOpts=Object.entries(S.hotels).map(([id,h])=>`<option value="${id}">${h.name} · ${h.price_range||""}</option>`).join("");
+  const chk=id=>(S.fav&&S.fav.has(id))?" checked":"";
   const groups=Object.keys(byCat).sort().map(cat=>`<div class="bg"><div class="bg-h">${CATLABEL[cat]||cat}</div><div class="bg-items">
-    ${byCat[cat].map(([id,a])=>`<label class="bo"><input type="checkbox" value="${id}"><span>${a.name}${a.rating?` <em>★${a.rating}</em>`:""}</span></label>`).join("")}</div></div>`).join("");
-  el.innerHTML=`<div class="card"><div class="cmp-head"><h3>🧩 내 코스 만들기 <span class="deck-sub">가고 싶은 곳만 골라 새 코스를 만드세요</span></h3><button class="cmp-x" id="bX">닫기 ✕</button></div>
+    ${byCat[cat].map(([id,a])=>`<label class="bo"><input type="checkbox" value="${id}"${chk(id)}><span>${a.name}${a.rating?` <em>★${a.rating}</em>`:""}</span></label>`).join("")}</div></div>`).join("");
+  el.innerHTML=`<div class="card"><div class="cmp-head"><h3>🧩 내 코스 만들기 <span class="deck-sub">가고 싶은 곳을 담고 인원·일수를 고르면 완성됩니다</span></h3><button class="cmp-x" id="bX">닫기 ✕</button></div>
     <div class="bctrl"><label>숙소 <select id="bHotel">${hotelOpts}</select></label>
-      <label>일수 <select id="bDays"><option value="2">2박3일</option><option value="1">1박2일</option><option value="3">3박4일</option></select></label>
+      <label>기간 <select id="bDays"><option value="2">2박3일</option><option value="1">1박2일</option><option value="3">3박4일</option></select></label>
+      <label>인원 <select id="bPpl"><option value="2">2명</option><option value="3">3명</option><option value="4" selected>4명</option><option value="5">5명</option><option value="6">6명</option></select></label>
+      <label>출발일 <input type="date" id="bDate"></label>
       <button class="btn p" id="bGo">코스 생성 →</button><span class="bcount" id="bCount">0곳 선택</span></div>
     <div class="bgroups">${groups}</div></div>`;
   el.hidden=false;
   const cbs=[...el.querySelectorAll('.bo input')];
-  const upd=()=>$("#bCount").textContent=`${cbs.filter(c=>c.checked).length}곳 선택`;
+  const upd=()=>$("#bCount").textContent=`${cbs.filter(c=>c.checked).length}곳 선택`; upd();
   cbs.forEach(c=>c.onchange=upd);
   $("#bX").onclick=()=>el.hidden=true;
   $("#bGo").onclick=()=>{ const ids=cbs.filter(c=>c.checked).map(c=>c.value);
     if(ids.length<2){ alert("2곳 이상 선택해주세요."); return; }
-    const plan=buildCustomPlan(ids,$("#bHotel").value,+$("#bDays").value+1);
-    upsertCustom(plan); localStorage.setItem(`custom_${S.city.id}`,JSON.stringify({ids,hotel:$("#bHotel").value,days:+$("#bDays").value+1}));
+    const hotel=$("#bHotel").value, days=+$("#bDays").value+1, ppl=+$("#bPpl").value, date=$("#bDate").value;
+    const plan=buildCustomPlan(ids,hotel,days,ppl,date);
+    upsertCustom(plan); localStorage.setItem(`custom_${S.city.id}`,JSON.stringify({ids,hotel,days,ppl,date}));
     el.hidden=true; renderPlanPicker(); selectPlan("custom"); };
   el.scrollIntoView({behavior:"smooth"}); }
 
@@ -283,7 +287,8 @@ function buildDayMeals(stops,hotel,dayNum){
     if(da){ const c2=nearestRest(da,3,used); if(c2.length) meals.push({slot:"저녁",after:di,near,candidates:c2}); } }
   return meals;
 }
-function buildCustomPlan(ids,hotelId,ndays){
+function buildCustomPlan(ids,hotelId,ndays,people,date){
+  people=people||4; date=date||"";
   const hotel=S.hotels[hotelId], spots=ids.map(id=>({id,...S.at[id]})).filter(x=>x.lat);
   let cur=hotel&&hotel.lat?hotel:spots[0], rem=[...spots], order=[];
   while(rem.length){ rem.sort((a,b)=>haversine(cur,a)-haversine(cur,b)); const n=rem.shift(); order.push(n); cur=n; }
@@ -297,23 +302,29 @@ function buildCustomPlan(ids,hotelId,ndays){
     if(d===ndays-1&&arr&&S.at[arr]) stops.push({ref:arr,time:"",note:"귀가"});
     days.push({day:d+1,label:"내 코스",stops,meals:buildDayMeals(stops,hotel,d+1)});
   }
-  const cc=S.city.cost, paid=[...new Set(ids)].reduce((s,id)=>s+((S.at[id]||{}).price4||0),0);
-  const lodging=(hotel&&hotel.nightly?hotel.nightly:220000)*(ndays);
-  const cost=[{cat:cc.intercity_label,detail:"왕복 4인",amount:cc.intercity,type:"추정"},
+  const cc=S.city.cost, pf=people/4, sc=v=>Math.round(v*pf/100)*100;
+  const paid=sc([...new Set(ids)].reduce((s,id)=>s+((S.at[id]||{}).price4||0),0));
+  const rooms=Math.max(1,Math.ceil(people/4));
+  const lodging=(hotel&&hotel.nightly?hotel.nightly:220000)*ndays*rooms;
+  const cost=[{cat:cc.intercity_label,detail:`왕복 ${people}인`,amount:sc(cc.intercity),type:"추정"},
+    ...(cc.home_transfer?[{cat:"집↔출발지 이동",detail:"잠실↔수서/공항 벤 왕복",amount:cc.home_transfer,type:"추정"}]:[]),
     {cat:"현지 교통",detail:"구간별 표시",amount:cc.local,type:"추정"},
-    {cat:`숙박 ${ndays}박`,detail:hotel?hotel.name:"",amount:lodging,type:"추정"},
+    {cat:`숙박 ${ndays}박`,detail:`${hotel?hotel.name:""}${rooms>1?` · ${rooms}객실`:""}`,amount:lodging,type:"추정"},
     {cat:"입장·체험",detail:[...new Set(ids)].map(id=>(S.at[id]||{}).name).filter(Boolean).join(", "),amount:paid,type:"추정"},
-    {cat:"식비",detail:`4인·${ndays+1}일`,amount:cc.food,type:"추정"},{cat:"예비·기념품",detail:"버퍼",amount:cc.misc,type:"추정"}];
+    {cat:"식비",detail:`${people}인·${ndays+1}일`,amount:sc(cc.food),type:"추정"},{cat:"예비·기념품",detail:"버퍼",amount:cc.misc,type:"추정"}];
   const total=cost.reduce((s,c)=>s+c.amount,0);
   const kid={상:3,중:2,하:1}, kv=ids.map(id=>kid[(S.at[id]||{}).kid_fit]||0);
-  return {id:"custom",short:"내 코스",title:`${S.city.name} · 내가 만든 코스`,subtitle:`선택한 ${ids.length}곳을 동선 순서로 자동 배치 · 식사·이동·경비 자동 계산`,
-    region:S.city.name,base_hotel:hotelId,budget:cc.budget,total,chips:["직접 선택","맞춤 코스"],recommended_for:"우리 가족이 직접 고른 코스",
+  const over=total>cc.budget;
+  return {id:"custom",short:"내 코스",title:`${S.city.name} · 우리 가족 코스`,
+    intro:`우리 가족이 직접 고른 ${ids.length}곳을 가까운 순서대로 이어 붙였습니다. 끼니마다 근처 맛집을 넣고 이동수단과 경비까지 자동으로 계산했어요.${date?` ${date}에 출발하는 ${people}인 기준입니다.`:` ${people}인 기준입니다.`}`,
+    subtitle:`직접 고른 ${ids.length}곳 · ${people}인 · ${ndays}박${ndays+1}일${date?` · ${date} 출발`:""}`,
+    region:S.city.name,base_hotel:hotelId,budget:cc.budget,total,chips:["직접 선택",`${people}인`,over?"예산 초과":"맞춤 코스"],recommended_for:"우리 가족이 직접 고른 코스",
     days,cost,decisions:[{label:cc.intercity_label+" 예매",note:"예매 오픈 즉시"},{label:"숙소 예약",note:hotel?hotel.name:""},{label:"예산 확정",note:`총액 ${won(total)}원`}],
     highlights:[],metrics:{stops:ids.length,indoor:0,kid:kv.length?+(kv.reduce((a,b)=>a+b,0)/kv.length).toFixed(1):0,meals:days.reduce((s,d)=>s+d.meals.length,0)}};
 }
 function upsertCustom(plan){ const i=S.plans.findIndex(p=>p.id==="custom"); if(i>=0) S.plans[i]=plan; else S.plans.push(plan); }
-function restoreCustom(){ try{ const raw=localStorage.getItem(`custom_${S.city.id}`); if(!raw) return; const {ids,hotel,days}=JSON.parse(raw);
-  const valid=ids.filter(id=>S.at[id]); if(valid.length>=2&&S.hotels[hotel]) upsertCustom(buildCustomPlan(valid,hotel,days)); }catch(e){} }
+function restoreCustom(){ try{ const raw=localStorage.getItem(`custom_${S.city.id}`); if(!raw) return; const {ids,hotel,days,ppl,date}=JSON.parse(raw);
+  const valid=ids.filter(id=>S.at[id]); if(valid.length>=2&&S.hotels[hotel]) upsertCustom(buildCustomPlan(valid,hotel,days,ppl,date)); }catch(e){} }
 
 /* ---------- print / PDF (핵심 요약) ---------- */
 function openPrint(p){

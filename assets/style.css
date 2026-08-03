@@ -322,3 +322,6 @@ table.cmp td.cat{max-width:230px; white-space:normal}
 .phero{width:100%; height:180px; object-fit:cover; border-radius:var(--r-sm); margin-bottom:var(--s4); border:1px solid var(--line)}
 @media (max-width:520px){ .phero{height:130px} }
 .thumb, .hbanner, .pop img{background:linear-gradient(135deg,#e7f2f1,#f7f3ea)}
+
+/* ---- v6: prose intro ---- */
+.pintro{color:var(--ink); font-size:15px; line-height:1.8; max-width:64ch; margin:0 0 var(--s4)}

@@ -113,7 +113,7 @@ def main():
         kv=[kid.get(at[r].get("kid_fit"),0) for r in seen if at.get(r)]
         out.append({"id":p["id"],"short":p["short"],"title":p["title"],"subtitle":p["subtitle"],
           "region":m["region"],"base_hotel":p["base_hotel"],"budget":m["budget"],"total":total,
-          "chips":p.get("chips",[]),"recommended_for":p.get("recommended_for") or "、".join(p.get("chips",[])[:2]),
+          "chips":p.get("chips",[]),"intro":p.get("intro") or p.get("subtitle",""),"recommended_for":p.get("recommended_for") or "、".join(p.get("chips",[])[:2]),
           "days":p["days"],"cost":cost,"decisions":decisions,"highlights":highlights,
           "kml":p.get("kml"),"mymaps":p.get("mymaps"),
           "metrics":{"stops":n_stops,"indoor":n_indoor,"kid":round(sum(kv)/len(kv),1) if kv else 0,"meals":sum(len(dd["meals"]) for dd in p["days"])}})
