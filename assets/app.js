@@ -135,7 +135,17 @@ function selectPlan(id){ S.cur=id; location.hash=`${S.city.id}/${id}`; $("#compa
   document.querySelectorAll(".plan-btn").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
   const p=S.plans.find(x=>x.id===id); if(!p) return;
   renderHead(p); renderMap(p); renderSide(p); renderCost(p); renderConfirm(p);
+  broadcastCtx(p);
   window.scrollTo({top:0,behavior:"smooth"}); }
+
+/* 도시/숙소 상태의 단일 출처(single source of truth)는 이 파일이다.
+   계산기(calc.js)는 자체 도시 상태를 갖지 않고 이 이벤트만 따라간다.
+   (과거 버그: 제주 탭을 눌러도 계산기가 부산 호텔을 계속 보여줌 = 상태 이중화) */
+function broadcastCtx(p){
+  const ctx={city:S.city.id, hotel:(p&&p.base_hotel)||null, plan:(p&&p.id)||null};
+  window.__tripCtx=ctx;                                   // calc.js 가 늦게 초기화돼도 받도록
+  document.dispatchEvent(new CustomEvent("tripcontext",{detail:ctx}));
+}
 
 function renderHead(p){ $("#planHead").innerHTML=`
   ${S.city.hero?`<img class="phero" src="${S.city.hero}" alt="${S.city.name}" onerror="this.style.display='none'">`:""}

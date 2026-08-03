@@ -12,8 +12,13 @@
   const CFG_LABEL = { 'one-room': '1객실 (4인 한 방)', 'two-room': '2객실' };
   const BF_LABEL = { with_breakfast: '조식 포함', without_breakfast: '조식 미포함' };
 
+  const inflight = {};                                 // 동시 호출이 같은 도시를 두 번 받지 않게
   async function loadCity(id) {
     if (C.data[id]) return C.data[id];
+    return (inflight[id] ||= fetchCity(id).finally(() => { delete inflight[id]; }));
+  }
+
+  async function fetchCity(id) {
     let failed = 0;
     const g = async (f) => {
       try {
@@ -89,7 +94,7 @@
 
   function render() {
     const el = $('#calc');
-    if (!el || !C.city) return;
+    if (!el || !C.city || !C.data[C.city.id]) return;   // 로딩 중 이벤트가 들어와도 빈 데이터를 렌더하지 않는다
     // innerHTML 재생성이 포커스를 body 로 떨어뜨리므로, 렌더 전후로 복원한다
     const focusedId = document.activeElement?.id || null;
     const d = C.data[C.city.id];
@@ -118,11 +123,11 @@
       .map(([id, h]) => `<option value="${id}"${id === C.hotel ? ' selected' : ''}>${h.name}</option>`).join('');
 
     el.innerHTML = `
-      <div class="calc-hd"><h2 id="calcHeading">💰 예산 계산기</h2>
+      <div class="calc-hd"><h2 id="calcHeading">💰 ${esc(C.city.emoji || '')} ${esc(C.city.name)} 예산 계산기</h2>
         <p class="calc-sub">날짜·호텔·객실구성·조식을 고르면 실측가로 최종 총액이 계산됩니다.
+        도시는 <b>맨 위 탭</b>에서 바꿉니다.
         <span class="calc-stamp">가격 조회 ${(d.prices?.meta?.fetched_at || '').slice(0, 10) || '-'}</span></p></div>
       <div class="calc-ctrl">
-        <label>도시 <select id="cCity">${C.cities.map((c) => `<option value="${c.id}"${c.id === C.city.id ? ' selected' : ''}>${c.emoji} ${c.name}</option>`).join('')}</select></label>
         <label>날짜 <select id="cWin">${winOpts}</select></label>
         <label>숙소 <select id="cHotel">${hotelOpts}</select></label>
         <label>객실 <select id="cCfg">${Object.entries(CFG_LABEL).map(([k, v]) => `<option value="${k}"${k === C.cfg ? ' selected' : ''}>${v}</option>`).join('')}</select></label>
@@ -157,14 +162,6 @@
     // 총액 변경을 스크린리더에 알린다(내용이 통째로 교체되므로 별도 status 노드로)
     const live = $('#calcLive');
     if (live) live.textContent = `합계 ${won(total)}원, 예산 대비 ${over ? `${won(total - budget)}원 초과` : `${won(budget - total)}원 여유`}`;
-    $('#cCity').onchange = async (e) => {
-      const sels = [...document.querySelectorAll('.calc-ctrl select')];
-      sels.forEach((s) => { s.disabled = true; });          // 재조회 동안 stale 표를 계속 만지지 못하게
-      C.city = C.cities.find((c) => c.id === e.target.value);
-      await loadCity(C.city.id);
-      C.hotel = Object.keys(C.data[C.city.id].hotels || {})[0];
-      render();                                              // render 가 컨트롤을 새로 그리므로 disabled 는 자동 해제
-    };
     $('#cWin').onchange = (e) => { C.win = e.target.value; render(); };
     $('#cHotel').onchange = (e) => { C.hotel = e.target.value; render(); };
     $('#cCfg').onchange = (e) => { C.cfg = e.target.value; render(); };
@@ -183,6 +180,7 @@
 
     let best = { total: Infinity };
     const cells = Object.entries(d.hotels || {}).map(([hid, h]) => {
+      const map = h.naver_map || null;                 // 데이터에 있는 것만 링크(URL 생성 금지)
       const tds = wins.map(([k]) => {
         const c = d.prices?.hotels?.[hid]?.windows?.[k]?.configs?.[C.cfg];
         const p = c?.lowest?.[C.bf] || c?.lowest?.without_breakfast || c?.lowest?.with_breakfast;
@@ -192,10 +190,10 @@
         const deal = (p.tracking?.badges || []).some((b) => b.startsWith('특가'));
         return { hid, k, tot, deal, lodging: p.family_total, name: h.name };
       });
-      return { hid, name: h.name, tds };
+      return { hid, name: h.name, area: h.area || '', map, tds };
     });
 
-    const body = cells.map(({ name, tds }) => {
+    const body = cells.map(({ name, area, map, tds }) => {
       const row = tds.map((c) => {
         if (c.html) return c.html;
         const isSel = c.hid === C.hotel && c.k === C.win;
@@ -207,13 +205,17 @@
           title="숙박 ${won(c.lodging)} + 교통 ${won(ics[c.k])} + 기타 ${won(fixedSide)}">
           <b>${won(c.tot)}</b><span>숙박 ${won(c.lodging)}</span>${isBest ? '<i class="best-tag">최저</i>' : ''}</td>`;
       }).join('');
-      return `<tr><th scope="row">${name}</th>${row}</tr>`;
+      const label = map
+        ? `<a class="map-lnk" href="${esc(map)}" target="_blank" rel="noopener"
+             aria-label="${esc(name)} 네이버 지도에서 위치 보기">${esc(name)}<span class="map-ico" aria-hidden="true">📍</span></a>`
+        : esc(name);
+      return `<tr><th scope="row">${label}${area ? `<em class="map-area">${esc(area)}</em>` : ''}</th>${row}</tr>`;
     }).join('');
 
     const grid = $('#calcGrid');
     grid.innerHTML = `
       <h3>📅 날짜 × 숙소 최종 총액 <small>(${CFG_LABEL[C.cfg]} · ${BF_LABEL[C.bf]} · 교통·식비·예비 포함)</small></h3>
-      <p class="calc-hint">칸을 누르면 위 계산기가 그 조합으로 바뀝니다.</p>
+      <p class="calc-hint">칸을 누르면 위 계산기가 그 조합으로 바뀝니다. 숙소 이름을 누르면 네이버 지도에서 위치가 열립니다.</p>
       <div class="calc-scroll"><table class="calc-matrix">
         <thead><tr><th scope="col">숙소</th>${wins.map(([, w]) => `<th scope="col">${w.label}</th>`).join('')}</tr></thead>
         <tbody>${body}</tbody></table></div>
@@ -233,6 +235,27 @@
     });
   }
 
+  /** 상단 탭(app.js)이 도시/여행안을 바꾸면 계산기도 따라간다.
+   *  계산기는 도시 상태를 스스로 갖지 않는다 — 출처는 app.js 하나뿐. */
+  let applying = null;
+  async function applyCtx(ctx) {
+    if (!ctx || !C.cities.length) return;
+    const city = C.cities.find((c) => c.id === ctx.city);
+    if (!city) return;
+    const loaded = !!C.data[city.id];
+    const sameCity = C.city && C.city.id === city.id;
+    const wantHotel = ctx.hotel;
+    if (sameCity && loaded && (!wantHotel || wantHotel === C.hotel)) return;  // 바뀐 게 없으면 재렌더 안 함
+    const token = (applying = Symbol('ctx'));
+    if (!loaded) document.querySelectorAll('.calc-ctrl select').forEach((s) => { s.disabled = true; });
+    await loadCity(city.id);                                          // 데이터 확보 전에는 절대 렌더하지 않는다
+    if (applying !== token) return;                                   // 빠른 연속 전환 시 늦은 응답 폐기
+    C.city = city;
+    const hotels = C.data[C.city.id].hotels || {};
+    C.hotel = (wantHotel && hotels[wantHotel]) ? wantHotel : (hotels[C.hotel] ? C.hotel : Object.keys(hotels)[0]);
+    render();
+  }
+
   async function init() {
     const host = $('#calc');
     if (!host) return;
@@ -243,14 +266,20 @@
     try {
       const cities = await (await fetch(`data/cities.json?t=${Date.now()}`)).json();
       C.cities = Array.isArray(cities) ? cities : cities.cities || [];
-      C.city = C.cities[0];
-      if (!C.city) return;
+      if (!C.cities.length) return;
+      // 초기 도시: app.js 가 이미 정한 값 > URL 해시 > 첫 도시 (자체 판단은 최후수단)
+      const fromHash = (location.hash || '').replace(/^#/, '').split('/')[0];
+      const wanted = window.__tripCtx?.city || fromHash;
+      C.city = C.cities.find((c) => c.id === wanted) || C.cities[0];
       await loadCity(C.city.id);
-      C.hotel = Object.keys(C.data[C.city.id].hotels || {})[0];
+      const hotels = C.data[C.city.id].hotels || {};
+      const wantHotel = window.__tripCtx?.hotel;
+      C.hotel = (wantHotel && hotels[wantHotel]) ? wantHotel : Object.keys(hotels)[0];
       render();
     } catch (e) {
       host.innerHTML = '<p class="unk">계산기 데이터를 불러오지 못했습니다.</p>';
     }
   }
+  document.addEventListener('tripcontext', (e) => { applyCtx(e.detail); });
   document.addEventListener('DOMContentLoaded', init);
 })();

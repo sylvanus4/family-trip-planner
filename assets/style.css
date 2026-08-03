@@ -485,6 +485,16 @@ table.cmp td.cat{max-width:230px; white-space:normal}
 .calc-matrix th,.calc-matrix td{padding:var(--s3); border-bottom:1px solid var(--line-2); font-size:.86rem; text-align:center}
 .calc-matrix thead th{background:var(--sea-tint); color:var(--sea-deep); font-size:.8rem}
 .calc-matrix tbody th{text-align:left; font-weight:600; color:var(--ink); white-space:nowrap}
+/* 숙소명 = 네이버 지도 링크. 밑줄은 text-decoration 으로 긋는다 — border-bottom 은 44px 박스
+   바닥에 그려져 아래 지역명을 가로지른다(2026-08-03 렌더 확인). 패딩으로 터치 타깃 확보. */
+.calc-matrix tbody th .map-lnk{display:inline-block; padding:11px 0; color:var(--ink);
+  text-decoration:underline dotted var(--sea); text-underline-offset:3px}
+.calc-matrix tbody th .map-lnk:hover,.calc-matrix tbody th .map-lnk:focus-visible{
+  color:var(--sea-deep); text-decoration-style:solid}
+.calc-matrix tbody th .map-lnk:focus-visible{outline:2px solid var(--sea); outline-offset:2px; border-radius:4px}
+.calc-matrix tbody th .map-ico{margin-left:4px; font-size:.78rem; opacity:.6}
+.calc-matrix tbody th .map-area{display:block; margin-top:-8px; font-style:normal;
+  font-weight:400; font-size:.72rem; color:var(--faint)}
 .calc-matrix td b{display:block; font-variant-numeric:tabular-nums}
 .calc-matrix td span{display:block; color:var(--faint); font-size:.72rem; margin-top:2px}
 .calc-matrix td.pick{cursor:pointer; transition:background .15s}
