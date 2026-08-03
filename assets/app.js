@@ -38,7 +38,7 @@ function ratingLine(o){ if(!o) return "";
 /* 3 blog/review discovery links (search-based, always valid — no fabricated post URLs) */
 function reviewLinks(name,kind){ if(!name) return "";
   const third = kind==="food"
-    ? {u:`https://www.diningcode.com/search/${enc(name)}`,t:"다이닝코드"}
+    ? {u:`https://map.kakao.com/?q=${enc(name)}`,t:"카카오맵"}
     : {u:`https://search.naver.com/search.naver?query=${enc(name+" 리뷰")}`,t:"네이버리뷰"};
   return `<div class="reviews"><span class="rv-h">📝 후기</span>`+
     `<a class="rlnk" href="https://search.naver.com/search.naver?ssc=tab.blog.all&query=${enc(name+" 후기")}" target="_blank" rel="noopener">네이버블로그</a>`+
@@ -186,9 +186,10 @@ function restCard(id){ const r=S.rest[id]; if(!r) return "";
   return `<div class="rest"><div class="rest-top"><div class="rest-nm">${r.name}${r.category?` <span class="rest-cat">${r.category}</span>`:""}</div>${favBtn(id,"R")}</div>
     ${ratingLine(r)}${r.menu?`<div class="rest-mn">${r.menu}${r.price?` · ${r.price}`:""}</div>`:""}
     ${r.kid_note?`<div class="rest-kid">👶 ${r.kid_note}</div>`:""}${r.wait?`<div class="rest-wt">⏱️ ${r.wait}</div>`:""}
-    <div class="lnks">${r.naver?`<a class="lnk" href="${r.naver}" target="_blank" rel="noopener">네이버</a>`:""}${r.phone?`<a class="lnk" href="tel:${r.phone}">📞 ${r.phone}</a>`:""}<a class="lnk" href="${kakaoTo(r)}" target="_blank" rel="noopener">🚕</a></div>
+    <div class="lnks">${r.naver?`<a class="lnk" href="${r.naver}" target="_blank" rel="noopener">네이버</a>`:""}${r.phone?`<a class="lnk" href="tel:${r.phone}">📞 ${r.phone}</a>`:""}<a class="lnk" href="https://map.kakao.com/?q=${enc(r.name)}" target="_blank" rel="noopener">🗺️ 카카오맵</a></div>
     ${reviewLinks(r.name,"food")}</div>`; }
-function mealBlock(mm){ return `<div class="meal"><div class="meal-slot">🍽️ ${mm.slot} <span class="meal-near">${mm.near} 근처</span></div>${mm.candidates.map(id=>restCard(id)).join("")}</div>`; }
+function mealBlock(mm){ const b=mm.buffet?`<div class="rest buffet"><div class="rest-top"><div class="rest-nm">🏨 ${mm.buffet.name} <span class="rest-cat">호텔 조식·뷔페</span></div></div>${mm.buffet.price?`<div class="rest-mn">${mm.buffet.price}</div>`:""}<div class="lnks">${mm.buffet.naver?`<a class="lnk" href="${mm.buffet.naver}" target="_blank" rel="noopener">네이버</a>`:""}</div></div>`:"";
+  return `<div class="meal"><div class="meal-slot">🍽️ ${mm.slot} <span class="meal-near">${mm.near} 근처</span></div>${b}${mm.candidates.map(id=>restCard(id)).join("")}</div>`; }
 
 function renderSide(p){ const el=$("#side"); el.innerHTML="";
   const h=S.hotels[p.base_hotel];

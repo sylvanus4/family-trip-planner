@@ -54,9 +54,9 @@
               "after": 2,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "mipo-hoe",
-                "haeundae-marine-donkatsu"
+                "dc-bu-27",
+                "dc-bu-07",
+                "dc-bu-21"
               ]
             },
             {
@@ -64,9 +64,9 @@
               "after": 4,
               "near": "광안리 해수욕장",
               "candidates": [
-                "gwangalli-jogae",
-                "gwangalli-donkatsu",
-                "minlak-hoe"
+                "dc-bu-16",
+                "dc-bu-03",
+                "dc-bu-06"
               ]
             }
           ]
@@ -91,9 +91,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 조선 부산",
+              "buffet": {
+                "name": "그랜드 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "dc-bu-21",
+                "dc-bu-12"
               ]
             },
             {
@@ -101,9 +106,9 @@
               "after": 1,
               "near": "롯데월드 어드벤처 부산",
               "candidates": [
-                "waveon",
-                "haeundae-choil6-gogi",
-                "haeundae-hotteok"
+                "dc-bu-27",
+                "dc-bu-07",
+                "dc-bu-15"
               ]
             },
             {
@@ -111,9 +116,9 @@
               "after": 1,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "geumsu-bokguk",
-                "haeundae-amso"
+                "dc-bu-08",
+                "dc-bu-23",
+                "dc-bu-19"
               ]
             }
           ]
@@ -138,9 +143,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 조선 부산",
+              "buffet": {
+                "name": "그랜드 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "gwangalli-donkatsu",
-                "gwangalli-jogae"
+                "dc-bu-06",
+                "dc-bu-03"
               ]
             },
             {
@@ -148,9 +158,9 @@
               "after": 0,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "molle-brunch",
-                "gijang-handasot",
-                "gijang-jangeo"
+                "dc-bu-14",
+                "dc-bu-22",
+                "dc-bu-11"
               ]
             }
           ]
@@ -214,11 +224,11 @@
           "note": "현재 예상 총액 2,164,200원 · 예산 4,000,000원"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "label": "아쿠아리움 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
@@ -228,16 +238,16 @@
       ],
       "highlights": [
         {
-          "name": "광안리 해수욕장",
-          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
+        },
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
         },
         {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
-        },
-        {
-          "name": "SEA LIFE 부산아쿠아리움",
-          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         }
       ],
       "kml": "data/busan/route.kml",
@@ -297,9 +307,9 @@
               "after": 1,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok",
-                "haeundae-amso"
+                "dc-bu-23",
+                "dc-bu-19",
+                "dc-bu-27"
               ]
             },
             {
@@ -307,9 +317,9 @@
               "after": 3,
               "near": "해운대 해수욕장",
               "candidates": [
-                "geumsu-bokguk",
-                "haeundae-choil6-gogi",
-                "mipo-hoe"
+                "dc-bu-08",
+                "dc-bu-04",
+                "dc-bu-07"
               ]
             }
           ]
@@ -334,9 +344,14 @@
               "slot": "아침",
               "after": -1,
               "near": "파라다이스 호텔 부산",
+              "buffet": {
+                "name": "파라다이스 호텔 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%8C%8C%EB%9D%BC%EB%8B%A4%EC%9D%B4%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "gwangalli-tteokbokki",
-                "minlak-hoe"
+                "dc-bu-12",
+                "dc-bu-15"
               ]
             },
             {
@@ -344,9 +359,9 @@
               "after": 0,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "gwangalli-jogae",
-                "songjeong-gukbap"
+                "dc-bu-21",
+                "dc-bu-06",
+                "dc-bu-03"
               ]
             },
             {
@@ -354,9 +369,9 @@
               "after": 1,
               "near": "광안리 요트투어",
               "candidates": [
-                "gwangalli-donkatsu",
-                "haeundae-amso",
-                "geumsu-bokguk"
+                "dc-bu-16",
+                "dc-bu-14",
+                "dc-bu-07"
               ]
             }
           ]
@@ -381,9 +396,14 @@
               "slot": "아침",
               "after": -1,
               "near": "파라다이스 호텔 부산",
+              "buffet": {
+                "name": "파라다이스 호텔 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%8C%8C%EB%9D%BC%EB%8B%A4%EC%9D%B4%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "gwangalli-jogae",
-                "songjeong-gukbap"
+                "dc-bu-16",
+                "dc-bu-03"
               ]
             },
             {
@@ -391,9 +411,9 @@
               "after": 0,
               "near": "삼진어묵 체험역사관",
               "candidates": [
-                "sinbalwon",
-                "ssangdungi-gukbap",
-                "liberty-jeonpo"
+                "dc-bu-09",
+                "dc-bu-14",
+                "dc-bu-06"
               ]
             }
           ]
@@ -457,7 +477,11 @@
           "note": "현재 예상 총액 2,204,200원 · 예산 4,000,000원"
         },
         {
-          "label": "삼진어묵 만들기 체험 예약",
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "광안리 요트투어 사전예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
@@ -465,26 +489,22 @@
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
-          "label": "광안리 요트투어 사전예약",
+          "label": "삼진어묵 만들기 체험 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "삼진어묵 체험역사관",
-          "blurb": "직접 어묵 만들고 시식. 블로거 아이 만족 상위 체험."
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
+        },
+        {
+          "name": "광안리 요트투어",
+          "blurb": "블로거 다수가 '아이들이 여행 중 제일 재밌어함'으로 꼽은 체험. 광안대교 야경·드론쇼."
         },
         {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
-        },
-        {
-          "name": "SEA LIFE 부산아쿠아리움",
-          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         }
       ],
       "kml": null,
@@ -544,9 +564,9 @@
               "after": 1,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "haeundae-amso",
-                "haeundae-hotteok",
-                "mipo-hoe"
+                "dc-bu-04",
+                "dc-bu-19",
+                "dc-bu-27"
               ]
             },
             {
@@ -554,9 +574,9 @@
               "after": 2,
               "near": "신세계 센텀시티",
               "candidates": [
-                "gwangalli-tteokbokki",
-                "gwangalli-donkatsu",
-                "gwangalli-jogae"
+                "dc-bu-15",
+                "dc-bu-06",
+                "dc-bu-16"
               ]
             }
           ]
@@ -581,9 +601,14 @@
               "slot": "아침",
               "after": -1,
               "near": "시그니엘 부산",
+              "buffet": {
+                "name": "시그니엘 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%97%98%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "gwangalli-tteokbokki",
-                "minlak-hoe"
+                "dc-bu-15",
+                "dc-bu-06"
               ]
             },
             {
@@ -591,9 +616,9 @@
               "after": 1,
               "near": "롯데월드 어드벤처 부산",
               "candidates": [
-                "daebyeon-daege",
-                "waveon",
-                "haeundae-choil6-gogi"
+                "dc-bu-04",
+                "dc-bu-23",
+                "dc-bu-19"
               ]
             },
             {
@@ -601,9 +626,9 @@
               "after": 1,
               "near": "시그니엘 부산",
               "candidates": [
-                "mipo-hoe",
-                "haeundae-hotteok",
-                "geumsu-bokguk"
+                "dc-bu-08",
+                "dc-bu-12",
+                "dc-bu-21"
               ]
             }
           ]
@@ -628,9 +653,14 @@
               "slot": "아침",
               "after": -1,
               "near": "시그니엘 부산",
+              "buffet": {
+                "name": "시그니엘 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%97%98%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "gwangalli-jogae",
-                "haeundae-choil6-gogi"
+                "dc-bu-03",
+                "dc-bu-04"
               ]
             },
             {
@@ -638,9 +668,9 @@
               "after": 0,
               "near": "부산엑스더스카이",
               "candidates": [
-                "gwangalli-donkatsu",
-                "songjeong-gukbap",
-                "molle-brunch"
+                "dc-bu-06",
+                "dc-bu-14",
+                "dc-bu-24"
               ]
             }
           ]
@@ -730,8 +760,8 @@
           "blurb": "아이스링크·아쿠아필드 등 실내 복합. 더운 날/비 오는 날 아이와 시간 보내기 좋음."
         },
         {
-          "name": "롯데월드 어드벤처 부산",
-          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
+          "name": "국립부산과학관",
+          "blurb": "만지고 체험하는 전시. 기장(용궁사 근처) 실내 — 폭염·우천 대안 최적."
         }
       ],
       "kml": null,
@@ -792,9 +822,9 @@
               "after": 2,
               "near": "해운대 해수욕장",
               "candidates": [
-                "geumsu-bokguk",
-                "haeundae-amso",
-                "haeundae-hotteok"
+                "dc-bu-23",
+                "dc-bu-04",
+                "dc-bu-19"
               ]
             },
             {
@@ -802,9 +832,9 @@
               "after": 3,
               "near": "광안리 해수욕장",
               "candidates": [
-                "gwangalli-jogae",
-                "gwangalli-donkatsu",
-                "minlak-hoe"
+                "dc-bu-16",
+                "dc-bu-03",
+                "dc-bu-06"
               ]
             }
           ]
@@ -829,9 +859,14 @@
               "slot": "아침",
               "after": -1,
               "near": "롯데호텔 부산",
+              "buffet": {
+                "name": "롯데호텔 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "gwangalli-jogae",
-                "gwangalli-donkatsu"
+                "dc-bu-17",
+                "dc-bu-02"
               ]
             },
             {
@@ -839,9 +874,9 @@
               "after": 1,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-hotteok",
-                "haeundae-amso",
-                "haeundae-marine-donkatsu"
+                "dc-bu-21",
+                "dc-bu-19",
+                "dc-bu-27"
               ]
             },
             {
@@ -849,9 +884,9 @@
               "after": 1,
               "near": "롯데호텔 부산",
               "candidates": [
-                "gaemi-jip",
-                "seomyeon-milmyeon",
-                "hapcheon-gukbap"
+                "dc-bu-09",
+                "dc-bu-13",
+                "dc-bu-25"
               ]
             }
           ]
@@ -876,9 +911,14 @@
               "slot": "아침",
               "after": -1,
               "near": "롯데호텔 부산",
+              "buffet": {
+                "name": "롯데호텔 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "gaemi-jip",
-                "hapcheon-gukbap"
+                "dc-bu-09",
+                "dc-bu-25"
               ]
             },
             {
@@ -886,9 +926,9 @@
               "after": 0,
               "near": "감천문화마을",
               "candidates": [
-                "choryang-milmyeon",
-                "yeongdo-samjin",
-                "yeongdo-haenyeochon"
+                "dc-bu-13",
+                "dc-bu-24",
+                "dc-bu-14"
               ]
             }
           ]
@@ -958,16 +998,16 @@
       ],
       "highlights": [
         {
-          "name": "광안리 해수욕장",
-          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
         },
         {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
-          "name": "해운대 해수욕장",
-          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+          "name": "광안리 해수욕장",
+          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
         }
       ],
       "kml": null,
@@ -1027,9 +1067,9 @@
               "after": 2,
               "near": "부산엑스더스카이",
               "candidates": [
-                "haeundae-amso",
-                "haeundae-hotteok",
-                "geumsu-bokguk"
+                "dc-bu-07",
+                "dc-bu-27",
+                "dc-bu-19"
               ]
             },
             {
@@ -1037,9 +1077,9 @@
               "after": 3,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-choil6-gogi",
-                "mipo-hoe"
+                "dc-bu-08",
+                "dc-bu-23",
+                "dc-bu-04"
               ]
             }
           ]
@@ -1064,9 +1104,14 @@
               "slot": "아침",
               "after": -1,
               "near": "아난티 힐튼 부산",
+              "buffet": {
+                "name": "아난티 힐튼 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%95%84%EB%82%9C%ED%8B%B0%20%ED%9E%90%ED%8A%BC%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-amso",
-                "geumsu-bokguk"
+                "dc-bu-08",
+                "dc-bu-15"
               ]
             },
             {
@@ -1074,9 +1119,9 @@
               "after": 1,
               "near": "롯데월드 어드벤처 부산",
               "candidates": [
-                "gijang-cafe220",
-                "songjeong-gukbap",
-                "daebyeon-daege"
+                "dc-bu-12",
+                "dc-bu-21",
+                "dc-bu-04"
               ]
             },
             {
@@ -1084,9 +1129,9 @@
               "after": 1,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "waveon",
-                "gijang-jangeo",
-                "gijang-handasot"
+                "dc-bu-10",
+                "dc-bu-11",
+                "dc-bu-22"
               ]
             }
           ]
@@ -1117,9 +1162,14 @@
               "slot": "아침",
               "after": -1,
               "near": "아난티 힐튼 부산",
+              "buffet": {
+                "name": "아난티 힐튼 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%95%84%EB%82%9C%ED%8B%B0%20%ED%9E%90%ED%8A%BC%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "daebyeon-daege",
-                "gijang-handasot"
+                "dc-bu-11",
+                "dc-bu-22"
               ]
             },
             {
@@ -1127,9 +1177,9 @@
               "after": 1,
               "near": "광안리 요트투어",
               "candidates": [
-                "geumsu-bokguk",
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "dc-bu-27",
+                "dc-bu-19",
+                "dc-bu-23"
               ]
             }
           ]
@@ -1193,15 +1243,15 @@
           "note": "현재 예상 총액 2,400,200원 · 예산 4,000,000원"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
           "label": "광안리 요트투어 사전예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
           "label": "엑스더스카이 전망대 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
@@ -1211,16 +1261,16 @@
       ],
       "highlights": [
         {
-          "name": "해운대 블루라인파크 (미포)",
-          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
-        },
-        {
           "name": "광안리 요트투어",
           "blurb": "블로거 다수가 '아이들이 여행 중 제일 재밌어함'으로 꼽은 체험. 광안대교 야경·드론쇼."
         },
         {
           "name": "해운대 해수욕장",
           "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         }
       ],
       "kml": null,
@@ -1275,9 +1325,9 @@
               "after": 1,
               "near": "감천문화마을",
               "candidates": [
-                "liberty-jeonpo",
-                "gukje-hotteok",
-                "nampo-gukbap"
+                "dc-bu-03",
+                "dc-bu-26",
+                "dc-bu-17"
               ]
             },
             {
@@ -1285,9 +1335,9 @@
               "after": 2,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "geumsu-bokguk",
-                "haeundae-amso"
+                "dc-bu-08",
+                "dc-bu-23",
+                "dc-bu-19"
               ]
             }
           ]
@@ -1312,9 +1362,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 조선 부산",
+              "buffet": {
+                "name": "그랜드 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "songjeong-gukbap",
-                "haeundae-gelatteok"
+                "dc-bu-03",
+                "dc-bu-08"
               ]
             },
             {
@@ -1322,9 +1377,9 @@
               "after": 0,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi",
-                "mipo-hoe"
+                "dc-bu-19",
+                "dc-bu-27",
+                "dc-bu-07"
               ]
             },
             {
@@ -1332,9 +1387,9 @@
               "after": 1,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "geumsu-bokguk",
-                "haeundae-amso",
-                "haeundae-marine-donkatsu"
+                "dc-bu-23",
+                "dc-bu-04",
+                "dc-bu-21"
               ]
             }
           ]
@@ -1359,9 +1414,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 조선 부산",
+              "buffet": {
+                "name": "그랜드 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-amso",
-                "haeundae-hotteok"
+                "dc-bu-19",
+                "dc-bu-04"
               ]
             },
             {
@@ -1369,9 +1429,9 @@
               "after": 0,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "songjeong-gukbap",
-                "gwangalli-tteokbokki",
-                "minlak-hoe"
+                "dc-bu-07",
+                "dc-bu-15",
+                "dc-bu-06"
               ]
             }
           ]
@@ -1435,19 +1495,15 @@
           "note": "현재 예상 총액 2,004,200원 · 예산 4,000,000원"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "label": "아쿠아리움 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
-        {
-          "name": "해운대 블루라인파크 (미포)",
-          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
-        },
         {
           "name": "SEA LIFE 부산아쿠아리움",
           "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
@@ -1455,6 +1511,10 @@
         {
           "name": "해운대 해수욕장",
           "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         }
       ],
       "kml": null,
@@ -1514,9 +1574,9 @@
               "after": 1,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "molle-brunch",
-                "gijang-handasot",
-                "mipo-hoe"
+                "dc-bu-14",
+                "dc-bu-22",
+                "dc-bu-12"
               ]
             },
             {
@@ -1524,9 +1584,9 @@
               "after": 3,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-gelatteok",
-                "geumsu-bokguk",
-                "haeundae-amso"
+                "dc-bu-08",
+                "dc-bu-23",
+                "dc-bu-04"
               ]
             }
           ]
@@ -1551,9 +1611,14 @@
               "slot": "아침",
               "after": -1,
               "near": "파라다이스 호텔 부산",
+              "buffet": {
+                "name": "파라다이스 호텔 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%8C%8C%EB%9D%BC%EB%8B%A4%EC%9D%B4%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-gelatteok",
-                "geumsu-bokguk"
+                "dc-bu-08",
+                "dc-bu-23"
               ]
             },
             {
@@ -1561,9 +1626,9 @@
               "after": 0,
               "near": "광안리 요트투어",
               "candidates": [
-                "minlak-hoe",
-                "gwangalli-donkatsu",
-                "gwangalli-tteokbokki"
+                "dc-bu-03",
+                "dc-bu-06",
+                "dc-bu-15"
               ]
             },
             {
@@ -1571,9 +1636,9 @@
               "after": 1,
               "near": "광안리 해수욕장",
               "candidates": [
-                "gwangalli-jogae",
-                "haeundae-marine-donkatsu",
-                "haeundae-amso"
+                "dc-bu-16",
+                "dc-bu-14",
+                "dc-bu-07"
               ]
             }
           ]
@@ -1598,9 +1663,14 @@
               "slot": "아침",
               "after": -1,
               "near": "파라다이스 호텔 부산",
+              "buffet": {
+                "name": "파라다이스 호텔 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%8C%8C%EB%9D%BC%EB%8B%A4%EC%9D%B4%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "dc-bu-19",
+                "dc-bu-27"
               ]
             },
             {
@@ -1608,9 +1678,9 @@
               "after": 0,
               "near": "해동용궁사",
               "candidates": [
-                "gijang-jangeo",
-                "waveon",
-                "haeundae-amso"
+                "dc-bu-21",
+                "dc-bu-04",
+                "dc-bu-15"
               ]
             }
           ]
@@ -1674,26 +1744,26 @@
           "note": "현재 예상 총액 2,078,200원 · 예산 4,000,000원"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "label": "광안리 요트투어 사전예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "광안리 요트투어 사전예약",
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "광안리 해수욕장",
-          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
+          "name": "광안리 요트투어",
+          "blurb": "블로거 다수가 '아이들이 여행 중 제일 재밌어함'으로 꼽은 체험. 광안대교 야경·드론쇼."
         },
         {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
-          "name": "광안리 요트투어",
-          "blurb": "블로거 다수가 '아이들이 여행 중 제일 재밌어함'으로 꼽은 체험. 광안대교 야경·드론쇼."
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
         }
       ],
       "kml": null,
@@ -1748,9 +1818,9 @@
               "after": 1,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "songjeong-gukbap",
-                "molle-brunch",
-                "gijang-handasot"
+                "dc-bu-03",
+                "dc-bu-14",
+                "dc-bu-24"
               ]
             },
             {
@@ -1758,9 +1828,9 @@
               "after": 2,
               "near": "웨스틴 조선 부산",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "haeundae-gelatteok",
-                "geumsu-bokguk"
+                "dc-bu-23",
+                "dc-bu-08",
+                "dc-bu-19"
               ]
             }
           ]
@@ -1785,9 +1855,14 @@
               "slot": "아침",
               "after": -1,
               "near": "웨스틴 조선 부산",
+              "buffet": {
+                "name": "웨스틴 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%9B%A8%EC%8A%A4%ED%8B%B4%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-gelatteok",
-                "geumsu-bokguk"
+                "dc-bu-08",
+                "dc-bu-19"
               ]
             },
             {
@@ -1795,9 +1870,9 @@
               "after": 0,
               "near": "국립부산과학관",
               "candidates": [
-                "molle-brunch",
-                "songjeong-gukbap",
-                "gijang-handasot"
+                "dc-bu-22",
+                "dc-bu-12",
+                "dc-bu-10"
               ]
             },
             {
@@ -1805,9 +1880,9 @@
               "after": 1,
               "near": "삼진어묵 체험역사관",
               "candidates": [
-                "yeongdo-momos",
-                "yeongdo-samjin",
-                "yeongdo-haenyeochon"
+                "dc-bu-26",
+                "dc-bu-01",
+                "dc-bu-02"
               ]
             }
           ]
@@ -1832,9 +1907,14 @@
               "slot": "아침",
               "after": -1,
               "near": "웨스틴 조선 부산",
+              "buffet": {
+                "name": "웨스틴 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%9B%A8%EC%8A%A4%ED%8B%B4%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "dc-bu-07",
+                "dc-bu-21"
               ]
             },
             {
@@ -1842,9 +1922,9 @@
               "after": 0,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-amso",
-                "haeundae-marine-donkatsu",
-                "songjeong-gukbap"
+                "dc-bu-23",
+                "dc-bu-19",
+                "dc-bu-27"
               ]
             }
           ]
@@ -1908,7 +1988,7 @@
           "note": "현재 예상 총액 2,004,200원 · 예산 4,000,000원"
         },
         {
-          "label": "삼진어묵 만들기 체험 예약",
+          "label": "아쿠아리움 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
@@ -1916,22 +1996,22 @@
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
+          "label": "삼진어묵 만들기 체험 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "삼진어묵 체험역사관",
-          "blurb": "직접 어묵 만들고 시식. 블로거 아이 만족 상위 체험."
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         },
         {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
-          "name": "SEA LIFE 부산아쿠아리움",
-          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
+          "name": "국립부산과학관",
+          "blurb": "만지고 체험하는 전시. 기장(용궁사 근처) 실내 — 폭염·우천 대안 최적."
         }
       ],
       "kml": null,
@@ -1986,9 +2066,9 @@
               "after": 2,
               "near": "해운대 해수욕장",
               "candidates": [
-                "gwangalli-jogae",
-                "songjeong-gukbap",
-                "molle-brunch"
+                "dc-bu-16",
+                "dc-bu-03",
+                "dc-bu-14"
               ]
             },
             {
@@ -1996,9 +2076,9 @@
               "after": 2,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "geumsu-bokguk",
-                "haeundae-amso"
+                "dc-bu-08",
+                "dc-bu-23",
+                "dc-bu-19"
               ]
             }
           ]
@@ -2023,9 +2103,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 조선 부산",
+              "buffet": {
+                "name": "그랜드 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-amso",
-                "haeundae-hotteok"
+                "dc-bu-19",
+                "dc-bu-04"
               ]
             },
             {
@@ -2033,9 +2118,9 @@
               "after": 0,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "gijang-cafe220",
-                "geumsu-bokguk",
-                "haeundae-choil6-gogi"
+                "dc-bu-25",
+                "dc-bu-08",
+                "dc-bu-23"
               ]
             },
             {
@@ -2043,9 +2128,9 @@
               "after": 1,
               "near": "광안리 해수욕장",
               "candidates": [
-                "gwangalli-jogae",
-                "gwangalli-donkatsu",
-                "minlak-hoe"
+                "dc-bu-16",
+                "dc-bu-03",
+                "dc-bu-06"
               ]
             }
           ]
@@ -2070,9 +2155,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 조선 부산",
+              "buffet": {
+                "name": "그랜드 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "mipo-hoe",
-                "haeundae-marine-donkatsu"
+                "dc-bu-07",
+                "dc-bu-21"
               ]
             },
             {
@@ -2080,9 +2170,9 @@
               "after": 0,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok",
-                "haeundae-amso"
+                "dc-bu-08",
+                "dc-bu-23",
+                "dc-bu-19"
               ]
             }
           ]
@@ -2146,26 +2236,26 @@
           "note": "현재 예상 총액 2,004,200원 · 예산 4,000,000원"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "label": "아쿠아리움 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "광안리 해수욕장",
-          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
+        },
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
         },
         {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
-        },
-        {
-          "name": "SEA LIFE 부산아쿠아리움",
-          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         }
       ],
       "kml": null,
@@ -2220,9 +2310,9 @@
               "after": 2,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "gwangalli-donkatsu",
-                "gwangalli-jogae",
-                "songjeong-gukbap"
+                "dc-bu-06",
+                "dc-bu-03",
+                "dc-bu-14"
               ]
             },
             {
@@ -2230,9 +2320,9 @@
               "after": 2,
               "near": "파라다이스 호텔 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "geumsu-bokguk",
-                "haeundae-amso"
+                "dc-bu-08",
+                "dc-bu-23",
+                "dc-bu-04"
               ]
             }
           ]
@@ -2252,9 +2342,14 @@
               "slot": "아침",
               "after": -1,
               "near": "파라다이스 호텔 부산",
+              "buffet": {
+                "name": "파라다이스 호텔 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%8C%8C%EB%9D%BC%EB%8B%A4%EC%9D%B4%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "dc-bu-19",
+                "dc-bu-27"
               ]
             },
             {
@@ -2262,9 +2357,9 @@
               "after": 0,
               "near": "롯데월드 어드벤처 부산",
               "candidates": [
-                "gwangalli-tteokbokki",
-                "gwangalli-donkatsu",
-                "molle-brunch"
+                "dc-bu-03",
+                "dc-bu-14",
+                "dc-bu-22"
               ]
             },
             {
@@ -2272,9 +2367,9 @@
               "after": 0,
               "near": "파라다이스 호텔 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "geumsu-bokguk",
-                "haeundae-amso"
+                "dc-bu-08",
+                "dc-bu-23",
+                "dc-bu-04"
               ]
             }
           ]
@@ -2304,9 +2399,14 @@
               "slot": "아침",
               "after": -1,
               "near": "파라다이스 호텔 부산",
+              "buffet": {
+                "name": "파라다이스 호텔 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%8C%8C%EB%9D%BC%EB%8B%A4%EC%9D%B4%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "dc-bu-21",
+                "dc-bu-12"
               ]
             },
             {
@@ -2314,9 +2414,9 @@
               "after": 1,
               "near": "해운대 해수욕장",
               "candidates": [
-                "geumsu-bokguk",
-                "haeundae-amso",
-                "haeundae-hotteok"
+                "dc-bu-23",
+                "dc-bu-04",
+                "dc-bu-19"
               ]
             }
           ]
@@ -2380,11 +2480,11 @@
           "note": "현재 예상 총액 2,224,200원 · 예산 4,000,000원"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "label": "아쿠아리움 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
@@ -2394,12 +2494,12 @@
       ],
       "highlights": [
         {
-          "name": "해운대 블루라인파크 (미포)",
-          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
-        },
-        {
           "name": "SEA LIFE 부산아쿠아리움",
           "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
           "name": "해운대 해수욕장",
@@ -2458,9 +2558,9 @@
               "after": 2,
               "near": "태종대(다누비열차·유람선)",
               "candidates": [
-                "baekgudang",
-                "sinbalwon",
-                "ssangdungi-gukbap"
+                "dc-bu-24",
+                "dc-bu-16",
+                "dc-bu-03"
               ]
             },
             {
@@ -2468,9 +2568,9 @@
               "after": 2,
               "near": "웨스틴 조선 부산",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "haeundae-gelatteok",
-                "geumsu-bokguk"
+                "dc-bu-23",
+                "dc-bu-08",
+                "dc-bu-19"
               ]
             }
           ]
@@ -2495,9 +2595,14 @@
               "slot": "아침",
               "after": -1,
               "near": "웨스틴 조선 부산",
+              "buffet": {
+                "name": "웨스틴 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%9B%A8%EC%8A%A4%ED%8B%B4%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "dc-bu-07",
+                "dc-bu-21"
               ]
             },
             {
@@ -2505,9 +2610,9 @@
               "after": 0,
               "near": "오륙도 스카이워크",
               "candidates": [
-                "geumsu-bokguk",
-                "baekgudang",
-                "haeundae-amso"
+                "dc-bu-19",
+                "dc-bu-27",
+                "dc-bu-15"
               ]
             },
             {
@@ -2515,9 +2620,9 @@
               "after": 1,
               "near": "광안리 해수욕장",
               "candidates": [
-                "gwangalli-jogae",
-                "gwangalli-donkatsu",
-                "minlak-hoe"
+                "dc-bu-16",
+                "dc-bu-03",
+                "dc-bu-06"
               ]
             }
           ]
@@ -2542,9 +2647,14 @@
               "slot": "아침",
               "after": -1,
               "near": "웨스틴 조선 부산",
+              "buffet": {
+                "name": "웨스틴 조선 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%9B%A8%EC%8A%A4%ED%8B%B4%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "gwangalli-tteokbokki",
-                "minlak-hoe"
+                "dc-bu-06",
+                "dc-bu-15"
               ]
             },
             {
@@ -2552,9 +2662,9 @@
               "after": 0,
               "near": "송도 해상케이블카",
               "candidates": [
-                "yeongdo-momos",
-                "nampo-jagalchi",
-                "nampo-wandang"
+                "dc-bu-26",
+                "dc-bu-01",
+                "dc-bu-17"
               ]
             }
           ]
@@ -2620,12 +2730,12 @@
       ],
       "highlights": [
         {
-          "name": "광안리 해수욕장",
-          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
-        },
-        {
           "name": "송도 해상케이블카",
           "blurb": "바다 위를 가로지르는 케이블카. 크리스탈 캐빈은 발밑이 유리라 스릴 만점."
+        },
+        {
+          "name": "광안리 해수욕장",
+          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
         },
         {
           "name": "태종대(다누비열차·유람선)",
@@ -2684,9 +2794,9 @@
               "after": 2,
               "near": "이기대 해안 드라이브·산책",
               "candidates": [
-                "haeundae-amso",
-                "haeundae-hotteok",
-                "mipo-hoe"
+                "dc-bu-19",
+                "dc-bu-27",
+                "dc-bu-07"
               ]
             },
             {
@@ -2694,9 +2804,9 @@
               "after": 2,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "waveon",
-                "daebyeon-daege",
-                "gijang-jangeo"
+                "dc-bu-10",
+                "dc-bu-11",
+                "dc-bu-22"
               ]
             }
           ]
@@ -2721,9 +2831,14 @@
               "slot": "아침",
               "after": -1,
               "near": "아난티 힐튼 부산",
+              "buffet": {
+                "name": "아난티 힐튼 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%95%84%EB%82%9C%ED%8B%B0%20%ED%9E%90%ED%8A%BC%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "gijang-cafe220",
-                "songjeong-gukbap"
+                "dc-bu-04",
+                "dc-bu-27"
               ]
             },
             {
@@ -2731,9 +2846,9 @@
               "after": 1,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "gwangalli-jogae",
-                "molle-brunch",
-                "gijang-handasot"
+                "dc-bu-14",
+                "dc-bu-22",
+                "dc-bu-11"
               ]
             },
             {
@@ -2741,9 +2856,9 @@
               "after": 1,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "waveon",
-                "daebyeon-daege",
-                "gijang-jangeo"
+                "dc-bu-10",
+                "dc-bu-12",
+                "dc-bu-21"
               ]
             }
           ]
@@ -2768,9 +2883,14 @@
               "slot": "아침",
               "after": -1,
               "near": "아난티 힐튼 부산",
+              "buffet": {
+                "name": "아난티 힐튼 부산 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%95%84%EB%82%9C%ED%8B%B0%20%ED%9E%90%ED%8A%BC%20%EB%B6%80%EC%82%B0%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-hotteok"
+                "dc-bu-19",
+                "dc-bu-23"
               ]
             },
             {
@@ -2778,9 +2898,9 @@
               "after": 0,
               "near": "송도 해상케이블카",
               "candidates": [
-                "seomyeon-yeonui",
-                "nampo-jagalchi",
-                "nampo-wandang"
+                "dc-bu-03",
+                "dc-bu-26",
+                "dc-bu-01"
               ]
             }
           ]
@@ -2850,16 +2970,16 @@
       ],
       "highlights": [
         {
-          "name": "해운대 블루라인파크 (미포)",
-          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
-        },
-        {
           "name": "송도 해상케이블카",
           "blurb": "바다 위를 가로지르는 케이블카. 크리스탈 캐빈은 발밑이 유리라 스릴 만점."
         },
         {
-          "name": "이기대 해안 드라이브·산책",
-          "blurb": "광안대교가 보이는 해안 드라이브와 갯바위 산책로. 뷰 맛집."
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "해동용궁사",
+          "blurb": "바다 절벽 위 사찰. 계단 많지만 초등 이상에게 인상적. 아침 일찍이 덜 붐빔."
         }
       ],
       "kml": null,

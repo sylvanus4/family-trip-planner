@@ -43,9 +43,9 @@
               "after": 2,
               "near": "함덕해수욕장",
               "candidates": [
-                "boromwae",
-                "ujin",
-                "jaemae-noodles"
+                "dc-je-28",
+                "dc-je-06",
+                "dc-je-20"
               ]
             },
             {
@@ -53,9 +53,9 @@
               "after": 2,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok",
-                "yeonliji"
+                "dc-je-19",
+                "dc-je-02",
+                "dc-je-24"
               ]
             }
           ]
@@ -85,9 +85,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 하얏트 제주",
+              "buffet": {
+                "name": "그랜드 하얏트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "dodo-haenyeo",
-                "ujin"
+                "dc-je-06",
+                "dc-je-20"
               ]
             },
             {
@@ -95,9 +100,9 @@
               "after": 1,
               "near": "섭지코지",
               "candidates": [
-                "tteulchae",
-                "delmoondo",
-                "haeoban"
+                "dc-je-03",
+                "dc-je-19",
+                "dc-je-16"
               ]
             },
             {
@@ -105,9 +110,9 @@
               "after": 2,
               "near": "아쿠아플라넷 제주",
               "candidates": [
-                "baekgi-haenyeo",
-                "sinyoungine",
-                "myeonghee-noodles"
+                "dc-je-17",
+                "dc-je-07",
+                "dc-je-11"
               ]
             }
           ]
@@ -137,9 +142,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 하얏트 제주",
+              "buffet": {
+                "name": "그랜드 하얏트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "boromwae",
-                "haeoban"
+                "dc-je-25",
+                "dc-je-04"
               ]
             },
             {
@@ -147,9 +157,9 @@
               "after": 1,
               "near": "에코랜드 테마파크",
               "candidates": [
-                "dodo-haenyeo",
-                "childdonga-seongsan",
-                "myeonghee-noodles"
+                "dc-je-15",
+                "dc-je-05",
+                "dc-je-24"
               ]
             }
           ]
@@ -231,8 +241,8 @@
           "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
         },
         {
-          "name": "함덕해수욕장",
-          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
+          "name": "에코랜드 테마파크",
+          "blurb": "곶자왈 꼬마기차+오리배, 걷기 부담 없이 자연."
         }
       ],
       "kml": null,
@@ -287,9 +297,9 @@
               "after": 2,
               "near": "협재해수욕장",
               "candidates": [
-                "hyeopjaesinguksu",
-                "donhaesang",
-                "bomnal-cafe"
+                "dc-je-27",
+                "dc-je-09",
+                "dc-je-10"
               ]
             },
             {
@@ -297,9 +307,9 @@
               "after": 2,
               "near": "파르나스 호텔 제주",
               "candidates": [
-                "saekdal",
-                "yeongsilguksu",
-                "hallagalchi"
+                "dc-je-03",
+                "dc-je-18",
+                "dc-je-14"
               ]
             }
           ]
@@ -329,9 +339,14 @@
               "slot": "아침",
               "after": -1,
               "near": "파르나스 호텔 제주",
+              "buffet": {
+                "name": "파르나스 호텔 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%8C%8C%EB%A5%B4%EB%82%98%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "jeongseong-momguk",
-                "miyoungine"
+                "dc-je-15",
+                "dc-je-16"
               ]
             },
             {
@@ -339,9 +354,9 @@
               "after": 1,
               "near": "오설록 티뮤지엄",
               "candidates": [
-                "yeongsilguksu",
-                "saekdal",
-                "donhaesang"
+                "dc-je-27",
+                "dc-je-21",
+                "dc-je-05"
               ]
             },
             {
@@ -349,9 +364,9 @@
               "after": 2,
               "near": "카멜리아힐",
               "candidates": [
-                "manorblanc",
-                "hallagalchi",
-                "deomjang"
+                "dc-je-09",
+                "dc-je-10",
+                "dc-je-22"
               ]
             }
           ]
@@ -376,9 +391,14 @@
               "slot": "아침",
               "after": -1,
               "near": "파르나스 호텔 제주",
+              "buffet": {
+                "name": "파르나스 호텔 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%8C%8C%EB%A5%B4%EB%82%98%EC%8A%A4%20%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "jaeyeon-bomal",
-                "daemunjip"
+                "dc-je-05",
+                "dc-je-13"
               ]
             },
             {
@@ -386,9 +406,9 @@
               "after": 0,
               "near": "제주항공우주박물관",
               "candidates": [
-                "hawonga",
-                "bomnal-cafe",
-                "jeongseong-momguk"
+                "dc-je-01",
+                "dc-je-08",
+                "dc-je-16"
               ]
             }
           ]
@@ -452,7 +472,7 @@
           "note": "현재 예상 총액 2,496,000원 · 예산 4,000,000원"
         },
         {
-          "label": "항공우주박물관 입장권",
+          "label": "한림공원 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
@@ -460,15 +480,11 @@
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "한림공원 입장권",
+          "label": "항공우주박물관 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
-        {
-          "name": "제주항공우주박물관",
-          "blurb": "실물 조종석·우주선 체험, 비행기 좋아하면 최고."
-        },
         {
           "name": "한림공원",
           "blurb": "용암동굴+아열대 식물원+공작새, 오래 걸어도 안 지루."
@@ -476,6 +492,10 @@
         {
           "name": "협재해수욕장",
           "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
+        },
+        {
+          "name": "제주항공우주박물관",
+          "blurb": "실물 조종석·우주선 체험, 비행기 좋아하면 최고."
         }
       ],
       "kml": null,
@@ -530,9 +550,9 @@
               "after": 1,
               "near": "함덕해수욕장",
               "candidates": [
-                "tteulchae",
-                "olle-guksu",
-                "boromwae"
+                "dc-je-02",
+                "dc-je-28",
+                "dc-je-06"
               ]
             },
             {
@@ -540,9 +560,9 @@
               "after": 2,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles",
-                "sinyoungine"
+                "dc-je-17",
+                "dc-je-07",
+                "dc-je-14"
               ]
             }
           ]
@@ -567,9 +587,14 @@
               "slot": "아침",
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
+              "buffet": {
+                "name": "해비치 호텔앤드리조트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%95%B4%EB%B9%84%EC%B9%98%20%ED%98%B8%ED%85%94%EC%95%A4%EB%93%9C%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "haeoban",
-                "delmoondo"
+                "dc-je-20",
+                "dc-je-04"
               ]
             },
             {
@@ -577,9 +602,9 @@
               "after": 1,
               "near": "섭지코지",
               "candidates": [
-                "myeongjin-jeonbok",
-                "boromwae",
-                "olle-guksu"
+                "dc-je-02",
+                "dc-je-18",
+                "dc-je-03"
               ]
             },
             {
@@ -587,9 +612,9 @@
               "after": 1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles",
-                "sinyoungine"
+                "dc-je-17",
+                "dc-je-07",
+                "dc-je-14"
               ]
             }
           ]
@@ -619,9 +644,14 @@
               "slot": "아침",
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
+              "buffet": {
+                "name": "해비치 호텔앤드리조트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%95%B4%EB%B9%84%EC%B9%98%20%ED%98%B8%ED%85%94%EC%95%A4%EB%93%9C%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "olle-guksu",
-                "childdonga-seongsan"
+                "dc-je-01",
+                "dc-je-17"
               ]
             },
             {
@@ -629,9 +659,9 @@
               "after": 1,
               "near": "만장굴",
               "candidates": [
-                "baekgi-haenyeo",
-                "golmak",
-                "jaemae-noodles"
+                "dc-je-04",
+                "dc-je-16",
+                "dc-je-08"
               ]
             }
           ]
@@ -765,9 +795,9 @@
               "after": 1,
               "near": "아쿠아플라넷 제주",
               "candidates": [
-                "sinyoungine",
-                "myeonghee-noodles",
-                "childdonga-seongsan"
+                "dc-je-07",
+                "dc-je-11",
+                "dc-je-24"
               ]
             },
             {
@@ -775,9 +805,9 @@
               "after": 2,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok",
-                "yeonliji"
+                "dc-je-19",
+                "dc-je-02",
+                "dc-je-21"
               ]
             }
           ]
@@ -802,9 +832,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 하얏트 제주",
+              "buffet": {
+                "name": "그랜드 하얏트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "boromwae",
-                "haeoban"
+                "dc-je-25",
+                "dc-je-04"
               ]
             },
             {
@@ -812,9 +847,9 @@
               "after": 1,
               "near": "테디베어뮤지엄",
               "candidates": [
-                "saekdal",
-                "manorblanc",
-                "jeongseong-momguk"
+                "dc-je-14",
+                "dc-je-01",
+                "dc-je-08"
               ]
             },
             {
@@ -822,9 +857,9 @@
               "after": 1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok",
-                "yeonliji"
+                "dc-je-19",
+                "dc-je-02",
+                "dc-je-24"
               ]
             }
           ]
@@ -849,9 +884,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 하얏트 제주",
+              "buffet": {
+                "name": "그랜드 하얏트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "sukseongdo",
-                "kimanbok"
+                "dc-je-19",
+                "dc-je-24"
               ]
             },
             {
@@ -859,9 +899,9 @@
               "after": 0,
               "near": "오설록 티뮤지엄",
               "candidates": [
-                "yeongsilguksu",
-                "saekdal",
-                "donhaesang"
+                "dc-je-21",
+                "dc-je-05",
+                "dc-je-08"
               ]
             }
           ]
@@ -929,11 +969,11 @@
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "항공우주박물관 입장권",
+          "label": "테디베어뮤지엄 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "테디베어뮤지엄 입장권",
+          "label": "항공우주박물관 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
@@ -943,12 +983,12 @@
           "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
         },
         {
-          "name": "제주항공우주박물관",
-          "blurb": "실물 조종석·우주선 체험, 비행기 좋아하면 최고."
-        },
-        {
           "name": "테디베어뮤지엄",
           "blurb": "실내 곰인형 전시·공연, 날씨 무관."
+        },
+        {
+          "name": "제주항공우주박물관",
+          "blurb": "실물 조종석·우주선 체험, 비행기 좋아하면 최고."
         }
       ],
       "kml": null,
@@ -1003,9 +1043,9 @@
               "after": 2,
               "near": "함덕해수욕장",
               "candidates": [
-                "haeoban",
-                "delmoondo",
-                "tteulchae"
+                "dc-je-11",
+                "dc-je-24",
+                "dc-je-02"
               ]
             },
             {
@@ -1013,9 +1053,9 @@
               "after": 2,
               "near": "롯데호텔 제주",
               "candidates": [
-                "hallagalchi",
-                "hawonga",
-                "deomjang"
+                "dc-je-09",
+                "dc-je-10",
+                "dc-je-03"
               ]
             }
           ]
@@ -1045,9 +1085,14 @@
               "slot": "아침",
               "after": -1,
               "near": "롯데호텔 제주",
+              "buffet": {
+                "name": "롯데호텔 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "jaeyeon-bomal",
-                "daemunjip"
+                "dc-je-05",
+                "dc-je-13"
               ]
             },
             {
@@ -1055,9 +1100,9 @@
               "after": 1,
               "near": "성산일출봉",
               "candidates": [
-                "childdonga-seongsan",
-                "udo-peanut",
-                "myeongjin-jeonbok"
+                "dc-je-24",
+                "dc-je-02",
+                "dc-je-28"
               ]
             },
             {
@@ -1065,9 +1110,9 @@
               "after": 2,
               "near": "천지연폭포",
               "candidates": [
-                "jeongseong-momguk",
-                "deomjang",
-                "hawonga"
+                "dc-je-03",
+                "dc-je-18",
+                "dc-je-14"
               ]
             }
           ]
@@ -1092,9 +1137,14 @@
               "slot": "아침",
               "after": -1,
               "near": "롯데호텔 제주",
+              "buffet": {
+                "name": "롯데호텔 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "hawonga",
-                "deomjang"
+                "dc-je-10",
+                "dc-je-03"
               ]
             },
             {
@@ -1102,9 +1152,9 @@
               "after": 0,
               "near": "만장굴",
               "candidates": [
-                "boromwae",
-                "sinyoungine",
-                "olle-guksu"
+                "dc-je-28",
+                "dc-je-06",
+                "dc-je-20"
               ]
             }
           ]
@@ -1170,12 +1220,12 @@
       ],
       "highlights": [
         {
-          "name": "섭지코지",
-          "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
-        },
-        {
           "name": "천지연폭포",
           "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
+        },
+        {
+          "name": "섭지코지",
+          "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
           "name": "함덕해수욕장",
@@ -1234,9 +1284,9 @@
               "after": 2,
               "near": "중문색달해수욕장",
               "candidates": [
-                "donhaesang",
-                "hallagalchi",
-                "saekdal"
+                "dc-je-04",
+                "dc-je-09",
+                "dc-je-10"
               ]
             },
             {
@@ -1244,9 +1294,9 @@
               "after": 2,
               "near": "제주신라호텔",
               "candidates": [
-                "hawonga",
-                "deomjang",
-                "yeongsilguksu"
+                "dc-je-03",
+                "dc-je-18",
+                "dc-je-14"
               ]
             }
           ]
@@ -1276,9 +1326,14 @@
               "slot": "아침",
               "after": -1,
               "near": "제주신라호텔",
+              "buffet": {
+                "name": "제주신라호텔 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EC%8B%A0%EB%9D%BC%ED%98%B8%ED%85%94%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "daemunjip",
-                "hawonga"
+                "dc-je-13",
+                "dc-je-09"
               ]
             },
             {
@@ -1286,9 +1341,9 @@
               "after": 1,
               "near": "섭지코지",
               "candidates": [
-                "myeonghee-noodles",
-                "childdonga-seongsan",
-                "udo-peanut"
+                "dc-je-11",
+                "dc-je-14",
+                "dc-je-02"
               ]
             },
             {
@@ -1296,9 +1351,9 @@
               "after": 2,
               "near": "아쿠아플라넷 제주",
               "candidates": [
-                "baekgi-haenyeo",
-                "sinyoungine",
-                "myeongjin-jeonbok"
+                "dc-je-17",
+                "dc-je-07",
+                "dc-je-24"
               ]
             }
           ]
@@ -1328,9 +1383,14 @@
               "slot": "아침",
               "after": -1,
               "near": "제주신라호텔",
+              "buffet": {
+                "name": "제주신라호텔 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EC%8B%A0%EB%9D%BC%ED%98%B8%ED%85%94%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "deomjang",
-                "saekdal"
+                "dc-je-03",
+                "dc-je-18"
               ]
             },
             {
@@ -1338,9 +1398,9 @@
               "after": 1,
               "near": "테디베어뮤지엄",
               "candidates": [
-                "jeongseong-momguk",
-                "miyoungine",
-                "hyeopjaesinguksu"
+                "dc-je-15",
+                "dc-je-16",
+                "dc-je-25"
               ]
             }
           ]
@@ -1414,16 +1474,16 @@
       ],
       "highlights": [
         {
+          "name": "천지연폭포",
+          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
+        },
+        {
           "name": "섭지코지",
           "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
           "name": "아쿠아플라넷 제주",
           "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
-        },
-        {
-          "name": "천지연폭포",
-          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
         }
       ],
       "kml": null,
@@ -1478,9 +1538,9 @@
               "after": 2,
               "near": "에코랜드 테마파크",
               "candidates": [
-                "dodo-haenyeo",
-                "boromwae",
-                "haeoban"
+                "dc-je-25",
+                "dc-je-24",
+                "dc-je-02"
               ]
             },
             {
@@ -1488,9 +1548,9 @@
               "after": 2,
               "near": "랜딩관 제주신화월드",
               "candidates": [
-                "manorblanc",
-                "oneonly",
-                "yeongsilguksu"
+                "dc-je-22",
+                "dc-je-23",
+                "dc-je-12"
               ]
             }
           ]
@@ -1515,9 +1575,14 @@
               "slot": "아침",
               "after": -1,
               "near": "랜딩관 제주신화월드",
+              "buffet": {
+                "name": "랜딩관 제주신화월드 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EB%9E%9C%EB%94%A9%EA%B4%80%20%EC%A0%9C%EC%A3%BC%EC%8B%A0%ED%99%94%EC%9B%94%EB%93%9C%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "manorblanc",
-                "yeongsilguksu"
+                "dc-je-22",
+                "dc-je-23"
               ]
             },
             {
@@ -1525,9 +1590,9 @@
               "after": 1,
               "near": "한림공원",
               "candidates": [
-                "daemunjip",
-                "swimpyo",
-                "hyeopjaesinguksu"
+                "dc-je-27",
+                "dc-je-09",
+                "dc-je-10"
               ]
             },
             {
@@ -1535,9 +1600,9 @@
               "after": 1,
               "near": "랜딩관 제주신화월드",
               "candidates": [
-                "oneonly",
-                "saekdal",
-                "jaeyeon-bomal"
+                "dc-je-12",
+                "dc-je-26",
+                "dc-je-21"
               ]
             }
           ]
@@ -1562,9 +1627,14 @@
               "slot": "아침",
               "after": -1,
               "near": "랜딩관 제주신화월드",
+              "buffet": {
+                "name": "랜딩관 제주신화월드 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EB%9E%9C%EB%94%A9%EA%B4%80%20%EC%A0%9C%EC%A3%BC%EC%8B%A0%ED%99%94%EC%9B%94%EB%93%9C%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "saekdal",
-                "jaeyeon-bomal"
+                "dc-je-09",
+                "dc-je-10"
               ]
             },
             {
@@ -1572,9 +1642,9 @@
               "after": 0,
               "near": "아쿠아플라넷 제주",
               "candidates": [
-                "udo-peanut",
-                "myeongjin-jeonbok",
-                "haeoban"
+                "dc-je-02",
+                "dc-je-14",
+                "dc-je-18"
               ]
             }
           ]
@@ -1646,11 +1716,11 @@
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "9.81파크 레이싱 예약",
+          "label": "에코랜드 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "에코랜드 입장권",
+          "label": "9.81파크 레이싱 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
@@ -1720,9 +1790,9 @@
               "after": 1,
               "near": "함덕해수욕장",
               "candidates": [
-                "yeonliji",
-                "dodo-haenyeo",
-                "haeoban"
+                "dc-je-05",
+                "dc-je-01",
+                "dc-je-24"
               ]
             },
             {
@@ -1730,9 +1800,9 @@
               "after": 2,
               "near": "롯데호텔 제주",
               "candidates": [
-                "hallagalchi",
-                "hawonga",
-                "deomjang"
+                "dc-je-09",
+                "dc-je-10",
+                "dc-je-03"
               ]
             }
           ]
@@ -1757,9 +1827,14 @@
               "slot": "아침",
               "after": -1,
               "near": "롯데호텔 제주",
+              "buffet": {
+                "name": "롯데호텔 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "hawonga",
-                "deomjang"
+                "dc-je-10",
+                "dc-je-03"
               ]
             },
             {
@@ -1767,9 +1842,9 @@
               "after": 0,
               "near": "협재해수욕장",
               "candidates": [
-                "swimpyo",
-                "daemunjip",
-                "jaeyeon-bomal"
+                "dc-je-22",
+                "dc-je-23",
+                "dc-je-12"
               ]
             },
             {
@@ -1777,9 +1852,9 @@
               "after": 1,
               "near": "중문색달해수욕장",
               "candidates": [
-                "hallagalchi",
-                "saekdal",
-                "yeongsilguksu"
+                "dc-je-09",
+                "dc-je-18",
+                "dc-je-14"
               ]
             }
           ]
@@ -1804,9 +1879,14 @@
               "slot": "아침",
               "after": -1,
               "near": "롯데호텔 제주",
+              "buffet": {
+                "name": "롯데호텔 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%98%B8%ED%85%94%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "saekdal",
-                "manorblanc"
+                "dc-je-14",
+                "dc-je-01"
               ]
             },
             {
@@ -1814,9 +1894,9 @@
               "after": 0,
               "near": "섭지코지",
               "candidates": [
-                "childdonga-seongsan",
-                "udo-peanut",
-                "myeongjin-jeonbok"
+                "dc-je-24",
+                "dc-je-02",
+                "dc-je-18"
               ]
             }
           ]
@@ -1882,16 +1962,16 @@
       ],
       "highlights": [
         {
+          "name": "협재해수욕장",
+          "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
+        },
+        {
           "name": "섭지코지",
           "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
           "name": "함덕해수욕장",
           "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
-        },
-        {
-          "name": "협재해수욕장",
-          "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
         }
       ],
       "kml": null,
@@ -1946,9 +2026,9 @@
               "after": 2,
               "near": "섭지코지",
               "candidates": [
-                "olle-guksu",
-                "golmak",
-                "baekgi-haenyeo"
+                "dc-je-06",
+                "dc-je-20",
+                "dc-je-04"
               ]
             },
             {
@@ -1956,9 +2036,9 @@
               "after": 2,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles",
-                "sinyoungine"
+                "dc-je-17",
+                "dc-je-07",
+                "dc-je-14"
               ]
             }
           ]
@@ -1983,9 +2063,14 @@
               "slot": "아침",
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
+              "buffet": {
+                "name": "해비치 호텔앤드리조트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%95%B4%EB%B9%84%EC%B9%98%20%ED%98%B8%ED%85%94%EC%95%A4%EB%93%9C%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "sinyoungine",
-                "boromwae"
+                "dc-je-14",
+                "dc-je-18"
               ]
             },
             {
@@ -1993,9 +2078,9 @@
               "after": 1,
               "near": "아쿠아플라넷 제주",
               "candidates": [
-                "jeongseong-momguk",
-                "baekgi-haenyeo",
-                "myeonghee-noodles"
+                "dc-je-08",
+                "dc-je-17",
+                "dc-je-07"
               ]
             },
             {
@@ -2003,9 +2088,9 @@
               "after": 1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeongjin-jeonbok",
-                "udo-peanut"
+                "dc-je-03",
+                "dc-je-11",
+                "dc-je-28"
               ]
             }
           ]
@@ -2030,9 +2115,14 @@
               "slot": "아침",
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
+              "buffet": {
+                "name": "해비치 호텔앤드리조트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%95%B4%EB%B9%84%EC%B9%98%20%ED%98%B8%ED%85%94%EC%95%A4%EB%93%9C%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "myeongjin-jeonbok",
-                "udo-peanut"
+                "dc-je-11",
+                "dc-je-28"
               ]
             },
             {
@@ -2040,9 +2130,9 @@
               "after": 0,
               "near": "천지연폭포",
               "candidates": [
-                "hawonga",
-                "hallagalchi",
-                "yeongsilguksu"
+                "dc-je-14",
+                "dc-je-10",
+                "dc-je-09"
               ]
             }
           ]
@@ -2112,16 +2202,16 @@
       ],
       "highlights": [
         {
+          "name": "천지연폭포",
+          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
+        },
+        {
           "name": "섭지코지",
           "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
           "name": "아쿠아플라넷 제주",
           "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
-        },
-        {
-          "name": "천지연폭포",
-          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
         }
       ],
       "kml": null,
@@ -2176,9 +2266,9 @@
               "after": 2,
               "near": "에코랜드 테마파크",
               "candidates": [
-                "yeonliji",
-                "dodo-haenyeo",
-                "boromwae"
+                "dc-je-01",
+                "dc-je-08",
+                "dc-je-25"
               ]
             },
             {
@@ -2186,9 +2276,9 @@
               "after": 2,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok",
-                "donsadon"
+                "dc-je-19",
+                "dc-je-02",
+                "dc-je-24"
               ]
             }
           ]
@@ -2213,9 +2303,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 하얏트 제주",
+              "buffet": {
+                "name": "그랜드 하얏트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "donsadon",
-                "golmak"
+                "dc-je-21",
+                "dc-je-28"
               ]
             },
             {
@@ -2223,9 +2318,9 @@
               "after": 1,
               "near": "성산일출봉",
               "candidates": [
-                "jaemae-noodles",
-                "kimanbok",
-                "baekgi-haenyeo"
+                "dc-je-15",
+                "dc-je-14",
+                "dc-je-07"
               ]
             },
             {
@@ -2233,9 +2328,9 @@
               "after": 1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "yeonliji",
-                "olle-guksu"
+                "dc-je-19",
+                "dc-je-02",
+                "dc-je-24"
               ]
             }
           ]
@@ -2265,9 +2360,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 하얏트 제주",
+              "buffet": {
+                "name": "그랜드 하얏트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "dodo-haenyeo",
-                "ujin"
+                "dc-je-06",
+                "dc-je-20"
               ]
             },
             {
@@ -2275,9 +2375,9 @@
               "after": 1,
               "near": "카멜리아힐",
               "candidates": [
-                "yeongsilguksu",
-                "saekdal",
-                "hallagalchi"
+                "dc-je-10",
+                "dc-je-12",
+                "dc-je-23"
               ]
             }
           ]
@@ -2351,12 +2451,12 @@
       ],
       "highlights": [
         {
-          "name": "성산일출봉",
-          "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
-        },
-        {
           "name": "에코랜드 테마파크",
           "blurb": "곶자왈 꼬마기차+오리배, 걷기 부담 없이 자연."
+        },
+        {
+          "name": "성산일출봉",
+          "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
         },
         {
           "name": "만장굴",
@@ -2415,9 +2515,9 @@
               "after": 2,
               "near": "함덕해수욕장",
               "candidates": [
-                "kimanbok",
-                "sukseongdo",
-                "myeongjin-jeonbok"
+                "dc-je-16",
+                "dc-je-21",
+                "dc-je-05"
               ]
             },
             {
@@ -2425,9 +2525,9 @@
               "after": 2,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles",
-                "sinyoungine"
+                "dc-je-17",
+                "dc-je-07",
+                "dc-je-14"
               ]
             }
           ]
@@ -2452,9 +2552,14 @@
               "slot": "아침",
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
+              "buffet": {
+                "name": "해비치 호텔앤드리조트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%95%B4%EB%B9%84%EC%B9%98%20%ED%98%B8%ED%85%94%EC%95%A4%EB%93%9C%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "boromwae",
-                "myeongjin-jeonbok"
+                "dc-je-03",
+                "dc-je-11"
               ]
             },
             {
@@ -2462,9 +2567,9 @@
               "after": 1,
               "near": "우도(성산항 도항선)",
               "candidates": [
-                "jaemae-noodles",
-                "kimanbok",
-                "sukseongdo"
+                "dc-je-08",
+                "dc-je-15",
+                "dc-je-25"
               ]
             },
             {
@@ -2472,9 +2577,9 @@
               "after": 1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles",
-                "sinyoungine"
+                "dc-je-17",
+                "dc-je-07",
+                "dc-je-14"
               ]
             }
           ]
@@ -2499,9 +2604,14 @@
               "slot": "아침",
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
+              "buffet": {
+                "name": "해비치 호텔앤드리조트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%ED%95%B4%EB%B9%84%EC%B9%98%20%ED%98%B8%ED%85%94%EC%95%A4%EB%93%9C%EB%A6%AC%EC%A1%B0%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "jeongseong-momguk",
-                "delmoondo"
+                "dc-je-06",
+                "dc-je-20"
               ]
             },
             {
@@ -2509,9 +2619,9 @@
               "after": 0,
               "near": "만장굴",
               "candidates": [
-                "myeongjin-jeonbok",
-                "haeoban",
-                "childdonga-seongsan"
+                "dc-je-11",
+                "dc-je-07",
+                "dc-je-17"
               ]
             }
           ]
@@ -2577,16 +2687,16 @@
       ],
       "highlights": [
         {
+          "name": "우도(성산항 도항선)",
+          "blurb": "배 타고 들어가는 섬 여행. 홍조단괴 백사장·등대, 전기차로 섬 한 바퀴."
+        },
+        {
           "name": "함덕해수욕장",
           "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
         },
         {
           "name": "성산일출봉",
           "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
-        },
-        {
-          "name": "우도(성산항 도항선)",
-          "blurb": "배 타고 들어가는 섬 여행. 홍조단괴 백사장·등대, 전기차로 섬 한 바퀴."
         }
       ],
       "kml": null,
@@ -2641,9 +2751,9 @@
               "after": 2,
               "near": "애월 해안도로 드라이브",
               "candidates": [
-                "dodo-haenyeo",
-                "yeonliji",
-                "kimanbok"
+                "dc-je-05",
+                "dc-je-01",
+                "dc-je-08"
               ]
             },
             {
@@ -2651,9 +2761,9 @@
               "after": 2,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "donsadon",
-                "golmak"
+                "dc-je-19",
+                "dc-je-02",
+                "dc-je-24"
               ]
             }
           ]
@@ -2678,9 +2788,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 하얏트 제주",
+              "buffet": {
+                "name": "그랜드 하얏트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "olle-guksu",
-                "dodo-haenyeo"
+                "dc-je-13",
+                "dc-je-20"
               ]
             },
             {
@@ -2688,9 +2803,9 @@
               "after": 1,
               "near": "가파도(운진항 배)",
               "candidates": [
-                "swimpyo",
-                "hyeopjaesinguksu",
-                "donhaesang"
+                "dc-je-01",
+                "dc-je-08",
+                "dc-je-25"
               ]
             },
             {
@@ -2698,9 +2813,9 @@
               "after": 1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok",
-                "yeonliji"
+                "dc-je-19",
+                "dc-je-02",
+                "dc-je-24"
               ]
             }
           ]
@@ -2725,9 +2840,14 @@
               "slot": "아침",
               "after": -1,
               "near": "그랜드 하얏트 제주",
+              "buffet": {
+                "name": "그랜드 하얏트 제주 조식·뷔페",
+                "price": "성인 약 4~7만원, 아동 할인 · 숙박 시 조식 패키지가 대개 유리",
+                "naver": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%ED%95%98%EC%96%8F%ED%8A%B8%20%EC%A0%9C%EC%A3%BC%20%EB%B7%94%ED%8E%98"
+              },
               "candidates": [
-                "jaemae-noodles",
-                "boromwae"
+                "dc-je-05",
+                "dc-je-04"
               ]
             },
             {
@@ -2735,9 +2855,9 @@
               "after": 0,
               "near": "오설록 티뮤지엄",
               "candidates": [
-                "bomnal-cafe",
-                "miyoungine",
-                "jaeyeon-bomal"
+                "dc-je-16",
+                "dc-je-22",
+                "dc-je-23"
               ]
             }
           ]
@@ -2803,16 +2923,16 @@
       ],
       "highlights": [
         {
-          "name": "애월 해안도로 드라이브",
-          "blurb": "에메랄드 바다를 끼고 달리는 인생 드라이브. 중간중간 카페·포토존."
-        },
-        {
           "name": "협재해수욕장",
           "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
         },
         {
-          "name": "가파도(운진항 배)",
-          "blurb": "납작한 섬을 걸어서 한 바퀴. 여름엔 파란 바다와 돌담길 산책."
+          "name": "애월 해안도로 드라이브",
+          "blurb": "에메랄드 바다를 끼고 달리는 인생 드라이브. 중간중간 카페·포토존."
+        },
+        {
+          "name": "오설록 티뮤지엄",
+          "blurb": "초록 차밭 산책+아이스크림, 사진 명소."
         }
       ],
       "kml": null,

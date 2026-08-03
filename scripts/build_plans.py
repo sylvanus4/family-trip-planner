@@ -94,7 +94,7 @@ def main():
             used=set(); meals=[]
             if day["day"]>1 and hp:
                 b=choose(near_pool(hp,12,used), p_idx*13+day["day"]*3+0, 2); used|=set(b)
-                if b: meals.append({"slot":"아침","after":-1,"near":hotel.get("name","숙소"),"candidates":b})
+                if b: meals.append({"slot":"아침","after":-1,"near":hotel.get("name","숙소"),"buffet":hotel.get("buffet"),"candidates":b})
             li,la=pick(750)   # ~12:30 lunch
             if la:
                 c=choose(near_pool(la,14,used), p_idx*13+day["day"]*3+1, 3); used|=set(c)

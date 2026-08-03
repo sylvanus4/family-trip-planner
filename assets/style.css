@@ -401,3 +401,10 @@ table.cmp td.cat{max-width:230px; white-space:normal}
   main{padding:18px 20px 96px}
   #map{height:460px}
 }
+
+/* ---- v10: live padding fix + buffet + kakao review ---- */
+.live .card{padding:var(--s5)}
+@media (max-width:768px){ .live{padding:0 12px} .live .card{padding:16px} }
+.rest.buffet{background:#F3F0FA; border-color:#E2DAF3}
+.rest.buffet .rest-cat{background:#6D28D9; color:#fff}
+.rest.buffet .rest-nm{color:#4C1D95}
