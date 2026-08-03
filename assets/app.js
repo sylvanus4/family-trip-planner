@@ -1,91 +1,139 @@
-/* 가족여행 플래너 — data-driven interactive planner */
+/* 가족여행 플래너 — cities · interactive map · transport legs · compare */
 const REPO_URL = "https://github.com/sylvanus4/family-trip-planner";
 const DAYCOL = {1:"#0E7C7B",2:"#E15A38",3:"#DE9A2E",4:"#6D28D9",5:"#0369A1"};
-const state = { plans:[], hotels:{}, attractions:{}, cur:null, map:null, layer:null };
+const S = { cities:[], city:null, plans:[], hotels:{}, at:{}, cur:null, map:null };
 
 const $ = s => document.querySelector(s);
 const won = n => n==null ? "-" : Number(n).toLocaleString("ko-KR");
-const commons = f => f ? `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=500` : null;
+const enc = s => encodeURIComponent(s);
+const commons = f => f ? `https://commons.wikimedia.org/wiki/Special:FilePath/${enc(f)}?width=500` : null;
+const kakaoTo = p => `https://map.kakao.com/link/to/${enc(p.name)},${p.lat},${p.lon}`;
+
+function haversine(a,b){
+  const R=6371, r=x=>x*Math.PI/180;
+  const dLat=r(b.lat-a.lat), dLon=r(b.lon-a.lon);
+  const s=Math.sin(dLat/2)**2+Math.cos(r(a.lat))*Math.cos(r(b.lat))*Math.sin(dLon/2)**2;
+  return R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s));
+}
+function round100(n){ return Math.round(n/100)*100; }
+
+/* transport leg between two placed stops, city-aware */
+function leg(a,b){
+  if(!a||!b||!a.lat||!b.lat) return null;
+  const d=haversine(a,b); const t=S.city.transport;
+  if(d<0.45) return {icon:"🚶",mode:"도보",mins:Math.max(2,Math.round(d*15)),cost:0,link:null,note:"가까워요"};
+  if(t.has_subway && d<=12){
+    return {icon:"🚇",mode:"지하철",mins:Math.round(d*4+8),cost:t.subway4,
+      link:kakaoTo(b),linklabel:"길찾기",note:"4인 요금(추정)"};
+  }
+  // taxi (both cities); jeju note 렌터카
+  const cost=round100(t.taxi_base+d*t.taxi_per_km);
+  return {icon:"🚕",mode:"택시",mins:Math.round(d*3+5),cost,
+    link:kakaoTo(b),linklabel:"카카오T 호출",
+    note: t.has_subway ? "택시비(추정)" : "택시비 추정 · 렌터카도 편해요"};
+}
 
 async function boot(){
-  document.getElementById("repoLink").href = REPO_URL + "#readme";
-  const [plans,hotels,attractions] = await Promise.all([
-    fetch("data/plans.json").then(r=>r.json()),
-    fetch("data/hotels.json").then(r=>r.json()),
-    fetch("data/attractions.json").then(r=>r.json())
+  $("#repoLink").href = REPO_URL + "#readme";
+  S.cities = (await fetch("data/cities.json").then(r=>r.json())).cities;
+  renderCityPicker();
+  const h=(location.hash.replace("#","").split("/"));
+  const cid = S.cities.find(c=>c.id===h[0]) ? h[0] : S.cities[0].id;
+  await selectCity(cid, h[1]);
+  $("#cmpBtn").onclick=toggleCompare;
+}
+
+function renderCityPicker(){
+  const el=$("#cityPicker"); el.innerHTML="";
+  S.cities.forEach(c=>{
+    const b=document.createElement("button");
+    b.className="city-btn"+(c.id===(S.city&&S.city.id)?" active":"");
+    b.innerHTML=`${c.emoji} ${c.name}`; b.dataset.id=c.id;
+    b.onclick=()=>selectCity(c.id); el.appendChild(b);
+  });
+}
+
+async function selectCity(id, wantPlan){
+  S.city = S.cities.find(c=>c.id===id);
+  const d=S.city.dir;
+  const [plans,hotels,at]=await Promise.all([
+    fetch(`${d}/plans.json`).then(r=>r.json()),
+    fetch(`${d}/hotels.json`).then(r=>r.json()),
+    fetch(`${d}/attractions.json`).then(r=>r.json())
   ]);
-  state.plans = plans.plans; state.hotels = hotels; state.attractions = attractions;
-  renderPicker();
-  const want = (location.hash.match(/plan=([^&]+)/)||[])[1];
-  selectPlan(want && state.plans.find(p=>p.id===want) ? want : state.plans[0].id);
+  S.plans=plans.plans; S.hotels=hotels; S.at=at;
+  document.querySelectorAll(".city-btn").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
+  renderPlanPicker();
+  $("#compare").hidden=true;
+  const pid = wantPlan && S.plans.find(p=>p.id===wantPlan) ? wantPlan : S.plans[0].id;
+  selectPlan(pid);
 }
 
 function place(ref){
-  if(ref.startsWith("hotel:")) { const h=state.hotels[ref.slice(6)]; return h && {...h,_type:"hotel"}; }
-  const a=state.attractions[ref]; return a && {...a,_type:"poi"};
+  if(ref.startsWith("hotel:")){ const h=S.hotels[ref.slice(6)]; return h && {...h,_type:"hotel"}; }
+  const a=S.at[ref]; return a && {...a,_type:"poi"};
 }
 
-function renderPicker(){
+function renderPlanPicker(){
   const el=$("#planPicker"); el.innerHTML="";
-  state.plans.forEach(p=>{
+  S.plans.forEach(p=>{
     const b=document.createElement("button");
-    b.className="plan-btn"+(p.id===state.cur?" active":"");
-    const done = localStorage.getItem("confirm_"+p.id);
-    b.innerHTML = (done?'<span class="chk">✓</span> ':'') + p.short;
-    b.onclick=()=>selectPlan(p.id);
-    b.dataset.id=p.id; el.appendChild(b);
+    b.className="plan-btn"+(p.id===S.cur?" active":"");
+    const done=localStorage.getItem(`cfm_${S.city.id}_${p.id}`);
+    b.innerHTML=(done?'<span class="chk">✓</span> ':'')+p.short;
+    b.dataset.id=p.id; b.onclick=()=>selectPlan(p.id); el.appendChild(b);
   });
 }
 
 function selectPlan(id){
-  state.cur=id; location.hash="plan="+id;
+  S.cur=id; location.hash=`${S.city.id}/${id}`;
+  $("#compare").hidden=true;
   document.querySelectorAll(".plan-btn").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
-  const p=state.plans.find(x=>x.id===id);
+  const p=S.plans.find(x=>x.id===id);
   renderHead(p); renderMap(p); renderSide(p); renderCost(p); renderConfirm(p);
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function renderHead(p){
-  $("#planHead").innerHTML = `
+  $("#planHead").innerHTML=`
+    <div class="ph-top"><span class="ph-city">${S.city.emoji} ${S.city.name}</span>
+      <span class="ph-arr">${S.city.arrival}</span></div>
     <h2>${p.title}</h2>
     <p class="psub">${p.subtitle||""}</p>
     <div class="chips">
       ${(p.chips||[]).map(c=>`<span class="chip">${c}</span>`).join("")}
       ${p.total!=null?`<span class="chip total">예상 총경비 ${won(p.total)}원</span>`:""}
+      ${p.budget?`<span class="chip ok">예산 ${won(p.budget)}원 이내 👍</span>`:""}
     </div>`;
 }
 
-function numberedStops(p){
+function orderedStops(p){
   const out=[]; let n=0;
-  p.days.forEach(d=> d.stops.forEach(s=>{ if(!s.ref.startsWith("hotel:")){ n++; out.push({...s,n,day:d.day}); }}));
+  p.days.forEach(d=>d.stops.forEach(s=>{
+    const isH=s.ref.startsWith("hotel:");
+    out.push({...s,day:d.day,isHotel:isH,n:isH?null:++n});
+  }));
   return out;
 }
 
 function renderMap(p){
-  if(state.map){ state.map.remove(); state.map=null; }
-  const map=L.map("map",{scrollWheelZoom:true}); state.map=map;
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
-    maxZoom:19, attribution:'&copy; OpenStreetMap'}).addTo(map);
+  if(S.map){ S.map.remove(); S.map=null; }
+  const map=L.map("map",{scrollWheelZoom:true}); S.map=map;
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap"}).addTo(map);
   const pts=[];
-  // day polylines
   p.days.forEach(d=>{
-    const coords=d.stops.map(s=>place(s.ref)).filter(x=>x&&x.lat).map(x=>[x.lat,x.lon]);
-    if(coords.length>1) L.polyline(coords,{color:DAYCOL[d.day]||"#333",weight:4,opacity:.75,dashArray:"2 8"}).addTo(map);
+    const co=d.stops.map(s=>place(s.ref)).filter(x=>x&&x.lat).map(x=>[x.lat,x.lon]);
+    if(co.length>1) L.polyline(co,{color:DAYCOL[d.day]||"#333",weight:4,opacity:.75,dashArray:"2 8"}).addTo(map);
   });
-  // hotel marker
-  const hotel=state.hotels[(p.base_hotel||"")];
-  if(hotel&&hotel.lat){
-    const hi=L.divIcon({className:"",html:`<div class="pin hotel"><span>🏨</span></div>`,iconSize:[30,30],iconAnchor:[15,28]});
-    L.marker([hotel.lat,hotel.lon],{icon:hi}).addTo(map).bindPopup(popupHotel(hotel));
-    pts.push([hotel.lat,hotel.lon]);
-  }
-  // numbered POI markers
-  numberedStops(p).forEach(s=>{
+  orderedStops(p).forEach(s=>{
     const a=place(s.ref); if(!a||!a.lat) return;
-    const icon=L.divIcon({className:"",html:`<div class="pin d${s.day}"><span>${s.n}</span></div>`,iconSize:[30,30],iconAnchor:[15,28]});
-    L.marker([a.lat,a.lon],{icon}).addTo(map).bindPopup(popupPoi(a,s));
+    const html = s.isHotel ? `<div class="pin hotel"><span>🏨</span></div>`
+                           : `<div class="pin d${s.day}"><span>${s.n}</span></div>`;
+    const icon=L.divIcon({className:"",html,iconSize:[30,30],iconAnchor:[15,28]});
+    L.marker([a.lat,a.lon],{icon}).addTo(map).bindPopup(s.isHotel?popupHotel(a):popupPoi(a,s));
     pts.push([a.lat,a.lon]);
   });
-  if(pts.length) map.fitBounds(pts,{padding:[40,40]});
+  if(pts.length) map.fitBounds(pts,{padding:[45,45]});
   renderMapActions(p);
   setTimeout(()=>map.invalidateSize(),120);
 }
@@ -93,131 +141,150 @@ function renderMap(p){
 function popupPoi(a,s){
   const img=commons(a.img);
   return `<div class="pop">${img?`<img src="${img}" alt="${a.name}" onerror="this.style.display='none'">`:""}
-    <h4>${s.n}. ${a.name}</h4>
-    <p class="pm">${a.price_hours||a.blurb||""}</p>
-    <div class="pl">
-      ${a.naver?`<a href="${a.naver}" target="_blank" rel="noopener">네이버 지도</a>`:""}
+    <h4>${s.n}. ${a.name}</h4><p class="pm">${a.price_hours||a.blurb||""}</p>
+    <div class="pl">${a.naver?`<a href="${a.naver}" target="_blank" rel="noopener">네이버 지도</a>`:""}
       ${a.review?`<a href="${a.review}" target="_blank" rel="noopener">리뷰</a>`:""}
       ${a.official?`<a href="${a.official}" target="_blank" rel="noopener">예매·공식</a>`:""}
-    </div></div>`;
+      <a href="${kakaoTo(a)}" target="_blank" rel="noopener">🚕 카카오T</a></div></div>`;
 }
 function popupHotel(h){
-  const img=h.img?commons(h.img):null;
-  return `<div class="pop">${img?`<img src="${img}" alt="${h.name}" onerror="this.style.display='none'">`:""}
-    <h4>🏨 ${h.name}</h4><p class="pm">${h.price_range||""}</p>
-    <div class="pl">
-      ${h.naver_map?`<a href="${h.naver_map}" target="_blank" rel="noopener">네이버 지도</a>`:""}
+  return `<div class="pop"><h4>🏨 ${h.name}</h4><p class="pm">${h.price_range||""}</p>
+    <div class="pl">${h.naver_map?`<a href="${h.naver_map}" target="_blank" rel="noopener">네이버 지도</a>`:""}
       ${h.booking?`<a href="${h.booking}" target="_blank" rel="noopener">예약</a>`:""}
-      ${h.phone?`<a href="tel:${h.phone}">전화 ${h.phone}</a>`:""}
-    </div></div>`;
+      ${h.phone?`<a href="tel:${h.phone}">전화</a>`:""}
+      <a href="${kakaoTo(h)}" target="_blank" rel="noopener">🚕 카카오T</a></div></div>`;
 }
 
 function gmapsDir(stops){
-  const c=stops.map(s=>place(s.ref)).filter(x=>x&&x.lat);
-  if(c.length<2) return null;
-  const o=c[0], d=c[c.length-1], w=c.slice(1,-1).map(x=>`${x.lat},${x.lon}`).join("|");
-  let u=`https://www.google.com/maps/dir/?api=1&origin=${o.lat},${o.lon}&destination=${d.lat},${d.lon}&travelmode=transit`;
-  if(w) u+=`&waypoints=${encodeURIComponent(w)}`;
-  return u;
+  const c=stops.map(s=>place(s.ref)).filter(x=>x&&x.lat); if(c.length<2) return null;
+  const o=c[0],dd=c[c.length-1],w=c.slice(1,-1).map(x=>`${x.lat},${x.lon}`).join("|");
+  let u=`https://www.google.com/maps/dir/?api=1&origin=${o.lat},${o.lon}&destination=${dd.lat},${dd.lon}&travelmode=transit`;
+  if(w) u+=`&waypoints=${enc(w)}`; return u;
 }
-
 function renderMapActions(p){
   const el=$("#mapActions"); el.innerHTML="";
-  const all=p.days.flatMap(d=>d.stops);
-  const g=gmapsDir(all);
+  const g=gmapsDir(p.days.flatMap(d=>d.stops));
   if(g) el.insertAdjacentHTML("beforeend",`<a href="${g}" target="_blank" rel="noopener">🧭 구글맵 전체 길찾기</a>`);
-  if(p.mymaps) el.insertAdjacentHTML("beforeend",`<a href="${p.mymaps}" target="_blank" rel="noopener">🗺️ 구글 마이맵</a>`);
-  if(p.kml) el.insertAdjacentHTML("beforeend",`<a href="${p.kml}" download>⬇️ KML 다운로드</a>`);
+  if(p.kml) el.insertAdjacentHTML("beforeend",`<a href="${p.kml}" download>⬇️ KML(구글 마이맵)</a>`);
 }
 
 function renderSide(p){
   const el=$("#side"); el.innerHTML="";
-  // hotel card
-  const h=state.hotels[(p.base_hotel||"")];
-  if(h){
-    const img=h.img?commons(h.img):null;
-    el.insertAdjacentHTML("beforeend",`<div class="hotel">
-      <div class="hd">🏨 베이스 숙소</div>
-      <div class="in">
-        ${img?`<img src="${img}" alt="${h.name}" onerror="this.style.display='none'">`:""}
-        <div>
-          <p class="nm">${h.name}</p>
-          <p class="meta">${h.family_note||""}</p>
-          <p class="price">${h.price_range||""}</p>
-          <div class="lnks">
-            ${h.naver_map?`<a class="lnk" href="${h.naver_map}" target="_blank" rel="noopener">네이버 지도</a>`:""}
-            ${h.booking?`<a class="lnk" href="${h.booking}" target="_blank" rel="noopener">예약</a>`:""}
-            ${h.phone?`<a class="lnk" href="tel:${h.phone}">전화 ${h.phone}</a>`:""}
-          </div>
-        </div>
-      </div></div>`);
-  }
-  // days
-  let n=0;
+  const h=S.hotels[p.base_hotel];
+  if(h) el.insertAdjacentHTML("beforeend",`<div class="hotel">
+    <div class="hd">🏨 베이스 숙소 · 2박</div>
+    <div class="in"><div>
+      <p class="nm">${h.name}</p><p class="meta">${h.family_note||""}</p>
+      <p class="price">${h.price_range||""}</p>
+      <div class="lnks">
+        ${h.naver_map?`<a class="lnk" href="${h.naver_map}" target="_blank" rel="noopener">네이버 지도</a>`:""}
+        ${h.booking?`<a class="lnk" href="${h.booking}" target="_blank" rel="noopener">예약</a>`:""}
+        ${h.phone?`<a class="lnk" href="tel:${h.phone}">📞 ${h.phone}</a>`:""}
+        <a class="lnk" href="${kakaoTo(h)}" target="_blank" rel="noopener">🚕 카카오T</a>
+      </div></div></div></div>`);
   p.days.forEach(d=>{
-    const col=DAYCOL[d.day]||"#333";
-    const g=gmapsDir(d.stops);
+    const col=DAYCOL[d.day]||"#333"; const g=gmapsDir(d.stops);
     let rows="";
-    d.stops.forEach(s=>{
-      const a=place(s.ref); if(!a) return;
-      const isHotel=s.ref.startsWith("hotel:");
-      const label = isHotel ? "🏨" : (++n);
-      const img = !isHotel && a.img ? commons(a.img) : null;
+    for(let i=0;i<d.stops.length;i++){
+      const s=d.stops[i], a=place(s.ref); if(!a) continue;
+      const isH=s.ref.startsWith("hotel:");
+      const label=isH?"🏨":numFor(p,d,i);
+      const img=!isH&&a.img?commons(a.img):null;
       rows+=`<div class="stop">
-        <div class="num" style="${isHotel?'background:#111':''}">${label}</div>
+        <div class="num"${isH?' style="background:#111"':''}>${label}</div>
         ${img?`<img class="thumb" src="${img}" alt="${a.name}" onerror="this.style.display='none'">`:""}
         <div class="body">
           ${s.time?`<div class="t">${s.time}</div>`:""}
-          <div class="nm">${a.name}${s.optional?' <span class="lnk opt">옵션</span>':''}</div>
+          <div class="nm">${a.name}${s.optional?' <span class="lnk opt">선택</span>':''}</div>
           ${s.note?`<div class="no">${s.note}</div>`:""}
           <div class="lnks">
-            ${a.naver||a.naver_map?`<a class="lnk" href="${a.naver||a.naver_map}" target="_blank" rel="noopener">네이버 지도</a>`:""}
+            ${(a.naver||a.naver_map)?`<a class="lnk" href="${a.naver||a.naver_map}" target="_blank" rel="noopener">네이버</a>`:""}
             ${a.review?`<a class="lnk" href="${a.review}" target="_blank" rel="noopener">리뷰</a>`:""}
-            ${a.official?`<a class="lnk" href="${a.official}" target="_blank" rel="noopener">예매·공식</a>`:""}
+            ${a.official?`<a class="lnk" href="${a.official}" target="_blank" rel="noopener">예매</a>`:""}
             ${a.booking?`<a class="lnk" href="${a.booking}" target="_blank" rel="noopener">예약</a>`:""}
-            ${a.phone?`<a class="lnk" href="tel:${a.phone}">전화</a>`:""}
+            ${a.phone?`<a class="lnk" href="tel:${a.phone}">📞</a>`:""}
           </div>
         </div></div>`;
-    });
+      // transport leg to next stop
+      if(i<d.stops.length-1){
+        const b=place(d.stops[i+1].ref); const lg=leg(a,b);
+        if(lg) rows+=`<div class="leg">
+          <span class="lg-ic">${lg.icon}</span>
+          <span class="lg-tx">${lg.mode} · 약 ${lg.mins}분${lg.cost?` · ₩${won(lg.cost)}`:" · 무료"}
+            <span class="lg-no">${lg.note||""}</span></span>
+          ${lg.link?`<a class="lg-lk" href="${lg.link}" target="_blank" rel="noopener">${lg.linklabel||"길찾기"}</a>`:""}
+        </div>`;
+      }
+    }
     el.insertAdjacentHTML("beforeend",`<div class="day-block">
       <div class="day-hd" style="background:${col}">
         <h3>${d.day}일차 · ${d.label||""}</h3>
-        ${g?`<a class="zone" style="color:#fff" href="${g}" target="_blank" rel="noopener">🧭 길찾기</a>`:`<span class="zone">${d.zone||""}</span>`}
+        ${g?`<a class="zone" style="color:#fff" href="${g}" target="_blank" rel="noopener">🧭 길찾기</a>`:""}
       </div>${rows}</div>`);
   });
+}
+// number that matches the map (non-hotel stops counted across plan)
+function numFor(p,day,idx){
+  let n=0;
+  for(const d of p.days){ for(let i=0;i<d.stops.length;i++){
+    if(!d.stops[i].ref.startsWith("hotel:")) n++;
+    if(d===day&&i===idx) return n;
+  }} return n;
 }
 
 function renderCost(p){
   const el=$("#cost");
   if(!p.cost||!p.cost.length){ el.innerHTML=""; return; }
-  const rows=p.cost.map(c=>`<tr><td>${c.cat}</td><td>${c.detail||""}</td>
-    <td class="n">${won(c.amount)}</td>
-    <td>${c.type?`<span class="badge ${c.type==='확정'?'f':'e'}">${c.type}</span>`:""}</td></tr>`).join("");
-  el.innerHTML=`<h3>전체 경비 (4인 기준)</h3>
+  const rows=p.cost.map(c=>`<tr><td class="cat">${c.cat}</td><td class="detail">${c.detail||""}</td>
+    <td class="n">${won(c.amount)}</td><td>${c.type?`<span class="badge ${c.type==='확정'?'f':'e'}">${c.type}</span>`:""}</td></tr>`).join("");
+  const left=p.budget?p.budget-p.total:null;
+  el.innerHTML=`<h3>💰 전체 경비 (4인 기준)</h3>
     <table><thead><tr><th>항목</th><th>내역</th><th class="n">금액(원)</th><th>구분</th></tr></thead>
     <tbody>${rows}</tbody>
-    <tfoot><tr><td>합계</td><td>${p.budget?`예산 ${won(p.budget)}원 이내`:""}</td>
-      <td class="n">${won(p.total)}</td><td></td></tr></tfoot></table>`;
+    <tfoot><tr><td>합계</td><td class="detail">${p.budget?`예산 ${won(p.budget)}원 이내`:""}</td><td class="n">${won(p.total)}</td><td></td></tr>
+    ${left!=null?`<tr class="buf"><td>남는 여유</td><td class="detail">업그레이드 여력</td><td class="n">+${won(left)}</td><td></td></tr>`:""}
+    </tfoot></table>`;
 }
 
 function renderConfirm(p){
   const el=$("#confirmBar");
-  const done=localStorage.getItem("confirm_"+p.id);
-  const cnt=state.plans.filter(x=>localStorage.getItem("confirm_"+x.id)).length;
-  el.innerHTML=`
-    <span class="st">${done?`✓ <b>${p.short}</b> 컨펌함`:`이 여행안이 마음에 드나요?`} · 컨펌한 안 ${cnt}개</span>
+  const key=`cfm_${S.city.id}_${p.id}`, done=localStorage.getItem(key);
+  const cnt=S.plans.filter(x=>localStorage.getItem(`cfm_${S.city.id}_${x.id}`)).length;
+  el.innerHTML=`<span class="st">${done?`✓ <b>${p.short}</b> 컨펌함`:`이 여행안이 마음에 드나요?`} · ${S.city.name} 컨펌 ${cnt}개</span>
     <button class="btn p ${done?'done':''}" id="cfm">${done?'컨펌 취소':'이 안으로 컨펌 👍'}</button>
     <button class="btn s" id="shr">🔗 링크 공유</button>`;
-  $("#cfm").onclick=()=>{
-    if(done) localStorage.removeItem("confirm_"+p.id);
-    else localStorage.setItem("confirm_"+p.id, new Date().toISOString());
-    renderPicker(); renderConfirm(p);
-    document.querySelectorAll(".plan-btn").forEach(b=>b.classList.toggle("active",b.dataset.id===p.id));
-  };
-  $("#shr").onclick=async()=>{
-    const url=location.origin+location.pathname+"#plan="+p.id;
-    try{ await navigator.clipboard.writeText(url); $("#shr").textContent="✓ 복사됨"; setTimeout(()=>$("#shr").textContent="🔗 링크 공유",1500);}catch(e){ prompt("링크 복사:",url); }
-  };
+  $("#cfm").onclick=()=>{ done?localStorage.removeItem(key):localStorage.setItem(key,new Date().toISOString());
+    renderPlanPicker(); renderConfirm(p);
+    document.querySelectorAll(".plan-btn").forEach(b=>b.classList.toggle("active",b.dataset.id===p.id)); };
+  $("#shr").onclick=async()=>{ const url=location.origin+location.pathname+`#${S.city.id}/${p.id}`;
+    try{ await navigator.clipboard.writeText(url); $("#shr").textContent="✓ 복사됨"; setTimeout(()=>$("#shr").textContent="🔗 링크 공유",1500);}catch(e){ prompt("링크:",url);} };
 }
 
-boot().catch(e=>{ document.getElementById("planHead").innerHTML='<p style="color:#E15A38">데이터 로드 실패: '+e.message+'</p>'; });
+function toggleCompare(){
+  const el=$("#compare");
+  if(!el.hidden){ el.hidden=true; return; }
+  const rows=S.plans.map(p=>{
+    const done=localStorage.getItem(`cfm_${S.city.id}_${p.id}`);
+    const m=p.metrics||{};
+    return `<tr data-id="${p.id}">
+      <td class="cat">${p.short}${done?' <span class="chk">✓</span>':''}<div class="cmp-sub">${p.subtitle||""}</div></td>
+      <td class="n">${won(p.total)}</td>
+      <td class="n">${m.stops??"-"}곳</td>
+      <td class="n">${m.indoor??"-"}</td>
+      <td class="n">${m.kid??"-"}</td>
+      <td>${(p.chips||[]).slice(0,2).join(", ")}</td>
+      <td><button class="btn s mini" data-go="${p.id}">열기 →</button></td></tr>`;
+  }).join("");
+  el.innerHTML=`<div class="cmp-head"><h3>📊 ${S.city.name} 여행안 비교 (${S.plans.length}개)</h3>
+    <button class="cmp-x" id="cmpX">닫기 ✕</button></div>
+    <div class="cmp-wrap"><table class="cmp">
+    <thead><tr><th>여행안</th><th class="n">총경비</th><th class="n">방문지</th><th class="n">실내</th><th class="n">아이만족<br><span class="mini2">(3=상)</span></th><th>특징</th><th></th></tr></thead>
+    <tbody>${rows}</tbody></table></div>
+    <p class="cmp-tip">💡 아이만족 = 방문지 kid-fit 평균(상3·중2·하1) · 실내 = 실내형 방문지 수(우천 대비 지표). 마음에 드는 안의 <b>열기</b>를 눌러 지도로 확인하고 컨펌하세요.</p>`;
+  el.hidden=false;
+  $("#cmpX").onclick=()=>el.hidden=true;
+  el.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>selectPlan(b.dataset.go));
+  el.scrollIntoView({behavior:"smooth"});
+}
+
+boot().catch(e=>{ $("#planHead").innerHTML='<p style="color:#E15A38">데이터 로드 실패: '+e.message+'</p>'; });

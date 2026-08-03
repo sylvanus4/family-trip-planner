@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "region": "부산", "budget": 3000000,
+    "intercity": { "cat": "SRT 왕복", "detail": "수서↔부산 일반실 어른2+어린이2", "amount": 311200, "type": "확정" },
+    "food": 420000, "misc": 100000, "local": 80000
+  },
+  "plans": [
+    { "id": "haeundae-classic", "short": "해운대 클래식", "title": "부산 2박3일 · 해운대 클래식",
+      "subtitle": "숙소를 해운대에 고정해 짐 이동 0회 · 하루 2~3곳 · 8월 말 · SRT 수서 출발",
+      "base_hotel": "w-residence", "kml": "data/busan/route.kml",
+      "chips": ["기본 추천", "동선 최소", "바다·아쿠아리움·놀이공원"],
+      "days": [
+        { "day":1, "label":"도착 · 해운대 바다", "stops":[
+          {"ref":"busan-station","time":"08:30","note":"SRT 수서→부산, 해운대로 이동"},
+          {"ref":"hotel:w-residence","time":"12:00","note":"짐 보관·점심(체크인 전)"},
+          {"ref":"haeundae-beach","time":"13:30","note":"물놀이·모래놀이"},
+          {"ref":"sealife","time":"16:00","note":"해변 앞 실내, 상어터널"},
+          {"ref":"gwangalli","time":"18:30","note":"저녁+광안대교 야경","optional":true}]},
+        { "day":2, "label":"기장 하이라이트", "stops":[
+          {"ref":"yonggungsa","time":"09:00","note":"아침 일찍 덜 붐빔"},
+          {"ref":"lotteworld","time":"13:00","note":"종일권, 저녁 퍼레이드까지"}]},
+        { "day":3, "label":"블루라인파크 · 귀가", "stops":[
+          {"ref":"blueline","time":"10:00","note":"미포→청사포→송정 바다 캡슐"},
+          {"ref":"busan-station","time":"15:00","note":"SRT 부산→수서 귀가"}]}
+      ] },
+    { "id": "blogger-favorites", "short": "블로거 인기", "title": "부산 2박3일 · 블로거 인기 코스",
+      "subtitle": "여행 블로거 실제 후기 반영 — 블루라인파크·요트투어·어묵체험·모래놀이 중심",
+      "base_hotel": "seacloud",
+      "chips": ["아이 만족 TOP", "요트·해변열차", "체험 중심"],
+      "days": [
+        { "day":1, "label":"해변열차 · 해운대", "stops":[
+          {"ref":"busan-station","time":"09:30","note":"SRT 도착→해운대"},
+          {"ref":"blueline","time":"11:00","note":"아이 만족 1위 캡슐·해변열차"},
+          {"ref":"hotel:seacloud","time":"14:00","note":"해변 도보 3분 체크인"},
+          {"ref":"haeundae-beach","time":"15:00","note":"모래놀이·조개구이 저녁"}]},
+        { "day":2, "label":"아쿠아리움 · 광안리 요트", "stops":[
+          {"ref":"sealife","time":"10:00","note":"오전 실내"},
+          {"ref":"yacht","time":"16:00","note":"요트투어(사전예약)·드론쇼·저녁"}]},
+        { "day":3, "label":"어묵 체험 · 귀가", "stops":[
+          {"ref":"samjin","time":"10:00","note":"삼진어묵 만들기 체험(영도)"},
+          {"ref":"busan-station","time":"15:00","note":"영도→부산역 귀가"}]}
+      ] },
+    { "id": "rainy-indoor", "short": "우천·폭염 대비", "title": "부산 2박3일 · 실내 위주",
+      "subtitle": "8월 말 소나기·폭염에도 안전 — 아쿠아리움·과학관·아이스링크·전망대 중심",
+      "base_hotel": "newsiz",
+      "chips": ["날씨 무관", "실내 비중 높음", "아이스링크·과학관"],
+      "days": [
+        { "day":1, "label":"아쿠아리움 · 센텀", "stops":[
+          {"ref":"busan-station","time":"10:00","note":"SRT 도착→해운대"},
+          {"ref":"sealife","time":"13:00","note":"실내 시작"},
+          {"ref":"centum","time":"16:00","note":"아이스링크·아쿠아필드"},
+          {"ref":"hotel:newsiz","time":"19:00","note":"체크인·인피니티풀"}]},
+        { "day":2, "label":"과학관 · 놀이공원", "stops":[
+          {"ref":"science","time":"10:00","note":"체험형 실내 과학관(기장)"},
+          {"ref":"lotteworld","time":"13:00","note":"실내존 위주, 종일권"}]},
+        { "day":3, "label":"전망대 · 귀가", "stops":[
+          {"ref":"xthesky","time":"10:00","note":"실내 전망대 오션뷰"},
+          {"ref":"busan-station","time":"14:00","note":"귀가"}]}
+      ] },
+    { "id": "budget-altteul", "short": "저예산 알뜰", "title": "부산 2박3일 · 알뜰 코스",
+      "subtitle": "무료·저렴 위주로 예산을 아끼는 코스 — 바다·마을·전망 무료 스팟 중심",
+      "base_hotel": "lecollective",
+      "chips": ["가성비", "무료 스팟 많음", "부담 적은 동선"],
+      "days": [
+        { "day":1, "label":"해운대 무료 바다", "stops":[
+          {"ref":"busan-station","time":"10:00","note":"SRT 도착→해운대"},
+          {"ref":"hotel:lecollective","time":"12:30","note":"짐 보관·점심"},
+          {"ref":"haeundae-beach","time":"14:00","note":"물놀이(무료)"},
+          {"ref":"gwangalli","time":"18:00","note":"야경 산책(무료)","optional":true}]},
+        { "day":2, "label":"용궁사 · 블루라인파크", "stops":[
+          {"ref":"yonggungsa","time":"09:00","note":"무료 사찰"},
+          {"ref":"blueline","time":"14:00","note":"해변열차만 이용(캡슐 대비 저렴)"}]},
+        { "day":3, "label":"감천마을 · 귀가", "stops":[
+          {"ref":"gamcheon","time":"10:00","note":"컬러풀 골목(무료)"},
+          {"ref":"busan-station","time":"14:00","note":"귀가"}]}
+      ] },
+    { "id": "premium-yeoyu", "short": "프리미엄 여유", "title": "부산 2박3일 · 프리미엄 여유",
+      "subtitle": "전망대·요트·놀이공원까지 알차게, 여유 있게 즐기는 풀코스",
+      "base_hotel": "pleiadeblanc",
+      "chips": ["풀코스", "전망대·요트", "알찬 하루"],
+      "days": [
+        { "day":1, "label":"전망대 · 해운대", "stops":[
+          {"ref":"busan-station","time":"09:30","note":"SRT 도착→해운대"},
+          {"ref":"hotel:pleiadeblanc","time":"12:00","note":"체크인·점심"},
+          {"ref":"xthesky","time":"14:00","note":"오션뷰 전망대"},
+          {"ref":"haeundae-beach","time":"16:30","note":"물놀이·저녁"}]},
+        { "day":2, "label":"용궁사 · 롯데월드", "stops":[
+          {"ref":"yonggungsa","time":"09:00","note":"바다 절"},
+          {"ref":"lotteworld","time":"13:00","note":"종일권"}]},
+        { "day":3, "label":"요트 · 블루라인 · 귀가", "stops":[
+          {"ref":"blueline","time":"09:30","note":"스카이캡슐"},
+          {"ref":"yacht","time":"12:30","note":"광안리 요트투어","optional":true},
+          {"ref":"busan-station","time":"16:00","note":"귀가"}]}
+      ] },
+    { "id": "wondosim-culture", "short": "원도심 문화", "title": "부산 2박3일 · 원도심 문화",
+      "subtitle": "감천문화마을 등 원도심 감성 + 해운대 바다를 함께",
+      "base_hotel": "w-residence",
+      "chips": ["감천마을", "포토·감성", "문화+바다"],
+      "days": [
+        { "day":1, "label":"감천 · 해운대 이동", "stops":[
+          {"ref":"busan-station","time":"10:00","note":"도착 후 원도심 먼저"},
+          {"ref":"gamcheon","time":"11:00","note":"컬러풀 골목 산책"},
+          {"ref":"hotel:w-residence","time":"16:00","note":"해운대 체크인"}]},
+        { "day":2, "label":"해운대 바다", "stops":[
+          {"ref":"haeundae-beach","time":"10:00","note":"물놀이"},
+          {"ref":"sealife","time":"15:00","note":"아쿠아리움"}]},
+        { "day":3, "label":"블루라인 · 귀가", "stops":[
+          {"ref":"blueline","time":"10:00","note":"바다 캡슐"},
+          {"ref":"busan-station","time":"15:00","note":"귀가"}]}
+      ] },
+    { "id": "sea-activity", "short": "바다 액티비티", "title": "부산 2박3일 · 바다 액티비티",
+      "subtitle": "해변열차·요트·해수욕 — 바다에서 신나게 노는 코스",
+      "base_hotel": "seacloud",
+      "chips": ["요트·해변열차", "물놀이", "액티브"],
+      "days": [
+        { "day":1, "label":"해변열차 · 해운대", "stops":[
+          {"ref":"busan-station","time":"09:30","note":"도착→해운대"},
+          {"ref":"blueline","time":"11:00","note":"스카이캡슐·해변열차"},
+          {"ref":"hotel:seacloud","time":"14:00","note":"체크인"},
+          {"ref":"haeundae-beach","time":"15:30","note":"해수욕"}]},
+        { "day":2, "label":"요트 · 광안리", "stops":[
+          {"ref":"yacht","time":"11:00","note":"요트투어"},
+          {"ref":"gwangalli","time":"17:00","note":"광안리 저녁·야경"}]},
+        { "day":3, "label":"용궁사 · 귀가", "stops":[
+          {"ref":"yonggungsa","time":"09:30","note":"바다 절"},
+          {"ref":"busan-station","time":"14:00","note":"귀가"}]}
+      ] },
+    { "id": "experience-learning", "short": "체험 학습", "title": "부산 2박3일 · 체험 학습",
+      "subtitle": "과학관·아쿠아리움·어묵 체험 — 놀면서 배우는 코스",
+      "base_hotel": "newsiz",
+      "chips": ["체험·학습", "과학관·어묵", "실내 많음"],
+      "days": [
+        { "day":1, "label":"아쿠아리움", "stops":[
+          {"ref":"busan-station","time":"10:00","note":"도착→해운대"},
+          {"ref":"sealife","time":"13:00","note":"해양생물 학습"},
+          {"ref":"hotel:newsiz","time":"17:00","note":"체크인"}]},
+        { "day":2, "label":"과학관 · 어묵체험", "stops":[
+          {"ref":"science","time":"10:00","note":"체험 과학관"},
+          {"ref":"samjin","time":"15:00","note":"어묵 만들기 체험"}]},
+        { "day":3, "label":"블루라인 · 귀가", "stops":[
+          {"ref":"blueline","time":"10:00","note":"바다 캡슐"},
+          {"ref":"busan-station","time":"14:00","note":"귀가"}]}
+      ] },
+    { "id": "relaxed-healing", "short": "느긋 힐링", "title": "부산 2박3일 · 느긋 힐링",
+      "subtitle": "하루 2곳만 — 아이도 어른도 지치지 않는 여유 코스",
+      "base_hotel": "lecollective",
+      "chips": ["적은 이동", "여유·휴식", "저부담"],
+      "days": [
+        { "day":1, "label":"해운대 도착", "stops":[
+          {"ref":"busan-station","time":"11:00","note":"느긋하게 도착"},
+          {"ref":"hotel:lecollective","time":"13:30","note":"체크인·점심"},
+          {"ref":"haeundae-beach","time":"15:00","note":"바다 산책·물놀이"}]},
+        { "day":2, "label":"아쿠아리움 · 광안리", "stops":[
+          {"ref":"sealife","time":"11:00","note":"천천히 관람"},
+          {"ref":"gwangalli","time":"17:00","note":"저녁·야경"}]},
+        { "day":3, "label":"블루라인 · 귀가", "stops":[
+          {"ref":"blueline","time":"10:00","note":"바다 캡슐"},
+          {"ref":"busan-station","time":"14:00","note":"귀가"}]}
+      ] },
+    { "id": "themepark-focus", "short": "놀이공원 집중", "title": "부산 2박3일 · 놀이공원 집중",
+      "subtitle": "롯데월드를 하루 통째로 + 아쿠아리움·블루라인파크",
+      "base_hotel": "w-residence",
+      "chips": ["롯데월드 종일", "놀이기구", "아이 최애"],
+      "days": [
+        { "day":1, "label":"도착 · 아쿠아리움", "stops":[
+          {"ref":"busan-station","time":"10:00","note":"도착→해운대"},
+          {"ref":"hotel:w-residence","time":"12:30","note":"체크인"},
+          {"ref":"sealife","time":"14:30","note":"아쿠아리움"}]},
+        { "day":2, "label":"롯데월드 종일", "stops":[
+          {"ref":"lotteworld","time":"10:00","note":"오픈런~야간쇼까지 종일"}]},
+        { "day":3, "label":"블루라인 · 바다 · 귀가", "stops":[
+          {"ref":"blueline","time":"09:30","note":"바다 캡슐"},
+          {"ref":"haeundae-beach","time":"11:30","note":"마지막 물놀이"},
+          {"ref":"busan-station","time":"15:00","note":"귀가"}]}
+      ] }
+  ]
+}

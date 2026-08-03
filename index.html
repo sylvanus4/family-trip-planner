@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>가족여행 플래너 · 동선 지도로 한눈에</title>
-<meta name="description" content="아이와 함께하는 가족여행을 실제 지도 동선으로 계획하고, 호텔·관광지 정보와 리뷰를 한눈에 확인하세요.">
+<title>가족여행 플래너 · 지도 동선으로 한눈에</title>
+<meta name="description" content="아이와 함께하는 부산·제주 가족여행을 실제 지도 동선으로 계획하고, 호텔·관광지 정보·리뷰·이동수단(카카오T)까지 한눈에 보고 컨펌하세요.">
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
 </head>
 <body>
 <header class="topbar">
@@ -17,11 +17,16 @@
     <span class="logo">🧭</span>
     <div>
       <h1>가족여행 플래너</h1>
-      <p class="tag">실제 지도 동선 · 호텔/관광지 정보 · 리뷰까지 한눈에</p>
+      <p class="tag">실제 지도 동선 · 이동수단/요금 · 호텔·관광지·리뷰까지 한눈에</p>
     </div>
   </div>
-  <div class="plan-picker" id="planPicker" aria-label="여행안 선택"></div>
+  <div class="controls">
+    <div class="city-picker" id="cityPicker" aria-label="여행지 선택"></div>
+    <button class="cmp-btn" id="cmpBtn">📊 안 비교</button>
+  </div>
 </header>
+
+<nav class="plan-bar"><div class="plan-picker" id="planPicker" aria-label="여행안 선택"></div></nav>
 
 <main>
   <section class="plan-head" id="planHead"></section>
@@ -30,6 +35,7 @@
     <div class="map-wrap">
       <div id="map" role="application" aria-label="여행 동선 지도"></div>
       <div class="map-actions" id="mapActions"></div>
+      <p class="maphint">📍 빨간 번호 = 방문 순서 · 색선 = 일자별 이동 · 핀을 누르면 사진·리뷰·예약 링크가 열립니다.</p>
     </div>
     <aside class="side" id="side"></aside>
   </div>
@@ -37,11 +43,13 @@
   <section class="cost" id="cost"></section>
 </main>
 
+<section class="compare" id="compare" hidden></section>
+
 <div class="confirmbar" id="confirmBar"></div>
 
 <footer class="foot">
-  <p>이 페이지는 <code>data/plans.json</code>·<code>data/hotels.json</code>·<code>data/attractions.json</code>만 고치면 누구나 여행안을 추가·수정할 수 있습니다. 편집 가이드는 저장소 <a href="#" id="repoLink">README</a> 참고.</p>
-  <p class="tiny">지도: OpenStreetMap · 가격·영업시간은 추정 포함이며 예약 직전 재확인하세요.</p>
+  <p>이 페이지는 <code>data/&lt;도시&gt;/*.json</code>만 고치면 누구나 여행안을 추가·수정할 수 있습니다. 가이드는 <a href="#" id="repoLink">README</a> 참고.</p>
+  <p class="tiny">지도 © OpenStreetMap · 이동수단/요금·입장료는 추정 포함이며 예약·탑승 전 재확인하세요. 사진 © 위키미디어 커먼스.</p>
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

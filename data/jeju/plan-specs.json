@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "region": "제주", "budget": 3000000,
+    "intercity": { "cat": "항공 왕복", "detail": "김포/김해↔제주 어른2+어린이2 (추정)", "amount": 360000, "type": "추정" },
+    "food": 450000, "misc": 100000, "local": 150000
+  },
+  "plans": [
+    { "id":"jeju-classic","short":"제주 클래식","title":"제주 2박3일 · 동서 하이라이트",
+      "subtitle":"성산·섭지·아쿠아플라넷 동부 + 만장굴·에코랜드 — 제주 처음이면 이 코스 · 렌터카 추천",
+      "base_hotel":"sonobel-jeju","chips":["기본 추천","동부 핵심","자연+체험"],
+      "days":[
+        {"day":1,"label":"도착 · 함덕 바다","stops":[
+          {"ref":"airport","time":"11:00","note":"제주 도착·렌터카 수령"},
+          {"ref":"hotel:sonobel-jeju","time":"13:00","note":"함덕 체크인·짐"},
+          {"ref":"hamdeok","time":"14:30","note":"에메랄드빛 물놀이"}]},
+        {"day":2,"label":"동부 성산·섭지","stops":[
+          {"ref":"seongsan","time":"09:00","note":"일출봉 왕복 1시간"},
+          {"ref":"seopjikoji","time":"11:30","note":"잔디 언덕 산책"},
+          {"ref":"aquaplanet","time":"14:00","note":"돌고래 공연·대형 수조"}]},
+        {"day":3,"label":"동굴·숲 · 귀가","stops":[
+          {"ref":"manjanggul","time":"09:30","note":"용암동굴 탐험"},
+          {"ref":"ecoland","time":"12:00","note":"곶자왈 꼬마기차"},
+          {"ref":"airport","time":"16:30","note":"렌터카 반납·귀가"}]}
+      ] },
+    { "id":"jeju-west","short":"서부 자연","title":"제주 2박3일 · 서부 자연·꽃",
+      "subtitle":"협재·한림공원·오설록·카멜리아힐 — 서부 초록과 바다 중심",
+      "base_hotel":"maison-glad-jeju","chips":["서부 코스","꽃·차밭","공항 근접"],
+      "days":[
+        {"day":1,"label":"도착 · 협재","stops":[
+          {"ref":"airport","time":"11:00","note":"도착·렌터카"},
+          {"ref":"hotel:maison-glad-jeju","time":"12:30","note":"제주시 체크인"},
+          {"ref":"hyeopjae","time":"14:30","note":"협재 물놀이"}]},
+        {"day":2,"label":"한림·차밭·꽃","stops":[
+          {"ref":"hallim","time":"09:30","note":"동굴+식물원+공작새"},
+          {"ref":"osulloc","time":"13:00","note":"차밭 산책·아이스크림"},
+          {"ref":"camellia","time":"15:30","note":"폭포·생태연못"}]},
+        {"day":3,"label":"항공우주 · 귀가","stops":[
+          {"ref":"aerospace","time":"09:30","note":"조종석·우주선 체험"},
+          {"ref":"airport","time":"13:30","note":"귀가"}]}
+      ] },
+    { "id":"jeju-east","short":"동부 바다","title":"제주 2박3일 · 동부 바다·자연",
+      "subtitle":"함덕·성산·섭지·만장굴 — 동부 에메랄드 바다와 자연",
+      "base_hotel":"sonobel-jeju","chips":["동부 코스","바다·동굴","완만한 동선"],
+      "days":[
+        {"day":1,"label":"도착 · 함덕","stops":[
+          {"ref":"airport","time":"11:00","note":"도착·렌터카"},
+          {"ref":"hamdeok","time":"13:00","note":"함덕 물놀이"},
+          {"ref":"hotel:sonobel-jeju","time":"17:00","note":"체크인"}]},
+        {"day":2,"label":"성산·섭지","stops":[
+          {"ref":"seongsan","time":"09:00","note":"일출봉"},
+          {"ref":"seopjikoji","time":"12:00","note":"바다 언덕"}]},
+        {"day":3,"label":"동굴·아쿠아 · 귀가","stops":[
+          {"ref":"aquaplanet","time":"09:30","note":"아쿠아리움"},
+          {"ref":"manjanggul","time":"13:30","note":"용암동굴"},
+          {"ref":"airport","time":"16:30","note":"귀가"}]}
+      ] },
+    { "id":"jeju-rainy","short":"우천·실내","title":"제주 2박3일 · 실내 위주",
+      "subtitle":"비·바람 잦은 제주 대비 — 아쿠아플라넷·항공우주·테디베어·오설록 실내 중심",
+      "base_hotel":"maison-glad-jeju","chips":["날씨 무관","실내 많음","박물관·수족관"],
+      "days":[
+        {"day":1,"label":"아쿠아플라넷","stops":[
+          {"ref":"airport","time":"11:00","note":"도착·렌터카"},
+          {"ref":"aquaplanet","time":"13:30","note":"실내 아쿠아리움"},
+          {"ref":"hotel:maison-glad-jeju","time":"18:00","note":"체크인·수영장"}]},
+        {"day":2,"label":"항공우주·테디베어","stops":[
+          {"ref":"aerospace","time":"09:30","note":"항공우주 체험"},
+          {"ref":"teddybear","time":"14:00","note":"곰인형 전시·공연"}]},
+        {"day":3,"label":"차밭 카페 · 귀가","stops":[
+          {"ref":"osulloc","time":"10:00","note":"실내 전시·티카페"},
+          {"ref":"airport","time":"13:30","note":"귀가"}]}
+      ] },
+    { "id":"jeju-budget","short":"저예산 알뜰","title":"제주 2박3일 · 알뜰 코스",
+      "subtitle":"무료·저렴 명소 중심 — 함덕·섭지·성산·천지연·만장굴",
+      "base_hotel":"ebenezer-hamdeok","chips":["가성비","무료·저렴 스팟","함덕 도보"],
+      "days":[
+        {"day":1,"label":"도착 · 함덕","stops":[
+          {"ref":"airport","time":"11:00","note":"도착·렌터카"},
+          {"ref":"hotel:ebenezer-hamdeok","time":"12:30","note":"함덕 도보 2분"},
+          {"ref":"hamdeok","time":"14:00","note":"무료 물놀이"}]},
+        {"day":2,"label":"섭지·성산·폭포","stops":[
+          {"ref":"seopjikoji","time":"09:30","note":"무료 언덕 산책"},
+          {"ref":"seongsan","time":"11:30","note":"저렴한 일출봉"},
+          {"ref":"cheonjiyeon","time":"15:00","note":"저렴한 폭포"}]},
+        {"day":3,"label":"동굴 · 귀가","stops":[
+          {"ref":"manjanggul","time":"09:30","note":"저렴한 용암동굴"},
+          {"ref":"airport","time":"13:30","note":"귀가"}]}
+      ] },
+    { "id":"jeju-premium","short":"프리미엄 여유","title":"제주 2박3일 · 프리미엄 여유",
+      "subtitle":"중문 리조트 베이스 + 동부 하이라이트 — 여유롭게 즐기는 풀코스",
+      "base_hotel":"shilla-jeju","chips":["중문 리조트","풀코스","여유"],
+      "days":[
+        {"day":1,"label":"도착 · 중문","stops":[
+          {"ref":"airport","time":"11:00","note":"도착·렌터카"},
+          {"ref":"hotel:shilla-jeju","time":"13:00","note":"중문 리조트 체크인"},
+          {"ref":"jungmun","time":"15:00","note":"중문 해변 산책"}]},
+        {"day":2,"label":"동부 하이라이트","stops":[
+          {"ref":"seongsan","time":"09:00","note":"일출봉"},
+          {"ref":"seopjikoji","time":"11:30","note":"바다 언덕"},
+          {"ref":"aquaplanet","time":"14:00","note":"아쿠아리움"}]},
+        {"day":3,"label":"폭포·테디베어 · 귀가","stops":[
+          {"ref":"cheonjiyeon","time":"09:30","note":"폭포 산책"},
+          {"ref":"teddybear","time":"11:30","note":"곰인형 뮤지엄"},
+          {"ref":"airport","time":"15:00","note":"귀가"}]}
+      ] },
+    { "id":"jeju-themepark","short":"테마·액티비티","title":"제주 2박3일 · 테마파크·액티비티",
+      "subtitle":"에코랜드·9.81파크·한림공원·아쿠아플라넷 — 신나게 노는 코스",
+      "base_hotel":"maison-glad-jeju","chips":["액티브","카트 레이싱","꼬마기차"],
+      "days":[
+        {"day":1,"label":"도착 · 에코랜드","stops":[
+          {"ref":"airport","time":"11:00","note":"도착·렌터카"},
+          {"ref":"hotel:maison-glad-jeju","time":"12:30","note":"체크인"},
+          {"ref":"ecoland","time":"14:00","note":"곶자왈 꼬마기차"}]},
+        {"day":2,"label":"9.81파크·한림","stops":[
+          {"ref":"park981","time":"09:30","note":"무동력 카트 레이싱(100cm↑)"},
+          {"ref":"hallim","time":"13:30","note":"동굴+식물원"}]},
+        {"day":3,"label":"아쿠아 · 귀가","stops":[
+          {"ref":"aquaplanet","time":"09:30","note":"돌고래 공연"},
+          {"ref":"airport","time":"14:00","note":"귀가"}]}
+      ] },
+    { "id":"jeju-beach","short":"바다·물놀이","title":"제주 2박3일 · 바다·물놀이",
+      "subtitle":"함덕·협재·중문 — 제주의 예쁜 해변만 골라 물놀이",
+      "base_hotel":"ebenezer-hamdeok","chips":["해변 3곳","물놀이","여름 최적"],
+      "days":[
+        {"day":1,"label":"도착 · 함덕","stops":[
+          {"ref":"airport","time":"11:00","note":"도착·렌터카"},
+          {"ref":"hamdeok","time":"13:00","note":"함덕 물놀이"},
+          {"ref":"hotel:ebenezer-hamdeok","time":"17:00","note":"체크인"}]},
+        {"day":2,"label":"협재·중문","stops":[
+          {"ref":"hyeopjae","time":"10:00","note":"협재 물놀이"},
+          {"ref":"jungmun","time":"15:00","note":"중문(얕은 구간)"}]},
+        {"day":3,"label":"섭지 · 귀가","stops":[
+          {"ref":"seopjikoji","time":"09:30","note":"바다 언덕 산책"},
+          {"ref":"airport","time":"13:30","note":"귀가"}]}
+      ] },
+    { "id":"jeju-relaxed","short":"느긋 힐링","title":"제주 2박3일 · 느긋 힐링",
+      "subtitle":"하루 2곳만 — 표선 리조트에서 여유롭게",
+      "base_hotel":"haevichi-jeju","chips":["적은 이동","여유·휴식","표선 리조트"],
+      "days":[
+        {"day":1,"label":"도착 · 섭지","stops":[
+          {"ref":"airport","time":"11:00","note":"도착·렌터카"},
+          {"ref":"hotel:haevichi-jeju","time":"13:30","note":"표선 체크인"},
+          {"ref":"seopjikoji","time":"15:30","note":"가까운 바다 언덕"}]},
+        {"day":2,"label":"성산·아쿠아","stops":[
+          {"ref":"seongsan","time":"09:30","note":"일출봉"},
+          {"ref":"aquaplanet","time":"13:00","note":"아쿠아리움"}]},
+        {"day":3,"label":"폭포 · 귀가","stops":[
+          {"ref":"cheonjiyeon","time":"10:00","note":"폭포 산책"},
+          {"ref":"airport","time":"14:00","note":"귀가"}]}
+      ] },
+    { "id":"jeju-nature-learning","short":"자연 학습","title":"제주 2박3일 · 자연 학습",
+      "subtitle":"만장굴·성산·오설록·카멜리아힐 — 놀며 배우는 제주 자연",
+      "base_hotel":"oriental-jeju","chips":["자연·학습","동굴·분화구","제주시 베이스"],
+      "days":[
+        {"day":1,"label":"도착 · 에코랜드","stops":[
+          {"ref":"airport","time":"11:00","note":"도착·렌터카"},
+          {"ref":"hotel:oriental-jeju","time":"12:30","note":"제주시 체크인"},
+          {"ref":"ecoland","time":"14:00","note":"곶자왈 생태 기차"}]},
+        {"day":2,"label":"동굴·분화구","stops":[
+          {"ref":"manjanggul","time":"09:30","note":"용암동굴 형성 학습"},
+          {"ref":"seongsan","time":"13:30","note":"분화구 트레킹"}]},
+        {"day":3,"label":"차밭·꽃 · 귀가","stops":[
+          {"ref":"osulloc","time":"09:30","note":"차 문화·차밭"},
+          {"ref":"camellia","time":"12:00","note":"수목·꽃 생태"},
+          {"ref":"airport","time":"16:00","note":"귀가"}]}
+      ] }
+  ]
+}

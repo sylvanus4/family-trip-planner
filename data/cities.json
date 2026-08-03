@@ -1,0 +1,16 @@
+{
+  "cities": [
+    {
+      "id": "busan", "name": "부산", "emoji": "🌊",
+      "arrival": "SRT 수서 출발 · 약 2시간 50분",
+      "dir": "data/busan",
+      "transport": { "has_subway": true, "subway4": 4800, "taxi_base": 4800, "taxi_per_km": 900 }
+    },
+    {
+      "id": "jeju", "name": "제주", "emoji": "🍊",
+      "arrival": "김포/김해 → 제주 항공 · 약 1시간 · 섬 안은 렌터카 추천",
+      "dir": "data/jeju",
+      "transport": { "has_subway": false, "taxi_base": 4800, "taxi_per_km": 800, "bus4": 4600 }
+    }
+  ]
+}
