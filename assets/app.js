@@ -172,7 +172,62 @@ function renderMap(p){ if(S.map){ S.map.remove(); S.map=null; }
     const html=s.isHotel?`<div class="pin hotel"><span>🏨</span></div>`:`<div class="pin d${s.day}"><span>${s.n}</span></div>`;
     L.marker([a.lat,a.lon],{icon:L.divIcon({className:"",html,iconSize:[32,32],iconAnchor:[16,30]})}).addTo(map).bindPopup(s.isHotel?popupHotel(a):popupPoi(a,s)); pts.push([a.lat,a.lon]); });
   if(pts.length) map.fitBounds(pts,{padding:[48,48]});
+  renderFoodMarkers(p);
   renderMapActions(p); renderVideo(); setTimeout(()=>map.invalidateSize(),120); }
+
+/* 이 여행안 식사에 등장하는 맛집 id (중복 제거, 등장 순서 유지) */
+function planRestIds(p){ const seen=new Set(), out=[];
+  (p.days||[]).forEach(d=>(d.meals||[]).forEach(m=>(m.candidates||[]).forEach(id=>{
+    if(!seen.has(id)&&S.rest[id]&&S.rest[id].lat){ seen.add(id); out.push(id); } })));
+  return out; }
+
+const FOOD_KEY="showFood";
+function foodOn(){ return localStorage.getItem(FOOD_KEY)!=="0"; }   // 기본 ON
+
+/* 맛집 = 동선 핀(물방울·일자색)과 색·모양을 모두 달리한 원형 라즈베리 마커.
+   색만으로 구분하지 않는다(색각 이상 대응) — 모양도 다르다. */
+function renderFoodMarkers(p){ const map=S.map; if(!map) return;
+  if(S.foodLayer){ map.removeLayer(S.foodLayer); S.foodLayer=null; }
+  S.restMarkers={};
+  const ids=planRestIds(p); if(!ids.length) return;
+  const layer=L.layerGroup();
+  ids.forEach(id=>{ const r=S.rest[id];
+    const mk=L.marker([r.lat,r.lon],{icon:L.divIcon({className:"",html:'<div class="fpin"><span>🍴</span></div>',
+      iconSize:[26,26],iconAnchor:[13,13]}),zIndexOffset:-200});
+    mk.bindPopup(popupRest(r)); layer.addLayer(mk); S.restMarkers[id]=mk; });
+  S.foodLayer=layer; if(foodOn()) layer.addTo(map); }
+
+function popupRest(r){ return `<div class="pop"><h4>🍴 ${r.name}${r.category?` <small>${r.category}</small>`:""}</h4>${ratingLine(r)}
+  <p class="pm">${[r.menu,r.price].filter(Boolean).join(" · ")}</p>${r.kid_note?`<p class="pm">👶 ${r.kid_note}</p>`:""}
+  <div class="pl">${r.naver?`<a href="${r.naver}" target="_blank" rel="noopener">네이버</a>`:""}<a href="https://map.kakao.com/?q=${enc(r.name)}" target="_blank" rel="noopener">카카오맵</a>${r.phone?`<a href="tel:${r.phone}">전화</a>`:""}</div></div>`; }
+
+/* 사이드바 → 지도. 목록에서 누른 그 집을 지도에서 바로 보여준다. */
+function focusRest(id){ const mk=S.restMarkers&&S.restMarkers[id], r=S.rest[id]; if(!mk||!r) return;
+  if(S.foodLayer&&!S.map.hasLayer(S.foodLayer)){ S.foodLayer.addTo(S.map); localStorage.setItem(FOOD_KEY,"1"); syncFoodBtn(); }
+  S.map.setView([r.lat,r.lon],16,{animate:true}); mk.openPopup();
+  document.querySelector(".map-wrap")?.scrollIntoView({behavior:"smooth",block:"nearest"}); }
+
+/* 상단 고정바(브랜드+도시+여행안)의 실제 높이를 CSS 변수로 흘려보낸다.
+   모바일에선 컨트롤이 2줄로 접혀 137px, 태블릿은 100px 로 제각각이라 하드코딩하면
+   점프바가 상단바 뒤로 숨는다(2026-08-03 측정). */
+function syncStickyH(){
+  const tb=document.querySelector(".topbar"), pb=document.querySelector(".plan-bar");
+  if(!tb) return;
+  const tbH=Math.round(tb.getBoundingClientRect().height);
+  let hgt=tbH;
+  if(pb&&getComputedStyle(pb).position==="sticky") hgt+=Math.round(pb.getBoundingClientRect().height);
+  const st=document.documentElement.style;
+  st.setProperty("--tb-h",tbH+"px");          // 여행안 바가 이 아래에 붙는다
+  st.setProperty("--topbar-h",hgt+"px");      // 점프바·스크롤 오프셋 기준
+}
+let _syncT; function scheduleSync(){ clearTimeout(_syncT); _syncT=setTimeout(syncStickyH,80); }
+window.addEventListener("resize",scheduleSync);
+window.addEventListener("orientationchange",scheduleSync);
+if(window.ResizeObserver) new ResizeObserver(scheduleSync).observe(document.documentElement);
+
+function syncFoodBtn(){ const b=document.getElementById("foodBtn"); if(!b) return;
+  const on=foodOn(); b.classList.toggle("off",!on); b.setAttribute("aria-pressed",String(on));
+  b.textContent=on?"🍴 맛집 핀 켬":"🍴 맛집 핀 끔"; }
 
 function popupPoi(a,s){ const img=resolveImg(a);
   return `<div class="pop">${img?`<img src="${img}" alt="${a.name}" onerror="this.style.display='none'">`:""}
@@ -191,19 +246,48 @@ function renderMapActions(p){ const el=$("#mapActions"); el.innerHTML="";
   if(p.kml) el.insertAdjacentHTML("beforeend",`<a href="${p.kml}" download>⬇️ KML(구글 마이맵)</a>`);
   el.insertAdjacentHTML("beforeend",`<a href="${S.city.dir}/all.kml" download title="다운로드 후 구글 마이맵(mymaps.google.com)에서 가져오기→업로드">🗺️ 구글 마이맵용 KML (${S.city.name} 전체)</a>`);
   el.insertAdjacentHTML("beforeend",`<button id="printBtn">🖨️ PDF·인쇄</button>`);
-  $("#printBtn").onclick=()=>openPrint(p); }
+  $("#printBtn").onclick=()=>openPrint(p);
+  if(planRestIds(p).length){
+    el.insertAdjacentHTML("afterbegin",`<button id="foodBtn" class="foodbtn" aria-pressed="true">🍴 맛집 핀 켬</button>`);
+    syncFoodBtn();
+    $("#foodBtn").onclick=()=>{ const on=!foodOn(); localStorage.setItem(FOOD_KEY,on?"1":"0");
+      if(S.foodLayer){ on?S.foodLayer.addTo(S.map):S.map.removeLayer(S.foodLayer); } syncFoodBtn(); };
+  } }
 
-function restCard(id){ const r=S.rest[id]; if(!r) return "";
-  return `<div class="rest"><div class="rest-top"><div class="rest-nm">${r.name}${r.category?` <span class="rest-cat">${r.category}</span>`:""}</div>${favBtn(id,"R")}</div>
-    ${ratingLine(r)}${r.menu?`<div class="rest-mn">${r.menu}${r.price?` · ${r.price}`:""}</div>`:""}
-    ${r.kid_note?`<div class="rest-kid">👶 ${r.kid_note}</div>`:""}${r.wait?`<div class="rest-wt">⏱️ ${r.wait}</div>`:""}
-    <div class="lnks">${r.naver?`<a class="lnk" href="${r.naver}" target="_blank" rel="noopener">네이버</a>`:""}${r.phone?`<a class="lnk" href="tel:${r.phone}">📞 ${r.phone}</a>`:""}<a class="lnk" href="https://map.kakao.com/?q=${enc(r.name)}" target="_blank" rel="noopener">🗺️ 카카오맵</a></div>
-    ${reviewLinks(r.name,"food")}</div>`; }
-function mealBlock(mm){ const b=mm.buffet?`<div class="rest buffet"><div class="rest-top"><div class="rest-nm">🏨 ${mm.buffet.name} <span class="rest-cat">호텔 조식·뷔페</span></div></div>${mm.buffet.price?`<div class="rest-mn">${mm.buffet.price}</div>`:""}<div class="lnks">${mm.buffet.naver?`<a class="lnk" href="${mm.buffet.naver}" target="_blank" rel="noopener">네이버</a>`:""}</div></div>`:"";
-  return `<div class="meal"><div class="meal-slot">🍽️ ${mm.slot} <span class="meal-near">${mm.near} 근처</span></div>${b}${mm.candidates.map(id=>restCard(id)).join("")}</div>`; }
+/* 맛집 = 요약 한 줄(항상 보임) + 펼침 상세(전체 정보, 삭제 없음).
+   맨 위 후보(가장 가까운 집)는 펼친 채로 두고 나머지는 접는다 — 전부 펼치면
+   식사 한 끼가 790px 를 먹어 오른쪽 컬럼이 1만 px 로 늘어난다(2026-08-03 실측). */
+function restCard(id,open){ const r=S.rest[id]; if(!r) return "";
+  const rv=r.reviews?(r.reviews>=1000?(r.reviews/1000).toFixed(1)+"k":r.reviews):null;
+  const sum=[r.category,r.price].filter(Boolean).join(" · ");
+  return `<details class="rest"${open?" open":""}>
+    <summary>
+      <span class="rest-nm">${r.name}</span>
+      ${r.rating!=null?`<span class="rest-rt">★ ${r.rating}${rv?`<i>(${rv})</i>`:""}</span>`:""}
+      ${sum?`<span class="rest-sum">${sum}</span>`:""}
+      ${r.lat?`<button class="rest-map" type="button" data-focus="${id}" title="지도에서 보기" aria-label="${r.name} 지도에서 위치 보기">📍</button>`:""}
+    </summary>
+    <div class="rest-in">
+      ${r.sentiment?`<div class="rate"><span class="senti">“${r.sentiment}”</span></div>`:""}
+      ${r.menu?`<div class="rest-mn">${r.menu}</div>`:""}
+      ${r.kid_note?`<div class="rest-kid">👶 ${r.kid_note}</div>`:""}${r.wait?`<div class="rest-wt">⏱️ ${r.wait}</div>`:""}
+      <div class="lnks">${r.naver?`<a class="lnk" href="${r.naver}" target="_blank" rel="noopener">네이버</a>`:""}${r.phone?`<a class="lnk" href="tel:${r.phone}">📞 ${r.phone}</a>`:""}<a class="lnk" href="https://map.kakao.com/?q=${enc(r.name)}" target="_blank" rel="noopener">🗺️ 카카오맵</a>${favBtn(id,"R")}</div>
+      ${reviewLinks(r.name,"food")}
+    </div></details>`; }
+
+function mealBlock(mm,domId){ const b=mm.buffet?`<details class="rest buffet"><summary><span class="rest-nm">🏨 ${mm.buffet.name}</span><span class="rest-sum">호텔 조식·뷔페</span></summary><div class="rest-in">${mm.buffet.price?`<div class="rest-mn">${mm.buffet.price}</div>`:""}<div class="lnks">${mm.buffet.naver?`<a class="lnk" href="${mm.buffet.naver}" target="_blank" rel="noopener">네이버</a>`:""}</div></div></details>`:"";
+  const n=(mm.candidates||[]).length;
+  return `<div class="meal"${domId?` id="${domId}"`:""}><div class="meal-slot">🍽️ ${mm.slot} <span class="meal-near">${mm.near} 근처</span>
+      ${n>1?`<button class="meal-all" type="button" data-all="1">모두 펼치기</button>`:""}</div>
+    ${b}${mm.candidates.map((id,i)=>restCard(id,i===0)).join("")}</div>`; }
 
 function renderSide(p){ const el=$("#side"); el.innerHTML="";
   const h=S.hotels[p.base_hotel];
+  // 긴 컬럼을 훑지 않고 바로 뛸 수 있게 — 오른쪽이 1만 px 이라 스크롤만으론 길을 잃는다
+  el.insertAdjacentHTML("beforeend",`<nav class="daynav" aria-label="일정 바로가기">
+    <a href="#top" data-jump="top">🏨 숙소·예매</a>
+    ${p.days.map(d=>`<a href="#day${d.day}" data-jump="day${d.day}" style="--dc:${DAYCOL[d.day]||'#333'}">${d.day}일차</a>`).join("")}
+    <a href="#cost" data-jump="cost">💳 비용</a></nav>`);
   if(h) el.insertAdjacentHTML("beforeend",`<div class="card hotel"><div class="hd">🏨 베이스 숙소 · 2박</div>
     ${resolveImg(h)?`<img class="hbanner" src="${resolveImg(h)}" alt="${h.name}" onerror="this.style.display='none'">`:""}<div class="in"><div class="grow"><p class="nm">${h.name}</p>${ratingLine(h)}${h.pool?`<p class="pool">🏊 ${h.pool}</p>`:""}<p class="meta">${h.family_note||""}</p><p class="price">${h.price_range||""}</p>
     <div class="lnks">${h.naver_map?`<a class="lnk" href="${h.naver_map}" target="_blank" rel="noopener">네이버 지도</a>`:""}${h.booking?`<a class="lnk" href="${h.booking}" target="_blank" rel="noopener">예약</a>`:""}${h.phone?`<a class="lnk" href="tel:${h.phone}">📞 ${h.phone}</a>`:""}<a class="lnk" href="${kakaoTo(h)}" target="_blank" rel="noopener">🚕 카카오T</a></div>
@@ -215,11 +299,15 @@ function renderSide(p){ const el=$("#side"); el.innerHTML="";
   if(ct) el.insertAdjacentHTML("beforeend",`<div class="card tour"><div class="tour-hd">🚌 ${ct.name}</div><p class="tour-tx">${ct.note}</p>
     <div class="lnks">${ct.url?`<a class="lnk" href="${ct.url}" target="_blank" rel="noopener">홈페이지</a>`:""}${ct.booking?`<a class="lnk" href="${ct.booking}" target="_blank" rel="noopener">예약</a>`:""}${ct.phone?`<a class="lnk" href="tel:${ct.phone}">📞 ${ct.phone}</a>`:""}</div></div>`);
   p.days.forEach(d=>{ const col=DAYCOL[d.day]||"#333", g=gmapsDir(d.stops); let rows="";
-    const mealsAfter=i=>(d.meals||[]).filter(m=>m.after===i).map(mealBlock).join("");
+    const strip=[];   // 하루 흐름 한 줄 요약 — 세부를 다 읽지 않고도 동선을 잡는다
+    const mealsAfter=i=>(d.meals||[]).filter(m=>m.after===i).map((m,j)=>{
+      strip.push({k:`d${d.day}m${i}_${j}`,t:m.slot,food:true});
+      return mealBlock(m,`d${d.day}m${i}_${j}`); }).join("");
     rows+=mealsAfter(-1);
     for(let i=0;i<d.stops.length;i++){ const s=d.stops[i], a=place(s.ref); if(!a) continue;
       const isH=s.ref.startsWith("hotel:"), label=isH?"🏨":numFor(p,d,i), img=!isH?resolveImg(a):null;
-      rows+=`<div class="stop"><div class="num"${isH?' style="background:#111"':''}>${label}</div>
+      strip.push({k:`d${d.day}s${i}`,t:a.name,time:s.time,num:isH?"🏨":label});
+      rows+=`<div class="stop" id="d${d.day}s${i}"><div class="num"${isH?' style="background:#111"':''}>${label}</div>
         ${img?`<img class="thumb" src="${img}" alt="${a.name}" onerror="this.style.display='none'">`:""}
         <div class="body"><div class="nmrow">${s.time?`<span class="t">${s.time}</span>`:""}<span class="nm">${a.name}</span>${s.optional?'<span class="lnk opt">선택</span>':''}</div>
         ${(!isH&&!TRANSIT.has(a.category))?`<span class="livewrap" data-lat="${a.lat}" data-lon="${a.lon}" data-cat="${a.category}"></span>`:""}${ratingLine(a)}${s.note?`<div class="no">${s.note}</div>`:""}
@@ -228,11 +316,26 @@ function renderSide(p){ const el=$("#side"); el.innerHTML="";
         if(lg) rows+=`<div class="leg"><span class="lg-ic">${lg.icon}</span><span class="lg-tx">${lg.mode} · 약 ${lg.mins}분${lg.cost?` · ₩${won(lg.cost)}`:" · 무료"}<span class="lg-no">${lg.note||""}</span></span>${lg.link?`<a class="lg-lk" href="${lg.link}" target="_blank" rel="noopener">${lg.linklabel}</a>`:""}</div>`; }
       rows+=mealsAfter(i);
     }
-    el.insertAdjacentHTML("beforeend",`<div class="card day-block"><div class="day-hd" style="background:${col}"><h3>${d.day}일차 · ${d.label||""}</h3>${g?`<a class="zone" href="${g}" target="_blank" rel="noopener">🧭 길찾기</a>`:""}</div><div class="day-body">${rows}</div></div>`);
+    const stripHtml=strip.length?`<div class="dstrip" role="list" aria-label="${d.day}일차 흐름 요약">${
+      strip.map(x=>`<button type="button" role="listitem" class="dchip${x.food?" food":""}" data-goto="${x.k}">${
+        x.food?`🍴 ${x.t}`:`${x.time?`<i>${x.time}</i>`:`<i>${x.num}</i>`}${x.t}`}</button>`).join('<span class="darr" aria-hidden="true">›</span>')}</div>`:"";
+    el.insertAdjacentHTML("beforeend",`<div class="card day-block" id="day${d.day}"><div class="day-hd" style="background:${col}"><h3>${d.day}일차 · ${d.label||""}</h3>${g?`<a class="zone" href="${g}" target="_blank" rel="noopener">🧭 길찾기</a>`:""}</div>${stripHtml}<div class="day-body">${rows}</div></div>`);
   });
   if(p.highlights&&p.highlights.length) el.insertAdjacentHTML("beforeend",`<div class="card hilite"><div class="hl-hd">✨ 이 여행의 하이라이트</div>${p.highlights.map(x=>`<div class="hl"><b>${x.name}</b> — ${x.blurb}</div>`).join("")}</div>`);
   el.insertAdjacentHTML("beforeend",packingCard());
-  el.querySelectorAll("input[data-k]").forEach(cb=>cb.onchange=()=>{ cb.checked?localStorage.setItem(cb.dataset.k,"1"):localStorage.removeItem(cb.dataset.k); }); bindFavs(el); fillLive(p); }
+  el.querySelectorAll("input[data-k]").forEach(cb=>cb.onchange=()=>{ cb.checked?localStorage.setItem(cb.dataset.k,"1"):localStorage.removeItem(cb.dataset.k); });
+  // 📍 지도 보기 — summary 안의 버튼이라 details 토글로 새지 않게 막는다
+  el.querySelectorAll(".rest-map").forEach(b=>b.onclick=e=>{ e.preventDefault(); e.stopPropagation(); focusRest(b.dataset.focus); });
+  el.querySelectorAll(".meal-all").forEach(b=>b.onclick=()=>{ const box=b.closest(".meal");
+    const ds=[...box.querySelectorAll("details.rest")], open=ds.some(d=>!d.open);
+    ds.forEach(d=>{ d.open=open; }); b.textContent=open?"모두 접기":"모두 펼치기"; });
+  el.querySelectorAll("[data-goto]").forEach(b=>b.onclick=()=>{ const t=document.getElementById(b.dataset.goto);
+    if(!t) return; t.scrollIntoView({behavior:"smooth",block:"center"});
+    t.classList.add("flash"); setTimeout(()=>t.classList.remove("flash"),1200); });
+  el.querySelectorAll("[data-jump]").forEach(a=>a.onclick=e=>{ e.preventDefault();
+    const k=a.dataset.jump, t=k==="top"?document.querySelector(".layout"):document.getElementById(k);
+    t?.scrollIntoView({behavior:"smooth",block:"start"}); });
+  bindFavs(el); fillLive(p); syncStickyH(); }
 function numFor(p,day,idx){ let n=0; for(const d of p.days){ for(let i=0;i<d.stops.length;i++){ if(!d.stops[i].ref.startsWith("hotel:")) n++; if(d===day&&i===idx) return n; } } return n; }
 
 function renderCost(p){ const el=$("#cost"); if(!p.cost||!p.cost.length){ el.innerHTML=""; return; }

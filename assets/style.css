@@ -43,7 +43,8 @@ p{margin:0}
 .build-btn{background:var(--sea); color:#fff; border-color:var(--sea)}
 .build-btn:hover{background:var(--sea-deep)}
 
-.plan-bar{position:sticky; top:60px; z-index:500; background:rgba(247,243,234,.94);
+/* top:60px 하드코딩이라 상단바가 79px(데스크톱)·138px(태블릿)일 때 뒤로 숨었다 → 실측값 사용 */
+.plan-bar{position:sticky; top:var(--tb-h,60px); z-index:500; background:rgba(247,243,234,.94);
   backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding:var(--s2) var(--s5); overflow-x:auto}
 .plan-picker{display:flex; gap:var(--s2); min-width:max-content}
 .plan-btn{border:1px solid var(--line); background:var(--card); color:var(--ink);
@@ -76,11 +77,18 @@ main{max-width:1180px; margin:0 auto; padding:var(--s5) var(--s5) 96px}
 .chip.total{background:var(--coral); color:#fff}
 .chip.ok{background:#E4F3E7; color:#1E7E34}
 
-.layout{display:grid; grid-template-columns:1.2fr 1fr; gap:var(--s5); align-items:start}
+/* 오른쪽 일정 컬럼이 지도보다 10배 길다 → 지도 쪽을 좁히고 일정 쪽에 폭을 준다.
+   폭이 넓어지면 같은 내용이 더 적은 줄로 접혀 컬럼 길이가 줄어든다. */
+.layout{display:grid; grid-template-columns:1fr 1.15fr; gap:var(--s5); align-items:start}
+/* 그리드 아이템 기본 min-width:auto 가 내부 nowrap 콘텐츠(하루 흐름 칩)의 min-content 를
+   트랙 폭으로 밀어올려 지도 컬럼을 235px 로 찌그러뜨렸다 → 명시적으로 축소 허용 */
+.layout > *{min-width:0}
+.side .card,.dstrip{min-width:0}
 @media (max-width:920px){ .layout{grid-template-columns:1fr} }
 .map-wrap{position:sticky; top:112px}
 @media (max-width:920px){ .map-wrap{position:static} }
-#map{height:520px; border-radius:var(--r); border:1px solid var(--line); box-shadow:var(--shadow); z-index:1}
+/* 지도는 붙박이라 화면 높이를 채워 쓰는 편이 동선 파악에 유리 */
+#map{height:clamp(520px,calc(100vh - 210px),820px); border-radius:var(--r); border:1px solid var(--line); box-shadow:var(--shadow); z-index:1}
 @media (max-width:920px){ #map{height:380px} }
 .map-actions{display:flex; gap:var(--s2); flex-wrap:wrap; margin-top:var(--s3)}
 .map-actions a{font-size:12.5px; font-weight:700; text-decoration:none; border:1px solid var(--line);
@@ -89,6 +97,51 @@ main{max-width:1180px; margin:0 auto; padding:var(--s5) var(--s5) 96px}
 .maphint{font-size:12px; color:var(--soft); margin:var(--s3) 2px 0; line-height:1.6}
 
 .side{display:flex; flex-direction:column; gap:var(--s4)}
+
+/* ---------- 일정 바로가기 (긴 컬럼용 sticky 점프바) ---------- */
+/* 점프 대상이 고정바 아래에 놓이게. --topbar-h 는 app.js 가 실측해 넣는다
+   (모바일 137px / 태블릿 100px 로 달라 하드코딩하면 헤더가 가려진다). */
+.day-block,.stop,.meal{scroll-margin-top:calc(var(--topbar-h,104px) + 62px)}
+.daynav{position:sticky; top:calc(var(--topbar-h,104px) + 6px); z-index:5; display:flex; gap:6px; flex-wrap:wrap;
+  padding:8px; background:color-mix(in srgb,var(--card) 92%,transparent);
+  backdrop-filter:blur(8px); border:1px solid var(--line); border-radius:var(--r-sm); box-shadow:var(--shadow)}
+.daynav a{--dc:var(--soft); display:inline-flex; align-items:center; min-height:32px; padding:0 11px;
+  font-size:12.5px; font-weight:800; text-decoration:none; color:var(--ink);
+  border:1px solid var(--line); border-radius:999px; background:var(--card)}
+.daynav a:hover,.daynav a:focus-visible{border-color:var(--dc); color:var(--dc); background:color-mix(in srgb,var(--dc) 8%,transparent)}
+.daynav a:focus-visible{outline:2px solid var(--sea); outline-offset:2px}
+/* 좁은 화면에선 줄바꿈(88px 2줄) 대신 한 줄 가로 스크롤 — 화면 높이를 아끼고 리듬이 안 깨진다 */
+@media (max-width:560px){
+  .daynav{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; padding:7px 8px}
+  .daynav::-webkit-scrollbar{display:none}
+  .daynav a{flex:none}
+}
+
+/* ---------- 하루 흐름 요약 스트립 (세부를 다 읽지 않고 동선을 잡는 개관) ---------- */
+.dstrip{display:flex; align-items:center; gap:4px; overflow-x:auto; padding:9px var(--s4);
+  background:var(--bg-2,#F7F9F9); border-bottom:1px solid var(--line-2); scrollbar-width:thin}
+.dchip{flex:none; display:inline-flex; align-items:center; gap:5px; min-height:30px; padding:0 10px;
+  font-size:12px; font-weight:700; color:var(--ink); background:var(--card);
+  border:1px solid var(--line); border-radius:999px; cursor:pointer; white-space:nowrap}
+.dchip i{font-style:normal; font-weight:800; font-size:10.5px; color:var(--soft);
+  font-variant-numeric:tabular-nums}
+.dchip:hover{border-color:var(--sea); background:var(--sea-tint)}
+.dchip:focus-visible{outline:2px solid var(--sea); outline-offset:2px}
+.dchip.food{color:#9B2C52; border-color:#F0CFDC; background:#FDF3F7}
+.dchip.food:hover{border-color:#C2255C; background:#FBE7EF}
+.darr{flex:none; color:var(--faint); font-size:12px}
+.flash{animation:flash 1.2s ease-out}
+@keyframes flash{0%,40%{background:#FFF6D8}100%{background:transparent}}
+@media (prefers-reduced-motion:reduce){ .flash{animation:none; outline:2px solid var(--gold)} }
+
+/* ---------- 맛집 지도 마커 (동선 핀과 색·모양 모두 다름) ---------- */
+.fpin{width:26px; height:26px; border-radius:50%; background:#C2255C; color:#fff;
+  display:flex; align-items:center; justify-content:center; font-size:13px;
+  border:2px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.foodbtn{font-size:12.5px; font-weight:700; border:1px solid #C2255C; color:#fff; background:#C2255C;
+  padding:8px 13px; border-radius:var(--r-sm); cursor:pointer; min-height:36px}
+.foodbtn.off{background:var(--card); color:var(--soft); border-color:var(--line)}
+.foodbtn:focus-visible{outline:2px solid var(--sea); outline-offset:2px}
 
 /* ---------- ratings ---------- */
 .rate{display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin:3px 0 5px; font-size:12.5px}
@@ -156,11 +209,35 @@ main{max-width:1180px; margin:0 auto; padding:var(--s5) var(--s5) 96px}
 /* meals inline */
 .meal{margin:var(--s2) 0 var(--s2) 40px; padding:var(--s3); background:#FFF9EE;
   border:1px solid #F3E6C9; border-radius:var(--r-sm)}
-.meal-slot{font-size:13px; font-weight:800; color:#B26B12; margin-bottom:var(--s2)}
-.meal-near{font-weight:600; color:var(--soft); font-size:11.5px; margin-left:4px}
-.rest{background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin-top:var(--s2)}
+.meal-slot{display:flex; align-items:center; gap:6px; font-size:13px; font-weight:800; color:#B26B12; margin-bottom:var(--s2)}
+.meal-near{font-weight:600; color:var(--soft); font-size:11.5px}
+.meal-all{margin-left:auto; font-size:11.5px; font-weight:700; color:var(--soft); background:transparent;
+  border:1px solid #E7D6AE; border-radius:999px; padding:0 9px; min-height:26px; cursor:pointer}
+.meal-all:hover{color:#B26B12; border-color:#B26B12}
+.meal-all:focus-visible{outline:2px solid var(--sea); outline-offset:2px}
+
+/* 맛집 = 접히는 카드. 요약 한 줄은 항상 보이고 상세는 펼침(정보 삭제 없음). */
+.rest{background:var(--card); border:1px solid var(--line); border-radius:8px; margin-top:6px}
 .rest:first-of-type{margin-top:0}
-.rest-nm{font-size:14px; font-weight:800}
+.rest > summary{display:flex; align-items:center; gap:7px; flex-wrap:wrap; cursor:pointer;
+  padding:9px 11px; min-height:44px; list-style:none; border-radius:8px}
+.rest > summary::-webkit-details-marker{display:none}
+.rest > summary::before{content:"▸"; color:var(--soft); font-size:13px; width:11px; flex:none;
+  text-align:center; transition:transform .15s}
+@media (prefers-reduced-motion:reduce){ .rest > summary::before{transition:none} }
+.rest[open] > summary::before{transform:rotate(90deg)}
+.rest > summary:hover{background:var(--sea-tint)}
+.rest > summary:focus-visible{outline:2px solid var(--sea); outline-offset:-2px}
+.rest-nm{font-size:14px; font-weight:800; min-width:0}
+.rest-rt{flex:none; font-size:12px; font-weight:800; color:#B26B12; background:#FFF4E0;
+  border-radius:999px; padding:2px 8px}
+.rest-rt i{font-style:normal; font-weight:600; color:var(--faint); margin-left:3px}
+.rest-sum{font-size:11.5px; color:var(--soft); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.rest-map{flex:none; margin-left:auto; width:34px; height:34px; border-radius:8px; cursor:pointer;
+  border:1px solid var(--line); background:var(--card); font-size:14px; line-height:1}
+.rest-map:hover{border-color:#C2255C; background:#FDF0F4}
+.rest-map:focus-visible{outline:2px solid var(--sea); outline-offset:2px}
+.rest-in{padding:0 11px 10px; border-top:1px dashed var(--line-2); margin-top:2px; padding-top:8px}
 .rest-cat{font-size:10.5px; font-weight:700; color:var(--sea-deep); background:var(--sea-tint); padding:2px 7px; border-radius:999px; margin-left:4px}
 .rest-mn{font-size:12.5px; color:var(--soft); margin:2px 0; line-height:1.55}
 .rest-kid{font-size:12px; color:#B26B12; margin:2px 0}
@@ -365,7 +442,11 @@ table.cmp td.cat{max-width:230px; white-space:normal}
   .logo{font-size:24px}
   .brand h1{font-size:17px}
   .tag{display:none}
-  .controls{gap:6px; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px}
+  /* nowrap 이 없으면 2줄로 접혀 상단바가 137px 를 먹는다(실측) — 한 줄 가로 스크롤로 */
+  .controls{gap:6px; width:100%; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px}
+  /* 반투명이면 아래 여행안 pill 이 비쳐 지저분하다 */
+  .topbar{background:#F7F3EA}
+  .brand{flex:none}
   .controls::-webkit-scrollbar{display:none}
   .city-btn,.live-btn,.cmp-btn,.build-btn{padding:8px 12px; font-size:12.5px; white-space:nowrap; flex:none}
   .plan-bar{position:static; padding:8px 12px}
@@ -402,6 +483,74 @@ table.cmp td.cat{max-width:230px; white-space:normal}
   main{padding:18px 20px 96px}
   #map{height:460px}
 }
+
+/* ============ 모바일·태블릿 마감 (2026-08-03 실측 기반) ============ */
+
+/* 0) 태블릿(769~920)에서도 컨트롤이 2줄로 접혀 상단바가 138px 이 됐다 → 한 줄 유지 */
+@media (max-width:920px){
+  .controls{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none}
+  .controls::-webkit-scrollbar{display:none}
+  .city-btn,.live-btn,.cmp-btn,.build-btn{flex:none; white-space:nowrap}
+  .topbar{background:#F7F3EA; flex-wrap:nowrap; gap:14px}
+  .brand{flex:none; min-width:0}
+  .brand h1{white-space:nowrap}
+}
+/* 체크박스는 포인터 환경에서도 작았다(13~17px) — 기본을 키운다 */
+.deci input[type=checkbox],.pk input[type=checkbox]{width:20px; height:20px; margin-top:1px}
+
+/* 1) 1단 레이아웃(≤920)에서 지도는 화면 비율로 — 340px 고정은 태블릿에서 우표만 하다 */
+@media (max-width:920px){
+  #map{height:min(52vh,460px); min-height:300px}
+  .map-wrap{margin-bottom:2px}
+  /* 지도 아래 액션은 가로 스크롤 한 줄 — 줄바꿈으로 3줄이 되면 화면을 잡아먹는다 */
+  .map-actions{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; padding-bottom:2px}
+  .map-actions::-webkit-scrollbar{display:none}
+  .map-actions a,.map-actions button,.foodbtn{flex:none; white-space:nowrap}
+  .maphint{font-size:11.5px; line-height:1.55}
+}
+
+/* 2) 터치 타깃 — 체크박스·리뷰칩이 WCAG 2.5.8 AA(24px) 미만이었다 */
+@media (hover:none),(max-width:920px){
+  .deci input[type=checkbox],.pk input[type=checkbox]{
+    width:24px; height:24px; margin-top:0; flex:none; accent-color:var(--sea); cursor:pointer}
+  .deci,.pk{min-height:44px; align-items:center}
+  .rlnk,.lnk{min-height:30px; display:inline-flex; align-items:center}
+  .rest > summary{min-height:52px}
+  .rest-map{width:40px; height:40px}
+  .meal-all{min-height:32px}
+  .dchip{min-height:36px}
+}
+
+/* 3) 좁은 화면 여백 — 식사 블록이 40px 들여쓰기로 본문 폭을 먹고 있었다 */
+@media (max-width:560px){
+  .meal{margin-left:10px; padding:10px}
+  .day-body{padding:var(--s2) 12px 14px}
+  .dstrip{padding:8px 12px}
+  .stop{gap:10px; padding:10px 0}
+  .rest-sum{display:none}          /* 요약행이 2줄로 접히면 리듬이 깨진다 — 상세에 그대로 있음 */
+  .rest > summary{gap:6px}
+  .reviews{margin-top:6px; padding-top:6px}
+}
+
+/* 4) 태블릿 세로(768~920) — 1단이라 폭이 남는다. 카드 내부를 2열로 써서 스크롤을 줄인다 */
+@media (min-width:600px) and (max-width:920px){
+  .pack-list{grid-template-columns:1fr 1fr}
+  .daynav{justify-content:flex-start}
+  .side{max-width:860px; width:100%; margin:0 auto}
+  .map-wrap{max-width:860px; margin-left:auto; margin-right:auto}
+  .meal{margin-left:40px}
+}
+
+/* 5) 태블릿 가로(921~1100) — 2단이지만 지도가 좁다. 지도 쪽에 폭을 조금 돌려준다 */
+@media (min-width:921px) and (max-width:1100px){
+  .layout{grid-template-columns:1fr 1.05fr; gap:16px}
+  #map{height:min(64vh,520px)}
+  .rest-sum{max-width:120px}
+}
+
+/* 6) 하단 고정 컨펌바가 마지막 콘텐츠를 가리지 않게 (모바일에서 2줄로 늘어난다) */
+@media (max-width:768px){ main{padding-bottom:132px} }
+@media (max-width:400px){ main{padding-bottom:148px} }
 
 /* ---- v10: live padding fix + buffet + kakao review ---- */
 .live .card{padding:var(--s5)}
