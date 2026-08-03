@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>부산 가족여행 2박3일 (해운대 베이스)</name>
+<description>핀 색상=카테고리. 주소 기반 지오코딩(구글 임포트 시 자동 위치).</description>
+<Style id="s_red"><IconStyle><scale>1.1</scale><Icon><href>http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png</href></Icon></IconStyle></Style>
+<Style id="s_blue"><IconStyle><scale>1.1</scale><Icon><href>http://maps.google.com/mapfiles/kml/pushpin/blue-pushpin.png</href></Icon></IconStyle></Style>
+<Style id="s_ylw"><IconStyle><scale>1.1</scale><Icon><href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href></Icon></IconStyle></Style>
+<Folder>
+<name>1일차 해운대 (3)</name>
+<Placemark>
+<name>해운대 해수욕장</name>
+<description>카테고리: 1일차 해운대
+주소: 부산 해운대구 우동 해운대해변로</description>
+<styleUrl>#s_red</styleUrl>
+<address>부산 해운대구 우동 해운대해변로</address>
+</Placemark>
+<Placemark>
+<name>SEA LIFE 부산아쿠아리움</name>
+<description>카테고리: 1일차 해운대
+주소: 부산 해운대구 해운대해변로 266</description>
+<styleUrl>#s_red</styleUrl>
+<address>부산 해운대구 해운대해변로 266</address>
+</Placemark>
+<Placemark>
+<name>광안리해수욕장</name>
+<description>카테고리: 1일차 해운대
+주소: 부산 수영구 광안해변로</description>
+<styleUrl>#s_red</styleUrl>
+<address>부산 수영구 광안해변로</address>
+</Placemark>
+</Folder>
+<Folder>
+<name>2일차 기장 (2)</name>
+<Placemark>
+<name>해동용궁사</name>
+<description>카테고리: 2일차 기장
+주소: 부산 기장군 기장읍 용궁길 86</description>
+<styleUrl>#s_blue</styleUrl>
+<address>부산 기장군 기장읍 용궁길 86</address>
+</Placemark>
+<Placemark>
+<name>롯데월드 어드벤처 부산</name>
+<description>카테고리: 2일차 기장
+주소: 부산 기장군 기장읍 동부산관광로 42</description>
+<styleUrl>#s_blue</styleUrl>
+<address>부산 기장군 기장읍 동부산관광로 42</address>
+</Placemark>
+</Folder>
+<Folder>
+<name>3일차 미포·귀가 (2)</name>
+<Placemark>
+<name>해운대 블루라인파크 미포정거장</name>
+<description>카테고리: 3일차 미포·귀가
+주소: 부산 해운대구 달맞이길62번길 13</description>
+<styleUrl>#s_ylw</styleUrl>
+<address>부산 해운대구 달맞이길62번길 13</address>
+</Placemark>
+<Placemark>
+<name>부산역</name>
+<description>카테고리: 3일차 미포·귀가
+주소: 부산 동구 중앙대로 206</description>
+<styleUrl>#s_ylw</styleUrl>
+<address>부산 동구 중앙대로 206</address>
+</Placemark>
+</Folder>
+</Document></kml>

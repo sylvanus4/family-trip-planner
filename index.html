@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>가족여행 플래너 · 동선 지도로 한눈에</title>
+<meta name="description" content="아이와 함께하는 가족여행을 실제 지도 동선으로 계획하고, 호텔·관광지 정보와 리뷰를 한눈에 확인하세요.">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">🧭</span>
+    <div>
+      <h1>가족여행 플래너</h1>
+      <p class="tag">실제 지도 동선 · 호텔/관광지 정보 · 리뷰까지 한눈에</p>
+    </div>
+  </div>
+  <div class="plan-picker" id="planPicker" aria-label="여행안 선택"></div>
+</header>
+
+<main>
+  <section class="plan-head" id="planHead"></section>
+
+  <div class="layout">
+    <div class="map-wrap">
+      <div id="map" role="application" aria-label="여행 동선 지도"></div>
+      <div class="map-actions" id="mapActions"></div>
+    </div>
+    <aside class="side" id="side"></aside>
+  </div>
+
+  <section class="cost" id="cost"></section>
+</main>
+
+<div class="confirmbar" id="confirmBar"></div>
+
+<footer class="foot">
+  <p>이 페이지는 <code>data/plans.json</code>·<code>data/hotels.json</code>·<code>data/attractions.json</code>만 고치면 누구나 여행안을 추가·수정할 수 있습니다. 편집 가이드는 저장소 <a href="#" id="repoLink">README</a> 참고.</p>
+  <p class="tiny">지도: OpenStreetMap · 가격·영업시간은 추정 포함이며 예약 직전 재확인하세요.</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

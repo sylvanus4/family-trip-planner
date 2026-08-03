@@ -1,0 +1,121 @@
+{
+  "plans": [
+    {
+      "id": "haeundae-classic",
+      "short": "해운대 클래식",
+      "title": "부산 2박3일 · 해운대 클래식",
+      "subtitle": "숙소를 해운대에 고정해 짐 이동 0회 · 하루 2~3곳 · 8월 말 · SRT 수서 출발",
+      "region": "부산",
+      "base_hotel": "w-residence",
+      "budget": 3000000,
+      "total": 1738200,
+      "chips": ["어른2+초4·초2", "2박3일", "동선 최소", "바다·아쿠아리움·놀이공원"],
+      "kml": "data/busan-route.kml",
+      "days": [
+        { "day": 1, "label": "도착 · 해운대 바다", "stops": [
+          { "ref": "busan-station", "time": "08:30", "note": "SRT 수서→부산, 해운대로 이동(약 40분)" },
+          { "ref": "hotel:w-residence", "time": "12:00", "note": "짐 보관·점심(체크인 전)" },
+          { "ref": "haeundae-beach", "time": "13:30", "note": "물놀이·모래놀이, 파라솔 대여" },
+          { "ref": "sealife", "time": "16:00", "note": "해변 바로 앞 실내, 상어터널" },
+          { "ref": "gwangalli", "time": "18:30", "note": "저녁+광안대교 야경", "optional": true }
+        ]},
+        { "day": 2, "label": "기장 하이라이트", "stops": [
+          { "ref": "yonggungsa", "time": "09:00", "note": "아침 일찍 덜 붐빔" },
+          { "ref": "lotteworld", "time": "13:00", "note": "종일권, 저녁 퍼레이드까지" }
+        ]},
+        { "day": 3, "label": "블루라인파크 · 귀가", "stops": [
+          { "ref": "blueline", "time": "10:00", "note": "미포→청사포→송정 바다 캡슐" },
+          { "ref": "busan-station", "time": "15:00", "note": "SRT 부산→수서 귀가" }
+        ]}
+      ],
+      "cost": [
+        { "cat": "SRT 왕복", "detail": "일반실 어른 51,900×2왕복 + 어린이 25,900×2왕복", "amount": 311200, "type": "확정" },
+        { "cat": "현지 교통", "detail": "지하철·택시·동해선 3일", "amount": 80000, "type": "추정" },
+        { "cat": "숙박 2박", "detail": "W 레지던스 패밀리룸", "amount": 450000, "type": "추정" },
+        { "cat": "아쿠아리움", "detail": "SEA LIFE 4인 온라인가", "amount": 86000, "type": "추정" },
+        { "cat": "롯데월드", "detail": "종일권 어른2+어린이2", "amount": 160000, "type": "추정" },
+        { "cat": "블루라인파크", "detail": "스카이캡슐 4인+해변열차", "amount": 111000, "type": "확정" },
+        { "cat": "해수욕장", "detail": "파라솔·튜브 대여", "amount": 20000, "type": "추정" },
+        { "cat": "식비", "detail": "4인·3일", "amount": 420000, "type": "추정" },
+        { "cat": "예비·기념품", "detail": "버퍼", "amount": 100000, "type": "추정" }
+      ]
+    },
+    {
+      "id": "blogger-favorites",
+      "short": "블로거 인기",
+      "title": "부산 2박3일 · 블로거 인기 코스",
+      "subtitle": "여행 블로거 실제 후기 반영 — 블루라인파크·요트투어·어묵체험·모래놀이 중심, 기장 원정 최소화",
+      "region": "부산",
+      "base_hotel": "seacloud",
+      "budget": 3000000,
+      "total": 1718200,
+      "chips": ["블로거 아이 만족 TOP", "요트투어·해변열차", "저부담 동선", "체험 중심"],
+      "days": [
+        { "day": 1, "label": "해변열차 · 해운대", "stops": [
+          { "ref": "busan-station", "time": "09:30", "note": "SRT 도착→해운대" },
+          { "ref": "blueline", "time": "11:00", "note": "아이 만족 1위 — 스카이캡슐·해변열차" },
+          { "ref": "hotel:seacloud", "time": "14:00", "note": "해변 도보 3분 체크인" },
+          { "ref": "haeundae-beach", "time": "15:00", "note": "모래놀이·조개구이 저녁" }
+        ]},
+        { "day": 2, "label": "아쿠아리움 · 광안리 요트", "stops": [
+          { "ref": "sealife", "time": "10:00", "note": "오전 실내" },
+          { "ref": "gwangalli", "time": "16:00", "note": "요트투어(사전예약)·드론쇼·저녁" }
+        ]},
+        { "day": 3, "label": "어묵 체험 · 귀가", "stops": [
+          { "ref": "samjin", "time": "10:00", "note": "삼진어묵 만들기 체험(영도)" },
+          { "ref": "busan-station", "time": "15:00", "note": "영도→부산역 귀가" }
+        ]}
+      ],
+      "cost": [
+        { "cat": "SRT 왕복", "detail": "일반실 어른2+어린이2 왕복", "amount": 311200, "type": "확정" },
+        { "cat": "현지 교통", "detail": "지하철·택시 3일", "amount": 90000, "type": "추정" },
+        { "cat": "숙박 2박", "detail": "씨클라우드 오션뷰", "amount": 460000, "type": "추정" },
+        { "cat": "블루라인파크", "detail": "스카이캡슐 4인+해변열차", "amount": 111000, "type": "확정" },
+        { "cat": "아쿠아리움", "detail": "SEA LIFE 4인", "amount": 86000, "type": "추정" },
+        { "cat": "요트투어", "detail": "광안리 4인", "amount": 100000, "type": "추정" },
+        { "cat": "어묵 체험", "detail": "삼진어묵 4인", "amount": 40000, "type": "추정" },
+        { "cat": "식비", "detail": "4인·3일", "amount": 420000, "type": "추정" },
+        { "cat": "예비·기념품", "detail": "버퍼", "amount": 100000, "type": "추정" }
+      ]
+    },
+    {
+      "id": "rainy-indoor",
+      "short": "우천·폭염 대비",
+      "title": "부산 2박3일 · 실내 위주(우천·폭염 대비)",
+      "subtitle": "8월 말 소나기·폭염에도 안전하게 — 아쿠아리움·과학관·아이스링크·전망대 중심",
+      "region": "부산",
+      "base_hotel": "newsiz",
+      "budget": 3000000,
+      "total": 1869200,
+      "chips": ["실내 비중 높음", "날씨 무관", "아이스링크·과학관", "폭염/우천 안심"],
+      "days": [
+        { "day": 1, "label": "아쿠아리움 · 센텀", "stops": [
+          { "ref": "busan-station", "time": "10:00", "note": "SRT 도착→해운대" },
+          { "ref": "sealife", "time": "13:00", "note": "실내 시작" },
+          { "ref": "centum", "time": "16:00", "note": "아이스링크·아쿠아필드" },
+          { "ref": "hotel:newsiz", "time": "19:00", "note": "체크인·인피니티풀" }
+        ]},
+        { "day": 2, "label": "과학관 · 놀이공원", "stops": [
+          { "ref": "science", "time": "10:00", "note": "체험형 실내 과학관(기장)" },
+          { "ref": "lotteworld", "time": "13:00", "note": "실내존 위주, 종일권" }
+        ]},
+        { "day": 3, "label": "전망대 · 귀가", "stops": [
+          { "ref": "xthesky", "time": "10:00", "note": "실내 전망대 오션뷰" },
+          { "ref": "busan-station", "time": "14:00", "note": "귀가" }
+        ]}
+      ],
+      "cost": [
+        { "cat": "SRT 왕복", "detail": "일반실 어른2+어린이2 왕복", "amount": 311200, "type": "확정" },
+        { "cat": "현지 교통", "detail": "지하철·택시 3일", "amount": 90000, "type": "추정" },
+        { "cat": "숙박 2박", "detail": "뉴시즈 레지던스", "amount": 500000, "type": "추정" },
+        { "cat": "아쿠아리움", "detail": "SEA LIFE 4인", "amount": 86000, "type": "추정" },
+        { "cat": "센텀 실내", "detail": "아이스링크/아쿠아필드 4인", "amount": 80000, "type": "추정" },
+        { "cat": "과학관", "detail": "국립부산과학관 4인", "amount": 20000, "type": "추정" },
+        { "cat": "롯데월드", "detail": "종일권 어른2+어린이2", "amount": 160000, "type": "추정" },
+        { "cat": "엑스더스카이", "detail": "전망대 4인", "amount": 102000, "type": "추정" },
+        { "cat": "식비", "detail": "4인·3일", "amount": 420000, "type": "추정" },
+        { "cat": "예비·기념품", "detail": "버퍼", "amount": 100000, "type": "추정" }
+      ]
+    }
+  ]
+}
