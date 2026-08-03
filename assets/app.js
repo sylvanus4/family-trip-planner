@@ -98,6 +98,7 @@ async function boot(){
   await selectCity(S.cities.find(c=>c.id===h[0])?h[0]:S.cities[0].id, h[1]);
   $("#cmpBtn").onclick=toggleCompare;
   $("#buildBtn").onclick=openBuilder;
+  $("#liveBtn").onclick=openLive;
 }
 
 function renderCityPicker(){ const el=$("#cityPicker"); el.innerHTML="";
@@ -129,7 +130,7 @@ function renderPlanPicker(){ const el=$("#planPicker"); el.innerHTML="";
     b.innerHTML=(localStorage.getItem(`cfm_${S.city.id}_${p.id}`)?'<span class="chk">✓</span> ':'')+(p.id==="custom"?"🧩 ":"")+p.short;
     b.dataset.id=p.id; b.onclick=()=>selectPlan(p.id); el.appendChild(b); }); }
 
-function selectPlan(id){ S.cur=id; location.hash=`${S.city.id}/${id}`; $("#compare").hidden=true; $("#builder").hidden=true;
+function selectPlan(id){ S.cur=id; location.hash=`${S.city.id}/${id}`; $("#compare").hidden=true; $("#builder").hidden=true; const lv=$("#live"); if(lv) lv.hidden=true;
   document.querySelectorAll(".plan-btn").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
   const p=S.plans.find(x=>x.id===id); if(!p) return;
   renderHead(p); renderMap(p); renderSide(p); renderCost(p); renderConfirm(p);
@@ -209,7 +210,7 @@ function renderSide(p){ const el=$("#side"); el.innerHTML="";
       rows+=`<div class="stop"><div class="num"${isH?' style="background:#111"':''}>${label}</div>
         ${img?`<img class="thumb" src="${img}" alt="${a.name}" onerror="this.style.display='none'">`:""}
         <div class="body"><div class="nmrow">${s.time?`<span class="t">${s.time}</span>`:""}<span class="nm">${a.name}</span>${s.optional?'<span class="lnk opt">선택</span>':''}</div>
-        ${ratingLine(a)}${s.note?`<div class="no">${s.note}</div>`:""}
+        ${(!isH&&!TRANSIT.has(a.category))?`<span class="livewrap" data-lat="${a.lat}" data-lon="${a.lon}" data-cat="${a.category}"></span>`:""}${ratingLine(a)}${s.note?`<div class="no">${s.note}</div>`:""}
         <div class="lnks">${(a.naver||a.naver_map)?`<a class="lnk" href="${a.naver||a.naver_map}" target="_blank" rel="noopener">네이버</a>`:""}${a.official?`<a class="lnk" href="${a.official}" target="_blank" rel="noopener">예매</a>`:""}${(!isH&&!TRANSIT.has(a.category))?favBtn(s.ref,"A"):""}</div>${!isH?reviewLinks(a.name,"spot"):""}</div></div>`;
       if(i<d.stops.length-1){ const b=place(d.stops[i+1].ref), lg=leg(a,b);
         if(lg) rows+=`<div class="leg"><span class="lg-ic">${lg.icon}</span><span class="lg-tx">${lg.mode} · 약 ${lg.mins}분${lg.cost?` · ₩${won(lg.cost)}`:" · 무료"}<span class="lg-no">${lg.note||""}</span></span>${lg.link?`<a class="lg-lk" href="${lg.link}" target="_blank" rel="noopener">${lg.linklabel}</a>`:""}</div>`; }
@@ -219,7 +220,7 @@ function renderSide(p){ const el=$("#side"); el.innerHTML="";
   });
   if(p.highlights&&p.highlights.length) el.insertAdjacentHTML("beforeend",`<div class="card hilite"><div class="hl-hd">✨ 이 여행의 하이라이트</div>${p.highlights.map(x=>`<div class="hl"><b>${x.name}</b> — ${x.blurb}</div>`).join("")}</div>`);
   el.insertAdjacentHTML("beforeend",packingCard());
-  el.querySelectorAll("input[data-k]").forEach(cb=>cb.onchange=()=>{ cb.checked?localStorage.setItem(cb.dataset.k,"1"):localStorage.removeItem(cb.dataset.k); }); bindFavs(el); }
+  el.querySelectorAll("input[data-k]").forEach(cb=>cb.onchange=()=>{ cb.checked?localStorage.setItem(cb.dataset.k,"1"):localStorage.removeItem(cb.dataset.k); }); bindFavs(el); fillLive(p); }
 function numFor(p,day,idx){ let n=0; for(const d of p.days){ for(let i=0;i<d.stops.length;i++){ if(!d.stops[i].ref.startsWith("hotel:")) n++; if(d===day&&i===idx) return n; } } return n; }
 
 function renderCost(p){ const el=$("#cost"); if(!p.cost||!p.cost.length){ el.innerHTML=""; return; }
@@ -359,6 +360,63 @@ function openPrint(p){
   const done=()=>{ document.body.classList.remove("printing"); window.removeEventListener("afterprint",done); };
   window.addEventListener("afterprint",done);
   setTimeout(()=>window.print(),200);
+}
+
+/* ---------- LIVE: 실시간 날씨(open-meteo, 무키) + 혼잡 예상(요일·시간·유형) ---------- */
+const WX={};
+const wkey=p=>`${(+p.lat).toFixed(3)},${(+p.lon).toFixed(3)}`;
+function wcode(c){ if(c===0)return["☀️","맑음"]; if([1,2].includes(c))return["🌤️","대체로 맑음"]; if(c===3)return["☁️","흐림"];
+  if([45,48].includes(c))return["🌫️","안개"]; if([51,53,55,56,57].includes(c))return["🌦️","이슬비"];
+  if([61,63,65,66,67,80,81,82].includes(c))return["🌧️","비"]; if([71,73,75,77,85,86].includes(c))return["🌨️","눈"];
+  if([95,96,99].includes(c))return["⛈️","뇌우"]; return["🌡️","-"]; }
+async function fetchWeather(points){
+  const uniq={}; points.forEach(p=>{ if(p&&p.lat) uniq[wkey(p)]=p; });
+  const need=Object.values(uniq).filter(p=>!WX[wkey(p)]);
+  if(!need.length) return;
+  const lat=need.map(p=>(+p.lat).toFixed(3)).join(","), lon=need.map(p=>(+p.lon).toFixed(3)).join(",");
+  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,precipitation,wind_speed_10m&hourly=precipitation_probability&forecast_days=1&timezone=Asia%2FSeoul`;
+  try{ const r=await fetch(u).then(x=>x.json()); const arr=Array.isArray(r)?r:[r]; const hh=new Date().getHours();
+    need.forEach((p,i)=>{ const d=arr[i]||arr[0]; if(!d||!d.current)return;
+      WX[wkey(p)]={t:Math.round(d.current.temperature_2m),code:d.current.weather_code,wind:Math.round(d.current.wind_speed_10m),
+        pp:(d.hourly&&d.hourly.precipitation_probability)?d.hourly.precipitation_probability[hh]:null}; }); }catch(e){}
+}
+function crowdLvl(cat,dt){ dt=dt||new Date(); const wd=dt.getDay(), we=wd===0||wd===6, h=dt.getHours(); const pm=h>=11&&h<=17; let b=0;
+  if(["beach","themepark","experience","aquarium","island"].includes(cat)) b=pm?2:1;
+  else if(["nature","village","view","waterfall","temple","drive","cave"].includes(cat)) b=pm?1:0; else b=pm?1:0;
+  if(we) b=Math.min(2,b+1); if(h<9||h>=20) b=Math.max(0,b-1); return b; }
+const CROWD=[["여유","c-ok"],["보통","c-mid"],["붐빔","c-hi"]];
+function liveChip(a){ const w=WX[wkey(a)], cl=crowdLvl(a.category);
+  const wx=w?`${wcode(w.code)[0]} ${w.t}°${w.pp!=null?` · 비 ${w.pp}%`:""}`:"날씨 …";
+  return `<span class="lc"><span class="lc-wx">${wx}</span><span class="lc-cr ${CROWD[cl][1]}">지금 ${CROWD[cl][0]} 예상</span></span>`; }
+async function fillLive(p){
+  const pts=[]; p.days.forEach(d=>d.stops.forEach(s=>{ const a=S.at[s.ref]; if(a&&a.lat&&!TRANSIT.has(a.category)) pts.push(a); }));
+  await fetchWeather(pts);
+  document.querySelectorAll(".livewrap").forEach(el=>{ el.innerHTML=liveChip({lat:el.dataset.lat,lon:el.dataset.lon,category:el.dataset.cat}); });
+}
+function wxScore(w){ if(!w) return 1; const [,l]=wcode(w.code); if(["비","뇌우","눈"].includes(l)) return 0; if((w.pp||0)>=60) return 0; if(l==="흐림"||l==="이슬비"||l==="안개") return 1; return 2; }
+async function openLive(){ const el=$("#live"); $("#compare").hidden=true; $("#builder").hidden=true; if(!el.hidden){ el.hidden=true; return; }
+  el.innerHTML=`<div class="card"><div class="cmp-head"><h3>🔴 지금 상황 <span class="deck-sub">${S.city.name} · 실시간 날씨 + 혼잡 예상</span></h3><button class="cmp-x" id="lX">닫기 ✕</button></div><p class="cmp-tip">불러오는 중…</p></div>`;
+  el.hidden=false; el.scrollIntoView({behavior:"smooth"});
+  const spots=Object.entries(S.at).filter(([id,a])=>a.lat&&!TRANSIT.has(a.category)).map(([id,a])=>({id,...a}));
+  await fetchWeather(spots);
+  const now=new Date(); let mode="best";
+  const render=()=>{
+    const rows=spots.map(a=>{ const w=WX[wkey(a)], cl=crowdLvl(a.category), sc=wxScore(w)*2-cl+ ({상:1,중:0,하:-1}[a.kid_fit]||0);
+      return {a,w,cl,sc}; });
+    rows.sort((x,y)=> mode==="best"? y.sc-x.sc : mode==="calm"? x.cl-y.cl : x.a.name.localeCompare(y.a.name,"ko"));
+    const list=rows.map(({a,w,cl})=>`<div class="lrow"><img class="lthumb" src="${resolveImg(a)||""}" alt="" onerror="this.style.visibility='hidden'">
+      <div class="lg1"><div class="lnm">${a.name} <span class="lcat">${(CATLABEL[a.category]||a.category)}</span></div>
+        <div class="lmeta">${w?`${wcode(w.code)[0]} ${wcode(w.code)[1]} ${w.t}°${w.pp!=null?` · 강수 ${w.pp}%`:""}${w.wind!=null?` · 바람 ${w.wind}m/s`:""}`:"날씨 정보 없음"}</div></div>
+      <div class="lg2"><span class="lc-cr ${CROWD[cl][1]}">${CROWD[cl][0]}</span><a class="lnk" href="${a.naver}" target="_blank" rel="noopener">지도</a></div></div>`).join("");
+    el.querySelector(".card").innerHTML=`<div class="cmp-head"><h3>🔴 지금 상황 <span class="deck-sub">${S.city.name} · ${now.getHours()}시 ${String(now.getMinutes()).padStart(2,'0')}분 기준</span></h3><button class="cmp-x" id="lX">닫기 ✕</button></div>
+      <div class="lsort"><button data-m="best" class="${mode==='best'?'on':''}">지금 좋은 순</button><button data-m="calm" class="${mode==='calm'?'on':''}">여유 순</button><button data-m="name" class="${mode==='name'?'on':''}">이름순</button>
+        <span class="lleg"><i class="c-ok"></i>여유 <i class="c-mid"></i>보통 <i class="c-hi"></i>붐빔</span></div>
+      <div class="llist">${list}</div>
+      <p class="cmp-tip">🌤️ 날씨는 open-meteo 실시간입니다. 혼잡도는 요일·시간·장소 유형으로 추정한 <b>예상</b>이라 실제와 다를 수 있어요. 물놀이·야외는 강수확률과 바람을 함께 보세요.</p>`;
+    el.querySelector("#lX").onclick=()=>el.hidden=true;
+    el.querySelectorAll(".lsort button").forEach(b=>b.onclick=()=>{ mode=b.dataset.m; render(); });
+  };
+  render();
 }
 
 boot().catch(e=>{ $("#planHead").innerHTML='<p style="color:#E15A38">데이터 로드 실패: '+e.message+'</p>'; });
