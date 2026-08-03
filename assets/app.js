@@ -79,9 +79,10 @@ function renderVideo(){ const el=$("#tripVideo"); if(!el) return; const c=S.city
   el.innerHTML=`<div class="tv-h">🎬 여행 미리보기</div><div class="tv-grid">${vids.map(([src,cap])=>`<figure class="tv"><video src="${src}" muted loop autoplay playsinline preload="metadata" onerror="this.closest('figure').style.display='none'"></video><figcaption>${cap}</figcaption></figure>`).join("")}</div>`;
   setTimeout(()=>{ if(![...el.querySelectorAll('figure')].some(f=>f.style.display!=='none')) el.innerHTML=""; },2500); }
 
-function bookingCard(){ const c=S.city, b=c.booking||[], ht=c.home_transfer;
+function bookingCard(){ const c=S.city, b=c.booking||[], ht=c.home_transfer, rc=c.rentcar;
   return `<div class="card book"><div class="book-hd">🎫 예매 & 출발 준비</div>
     <div class="book-row"><b>${c.cost.intercity_label} 예매</b><div class="lnks">${b.map(x=>`<a class="lnk" href="${x.url}" target="_blank" rel="noopener">${x.label}</a>`).join("")}</div></div>
+    ${rc?`<div class="book-row"><b>🚗 ${rc.label}</b>${rc.note?`<div class="bt-note">${rc.note}</div>`:""}<div class="lnks">${(rc.book||[]).map(x=>`<a class="lnk" href="${x.url}" target="_blank" rel="noopener">${x.label}</a>`).join("")}</div></div>`:""}
     ${ht?`<div class="book-row"><b>🚐 ${ht.label}</b><div class="bt-note">${ht.note}</div><div class="lnks">${(ht.book||[]).map(x=>`<a class="lnk" href="${x.url}" target="_blank" rel="noopener">${x.label}</a>`).join("")}</div></div>`:""}</div>`; }
 
 function packingCard(){ const pk=S.city.packing; if(!pk) return "";
