@@ -246,3 +246,35 @@ table.cmp td.cat{max-width:230px; white-space:normal}
   .plan-head h2{font-size:20px} main{padding:var(--s4) var(--s3) 96px}
   .plan-head{padding:var(--s4)} .bgroups{grid-template-columns:1fr}
 }
+
+/* ---- v4: reviews, booking, packing, video ---- */
+.reviews{display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-top:7px; padding-top:7px; border-top:1px dashed var(--line-2)}
+.rv-h{font-size:11px; font-weight:800; color:var(--faint)}
+.rlnk{font-size:11px; font-weight:700; text-decoration:none; color:#2E7D32; border:1px solid #CFE6D0;
+  background:#F1F8F1; padding:3px 8px; border-radius:999px; white-space:nowrap}
+.rlnk:hover{background:#E3F1E3}
+
+.book{padding:var(--s4)}
+.book-hd{font-size:14px; font-weight:800; margin-bottom:var(--s3)}
+.book-row{padding:var(--s2) 0; border-top:1px solid var(--line-2)}
+.book-row:first-of-type{border-top:none}
+.book-row b{font-size:13.5px; display:block; margin-bottom:5px}
+.bt-note{font-size:12px; color:var(--soft); line-height:1.55; margin-bottom:6px}
+
+.pack{padding:var(--s4)}
+.pack-hd{font-size:14px; font-weight:800; margin-bottom:var(--s2)}
+.pack-grp{font-size:12px; font-weight:800; color:var(--sea-deep); margin:var(--s3) 0 var(--s1)}
+.pack-list{display:grid; grid-template-columns:1fr 1fr; gap:2px 12px}
+@media (max-width:520px){ .pack-list{grid-template-columns:1fr} }
+.pk{display:flex; align-items:flex-start; gap:8px; padding:6px 0; font-size:13px; cursor:pointer; line-height:1.45}
+.pk input{margin-top:2px; width:16px; height:16px; accent-color:var(--sea); flex:none}
+
+.trip-video{margin-top:var(--s4)}
+.tv-h{font-size:13px; font-weight:800; color:var(--soft); margin-bottom:var(--s2)}
+.tv-grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--s3)}
+@media (max-width:520px){ .tv-grid{grid-template-columns:1fr} }
+.tv{margin:0}
+.tv video{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:var(--r-sm); border:1px solid var(--line); background:#0c1a1a; display:block}
+.tv figcaption{font-size:11.5px; color:var(--soft); font-weight:700; margin-top:5px; text-align:center}
+
+.pool{display:inline-block; font-size:12px; font-weight:800; color:#0369A1; background:#E5F0FB; border:1px solid #CBE2F7; padding:3px 10px; border-radius:999px; margin:0 0 var(--s2)}

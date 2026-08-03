@@ -30,9 +30,36 @@ function nearestRest(target,k,excl){ if(!target) return [];
 /* ---------- ratings ---------- */
 function stars(r){ if(r==null) return ""; const f=Math.round(r);
   return `<span class="stars">${"★".repeat(f)}${"☆".repeat(Math.max(0,5-f))}</span>`; }
-function ratingLine(o){ if(!o||o.rating==null) return "";
+function ratingLine(o){ if(!o) return "";
+  if(o.rating==null){ return o.sentiment?`<div class="rate"><span class="senti">“${o.sentiment}”</span></div>`:""; }
   const rv=o.reviews?(o.reviews>=1000?(o.reviews/1000).toFixed(1)+"k":o.reviews):null;
   return `<div class="rate">${stars(o.rating)}<b>${o.rating}</b>${rv?`<span class="rev">리뷰 ${rv}</span>`:""}${o.sentiment?`<span class="senti">“${o.sentiment}”</span>`:""}</div>`; }
+/* 3 blog/review discovery links (search-based, always valid — no fabricated post URLs) */
+function reviewLinks(name,kind){ if(!name) return "";
+  const third = kind==="food"
+    ? {u:`https://www.diningcode.com/search/${enc(name)}`,t:"다이닝코드"}
+    : {u:`https://search.naver.com/search.naver?query=${enc(name+" 리뷰")}`,t:"네이버리뷰"};
+  return `<div class="reviews"><span class="rv-h">📝 후기</span>`+
+    `<a class="rlnk" href="https://search.naver.com/search.naver?ssc=tab.blog.all&query=${enc(name+" 후기")}" target="_blank" rel="noopener">네이버블로그</a>`+
+    `<a class="rlnk" href="https://www.google.com/search?q=${enc(name+" 블로그 후기")}" target="_blank" rel="noopener">구글</a>`+
+    `<a class="rlnk" href="${third.u}" target="_blank" rel="noopener">${third.t}</a></div>`; }
+
+function renderVideo(){ const el=$("#tripVideo"); if(!el) return; const c=S.city; el.innerHTML="";
+  const vids=[[c.intro_video, c.id==="jeju"?"✈️ 비행기 타고 출발":"🚄 SRT 타고 출발"],[c.feel_video,"🌊 이번 여행 미리보기"]].filter(v=>v[0]);
+  if(!vids.length) return;
+  el.innerHTML=`<div class="tv-h">🎬 여행 미리보기</div><div class="tv-grid">${vids.map(([src,cap])=>`<figure class="tv"><video src="${src}" muted loop autoplay playsinline preload="metadata" onerror="this.closest('figure').style.display='none'"></video><figcaption>${cap}</figcaption></figure>`).join("")}</div>`;
+  setTimeout(()=>{ if(![...el.querySelectorAll('figure')].some(f=>f.style.display!=='none')) el.innerHTML=""; },2500); }
+
+function bookingCard(){ const c=S.city, b=c.booking||[], ht=c.home_transfer;
+  return `<div class="card book"><div class="book-hd">🎫 예매 & 출발 준비</div>
+    <div class="book-row"><b>${c.cost.intercity_label} 예매</b><div class="lnks">${b.map(x=>`<a class="lnk" href="${x.url}" target="_blank" rel="noopener">${x.label}</a>`).join("")}</div></div>
+    ${ht?`<div class="book-row"><b>🚐 ${ht.label}</b><div class="bt-note">${ht.note}</div><div class="lnks">${(ht.book||[]).map(x=>`<a class="lnk" href="${x.url}" target="_blank" rel="noopener">${x.label}</a>`).join("")}</div></div>`:""}</div>`; }
+
+function packingCard(){ const pk=S.city.packing; if(!pk) return "";
+  const item=(x,i,g)=>{const k=`pk_${S.city.id}_${g}_${i}`;return `<label class="pk"><input type="checkbox" data-k="${k}" ${localStorage.getItem(k)?"checked":""}><span>${x}</span></label>`;};
+  return `<div class="card pack"><div class="pack-hd">🧳 여행 준비물 <span class="deck-sub">체크하며 챙기세요</span></div>
+    <div class="pack-grp">공통</div><div class="pack-list">${pk.common.map((x,i)=>item(x,i,"c")).join("")}</div>
+    <div class="pack-grp">${S.city.name} 맞춤</div><div class="pack-list">${pk.specific.map((x,i)=>item(x,i,"s")).join("")}</div></div>`; }
 
 async function boot(){
   $("#repoLink").href=REPO_URL+"#readme";
@@ -103,13 +130,13 @@ function renderMap(p){ if(S.map){ S.map.remove(); S.map=null; }
     const html=s.isHotel?`<div class="pin hotel"><span>🏨</span></div>`:`<div class="pin d${s.day}"><span>${s.n}</span></div>`;
     L.marker([a.lat,a.lon],{icon:L.divIcon({className:"",html,iconSize:[32,32],iconAnchor:[16,30]})}).addTo(map).bindPopup(s.isHotel?popupHotel(a):popupPoi(a,s)); pts.push([a.lat,a.lon]); });
   if(pts.length) map.fitBounds(pts,{padding:[48,48]});
-  renderMapActions(p); setTimeout(()=>map.invalidateSize(),120); }
+  renderMapActions(p); renderVideo(); setTimeout(()=>map.invalidateSize(),120); }
 
 function popupPoi(a,s){ const img=commons(a.img);
   return `<div class="pop">${img?`<img src="${img}" alt="${a.name}" onerror="this.style.display='none'">`:""}
     <h4>${s.n}. ${a.name}</h4>${ratingLine(a)}<p class="pm">${a.price_hours||a.blurb||""}</p>
     <div class="pl">${a.naver?`<a href="${a.naver}" target="_blank" rel="noopener">네이버</a>`:""}${a.official?`<a href="${a.official}" target="_blank" rel="noopener">예매</a>`:""}<a href="${kakaoTo(a)}" target="_blank" rel="noopener">🚕</a></div></div>`; }
-function popupHotel(h){ return `<div class="pop"><h4>🏨 ${h.name}</h4>${ratingLine(h)}<p class="pm">${h.price_range||""}</p>
+function popupHotel(h){ return `<div class="pop"><h4>🏨 ${h.name}</h4>${ratingLine(h)}${h.pool?`<p class="pm">🏊 ${h.pool}</p>`:""}<p class="pm">${h.price_range||""}</p>
     <div class="pl">${h.naver_map?`<a href="${h.naver_map}" target="_blank" rel="noopener">네이버</a>`:""}${h.booking?`<a href="${h.booking}" target="_blank" rel="noopener">예약</a>`:""}${h.phone?`<a href="tel:${h.phone}">전화</a>`:""}<a href="${kakaoTo(h)}" target="_blank" rel="noopener">🚕</a></div></div>`; }
 
 function gmapsDir(stops){ const c=stops.map(s=>place(s.ref)).filter(x=>x&&x.lat); if(c.length<2) return null;
@@ -125,14 +152,17 @@ function restCard(r){ if(!r) return "";
   return `<div class="rest"><div class="rest-nm">${r.name}${r.category?` <span class="rest-cat">${r.category}</span>`:""}</div>
     ${ratingLine(r)}${r.menu?`<div class="rest-mn">${r.menu}${r.price?` · ${r.price}`:""}</div>`:""}
     ${r.kid_note?`<div class="rest-kid">👶 ${r.kid_note}</div>`:""}${r.wait?`<div class="rest-wt">⏱️ ${r.wait}</div>`:""}
-    <div class="lnks">${r.naver?`<a class="lnk" href="${r.naver}" target="_blank" rel="noopener">네이버</a>`:""}${r.phone?`<a class="lnk" href="tel:${r.phone}">📞 ${r.phone}</a>`:""}<a class="lnk" href="${kakaoTo(r)}" target="_blank" rel="noopener">🚕</a></div></div>`; }
+    <div class="lnks">${r.naver?`<a class="lnk" href="${r.naver}" target="_blank" rel="noopener">네이버</a>`:""}${r.phone?`<a class="lnk" href="tel:${r.phone}">📞 ${r.phone}</a>`:""}<a class="lnk" href="${kakaoTo(r)}" target="_blank" rel="noopener">🚕</a></div>
+    ${reviewLinks(r.name,"food")}</div>`; }
 function mealBlock(mm){ return `<div class="meal"><div class="meal-slot">🍽️ ${mm.slot} <span class="meal-near">${mm.near} 근처</span></div>${mm.candidates.map(id=>restCard(S.rest[id])).join("")}</div>`; }
 
 function renderSide(p){ const el=$("#side"); el.innerHTML="";
   const h=S.hotels[p.base_hotel];
   if(h) el.insertAdjacentHTML("beforeend",`<div class="card hotel"><div class="hd">🏨 베이스 숙소 · 2박</div>
-    <div class="in"><div class="grow"><p class="nm">${h.name}</p>${ratingLine(h)}<p class="meta">${h.family_note||""}</p><p class="price">${h.price_range||""}</p>
-    <div class="lnks">${h.naver_map?`<a class="lnk" href="${h.naver_map}" target="_blank" rel="noopener">네이버 지도</a>`:""}${h.booking?`<a class="lnk" href="${h.booking}" target="_blank" rel="noopener">예약</a>`:""}${h.phone?`<a class="lnk" href="tel:${h.phone}">📞 ${h.phone}</a>`:""}<a class="lnk" href="${kakaoTo(h)}" target="_blank" rel="noopener">🚕 카카오T</a></div></div></div></div>`);
+    <div class="in"><div class="grow"><p class="nm">${h.name}</p>${ratingLine(h)}${h.pool?`<p class="pool">🏊 ${h.pool}</p>`:""}<p class="meta">${h.family_note||""}</p><p class="price">${h.price_range||""}</p>
+    <div class="lnks">${h.naver_map?`<a class="lnk" href="${h.naver_map}" target="_blank" rel="noopener">네이버 지도</a>`:""}${h.booking?`<a class="lnk" href="${h.booking}" target="_blank" rel="noopener">예약</a>`:""}${h.phone?`<a class="lnk" href="tel:${h.phone}">📞 ${h.phone}</a>`:""}<a class="lnk" href="${kakaoTo(h)}" target="_blank" rel="noopener">🚕 카카오T</a></div>
+    ${reviewLinks(h.name,"hotel")}</div></div></div>`);
+  el.insertAdjacentHTML("beforeend",bookingCard());
   if(p.decisions&&p.decisions.length) el.insertAdjacentHTML("beforeend",`<div class="card deck"><div class="deck-hd">✅ 결정 체크리스트 <span class="deck-sub">배우자 컨펌용</span></div>
     ${p.decisions.map((x,i)=>{const k=`chk_${S.city.id}_${p.id}_${i}`;return `<label class="deci"><input type="checkbox" data-k="${k}" ${localStorage.getItem(k)?"checked":""}><span><b>${x.label}</b><em>${x.note||""}</em></span></label>`;}).join("")}</div>`);
   const ct=S.city.city_tour;
@@ -147,7 +177,7 @@ function renderSide(p){ const el=$("#side"); el.innerHTML="";
         ${img?`<img class="thumb" src="${img}" alt="${a.name}" onerror="this.style.display='none'">`:""}
         <div class="body"><div class="nmrow">${s.time?`<span class="t">${s.time}</span>`:""}<span class="nm">${a.name}</span>${s.optional?'<span class="lnk opt">선택</span>':''}</div>
         ${ratingLine(a)}${s.note?`<div class="no">${s.note}</div>`:""}
-        <div class="lnks">${(a.naver||a.naver_map)?`<a class="lnk" href="${a.naver||a.naver_map}" target="_blank" rel="noopener">네이버</a>`:""}${a.official?`<a class="lnk" href="${a.official}" target="_blank" rel="noopener">예매</a>`:""}</div></div></div>`;
+        <div class="lnks">${(a.naver||a.naver_map)?`<a class="lnk" href="${a.naver||a.naver_map}" target="_blank" rel="noopener">네이버</a>`:""}${a.official?`<a class="lnk" href="${a.official}" target="_blank" rel="noopener">예매</a>`:""}</div>${!isH?reviewLinks(a.name,"spot"):""}</div></div>`;
       if(i<d.stops.length-1){ const b=place(d.stops[i+1].ref), lg=leg(a,b);
         if(lg) rows+=`<div class="leg"><span class="lg-ic">${lg.icon}</span><span class="lg-tx">${lg.mode} · 약 ${lg.mins}분${lg.cost?` · ₩${won(lg.cost)}`:" · 무료"}<span class="lg-no">${lg.note||""}</span></span>${lg.link?`<a class="lg-lk" href="${lg.link}" target="_blank" rel="noopener">${lg.linklabel}</a>`:""}</div>`; }
       rows+=mealsAfter(i);
@@ -155,7 +185,8 @@ function renderSide(p){ const el=$("#side"); el.innerHTML="";
     el.insertAdjacentHTML("beforeend",`<div class="card day-block"><div class="day-hd" style="background:${col}"><h3>${d.day}일차 · ${d.label||""}</h3>${g?`<a class="zone" href="${g}" target="_blank" rel="noopener">🧭 길찾기</a>`:""}</div><div class="day-body">${rows}</div></div>`);
   });
   if(p.highlights&&p.highlights.length) el.insertAdjacentHTML("beforeend",`<div class="card hilite"><div class="hl-hd">✨ 이 여행의 하이라이트</div>${p.highlights.map(x=>`<div class="hl"><b>${x.name}</b> — ${x.blurb}</div>`).join("")}</div>`);
-  el.querySelectorAll(".deci input").forEach(cb=>cb.onchange=()=>{ cb.checked?localStorage.setItem(cb.dataset.k,"1"):localStorage.removeItem(cb.dataset.k); }); }
+  el.insertAdjacentHTML("beforeend",packingCard());
+  el.querySelectorAll("input[data-k]").forEach(cb=>cb.onchange=()=>{ cb.checked?localStorage.setItem(cb.dataset.k,"1"):localStorage.removeItem(cb.dataset.k); }); }
 function numFor(p,day,idx){ let n=0; for(const d of p.days){ for(let i=0;i<d.stops.length;i++){ if(!d.stops[i].ref.startsWith("hotel:")) n++; if(d===day&&i===idx) return n; } } return n; }
 
 function renderCost(p){ const el=$("#cost"); if(!p.cost||!p.cost.length){ el.innerHTML=""; return; }

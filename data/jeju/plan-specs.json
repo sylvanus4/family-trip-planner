@@ -1,7 +1,7 @@
 {
   "meta": {
     "region": "제주",
-    "budget": 3000000,
+    "budget": 4000000,
     "intercity": {
       "cat": "항공 왕복",
       "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
@@ -12,7 +12,8 @@
     "misc": 100000,
     "local": 150000,
     "book_note": "항공권+렌터카 조기 예약(성수기 D-30 전후)",
-    "local_note": "렌터카 2일 or 구간별 택시/버스"
+    "local_note": "렌터카 2일 or 구간별 택시/버스",
+    "home_transfer": 110000
   },
   "plans": [
     {
@@ -20,7 +21,7 @@
       "short": "제주 클래식",
       "title": "제주 2박3일 · 동서 하이라이트",
       "subtitle": "성산·섭지·아쿠아플라넷 동부 + 만장굴·에코랜드 — 제주 처음이면 이 코스 · 렌터카 추천",
-      "base_hotel": "sonobel-jeju",
+      "base_hotel": "grand-hyatt-jeju",
       "chips": [
         "기본 추천",
         "동부 핵심",
@@ -37,7 +38,7 @@
               "note": "제주 도착·렌터카 수령"
             },
             {
-              "ref": "hotel:sonobel-jeju",
+              "ref": "hotel:grand-hyatt-jeju",
               "time": "13:00",
               "note": "함덕 체크인·짐"
             },
@@ -97,7 +98,7 @@
       "short": "서부 자연",
       "title": "제주 2박3일 · 서부 자연·꽃",
       "subtitle": "협재·한림공원·오설록·카멜리아힐 — 서부 초록과 바다 중심",
-      "base_hotel": "maison-glad-jeju",
+      "base_hotel": "parnas-jeju",
       "chips": [
         "서부 코스",
         "꽃·차밭",
@@ -114,7 +115,7 @@
               "note": "도착·렌터카"
             },
             {
-              "ref": "hotel:maison-glad-jeju",
+              "ref": "hotel:parnas-jeju",
               "time": "12:30",
               "note": "제주시 체크인"
             },
@@ -169,7 +170,7 @@
       "short": "동부 바다",
       "title": "제주 2박3일 · 동부 바다·자연",
       "subtitle": "함덕·성산·섭지·만장굴 — 동부 에메랄드 바다와 자연",
-      "base_hotel": "sonobel-jeju",
+      "base_hotel": "haevichi-jeju",
       "chips": [
         "동부 코스",
         "바다·동굴",
@@ -191,7 +192,7 @@
               "note": "함덕 물놀이"
             },
             {
-              "ref": "hotel:sonobel-jeju",
+              "ref": "hotel:haevichi-jeju",
               "time": "17:00",
               "note": "체크인"
             }
@@ -241,7 +242,7 @@
       "short": "우천·실내",
       "title": "제주 2박3일 · 실내 위주",
       "subtitle": "비·바람 잦은 제주 대비 — 아쿠아플라넷·항공우주·테디베어·오설록 실내 중심",
-      "base_hotel": "maison-glad-jeju",
+      "base_hotel": "grand-hyatt-jeju",
       "chips": [
         "날씨 무관",
         "실내 많음",
@@ -263,7 +264,7 @@
               "note": "실내 아쿠아리움"
             },
             {
-              "ref": "hotel:maison-glad-jeju",
+              "ref": "hotel:grand-hyatt-jeju",
               "time": "18:00",
               "note": "체크인·수영장"
             }
@@ -308,7 +309,7 @@
       "short": "저예산 알뜰",
       "title": "제주 2박3일 · 알뜰 코스",
       "subtitle": "무료·저렴 명소 중심 — 함덕·섭지·성산·천지연·만장굴",
-      "base_hotel": "ebenezer-hamdeok",
+      "base_hotel": "lotte-jeju",
       "chips": [
         "가성비",
         "무료·저렴 스팟",
@@ -325,7 +326,7 @@
               "note": "도착·렌터카"
             },
             {
-              "ref": "hotel:ebenezer-hamdeok",
+              "ref": "hotel:lotte-jeju",
               "time": "12:30",
               "note": "함덕 도보 2분"
             },
@@ -457,7 +458,7 @@
       "short": "테마·액티비티",
       "title": "제주 2박3일 · 테마파크·액티비티",
       "subtitle": "에코랜드·9.81파크·한림공원·아쿠아플라넷 — 신나게 노는 코스",
-      "base_hotel": "maison-glad-jeju",
+      "base_hotel": "shinhwa-landing-jeju",
       "chips": [
         "액티브",
         "카트 레이싱",
@@ -474,7 +475,7 @@
               "note": "도착·렌터카"
             },
             {
-              "ref": "hotel:maison-glad-jeju",
+              "ref": "hotel:shinhwa-landing-jeju",
               "time": "12:30",
               "note": "체크인"
             },
@@ -524,7 +525,7 @@
       "short": "바다·물놀이",
       "title": "제주 2박3일 · 바다·물놀이",
       "subtitle": "함덕·협재·중문 — 제주의 예쁜 해변만 골라 물놀이",
-      "base_hotel": "ebenezer-hamdeok",
+      "base_hotel": "lotte-jeju",
       "chips": [
         "해변 3곳",
         "물놀이",
@@ -546,7 +547,7 @@
               "note": "함덕 물놀이"
             },
             {
-              "ref": "hotel:ebenezer-hamdeok",
+              "ref": "hotel:lotte-jeju",
               "time": "17:00",
               "note": "체크인"
             }
@@ -658,7 +659,7 @@
       "short": "자연 학습",
       "title": "제주 2박3일 · 자연 학습",
       "subtitle": "만장굴·성산·오설록·카멜리아힐 — 놀며 배우는 제주 자연",
-      "base_hotel": "oriental-jeju",
+      "base_hotel": "grand-hyatt-jeju",
       "chips": [
         "자연·학습",
         "동굴·분화구",
@@ -675,7 +676,7 @@
               "note": "도착·렌터카"
             },
             {
-              "ref": "hotel:oriental-jeju",
+              "ref": "hotel:grand-hyatt-jeju",
               "time": "12:30",
               "note": "제주시 체크인"
             },
@@ -730,7 +731,7 @@
       "short": "우도 섬",
       "title": "제주 2박3일 · 우도 섬 여행",
       "subtitle": "성산항에서 배 타고 우도 한 바퀴 + 동부 바다·동굴",
-      "base_hotel": "sonobel-jeju",
+      "base_hotel": "haevichi-jeju",
       "chips": [
         "배 타고 섬",
         "우도 전기차",
@@ -748,7 +749,7 @@
               "note": "도착·렌터카"
             },
             {
-              "ref": "hotel:sonobel-jeju",
+              "ref": "hotel:haevichi-jeju",
               "time": "13:00",
               "note": "함덕 체크인"
             },
@@ -798,7 +799,7 @@
       "short": "해안 드라이브",
       "title": "제주 2박3일 · 해안 드라이브 & 가파도",
       "subtitle": "애월 해안도로 드라이브 + 가파도 배 + 서부 바다",
-      "base_hotel": "maison-glad-jeju",
+      "base_hotel": "grand-hyatt-jeju",
       "chips": [
         "드라이브 경치",
         "가파도 배",
@@ -816,7 +817,7 @@
               "note": "도착·렌터카"
             },
             {
-              "ref": "hotel:maison-glad-jeju",
+              "ref": "hotel:grand-hyatt-jeju",
               "time": "12:30",
               "note": "제주시 체크인"
             },

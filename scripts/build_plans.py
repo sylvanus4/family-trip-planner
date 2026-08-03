@@ -51,6 +51,7 @@ def main():
                 if a and a.get("price4",0)>0: paid_sum+=a["price4"]; paid_names.append(a["name"])
         hotel=ho.get(p["base_hotel"],{}); nightly=hotel.get("nightly",220000); lodging=nightly*2
         cost=[{**m["intercity"]},
+          *([{"cat":"집↔출발지 이동","detail":"잠실↔수서/공항 벤 왕복(4인+짐)","amount":m["home_transfer"],"type":"추정"}] if m.get("home_transfer") else []),
           {"cat":"현지 교통","detail":m.get("local_note","지하철·택시·버스 3일(구간별 표시)"),"amount":m["local"],"type":"추정"},
           {"cat":"숙박 2박","detail":f"{hotel.get('name','')} (1박 {won(nightly)}원)","amount":lodging,"type":"추정"},
           {"cat":"입장·체험","detail":", ".join(paid_names) or "무료 위주","amount":paid_sum,"type":"추정"},

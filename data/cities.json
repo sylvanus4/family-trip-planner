@@ -1,33 +1,159 @@
 {
   "cities": [
     {
-      "id": "busan", "name": "부산", "emoji": "🌊",
+      "id": "busan",
+      "name": "부산",
+      "emoji": "🌊",
       "arrival": "SRT 수서 출발 · 약 2시간 50분",
       "dir": "data/busan",
       "arrival_ref": "busan-station",
-      "transport": { "has_subway": true, "subway4": 4800, "taxi_base": 4800, "taxi_per_km": 900 },
-      "cost": { "intercity": 311200, "intercity_label": "SRT 왕복", "food": 420000, "misc": 100000, "local": 80000, "budget": 3000000 },
+      "intro_video": "assets/video/intro-srt.mp4",
+      "feel_video": "assets/video/trip-feel.mp4",
+      "transport": {
+        "has_subway": true,
+        "subway4": 4800,
+        "taxi_base": 4800,
+        "taxi_per_km": 900
+      },
+      "cost": {
+        "intercity": 311200,
+        "intercity_label": "SRT 왕복",
+        "food": 420000,
+        "misc": 100000,
+        "local": 80000,
+        "home_transfer": 36000,
+        "budget": 4000000
+      },
+      "home_transfer": {
+        "label": "집(잠실 아시아선수촌) ↔ 수서역 벤",
+        "note": "카카오 벤티/대형택시로 약 15분, 편도 약 18,000원(4인+짐 기준, 왕복 약 36,000원). SRT는 수서역에서 바로 탑승.",
+        "amount": 36000,
+        "book": [
+          {
+            "label": "카카오 T 벤티 예약",
+            "url": "https://www.kakaomobility.com/"
+          }
+        ]
+      },
+      "booking": [
+        {
+          "label": "SRT 예매 (SR 공식)",
+          "url": "https://etk.srail.kr/"
+        },
+        {
+          "label": "코레일톡(KTX 대안)",
+          "url": "https://www.letskorail.com/"
+        }
+      ],
       "city_tour": {
         "name": "부산 시티투어버스",
         "note": "레드(부산역↔해운대)·그린(부산역↔태종대)·오렌지(부산역↔다대포) 1일권 공용 hop-on/hop-off. 뚜벅이 가족이 원도심·태종대를 묶는 날 택시 대신 추천. 야경투어 성인 20,000·소인 10,000원.",
         "url": "https://citytourbusan.com/",
         "booking": "https://citytourbusan.com/ko/03vr/01.php",
         "phone": "051-464-9898"
+      },
+      "packing": {
+        "common": [
+          "아이 여벌옷·속옷 넉넉히",
+          "세면도구·칫솔",
+          "상비약(해열제·밴드·소화제·멀미약)",
+          "자외선차단제·모자·선글라스",
+          "충전기·보조배터리",
+          "물티슈·손소독제",
+          "간식·물병",
+          "어린이 신분 증빙(등본 또는 여권 사진, SRT 어린이 운임용)",
+          "우산·우비(8월 말 소나기 대비)",
+          "카메라"
+        ],
+        "specific": [
+          "수영복·래시가드(해수욕장)",
+          "비치타월·물놀이용품·튜브",
+          "아쿠아슈즈",
+          "많이 걷는 날용 편한 운동화",
+          "광안리 야경용 얇은 겉옷"
+        ]
       }
     },
     {
-      "id": "jeju", "name": "제주", "emoji": "🍊",
+      "id": "jeju",
+      "name": "제주",
+      "emoji": "🍊",
       "arrival": "김포/김해 → 제주 항공 · 약 1시간 · 섬 안은 렌터카 추천",
       "dir": "data/jeju",
       "arrival_ref": "airport",
-      "transport": { "has_subway": false, "taxi_base": 4800, "taxi_per_km": 800, "bus4": 4600 },
-      "cost": { "intercity": 360000, "intercity_label": "항공 왕복", "food": 450000, "misc": 100000, "local": 150000, "budget": 3000000 },
+      "intro_video": "assets/video/intro-flight.mp4",
+      "feel_video": "assets/video/trip-feel.mp4",
+      "transport": {
+        "has_subway": false,
+        "taxi_base": 4800,
+        "taxi_per_km": 800,
+        "bus4": 4600
+      },
+      "cost": {
+        "intercity": 360000,
+        "intercity_label": "항공 왕복",
+        "food": 450000,
+        "misc": 100000,
+        "local": 150000,
+        "home_transfer": 110000,
+        "budget": 4000000
+      },
+      "home_transfer": {
+        "label": "집(잠실 아시아선수촌) ↔ 김포공항 벤",
+        "note": "카카오 벤티/공항 대형택시로 약 45분, 편도 약 55,000원(4인+짐 기준, 왕복 약 110,000원). 공항리무진(6706번 등)은 더 저렴하나 짐·아이 동반엔 벤이 편함.",
+        "amount": 110000,
+        "book": [
+          {
+            "label": "카카오 T 벤티 예약",
+            "url": "https://www.kakaomobility.com/"
+          }
+        ]
+      },
+      "booking": [
+        {
+          "label": "네이버 항공권(비교)",
+          "url": "https://flight.naver.com/"
+        },
+        {
+          "label": "대한항공",
+          "url": "https://www.koreanair.com/"
+        },
+        {
+          "label": "제주항공",
+          "url": "https://www.jejuair.net/"
+        },
+        {
+          "label": "티웨이항공",
+          "url": "https://www.twayair.com/"
+        }
+      ],
       "city_tour": {
         "name": "제주 이동 안내 (렌터카/버스)",
         "note": "제주는 지하철이 없어 렌터카가 가장 편합니다(공항 렌터카 사전예약 권장). 우도·가파도는 성산항·운진항에서 배로 들어갑니다. 대중교통 버스는 저렴하나 배차가 길어 아이 동반엔 렌터카가 현실적입니다.",
         "url": "https://www.jejuair.net",
         "booking": null,
         "phone": null
+      },
+      "packing": {
+        "common": [
+          "아이 여벌옷·속옷 넉넉히",
+          "세면도구·칫솔",
+          "상비약(해열제·밴드·소화제)",
+          "자외선차단제·모자·선글라스",
+          "충전기·보조배터리",
+          "물티슈·손소독제",
+          "간식·물병",
+          "카메라",
+          "우산·바람막이(제주는 바람·소나기)"
+        ],
+        "specific": [
+          "운전면허증(렌터카 필수)·결제 카드",
+          "카시트 예약 확인(아이용)",
+          "멀미약(우도·가파도 배편)",
+          "수영복·물놀이용품(협재·함덕)",
+          "성산일출봉용 편한 트레킹화",
+          "얇은 긴팔(실내·해안 바람)"
+        ]
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "meta": {
     "region": "부산",
-    "budget": 3000000,
+    "budget": 4000000,
     "intercity": {
       "cat": "SRT 왕복",
       "detail": "수서↔부산 일반실 어른2+어린이2",
@@ -12,7 +12,8 @@
     "misc": 100000,
     "local": 80000,
     "book_note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)",
-    "local_note": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)"
+    "local_note": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+    "home_transfer": 36000
   },
   "plans": [
     {
@@ -20,7 +21,7 @@
       "short": "해운대 클래식",
       "title": "부산 2박3일 · 해운대 클래식",
       "subtitle": "숙소를 해운대에 고정해 짐 이동 0회 · 하루 2~3곳 · 8월 말 · SRT 수서 출발",
-      "base_hotel": "w-residence",
+      "base_hotel": "grand-josun-busan",
       "kml": "data/busan/route.kml",
       "chips": [
         "기본 추천",
@@ -38,7 +39,7 @@
               "note": "SRT 수서→부산, 해운대로 이동"
             },
             {
-              "ref": "hotel:w-residence",
+              "ref": "hotel:grand-josun-busan",
               "time": "12:00",
               "note": "짐 보관·점심(체크인 전)"
             },
@@ -99,7 +100,7 @@
       "short": "블로거 인기",
       "title": "부산 2박3일 · 블로거 인기 코스",
       "subtitle": "여행 블로거 실제 후기 반영 — 블루라인파크·요트투어·어묵체험·모래놀이 중심",
-      "base_hotel": "seacloud",
+      "base_hotel": "paradise-busan",
       "chips": [
         "아이 만족 TOP",
         "요트·해변열차",
@@ -121,7 +122,7 @@
               "note": "아이 만족 1위 캡슐·해변열차"
             },
             {
-              "ref": "hotel:seacloud",
+              "ref": "hotel:paradise-busan",
               "time": "14:00",
               "note": "해변 도보 3분 체크인"
             },
@@ -171,7 +172,7 @@
       "short": "우천·폭염 대비",
       "title": "부산 2박3일 · 실내 위주",
       "subtitle": "8월 말 소나기·폭염에도 안전 — 아쿠아리움·과학관·아이스링크·전망대 중심",
-      "base_hotel": "newsiz",
+      "base_hotel": "signiel-busan",
       "chips": [
         "날씨 무관",
         "실내 비중 높음",
@@ -198,7 +199,7 @@
               "note": "아이스링크·아쿠아필드"
             },
             {
-              "ref": "hotel:newsiz",
+              "ref": "hotel:signiel-busan",
               "time": "19:00",
               "note": "체크인·인피니티풀"
             }
@@ -243,7 +244,7 @@
       "short": "저예산 알뜰",
       "title": "부산 2박3일 · 알뜰 코스",
       "subtitle": "무료·저렴 위주로 예산을 아끼는 코스 — 바다·마을·전망 무료 스팟 중심",
-      "base_hotel": "lecollective",
+      "base_hotel": "lotte-busan",
       "chips": [
         "가성비",
         "무료 스팟 많음",
@@ -260,7 +261,7 @@
               "note": "SRT 도착→해운대"
             },
             {
-              "ref": "hotel:lecollective",
+              "ref": "hotel:lotte-busan",
               "time": "12:30",
               "note": "짐 보관·점심"
             },
@@ -316,7 +317,7 @@
       "short": "프리미엄 여유",
       "title": "부산 2박3일 · 프리미엄 여유",
       "subtitle": "전망대·요트·놀이공원까지 알차게, 여유 있게 즐기는 풀코스",
-      "base_hotel": "pleiadeblanc",
+      "base_hotel": "ananti-hilton-busan",
       "chips": [
         "풀코스",
         "전망대·요트",
@@ -333,7 +334,7 @@
               "note": "SRT 도착→해운대"
             },
             {
-              "ref": "hotel:pleiadeblanc",
+              "ref": "hotel:ananti-hilton-busan",
               "time": "12:00",
               "note": "체크인·점심"
             },
@@ -394,7 +395,7 @@
       "short": "원도심 문화",
       "title": "부산 2박3일 · 원도심 문화",
       "subtitle": "감천문화마을 등 원도심 감성 + 해운대 바다를 함께",
-      "base_hotel": "w-residence",
+      "base_hotel": "grand-josun-busan",
       "chips": [
         "감천마을",
         "포토·감성",
@@ -416,7 +417,7 @@
               "note": "컬러풀 골목 산책"
             },
             {
-              "ref": "hotel:w-residence",
+              "ref": "hotel:grand-josun-busan",
               "time": "16:00",
               "note": "해운대 체크인"
             }
@@ -461,7 +462,7 @@
       "short": "바다 액티비티",
       "title": "부산 2박3일 · 바다 액티비티",
       "subtitle": "해변열차·요트·해수욕 — 바다에서 신나게 노는 코스",
-      "base_hotel": "seacloud",
+      "base_hotel": "paradise-busan",
       "chips": [
         "요트·해변열차",
         "물놀이",
@@ -483,7 +484,7 @@
               "note": "스카이캡슐·해변열차"
             },
             {
-              "ref": "hotel:seacloud",
+              "ref": "hotel:paradise-busan",
               "time": "14:00",
               "note": "체크인"
             },
@@ -533,7 +534,7 @@
       "short": "체험 학습",
       "title": "부산 2박3일 · 체험 학습",
       "subtitle": "과학관·아쿠아리움·어묵 체험 — 놀면서 배우는 코스",
-      "base_hotel": "newsiz",
+      "base_hotel": "westin-josun-busan",
       "chips": [
         "체험·학습",
         "과학관·어묵",
@@ -555,7 +556,7 @@
               "note": "해양생물 학습"
             },
             {
-              "ref": "hotel:newsiz",
+              "ref": "hotel:westin-josun-busan",
               "time": "17:00",
               "note": "체크인"
             }
@@ -600,7 +601,7 @@
       "short": "느긋 힐링",
       "title": "부산 2박3일 · 느긋 힐링",
       "subtitle": "하루 2곳만 — 아이도 어른도 지치지 않는 여유 코스",
-      "base_hotel": "lecollective",
+      "base_hotel": "grand-josun-busan",
       "chips": [
         "적은 이동",
         "여유·휴식",
@@ -617,7 +618,7 @@
               "note": "느긋하게 도착"
             },
             {
-              "ref": "hotel:lecollective",
+              "ref": "hotel:grand-josun-busan",
               "time": "13:30",
               "note": "체크인·점심"
             },
@@ -667,7 +668,7 @@
       "short": "놀이공원 집중",
       "title": "부산 2박3일 · 놀이공원 집중",
       "subtitle": "롯데월드를 하루 통째로 + 아쿠아리움·블루라인파크",
-      "base_hotel": "w-residence",
+      "base_hotel": "paradise-busan",
       "chips": [
         "롯데월드 종일",
         "놀이기구",
@@ -684,7 +685,7 @@
               "note": "도착→해운대"
             },
             {
-              "ref": "hotel:w-residence",
+              "ref": "hotel:paradise-busan",
               "time": "12:30",
               "note": "체크인"
             },
@@ -734,7 +735,7 @@
       "short": "유람선·해상",
       "title": "부산 2박3일 · 유람선 & 해상 케이블카",
       "subtitle": "태종대 다누비열차·유람선, 오륙도 스카이워크, 송도 해상케이블카 — 바다 위에서 노는 코스",
-      "base_hotel": "seacloud",
+      "base_hotel": "westin-josun-busan",
       "chips": [
         "배·케이블카",
         "해상 절경",
@@ -752,7 +753,7 @@
               "note": "도착→해운대"
             },
             {
-              "ref": "hotel:seacloud",
+              "ref": "hotel:westin-josun-busan",
               "time": "12:00",
               "note": "체크인"
             },
@@ -802,7 +803,7 @@
       "short": "해안 드라이브",
       "title": "부산 2박3일 · 해안 드라이브",
       "subtitle": "이기대 해안 드라이브 + 기장 해동용궁사 + 블루라인파크 + 송도 케이블카",
-      "base_hotel": "w-residence",
+      "base_hotel": "ananti-hilton-busan",
       "chips": [
         "드라이브 경치",
         "해안도로",
@@ -820,7 +821,7 @@
               "note": "도착→해운대"
             },
             {
-              "ref": "hotel:w-residence",
+              "ref": "hotel:ananti-hilton-busan",
               "time": "12:00",
               "note": "체크인"
             },
