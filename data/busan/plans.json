@@ -54,9 +54,9 @@
               "after": 2,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "haeundae-choil6-gogi",
+                "mipo-hoe",
+                "haeundae-marine-donkatsu"
               ]
             },
             {
@@ -66,7 +66,7 @@
               "candidates": [
                 "gwangalli-jogae",
                 "gwangalli-donkatsu",
-                "gwangalli-tteokbokki"
+                "minlak-hoe"
               ]
             }
           ]
@@ -92,8 +92,8 @@
               "after": -1,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
               ]
             },
             {
@@ -101,9 +101,9 @@
               "after": 1,
               "near": "롯데월드 어드벤처 부산",
               "candidates": [
-                "gijang-handasot",
-                "gijang-jangeo",
-                "gijang-cafe220"
+                "waveon",
+                "haeundae-choil6-gogi",
+                "haeundae-hotteok"
               ]
             },
             {
@@ -111,9 +111,9 @@
               "after": 1,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "haeundae-gelatteok",
+                "geumsu-bokguk",
+                "haeundae-amso"
               ]
             }
           ]
@@ -139,8 +139,8 @@
               "after": -1,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "gwangalli-donkatsu",
+                "gwangalli-jogae"
               ]
             },
             {
@@ -148,9 +148,9 @@
               "after": 0,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "molle-brunch",
+                "gijang-handasot",
+                "gijang-jangeo"
               ]
             }
           ]
@@ -214,30 +214,30 @@
           "note": "현재 예상 총액 2,164,200원 · 예산 4,000,000원"
         },
         {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
           "label": "아쿠아리움 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
           "label": "롯데월드 종일권 온라인 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "해운대 해수욕장",
-          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+          "name": "광안리 해수욕장",
+          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
           "name": "SEA LIFE 부산아쿠아리움",
           "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
-        },
-        {
-          "name": "롯데월드 어드벤처 부산",
-          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
         }
       ],
       "kml": "data/busan/route.kml",
@@ -297,9 +297,9 @@
               "after": 1,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-choil6-gogi",
                 "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "haeundae-hotteok",
+                "haeundae-amso"
               ]
             },
             {
@@ -307,9 +307,9 @@
               "after": 3,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki",
-                "gwangalli-donkatsu"
+                "geumsu-bokguk",
+                "haeundae-choil6-gogi",
+                "mipo-hoe"
               ]
             }
           ]
@@ -335,8 +335,8 @@
               "after": -1,
               "near": "파라다이스 호텔 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "gwangalli-tteokbokki",
+                "minlak-hoe"
               ]
             },
             {
@@ -344,9 +344,9 @@
               "after": 0,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "haeundae-choil6-gogi",
                 "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "gwangalli-jogae",
+                "songjeong-gukbap"
               ]
             },
             {
@@ -354,9 +354,9 @@
               "after": 1,
               "near": "광안리 요트투어",
               "candidates": [
-                "gwangalli-jogae",
                 "gwangalli-donkatsu",
-                "seomyeon-yeonui"
+                "haeundae-amso",
+                "geumsu-bokguk"
               ]
             }
           ]
@@ -382,8 +382,8 @@
               "after": -1,
               "near": "파라다이스 호텔 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "gwangalli-jogae",
+                "songjeong-gukbap"
               ]
             },
             {
@@ -391,9 +391,9 @@
               "after": 0,
               "near": "삼진어묵 체험역사관",
               "candidates": [
-                "yeongdo-momos",
-                "yeongdo-samjin",
-                "yeongdo-haenyeochon"
+                "sinbalwon",
+                "ssangdungi-gukbap",
+                "liberty-jeonpo"
               ]
             }
           ]
@@ -457,34 +457,34 @@
           "note": "현재 예상 총액 2,204,200원 · 예산 4,000,000원"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
-          "label": "광안리 요트투어 사전예약",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
           "label": "삼진어묵 만들기 체험 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
           "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "광안리 요트투어 사전예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "해운대 해수욕장",
-          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+          "name": "삼진어묵 체험역사관",
+          "blurb": "직접 어묵 만들고 시식. 블로거 아이 만족 상위 체험."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
           "name": "SEA LIFE 부산아쿠아리움",
           "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
-        },
-        {
-          "name": "광안리 요트투어",
-          "blurb": "블로거 다수가 '아이들이 여행 중 제일 재밌어함'으로 꼽은 체험. 광안대교 야경·드론쇼."
         }
       ],
       "kml": null,
@@ -544,9 +544,9 @@
               "after": 1,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "haeundae-gelatteok",
+                "haeundae-amso",
                 "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "mipo-hoe"
               ]
             },
             {
@@ -582,8 +582,8 @@
               "after": -1,
               "near": "시그니엘 부산",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-hotteok"
+                "gwangalli-tteokbokki",
+                "minlak-hoe"
               ]
             },
             {
@@ -591,9 +591,9 @@
               "after": 1,
               "near": "롯데월드 어드벤처 부산",
               "candidates": [
-                "gijang-handasot",
-                "gijang-jangeo",
-                "gijang-cafe220"
+                "daebyeon-daege",
+                "waveon",
+                "haeundae-choil6-gogi"
               ]
             },
             {
@@ -601,9 +601,9 @@
               "after": 1,
               "near": "시그니엘 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "mipo-hoe",
+                "haeundae-hotteok",
+                "geumsu-bokguk"
               ]
             }
           ]
@@ -629,8 +629,8 @@
               "after": -1,
               "near": "시그니엘 부산",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-hotteok"
+                "gwangalli-jogae",
+                "haeundae-choil6-gogi"
               ]
             },
             {
@@ -638,9 +638,9 @@
               "after": 0,
               "near": "부산엑스더스카이",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "gwangalli-donkatsu",
+                "songjeong-gukbap",
+                "molle-brunch"
               ]
             }
           ]
@@ -708,15 +708,15 @@
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "롯데월드 종일권 온라인 예매",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
           "label": "센텀 아이스링크/아쿠아필드 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
           "label": "엑스더스카이 전망대 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "롯데월드 종일권 온라인 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
@@ -726,12 +726,12 @@
           "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         },
         {
-          "name": "롯데월드 어드벤처 부산",
-          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
-        },
-        {
           "name": "신세계 센텀시티",
           "blurb": "아이스링크·아쿠아필드 등 실내 복합. 더운 날/비 오는 날 아이와 시간 보내기 좋음."
+        },
+        {
+          "name": "롯데월드 어드벤처 부산",
+          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
         }
       ],
       "kml": null,
@@ -792,9 +792,9 @@
               "after": 2,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "geumsu-bokguk",
+                "haeundae-amso",
+                "haeundae-hotteok"
               ]
             },
             {
@@ -804,7 +804,7 @@
               "candidates": [
                 "gwangalli-jogae",
                 "gwangalli-donkatsu",
-                "gwangalli-tteokbokki"
+                "minlak-hoe"
               ]
             }
           ]
@@ -830,8 +830,8 @@
               "after": -1,
               "near": "롯데호텔 부산",
               "candidates": [
-                "seomyeon-milmyeon",
-                "seomyeon-yeonui"
+                "gwangalli-jogae",
+                "gwangalli-donkatsu"
               ]
             },
             {
@@ -839,9 +839,9 @@
               "after": 1,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "haeundae-hotteok",
+                "haeundae-amso",
+                "haeundae-marine-donkatsu"
               ]
             },
             {
@@ -849,9 +849,9 @@
               "after": 1,
               "near": "롯데호텔 부산",
               "candidates": [
-                "gwangalli-jogae",
-                "gwangalli-donkatsu",
-                "gwangalli-tteokbokki"
+                "gaemi-jip",
+                "seomyeon-milmyeon",
+                "hapcheon-gukbap"
               ]
             }
           ]
@@ -877,8 +877,8 @@
               "after": -1,
               "near": "롯데호텔 부산",
               "candidates": [
-                "seomyeon-milmyeon",
-                "seomyeon-yeonui"
+                "gaemi-jip",
+                "hapcheon-gukbap"
               ]
             },
             {
@@ -886,9 +886,9 @@
               "after": 0,
               "near": "감천문화마을",
               "candidates": [
-                "nampo-gukbap",
-                "nampo-jagalchi",
-                "nampo-wandang"
+                "choryang-milmyeon",
+                "yeongdo-samjin",
+                "yeongdo-haenyeochon"
               ]
             }
           ]
@@ -958,16 +958,16 @@
       ],
       "highlights": [
         {
-          "name": "해운대 해수욕장",
-          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+          "name": "광안리 해수욕장",
+          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
         },
         {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
-          "name": "광안리 해수욕장",
-          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
         }
       ],
       "kml": null,
@@ -1027,9 +1027,9 @@
               "after": 2,
               "near": "부산엑스더스카이",
               "candidates": [
+                "haeundae-amso",
                 "haeundae-hotteok",
-                "haeundae-gelatteok",
-                "haeundae-choil6-gogi"
+                "geumsu-bokguk"
               ]
             },
             {
@@ -1037,9 +1037,9 @@
               "after": 3,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki",
-                "gwangalli-donkatsu"
+                "haeundae-gelatteok",
+                "haeundae-choil6-gogi",
+                "mipo-hoe"
               ]
             }
           ]
@@ -1065,8 +1065,8 @@
               "after": -1,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "gijang-jangeo",
-                "gijang-handasot"
+                "haeundae-amso",
+                "geumsu-bokguk"
               ]
             },
             {
@@ -1075,8 +1075,8 @@
               "near": "롯데월드 어드벤처 부산",
               "candidates": [
                 "gijang-cafe220",
-                "haeundae-choil6-gogi",
-                "haeundae-hotteok"
+                "songjeong-gukbap",
+                "daebyeon-daege"
               ]
             },
             {
@@ -1084,9 +1084,9 @@
               "after": 1,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "waveon",
+                "gijang-jangeo",
+                "gijang-handasot"
               ]
             }
           ]
@@ -1118,7 +1118,7 @@
               "after": -1,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "gijang-jangeo",
+                "daebyeon-daege",
                 "gijang-handasot"
               ]
             },
@@ -1127,9 +1127,9 @@
               "after": 1,
               "near": "광안리 요트투어",
               "candidates": [
-                "gwangalli-jogae",
-                "gwangalli-donkatsu",
-                "gwangalli-tteokbokki"
+                "geumsu-bokguk",
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
               ]
             }
           ]
@@ -1193,11 +1193,7 @@
           "note": "현재 예상 총액 2,400,200원 · 예산 4,000,000원"
         },
         {
-          "label": "롯데월드 종일권 온라인 예매",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
-          "label": "엑스더스카이 전망대 예매",
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
@@ -1205,22 +1201,26 @@
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "label": "엑스더스카이 전망대 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "롯데월드 종일권 온라인 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "해운대 해수욕장",
-          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
-        },
-        {
-          "name": "롯데월드 어드벤처 부산",
-          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
           "name": "광안리 요트투어",
           "blurb": "블로거 다수가 '아이들이 여행 중 제일 재밌어함'으로 꼽은 체험. 광안대교 야경·드론쇼."
+        },
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
         }
       ],
       "kml": null,
@@ -1275,9 +1275,9 @@
               "after": 1,
               "near": "감천문화마을",
               "candidates": [
-                "nampo-gukbap",
-                "nampo-jagalchi",
-                "nampo-wandang"
+                "liberty-jeonpo",
+                "gukje-hotteok",
+                "nampo-gukbap"
               ]
             },
             {
@@ -1286,8 +1286,8 @@
               "near": "그랜드 조선 부산",
               "candidates": [
                 "haeundae-gelatteok",
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "geumsu-bokguk",
+                "haeundae-amso"
               ]
             }
           ]
@@ -1313,8 +1313,8 @@
               "after": -1,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "songjeong-gukbap",
+                "haeundae-gelatteok"
               ]
             },
             {
@@ -1322,9 +1322,9 @@
               "after": 0,
               "near": "해운대 해수욕장",
               "candidates": [
+                "haeundae-hotteok",
                 "haeundae-choil6-gogi",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "mipo-hoe"
               ]
             },
             {
@@ -1332,9 +1332,9 @@
               "after": 1,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "gwangalli-donkatsu",
-                "gwangalli-jogae",
-                "gijang-handasot"
+                "geumsu-bokguk",
+                "haeundae-amso",
+                "haeundae-marine-donkatsu"
               ]
             }
           ]
@@ -1360,7 +1360,7 @@
               "after": -1,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-gelatteok",
+                "haeundae-amso",
                 "haeundae-hotteok"
               ]
             },
@@ -1369,9 +1369,9 @@
               "after": 0,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "songjeong-gukbap",
+                "gwangalli-tteokbokki",
+                "minlak-hoe"
               ]
             }
           ]
@@ -1435,26 +1435,26 @@
           "note": "현재 예상 총액 2,004,200원 · 예산 4,000,000원"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "label": "아쿠아리움 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "해운대 해수욕장",
-          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
           "name": "SEA LIFE 부산아쿠아리움",
           "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         },
         {
-          "name": "해운대 블루라인파크 (미포)",
-          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
         }
       ],
       "kml": null,
@@ -1514,9 +1514,9 @@
               "after": 1,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "molle-brunch",
+                "gijang-handasot",
+                "mipo-hoe"
               ]
             },
             {
@@ -1524,9 +1524,9 @@
               "after": 3,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki",
-                "gwangalli-donkatsu"
+                "haeundae-gelatteok",
+                "geumsu-bokguk",
+                "haeundae-amso"
               ]
             }
           ]
@@ -1553,7 +1553,7 @@
               "near": "파라다이스 호텔 부산",
               "candidates": [
                 "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "geumsu-bokguk"
               ]
             },
             {
@@ -1561,7 +1561,7 @@
               "after": 0,
               "near": "광안리 요트투어",
               "candidates": [
-                "gwangalli-jogae",
+                "minlak-hoe",
                 "gwangalli-donkatsu",
                 "gwangalli-tteokbokki"
               ]
@@ -1571,9 +1571,9 @@
               "after": 1,
               "near": "광안리 해수욕장",
               "candidates": [
+                "gwangalli-jogae",
                 "haeundae-marine-donkatsu",
-                "haeundae-choil6-gogi",
-                "seomyeon-yeonui"
+                "haeundae-amso"
               ]
             }
           ]
@@ -1599,8 +1599,8 @@
               "after": -1,
               "near": "파라다이스 호텔 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
               ]
             },
             {
@@ -1608,9 +1608,9 @@
               "after": 0,
               "near": "해동용궁사",
               "candidates": [
-                "gijang-cafe220",
-                "gijang-handasot",
-                "gijang-jangeo"
+                "gijang-jangeo",
+                "waveon",
+                "haeundae-amso"
               ]
             }
           ]
@@ -1674,26 +1674,26 @@
           "note": "현재 예상 총액 2,078,200원 · 예산 4,000,000원"
         },
         {
-          "label": "광안리 요트투어 사전예약",
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "label": "광안리 요트투어 사전예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "해운대 해수욕장",
-          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
-        },
-        {
-          "name": "광안리 요트투어",
-          "blurb": "블로거 다수가 '아이들이 여행 중 제일 재밌어함'으로 꼽은 체험. 광안대교 야경·드론쇼."
+          "name": "광안리 해수욕장",
+          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
         },
         {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "광안리 요트투어",
+          "blurb": "블로거 다수가 '아이들이 여행 중 제일 재밌어함'으로 꼽은 체험. 광안대교 야경·드론쇼."
         }
       ],
       "kml": null,
@@ -1748,9 +1748,9 @@
               "after": 1,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "songjeong-gukbap",
+                "molle-brunch",
+                "gijang-handasot"
               ]
             },
             {
@@ -1759,8 +1759,8 @@
               "near": "웨스틴 조선 부산",
               "candidates": [
                 "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki",
-                "gwangalli-donkatsu"
+                "haeundae-gelatteok",
+                "geumsu-bokguk"
               ]
             }
           ]
@@ -1786,8 +1786,8 @@
               "after": -1,
               "near": "웨스틴 조선 부산",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "haeundae-gelatteok"
+                "haeundae-gelatteok",
+                "geumsu-bokguk"
               ]
             },
             {
@@ -1795,9 +1795,9 @@
               "after": 0,
               "near": "국립부산과학관",
               "candidates": [
-                "gijang-cafe220",
-                "gijang-handasot",
-                "gijang-jangeo"
+                "molle-brunch",
+                "songjeong-gukbap",
+                "gijang-handasot"
               ]
             },
             {
@@ -1833,8 +1833,8 @@
               "after": -1,
               "near": "웨스틴 조선 부산",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "haeundae-gelatteok"
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
               ]
             },
             {
@@ -1842,9 +1842,9 @@
               "after": 0,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-hotteok",
-                "gwangalli-tteokbokki"
+                "haeundae-amso",
+                "haeundae-marine-donkatsu",
+                "songjeong-gukbap"
               ]
             }
           ]
@@ -1908,30 +1908,30 @@
           "note": "현재 예상 총액 2,004,200원 · 예산 4,000,000원"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
           "label": "삼진어묵 만들기 체험 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
           "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "SEA LIFE 부산아쿠아리움",
-          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
-        },
-        {
-          "name": "국립부산과학관",
-          "blurb": "만지고 체험하는 전시. 기장(용궁사 근처) 실내 — 폭염·우천 대안 최적."
-        },
-        {
           "name": "삼진어묵 체험역사관",
           "blurb": "직접 어묵 만들고 시식. 블로거 아이 만족 상위 체험."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         }
       ],
       "kml": null,
@@ -1986,9 +1986,9 @@
               "after": 2,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "gwangalli-jogae",
+                "songjeong-gukbap",
+                "molle-brunch"
               ]
             },
             {
@@ -1996,9 +1996,9 @@
               "after": 2,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki",
-                "gwangalli-donkatsu"
+                "haeundae-gelatteok",
+                "geumsu-bokguk",
+                "haeundae-amso"
               ]
             }
           ]
@@ -2024,7 +2024,7 @@
               "after": -1,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-gelatteok",
+                "haeundae-amso",
                 "haeundae-hotteok"
               ]
             },
@@ -2033,9 +2033,9 @@
               "after": 0,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "gijang-cafe220",
+                "geumsu-bokguk",
+                "haeundae-choil6-gogi"
               ]
             },
             {
@@ -2045,7 +2045,7 @@
               "candidates": [
                 "gwangalli-jogae",
                 "gwangalli-donkatsu",
-                "seomyeon-yeonui"
+                "minlak-hoe"
               ]
             }
           ]
@@ -2071,8 +2071,8 @@
               "after": -1,
               "near": "그랜드 조선 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "mipo-hoe",
+                "haeundae-marine-donkatsu"
               ]
             },
             {
@@ -2080,9 +2080,9 @@
               "after": 0,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "haeundae-gelatteok",
+                "haeundae-hotteok",
+                "haeundae-amso"
               ]
             }
           ]
@@ -2146,26 +2146,26 @@
           "note": "현재 예상 총액 2,004,200원 · 예산 4,000,000원"
         },
         {
-          "label": "아쿠아리움 온라인권 예매",
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "label": "아쿠아리움 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "해운대 해수욕장",
-          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
-        },
-        {
-          "name": "SEA LIFE 부산아쿠아리움",
-          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
+          "name": "광안리 해수욕장",
+          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
         },
         {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         }
       ],
       "kml": null,
@@ -2220,9 +2220,9 @@
               "after": 2,
               "near": "SEA LIFE 부산아쿠아리움",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "gwangalli-donkatsu",
+                "gwangalli-jogae",
+                "songjeong-gukbap"
               ]
             },
             {
@@ -2230,9 +2230,9 @@
               "after": 2,
               "near": "파라다이스 호텔 부산",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki",
-                "gwangalli-donkatsu"
+                "haeundae-gelatteok",
+                "geumsu-bokguk",
+                "haeundae-amso"
               ]
             }
           ]
@@ -2253,8 +2253,8 @@
               "after": -1,
               "near": "파라다이스 호텔 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
               ]
             },
             {
@@ -2262,9 +2262,9 @@
               "after": 0,
               "near": "롯데월드 어드벤처 부산",
               "candidates": [
-                "gijang-handasot",
-                "gijang-jangeo",
-                "gijang-cafe220"
+                "gwangalli-tteokbokki",
+                "gwangalli-donkatsu",
+                "molle-brunch"
               ]
             },
             {
@@ -2272,9 +2272,9 @@
               "after": 0,
               "near": "파라다이스 호텔 부산",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "haeundae-gelatteok",
+                "geumsu-bokguk",
+                "haeundae-amso"
               ]
             }
           ]
@@ -2305,8 +2305,8 @@
               "after": -1,
               "near": "파라다이스 호텔 부산",
               "candidates": [
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
               ]
             },
             {
@@ -2314,9 +2314,9 @@
               "after": 1,
               "near": "해운대 해수욕장",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "geumsu-bokguk",
+                "haeundae-amso",
+                "haeundae-hotteok"
               ]
             }
           ]
@@ -2380,30 +2380,30 @@
           "note": "현재 예상 총액 2,224,200원 · 예산 4,000,000원"
         },
         {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
           "label": "아쿠아리움 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
           "label": "롯데월드 종일권 온라인 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
-          "label": "블루라인파크 스카이캡슐 시간대 예약",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "해운대 해수욕장",
-          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         },
         {
           "name": "SEA LIFE 부산아쿠아리움",
           "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         },
         {
-          "name": "롯데월드 어드벤처 부산",
-          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
         }
       ],
       "kml": null,
@@ -2458,9 +2458,9 @@
               "after": 2,
               "near": "태종대(다누비열차·유람선)",
               "candidates": [
-                "yeongdo-haenyeochon",
-                "yeongdo-samjin",
-                "yeongdo-momos"
+                "baekgudang",
+                "sinbalwon",
+                "ssangdungi-gukbap"
               ]
             },
             {
@@ -2470,7 +2470,7 @@
               "candidates": [
                 "haeundae-marine-donkatsu",
                 "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "geumsu-bokguk"
               ]
             }
           ]
@@ -2496,8 +2496,8 @@
               "after": -1,
               "near": "웨스틴 조선 부산",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "haeundae-gelatteok"
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
               ]
             },
             {
@@ -2505,9 +2505,9 @@
               "after": 0,
               "near": "오륙도 스카이워크",
               "candidates": [
-                "gwangalli-jogae",
-                "gwangalli-donkatsu",
-                "yeongdo-haenyeochon"
+                "geumsu-bokguk",
+                "baekgudang",
+                "haeundae-amso"
               ]
             },
             {
@@ -2515,9 +2515,9 @@
               "after": 1,
               "near": "광안리 해수욕장",
               "candidates": [
-                "gwangalli-tteokbokki",
-                "haeundae-hotteok",
-                "haeundae-choil6-gogi"
+                "gwangalli-jogae",
+                "gwangalli-donkatsu",
+                "minlak-hoe"
               ]
             }
           ]
@@ -2543,8 +2543,8 @@
               "after": -1,
               "near": "웨스틴 조선 부산",
               "candidates": [
-                "haeundae-marine-donkatsu",
-                "haeundae-gelatteok"
+                "gwangalli-tteokbokki",
+                "minlak-hoe"
               ]
             },
             {
@@ -2620,16 +2620,16 @@
       ],
       "highlights": [
         {
-          "name": "송도 해상케이블카",
-          "blurb": "바다 위를 가로지르는 케이블카. 크리스탈 캐빈은 발밑이 유리라 스릴 만점."
-        },
-        {
           "name": "광안리 해수욕장",
           "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
         },
         {
-          "name": "오륙도 스카이워크",
-          "blurb": "바다 위로 튀어나온 유리 전망대. 발밑이 바다라 아이들이 짜릿해함."
+          "name": "송도 해상케이블카",
+          "blurb": "바다 위를 가로지르는 케이블카. 크리스탈 캐빈은 발밑이 유리라 스릴 만점."
+        },
+        {
+          "name": "태종대(다누비열차·유람선)",
+          "blurb": "기암절벽을 도는 다누비열차와 유람선. 등대·전망대에서 탁 트인 바다."
         }
       ],
       "kml": null,
@@ -2684,9 +2684,9 @@
               "after": 2,
               "near": "이기대 해안 드라이브·산책",
               "candidates": [
-                "gwangalli-jogae",
-                "gwangalli-donkatsu",
-                "gwangalli-tteokbokki"
+                "haeundae-amso",
+                "haeundae-hotteok",
+                "mipo-hoe"
               ]
             },
             {
@@ -2694,9 +2694,9 @@
               "after": 2,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "gijang-jangeo",
-                "gijang-handasot",
-                "gijang-cafe220"
+                "waveon",
+                "daebyeon-daege",
+                "gijang-jangeo"
               ]
             }
           ]
@@ -2722,8 +2722,8 @@
               "after": -1,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "gijang-jangeo",
-                "gijang-handasot"
+                "gijang-cafe220",
+                "songjeong-gukbap"
               ]
             },
             {
@@ -2731,9 +2731,9 @@
               "after": 1,
               "near": "해운대 블루라인파크 (미포)",
               "candidates": [
-                "haeundae-choil6-gogi",
-                "haeundae-gelatteok",
-                "haeundae-hotteok"
+                "gwangalli-jogae",
+                "molle-brunch",
+                "gijang-handasot"
               ]
             },
             {
@@ -2741,9 +2741,9 @@
               "after": 1,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "gijang-cafe220",
-                "haeundae-marine-donkatsu",
-                "gwangalli-tteokbokki"
+                "waveon",
+                "daebyeon-daege",
+                "gijang-jangeo"
               ]
             }
           ]
@@ -2769,8 +2769,8 @@
               "after": -1,
               "near": "아난티 힐튼 부산",
               "candidates": [
-                "gijang-jangeo",
-                "gijang-handasot"
+                "haeundae-choil6-gogi",
+                "haeundae-hotteok"
               ]
             },
             {
@@ -2778,7 +2778,7 @@
               "after": 0,
               "near": "송도 해상케이블카",
               "candidates": [
-                "yeongdo-momos",
+                "seomyeon-yeonui",
                 "nampo-jagalchi",
                 "nampo-wandang"
               ]
@@ -2850,12 +2850,12 @@
       ],
       "highlights": [
         {
-          "name": "송도 해상케이블카",
-          "blurb": "바다 위를 가로지르는 케이블카. 크리스탈 캐빈은 발밑이 유리라 스릴 만점."
-        },
-        {
           "name": "해운대 블루라인파크 (미포)",
           "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "송도 해상케이블카",
+          "blurb": "바다 위를 가로지르는 케이블카. 크리스탈 캐빈은 발밑이 유리라 스릴 만점."
         },
         {
           "name": "이기대 해안 드라이브·산책",

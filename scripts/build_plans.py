@@ -33,6 +33,22 @@ def main():
               if rv.get("lat") and rid not in exclude]
         cand.sort(key=lambda x:x[1])
         return [rid for rid,_ in cand[:k]]
+    def near_pool(target,kmax,exclude):
+        if not rest or not target: return []
+        c=[(rid,hav(target,rv)) for rid,rv in rest.items() if rv.get("lat") and rid not in exclude]
+        c.sort(key=lambda x:x[1]); return [rid for rid,_ in c[:kmax]]
+    def choose(pool,seed,n):
+        if not pool: return []
+        r=seed%len(pool); rot=pool[r:]+pool[:r]; out=[]; cats=set()
+        for rid in rot:
+            cat=rest[rid].get("category")
+            if cat in cats and len(pool)>n: continue
+            out.append(rid); cats.add(cat)
+            if len(out)==n: break
+        for rid in rot:
+            if rid not in out: out.append(rid)
+            if len(out)==n: break
+        return out[:n]
 
     PAID_LABEL={"lotteworld":"롯데월드 종일권 온라인 예매","sealife":"아쿠아리움 온라인권 예매",
       "aquaplanet":"아쿠아플라넷 온라인권 예매","blueline":"블루라인파크 스카이캡슐 시간대 예약",
@@ -41,7 +57,7 @@ def main():
       "hallim":"한림공원 입장권","ecoland":"에코랜드 입장권","camellia":"카멜리아힐 입장권",
       "aerospace":"항공우주박물관 입장권","teddybear":"테디베어뮤지엄 입장권","centum":"센텀 아이스링크/아쿠아필드 예약"}
 
-    for p in spec["plans"]:
+    for p_idx,p in enumerate(spec["plans"]):
         seen,paid_names,paid_sum=set(),[],0
         for day in p["days"]:
             for s in day["stops"]:
@@ -77,11 +93,11 @@ def main():
                 return (best[1],best[2]) if best else (None,None)
             used=set(); meals=[]
             if day["day"]>1 and hp:
-                b=nearest(hp,2,used); used|=set(b)
+                b=choose(near_pool(hp,12,used), p_idx*13+day["day"]*3+0, 2); used|=set(b)
                 if b: meals.append({"slot":"아침","after":-1,"near":hotel.get("name","숙소"),"candidates":b})
             li,la=pick(750)   # ~12:30 lunch
             if la:
-                c=nearest(la,3,used); used|=set(c)
+                c=choose(near_pool(la,14,used), p_idx*13+day["day"]*3+1, 3); used|=set(c)
                 if c: meals.append({"slot":"점심","after":li,"near":la["name"],"candidates":c})
             # dinner: latest POI after lunch; else near hotel; skip on departure day
             last_station = at.get(stops[-1]["ref"],{}).get("category") in TRANSIT

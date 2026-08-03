@@ -43,9 +43,9 @@
               "after": 2,
               "near": "함덕해수욕장",
               "candidates": [
-                "haeoban",
-                "delmoondo",
-                "tteulchae"
+                "boromwae",
+                "ujin",
+                "jaemae-noodles"
               ]
             },
             {
@@ -55,7 +55,7 @@
               "candidates": [
                 "sukseongdo",
                 "kimanbok",
-                "ujin"
+                "yeonliji"
               ]
             }
           ]
@@ -86,8 +86,8 @@
               "after": -1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok"
+                "dodo-haenyeo",
+                "ujin"
               ]
             },
             {
@@ -95,9 +95,9 @@
               "after": 1,
               "near": "섭지코지",
               "candidates": [
-                "baekgi-haenyeo",
-                "myeonghee-noodles",
-                "childdonga-seongsan"
+                "tteulchae",
+                "delmoondo",
+                "haeoban"
               ]
             },
             {
@@ -105,9 +105,9 @@
               "after": 2,
               "near": "아쿠아플라넷 제주",
               "candidates": [
-                "tteulchae",
-                "delmoondo",
-                "haeoban"
+                "baekgi-haenyeo",
+                "sinyoungine",
+                "myeonghee-noodles"
               ]
             }
           ]
@@ -138,8 +138,8 @@
               "after": -1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok"
+                "boromwae",
+                "haeoban"
               ]
             },
             {
@@ -147,9 +147,9 @@
               "after": 1,
               "near": "에코랜드 테마파크",
               "candidates": [
-                "haeoban",
-                "delmoondo",
-                "tteulchae"
+                "dodo-haenyeo",
+                "childdonga-seongsan",
+                "myeonghee-noodles"
               ]
             }
           ]
@@ -223,16 +223,16 @@
       ],
       "highlights": [
         {
-          "name": "함덕해수욕장",
-          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
-        },
-        {
           "name": "섭지코지",
           "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
-          "name": "성산일출봉",
-          "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
+          "name": "아쿠아플라넷 제주",
+          "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
+        },
+        {
+          "name": "함덕해수욕장",
+          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
         }
       ],
       "kml": null,
@@ -287,9 +287,9 @@
               "after": 2,
               "near": "협재해수욕장",
               "candidates": [
-                "swimpyo",
-                "daemunjip",
-                "hyeopjaesinguksu"
+                "hyeopjaesinguksu",
+                "donhaesang",
+                "bomnal-cafe"
               ]
             },
             {
@@ -330,8 +330,8 @@
               "after": -1,
               "near": "파르나스 호텔 제주",
               "candidates": [
-                "saekdal",
-                "yeongsilguksu"
+                "jeongseong-momguk",
+                "miyoungine"
               ]
             },
             {
@@ -339,9 +339,9 @@
               "after": 1,
               "near": "오설록 티뮤지엄",
               "candidates": [
-                "daemunjip",
-                "swimpyo",
-                "hyeopjaesinguksu"
+                "yeongsilguksu",
+                "saekdal",
+                "donhaesang"
               ]
             },
             {
@@ -349,9 +349,9 @@
               "after": 2,
               "near": "카멜리아힐",
               "candidates": [
+                "manorblanc",
                 "hallagalchi",
-                "hawonga",
-                "donhaesang"
+                "deomjang"
               ]
             }
           ]
@@ -377,8 +377,8 @@
               "after": -1,
               "near": "파르나스 호텔 제주",
               "candidates": [
-                "saekdal",
-                "yeongsilguksu"
+                "jaeyeon-bomal",
+                "daemunjip"
               ]
             },
             {
@@ -386,9 +386,9 @@
               "after": 0,
               "near": "제주항공우주박물관",
               "candidates": [
-                "daemunjip",
-                "swimpyo",
-                "hallagalchi"
+                "hawonga",
+                "bomnal-cafe",
+                "jeongseong-momguk"
               ]
             }
           ]
@@ -470,12 +470,12 @@
           "blurb": "실물 조종석·우주선 체험, 비행기 좋아하면 최고."
         },
         {
-          "name": "협재해수욕장",
-          "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
-        },
-        {
           "name": "한림공원",
           "blurb": "용암동굴+아열대 식물원+공작새, 오래 걸어도 안 지루."
+        },
+        {
+          "name": "협재해수욕장",
+          "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
         }
       ],
       "kml": null,
@@ -530,9 +530,9 @@
               "after": 1,
               "near": "함덕해수욕장",
               "candidates": [
-                "haeoban",
-                "delmoondo",
-                "tteulchae"
+                "tteulchae",
+                "olle-guksu",
+                "boromwae"
               ]
             },
             {
@@ -542,7 +542,7 @@
               "candidates": [
                 "childdonga-seongsan",
                 "myeonghee-noodles",
-                "baekgi-haenyeo"
+                "sinyoungine"
               ]
             }
           ]
@@ -568,8 +568,8 @@
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles"
+                "haeoban",
+                "delmoondo"
               ]
             },
             {
@@ -577,9 +577,9 @@
               "after": 1,
               "near": "섭지코지",
               "candidates": [
-                "baekgi-haenyeo",
-                "tteulchae",
-                "delmoondo"
+                "myeongjin-jeonbok",
+                "boromwae",
+                "olle-guksu"
               ]
             },
             {
@@ -587,9 +587,9 @@
               "after": 1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "haeoban",
-                "kimanbok",
-                "ujin"
+                "childdonga-seongsan",
+                "myeonghee-noodles",
+                "sinyoungine"
               ]
             }
           ]
@@ -620,8 +620,8 @@
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles"
+                "olle-guksu",
+                "childdonga-seongsan"
               ]
             },
             {
@@ -629,9 +629,9 @@
               "after": 1,
               "near": "만장굴",
               "candidates": [
-                "tteulchae",
-                "delmoondo",
-                "haeoban"
+                "baekgi-haenyeo",
+                "golmak",
+                "jaemae-noodles"
               ]
             }
           ]
@@ -701,16 +701,16 @@
       ],
       "highlights": [
         {
-          "name": "함덕해수욕장",
-          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
-        },
-        {
           "name": "섭지코지",
           "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
-          "name": "성산일출봉",
-          "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
+          "name": "아쿠아플라넷 제주",
+          "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
+        },
+        {
+          "name": "함덕해수욕장",
+          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
         }
       ],
       "kml": null,
@@ -765,7 +765,7 @@
               "after": 1,
               "near": "아쿠아플라넷 제주",
               "candidates": [
-                "baekgi-haenyeo",
+                "sinyoungine",
                 "myeonghee-noodles",
                 "childdonga-seongsan"
               ]
@@ -777,7 +777,7 @@
               "candidates": [
                 "sukseongdo",
                 "kimanbok",
-                "ujin"
+                "yeonliji"
               ]
             }
           ]
@@ -803,8 +803,8 @@
               "after": -1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok"
+                "boromwae",
+                "haeoban"
               ]
             },
             {
@@ -812,9 +812,9 @@
               "after": 1,
               "near": "테디베어뮤지엄",
               "candidates": [
-                "hallagalchi",
-                "hawonga",
-                "yeongsilguksu"
+                "saekdal",
+                "manorblanc",
+                "jeongseong-momguk"
               ]
             },
             {
@@ -822,9 +822,9 @@
               "after": 1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "ujin",
-                "jaemae-noodles",
-                "haeoban"
+                "sukseongdo",
+                "kimanbok",
+                "yeonliji"
               ]
             }
           ]
@@ -859,9 +859,9 @@
               "after": 0,
               "near": "오설록 티뮤지엄",
               "candidates": [
-                "daemunjip",
-                "swimpyo",
-                "hyeopjaesinguksu"
+                "yeongsilguksu",
+                "saekdal",
+                "donhaesang"
               ]
             }
           ]
@@ -925,19 +925,23 @@
           "note": "현재 예상 총액 2,358,000원 · 예산 4,000,000원"
         },
         {
+          "label": "아쿠아플라넷 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
           "label": "항공우주박물관 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
           "label": "테디베어뮤지엄 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
-          "label": "아쿠아플라넷 온라인권 예매",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
+        {
+          "name": "아쿠아플라넷 제주",
+          "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
+        },
         {
           "name": "제주항공우주박물관",
           "blurb": "실물 조종석·우주선 체험, 비행기 좋아하면 최고."
@@ -945,10 +949,6 @@
         {
           "name": "테디베어뮤지엄",
           "blurb": "실내 곰인형 전시·공연, 날씨 무관."
-        },
-        {
-          "name": "아쿠아플라넷 제주",
-          "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
         }
       ],
       "kml": null,
@@ -1015,7 +1015,7 @@
               "candidates": [
                 "hallagalchi",
                 "hawonga",
-                "yeongsilguksu"
+                "deomjang"
               ]
             }
           ]
@@ -1046,8 +1046,8 @@
               "after": -1,
               "near": "롯데호텔 제주",
               "candidates": [
-                "hallagalchi",
-                "hawonga"
+                "jaeyeon-bomal",
+                "daemunjip"
               ]
             },
             {
@@ -1055,9 +1055,9 @@
               "after": 1,
               "near": "성산일출봉",
               "candidates": [
-                "baekgi-haenyeo",
-                "myeonghee-noodles",
-                "childdonga-seongsan"
+                "childdonga-seongsan",
+                "udo-peanut",
+                "myeongjin-jeonbok"
               ]
             },
             {
@@ -1065,9 +1065,9 @@
               "after": 2,
               "near": "천지연폭포",
               "candidates": [
-                "yeongsilguksu",
-                "saekdal",
-                "sukseongdo"
+                "jeongseong-momguk",
+                "deomjang",
+                "hawonga"
               ]
             }
           ]
@@ -1093,8 +1093,8 @@
               "after": -1,
               "near": "롯데호텔 제주",
               "candidates": [
-                "hallagalchi",
-                "hawonga"
+                "hawonga",
+                "deomjang"
               ]
             },
             {
@@ -1102,9 +1102,9 @@
               "after": 0,
               "near": "만장굴",
               "candidates": [
-                "tteulchae",
-                "delmoondo",
-                "haeoban"
+                "boromwae",
+                "sinyoungine",
+                "olle-guksu"
               ]
             }
           ]
@@ -1170,16 +1170,16 @@
       ],
       "highlights": [
         {
-          "name": "함덕해수욕장",
-          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
+          "name": "섭지코지",
+          "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
           "name": "천지연폭포",
           "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
         },
         {
-          "name": "섭지코지",
-          "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
+          "name": "함덕해수욕장",
+          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
         }
       ],
       "kml": null,
@@ -1234,8 +1234,8 @@
               "after": 2,
               "near": "중문색달해수욕장",
               "candidates": [
+                "donhaesang",
                 "hallagalchi",
-                "hawonga",
                 "saekdal"
               ]
             },
@@ -1244,9 +1244,9 @@
               "after": 2,
               "near": "제주신라호텔",
               "candidates": [
-                "yeongsilguksu",
-                "hyeopjaesinguksu",
-                "daemunjip"
+                "hawonga",
+                "deomjang",
+                "yeongsilguksu"
               ]
             }
           ]
@@ -1277,8 +1277,8 @@
               "after": -1,
               "near": "제주신라호텔",
               "candidates": [
-                "hawonga",
-                "hallagalchi"
+                "daemunjip",
+                "hawonga"
               ]
             },
             {
@@ -1286,9 +1286,9 @@
               "after": 1,
               "near": "섭지코지",
               "candidates": [
-                "baekgi-haenyeo",
                 "myeonghee-noodles",
-                "childdonga-seongsan"
+                "childdonga-seongsan",
+                "udo-peanut"
               ]
             },
             {
@@ -1296,9 +1296,9 @@
               "after": 2,
               "near": "아쿠아플라넷 제주",
               "candidates": [
-                "tteulchae",
-                "delmoondo",
-                "haeoban"
+                "baekgi-haenyeo",
+                "sinyoungine",
+                "myeongjin-jeonbok"
               ]
             }
           ]
@@ -1329,8 +1329,8 @@
               "after": -1,
               "near": "제주신라호텔",
               "candidates": [
-                "hawonga",
-                "hallagalchi"
+                "deomjang",
+                "saekdal"
               ]
             },
             {
@@ -1338,8 +1338,8 @@
               "after": 1,
               "near": "테디베어뮤지엄",
               "candidates": [
-                "yeongsilguksu",
-                "saekdal",
+                "jeongseong-momguk",
+                "miyoungine",
                 "hyeopjaesinguksu"
               ]
             }
@@ -1404,26 +1404,26 @@
           "note": "현재 예상 총액 2,786,000원 · 예산 4,000,000원"
         },
         {
-          "label": "테디베어뮤지엄 입장권",
+          "label": "아쿠아플라넷 온라인권 예매",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "아쿠아플라넷 온라인권 예매",
+          "label": "테디베어뮤지엄 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
       "highlights": [
         {
-          "name": "천지연폭포",
-          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
-        },
-        {
           "name": "섭지코지",
           "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
-          "name": "성산일출봉",
-          "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
+          "name": "아쿠아플라넷 제주",
+          "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
+        },
+        {
+          "name": "천지연폭포",
+          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
         }
       ],
       "kml": null,
@@ -1478,9 +1478,9 @@
               "after": 2,
               "near": "에코랜드 테마파크",
               "candidates": [
-                "haeoban",
-                "delmoondo",
-                "tteulchae"
+                "dodo-haenyeo",
+                "boromwae",
+                "haeoban"
               ]
             },
             {
@@ -1488,9 +1488,9 @@
               "after": 2,
               "near": "랜딩관 제주신화월드",
               "candidates": [
-                "yeongsilguksu",
-                "saekdal",
-                "daemunjip"
+                "manorblanc",
+                "oneonly",
+                "yeongsilguksu"
               ]
             }
           ]
@@ -1516,8 +1516,8 @@
               "after": -1,
               "near": "랜딩관 제주신화월드",
               "candidates": [
-                "yeongsilguksu",
-                "saekdal"
+                "manorblanc",
+                "yeongsilguksu"
               ]
             },
             {
@@ -1535,9 +1535,9 @@
               "after": 1,
               "near": "랜딩관 제주신화월드",
               "candidates": [
-                "hallagalchi",
-                "hawonga",
-                "donhaesang"
+                "oneonly",
+                "saekdal",
+                "jaeyeon-bomal"
               ]
             }
           ]
@@ -1563,8 +1563,8 @@
               "after": -1,
               "near": "랜딩관 제주신화월드",
               "candidates": [
-                "yeongsilguksu",
-                "saekdal"
+                "saekdal",
+                "jaeyeon-bomal"
               ]
             },
             {
@@ -1572,9 +1572,9 @@
               "after": 0,
               "near": "아쿠아플라넷 제주",
               "candidates": [
-                "baekgi-haenyeo",
-                "myeonghee-noodles",
-                "childdonga-seongsan"
+                "udo-peanut",
+                "myeongjin-jeonbok",
+                "haeoban"
               ]
             }
           ]
@@ -1638,15 +1638,15 @@
           "note": "현재 예상 총액 2,450,000원 · 예산 4,000,000원"
         },
         {
-          "label": "9.81파크 레이싱 예약",
-          "note": "온라인 예매가 현장보다 저렴/시간지정"
-        },
-        {
           "label": "한림공원 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
           "label": "아쿠아플라넷 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "9.81파크 레이싱 예약",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
@@ -1720,9 +1720,9 @@
               "after": 1,
               "near": "함덕해수욕장",
               "candidates": [
-                "haeoban",
-                "delmoondo",
-                "tteulchae"
+                "yeonliji",
+                "dodo-haenyeo",
+                "haeoban"
               ]
             },
             {
@@ -1732,7 +1732,7 @@
               "candidates": [
                 "hallagalchi",
                 "hawonga",
-                "yeongsilguksu"
+                "deomjang"
               ]
             }
           ]
@@ -1758,8 +1758,8 @@
               "after": -1,
               "near": "롯데호텔 제주",
               "candidates": [
-                "hallagalchi",
-                "hawonga"
+                "hawonga",
+                "deomjang"
               ]
             },
             {
@@ -1769,7 +1769,7 @@
               "candidates": [
                 "swimpyo",
                 "daemunjip",
-                "hyeopjaesinguksu"
+                "jaeyeon-bomal"
               ]
             },
             {
@@ -1777,9 +1777,9 @@
               "after": 1,
               "near": "중문색달해수욕장",
               "candidates": [
+                "hallagalchi",
                 "saekdal",
-                "yeongsilguksu",
-                "donhaesang"
+                "yeongsilguksu"
               ]
             }
           ]
@@ -1805,8 +1805,8 @@
               "after": -1,
               "near": "롯데호텔 제주",
               "candidates": [
-                "hallagalchi",
-                "hawonga"
+                "saekdal",
+                "manorblanc"
               ]
             },
             {
@@ -1814,9 +1814,9 @@
               "after": 0,
               "near": "섭지코지",
               "candidates": [
-                "baekgi-haenyeo",
-                "myeonghee-noodles",
-                "childdonga-seongsan"
+                "childdonga-seongsan",
+                "udo-peanut",
+                "myeongjin-jeonbok"
               ]
             }
           ]
@@ -1882,16 +1882,16 @@
       ],
       "highlights": [
         {
-          "name": "협재해수욕장",
-          "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
+          "name": "섭지코지",
+          "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
           "name": "함덕해수욕장",
           "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
         },
         {
-          "name": "섭지코지",
-          "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
+          "name": "협재해수욕장",
+          "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
         }
       ],
       "kml": null,
@@ -1946,9 +1946,9 @@
               "after": 2,
               "near": "섭지코지",
               "candidates": [
-                "baekgi-haenyeo",
-                "myeonghee-noodles",
-                "childdonga-seongsan"
+                "olle-guksu",
+                "golmak",
+                "baekgi-haenyeo"
               ]
             },
             {
@@ -1956,9 +1956,9 @@
               "after": 2,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "haeoban",
-                "delmoondo",
-                "tteulchae"
+                "childdonga-seongsan",
+                "myeonghee-noodles",
+                "sinyoungine"
               ]
             }
           ]
@@ -1984,8 +1984,8 @@
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles"
+                "sinyoungine",
+                "boromwae"
               ]
             },
             {
@@ -1993,9 +1993,9 @@
               "after": 1,
               "near": "아쿠아플라넷 제주",
               "candidates": [
+                "jeongseong-momguk",
                 "baekgi-haenyeo",
-                "tteulchae",
-                "delmoondo"
+                "myeonghee-noodles"
               ]
             },
             {
@@ -2003,9 +2003,9 @@
               "after": 1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "haeoban",
-                "kimanbok",
-                "ujin"
+                "childdonga-seongsan",
+                "myeongjin-jeonbok",
+                "udo-peanut"
               ]
             }
           ]
@@ -2031,8 +2031,8 @@
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles"
+                "myeongjin-jeonbok",
+                "udo-peanut"
               ]
             },
             {
@@ -2112,16 +2112,16 @@
       ],
       "highlights": [
         {
-          "name": "천지연폭포",
-          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
-        },
-        {
           "name": "섭지코지",
           "blurb": "평탄한 잔디 언덕 산책로, 8세도 편하게 바다뷰."
         },
         {
-          "name": "성산일출봉",
-          "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
+          "name": "아쿠아플라넷 제주",
+          "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
+        },
+        {
+          "name": "천지연폭포",
+          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
         }
       ],
       "kml": null,
@@ -2176,9 +2176,9 @@
               "after": 2,
               "near": "에코랜드 테마파크",
               "candidates": [
-                "haeoban",
-                "delmoondo",
-                "tteulchae"
+                "yeonliji",
+                "dodo-haenyeo",
+                "boromwae"
               ]
             },
             {
@@ -2188,7 +2188,7 @@
               "candidates": [
                 "sukseongdo",
                 "kimanbok",
-                "ujin"
+                "donsadon"
               ]
             }
           ]
@@ -2214,8 +2214,8 @@
               "after": -1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok"
+                "donsadon",
+                "golmak"
               ]
             },
             {
@@ -2223,9 +2223,9 @@
               "after": 1,
               "near": "성산일출봉",
               "candidates": [
-                "baekgi-haenyeo",
-                "myeonghee-noodles",
-                "childdonga-seongsan"
+                "jaemae-noodles",
+                "kimanbok",
+                "baekgi-haenyeo"
               ]
             },
             {
@@ -2233,9 +2233,9 @@
               "after": 1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "ujin",
-                "jaemae-noodles",
-                "haeoban"
+                "sukseongdo",
+                "yeonliji",
+                "olle-guksu"
               ]
             }
           ]
@@ -2266,8 +2266,8 @@
               "after": -1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok"
+                "dodo-haenyeo",
+                "ujin"
               ]
             },
             {
@@ -2341,11 +2341,11 @@
           "note": "현재 예상 총액 2,263,000원 · 예산 4,000,000원"
         },
         {
-          "label": "카멜리아힐 입장권",
+          "label": "에코랜드 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         },
         {
-          "label": "에코랜드 입장권",
+          "label": "카멜리아힐 입장권",
           "note": "온라인 예매가 현장보다 저렴/시간지정"
         }
       ],
@@ -2415,9 +2415,9 @@
               "after": 2,
               "near": "함덕해수욕장",
               "candidates": [
-                "haeoban",
-                "delmoondo",
-                "tteulchae"
+                "kimanbok",
+                "sukseongdo",
+                "myeongjin-jeonbok"
               ]
             },
             {
@@ -2427,7 +2427,7 @@
               "candidates": [
                 "childdonga-seongsan",
                 "myeonghee-noodles",
-                "baekgi-haenyeo"
+                "sinyoungine"
               ]
             }
           ]
@@ -2453,8 +2453,8 @@
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles"
+                "boromwae",
+                "myeongjin-jeonbok"
               ]
             },
             {
@@ -2462,9 +2462,9 @@
               "after": 1,
               "near": "우도(성산항 도항선)",
               "candidates": [
-                "baekgi-haenyeo",
-                "tteulchae",
-                "delmoondo"
+                "jaemae-noodles",
+                "kimanbok",
+                "sukseongdo"
               ]
             },
             {
@@ -2472,9 +2472,9 @@
               "after": 1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "haeoban",
-                "kimanbok",
-                "ujin"
+                "childdonga-seongsan",
+                "myeonghee-noodles",
+                "sinyoungine"
               ]
             }
           ]
@@ -2500,8 +2500,8 @@
               "after": -1,
               "near": "해비치 호텔앤드리조트 제주",
               "candidates": [
-                "childdonga-seongsan",
-                "myeonghee-noodles"
+                "jeongseong-momguk",
+                "delmoondo"
               ]
             },
             {
@@ -2509,9 +2509,9 @@
               "after": 0,
               "near": "만장굴",
               "candidates": [
-                "tteulchae",
-                "delmoondo",
-                "haeoban"
+                "myeongjin-jeonbok",
+                "haeoban",
+                "childdonga-seongsan"
               ]
             }
           ]
@@ -2577,16 +2577,16 @@
       ],
       "highlights": [
         {
-          "name": "우도(성산항 도항선)",
-          "blurb": "배 타고 들어가는 섬 여행. 홍조단괴 백사장·등대, 전기차로 섬 한 바퀴."
-        },
-        {
           "name": "함덕해수욕장",
           "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
         },
         {
           "name": "성산일출봉",
           "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
+        },
+        {
+          "name": "우도(성산항 도항선)",
+          "blurb": "배 타고 들어가는 섬 여행. 홍조단괴 백사장·등대, 전기차로 섬 한 바퀴."
         }
       ],
       "kml": null,
@@ -2641,9 +2641,9 @@
               "after": 2,
               "near": "애월 해안도로 드라이브",
               "candidates": [
-                "donhaesang",
-                "hyeopjaesinguksu",
-                "daemunjip"
+                "dodo-haenyeo",
+                "yeonliji",
+                "kimanbok"
               ]
             },
             {
@@ -2652,8 +2652,8 @@
               "near": "그랜드 하얏트 제주",
               "candidates": [
                 "sukseongdo",
-                "kimanbok",
-                "ujin"
+                "donsadon",
+                "golmak"
               ]
             }
           ]
@@ -2679,8 +2679,8 @@
               "after": -1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok"
+                "olle-guksu",
+                "dodo-haenyeo"
               ]
             },
             {
@@ -2688,9 +2688,9 @@
               "after": 1,
               "near": "가파도(운진항 배)",
               "candidates": [
-                "saekdal",
-                "yeongsilguksu",
-                "hallagalchi"
+                "swimpyo",
+                "hyeopjaesinguksu",
+                "donhaesang"
               ]
             },
             {
@@ -2698,9 +2698,9 @@
               "after": 1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "ujin",
-                "jaemae-noodles",
-                "haeoban"
+                "sukseongdo",
+                "kimanbok",
+                "yeonliji"
               ]
             }
           ]
@@ -2726,8 +2726,8 @@
               "after": -1,
               "near": "그랜드 하얏트 제주",
               "candidates": [
-                "sukseongdo",
-                "kimanbok"
+                "jaemae-noodles",
+                "boromwae"
               ]
             },
             {
@@ -2735,9 +2735,9 @@
               "after": 0,
               "near": "오설록 티뮤지엄",
               "candidates": [
-                "daemunjip",
-                "swimpyo",
-                "hyeopjaesinguksu"
+                "bomnal-cafe",
+                "miyoungine",
+                "jaeyeon-bomal"
               ]
             }
           ]
@@ -2803,16 +2803,16 @@
       ],
       "highlights": [
         {
-          "name": "협재해수욕장",
-          "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
-        },
-        {
           "name": "애월 해안도로 드라이브",
           "blurb": "에메랄드 바다를 끼고 달리는 인생 드라이브. 중간중간 카페·포토존."
         },
         {
-          "name": "오설록 티뮤지엄",
-          "blurb": "초록 차밭 산책+아이스크림, 사진 명소."
+          "name": "협재해수욕장",
+          "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
+        },
+        {
+          "name": "가파도(운진항 배)",
+          "blurb": "납작한 섬을 걸어서 한 바퀴. 여름엔 파란 바다와 돌담길 산책."
         }
       ],
       "kml": null,

@@ -357,3 +357,47 @@ table.cmp td.cat{max-width:230px; white-space:normal}
 .hbars{display:flex; align-items:flex-end; gap:3px; height:60px; padding:4px; background:var(--line-2); border-radius:var(--r-sm)}
 .hb{flex:1; min-width:4px; border-radius:2px 2px 0 0; opacity:.85}
 .hb.now{outline:2px solid var(--coral); opacity:1}
+
+/* ---- v9: responsive (mobile/tablet) ---- */
+@media (max-width:768px){
+  .topbar{padding:10px 14px; gap:10px}
+  .logo{font-size:24px}
+  .brand h1{font-size:17px}
+  .tag{display:none}
+  .controls{gap:6px; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px}
+  .controls::-webkit-scrollbar{display:none}
+  .city-btn,.live-btn,.cmp-btn,.build-btn{padding:8px 12px; font-size:12.5px; white-space:nowrap; flex:none}
+  .plan-bar{position:static; padding:8px 12px}
+  main{padding:14px 12px 104px}
+  .plan-head{padding:16px}
+  .plan-head h2{font-size:20px}
+  .pintro{font-size:14px; line-height:1.75}
+  .layout{gap:14px}
+  #map{height:340px}
+  .map-actions a{font-size:12px; padding:7px 11px}
+  .cost h3,.compare .card,.builder .card,.live .card{padding:16px}
+  th,td{padding:9px 12px; font-size:13px}
+  .cmp-head h3{font-size:16px}
+  #favPill{right:12px; bottom:72px; padding:11px 15px; font-size:13px}
+  .tv-grid{grid-template-columns:1fr}
+  .lmeta{font-size:11.5px}
+  .confirmbar{padding:8px 12px; gap:8px}
+  .confirmbar .st{font-size:12px; width:100%; text-align:center; order:-1}
+  .btn{padding:10px 14px; font-size:13px}
+  .hbanner{height:130px}
+  .phero{height:150px}
+}
+@media (max-width:400px){
+  .brand h1{font-size:16px}
+  .plan-head h2{font-size:18px}
+  .city-btn,.live-btn,.cmp-btn,.build-btn{padding:7px 10px; font-size:12px}
+  .chip{font-size:11.5px; padding:5px 10px}
+  .stop{gap:10px}
+  .thumb{width:60px; height:60px}
+  .lthumb{width:40px; height:40px}
+}
+/* tablet: keep 2-col until 900, comfortable gutters */
+@media (min-width:769px) and (max-width:1024px){
+  main{padding:18px 20px 96px}
+  #map{height:460px}
+}
