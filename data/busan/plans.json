@@ -14,6 +14,7 @@
         "동선 최소",
         "바다·아쿠아리움·놀이공원"
       ],
+      "recommended_for": "기본 추천、동선 최소",
       "days": [
         {
           "day": 1,
@@ -45,6 +46,26 @@
               "note": "저녁+광안대교 야경",
               "optional": true
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "SEA LIFE 부산아쿠아리움",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "광안리 해수욕장",
+              "candidates": [
+                "gwangalli-jogae",
+                "gwangalli-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            }
           ]
         },
         {
@@ -60,6 +81,34 @@
               "ref": "lotteworld",
               "time": "13:00",
               "note": "종일권, 저녁 퍼레이드까지"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "롯데월드 어드벤처 부산",
+              "candidates": [
+                "gijang-handasot",
+                "gijang-jangeo",
+                "gijang-cafe220"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "롯데월드 어드벤처 부산",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
             }
           ]
         },
@@ -77,7 +126,113 @@
               "time": "15:00",
               "note": "SRT 부산→수서 귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "부산역",
+              "candidates": [
+                "nampo-gukbap",
+                "nampo-wandang",
+                "nampo-jagalchi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 블루라인파크 (미포)",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "W 레지던스호텔 해운대 (1박 225,000원)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "해운대 해수욕장, SEA LIFE 부산아쿠아리움, 롯데월드 어드벤처 부산, 해운대 블루라인파크 (미포)",
+          "amount": 377000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "W 레지던스호텔 해운대 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,738,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "롯데월드 종일권 온라인 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "롯데월드 어드벤처 부산",
+          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         }
       ],
       "kml": "data/busan/route.kml",
@@ -85,7 +240,8 @@
       "metrics": {
         "stops": 6,
         "indoor": 2,
-        "kid": 2.4
+        "kid": 2.4,
+        "meals": 8
       }
     },
     {
@@ -102,6 +258,7 @@
         "요트·해변열차",
         "체험 중심"
       ],
+      "recommended_for": "아이 만족 TOP、요트·해변열차",
       "days": [
         {
           "day": 1,
@@ -127,6 +284,26 @@
               "time": "15:00",
               "note": "모래놀이·조개구이 저녁"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "해운대 블루라인파크 (미포)",
+              "candidates": [
+                "haeundae-choil6-gogi",
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 해수욕장",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki",
+                "gwangalli-donkatsu"
+              ]
+            }
           ]
         },
         {
@@ -142,6 +319,34 @@
               "ref": "yacht",
               "time": "16:00",
               "note": "요트투어(사전예약)·드론쇼·저녁"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "광안리 요트투어",
+              "candidates": [
+                "gwangalli-jogae",
+                "gwangalli-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "광안리 요트투어",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "haeundae-choil6-gogi",
+                "seomyeon-yeonui"
+              ]
             }
           ]
         },
@@ -159,7 +364,117 @@
               "time": "15:00",
               "note": "영도→부산역 귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "부산역",
+              "candidates": [
+                "nampo-gukbap",
+                "nampo-wandang",
+                "nampo-jagalchi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "삼진어묵 체험역사관",
+              "candidates": [
+                "yeongdo-momos",
+                "yeongdo-samjin",
+                "yeongdo-haenyeochon"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "씨클라우드 호텔앤레지던스 (1박 230,000원)",
+          "amount": 460000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "해운대 블루라인파크 (미포), 해운대 해수욕장, SEA LIFE 부산아쿠아리움, 광안리 요트투어, 삼진어묵 체험역사관",
+          "amount": 357000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "씨클라우드 호텔앤레지던스 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,728,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "광안리 요트투어 사전예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "삼진어묵 만들기 체험 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         }
       ],
       "kml": null,
@@ -167,7 +482,8 @@
       "metrics": {
         "stops": 5,
         "indoor": 1,
-        "kid": 2.5
+        "kid": 2.5,
+        "meals": 8
       }
     },
     {
@@ -184,6 +500,7 @@
         "실내 비중 높음",
         "아이스링크·과학관"
       ],
+      "recommended_for": "날씨 무관、실내 비중 높음",
       "days": [
         {
           "day": 1,
@@ -209,6 +526,26 @@
               "time": "19:00",
               "note": "체크인·인피니티풀"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "SEA LIFE 부산아쿠아리움",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "신세계 센텀시티",
+              "candidates": [
+                "gwangalli-tteokbokki",
+                "gwangalli-donkatsu",
+                "gwangalli-jogae"
+              ]
+            }
           ]
         },
         {
@@ -224,6 +561,34 @@
               "ref": "lotteworld",
               "time": "13:00",
               "note": "실내존 위주, 종일권"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "롯데월드 어드벤처 부산",
+              "candidates": [
+                "gijang-handasot",
+                "gijang-jangeo",
+                "gijang-cafe220"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "롯데월드 어드벤처 부산",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
             }
           ]
         },
@@ -241,7 +606,117 @@
               "time": "14:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "부산역",
+              "candidates": [
+                "nampo-gukbap",
+                "nampo-wandang",
+                "nampo-jagalchi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "부산엑스더스카이",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "뉴시즈 해운대 레지던스 (1박 260,000원)",
+          "amount": 520000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "SEA LIFE 부산아쿠아리움, 신세계 센텀시티, 국립부산과학관, 롯데월드 어드벤처 부산, 부산엑스더스카이",
+          "amount": 448000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "뉴시즈 해운대 레지던스 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,879,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "엑스더스카이 전망대 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "롯데월드 종일권 온라인 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "센텀 아이스링크/아쿠아필드 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "롯데월드 어드벤처 부산",
+          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
+        },
+        {
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
+        },
+        {
+          "name": "신세계 센텀시티",
+          "blurb": "아이스링크·아쿠아필드 등 실내 복합. 더운 날/비 오는 날 아이와 시간 보내기 좋음."
         }
       ],
       "kml": null,
@@ -249,7 +724,8 @@
       "metrics": {
         "stops": 5,
         "indoor": 5,
-        "kid": 2.3
+        "kid": 2.3,
+        "meals": 8
       }
     },
     {
@@ -266,6 +742,7 @@
         "무료 스팟 많음",
         "부담 적은 동선"
       ],
+      "recommended_for": "가성비、무료 스팟 많음",
       "days": [
         {
           "day": 1,
@@ -292,6 +769,26 @@
               "note": "야경 산책(무료)",
               "optional": true
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "해운대 해수욕장",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "광안리 해수욕장",
+              "candidates": [
+                "gwangalli-jogae",
+                "gwangalli-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            }
           ]
         },
         {
@@ -307,6 +804,34 @@
               "ref": "blueline",
               "time": "14:00",
               "note": "해변열차만 이용(캡슐 대비 저렴)"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "해운대 블루라인파크 (미포)",
+              "candidates": [
+                "haeundae-choil6-gogi",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 블루라인파크 (미포)",
+              "candidates": [
+                "gwangalli-donkatsu",
+                "gwangalli-jogae",
+                "gijang-handasot"
+              ]
             }
           ]
         },
@@ -324,7 +849,105 @@
               "time": "14:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "부산역",
+              "candidates": [
+                "nampo-gukbap",
+                "nampo-wandang",
+                "nampo-jagalchi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "감천문화마을",
+              "candidates": [
+                "yeongdo-momos",
+                "yeongdo-samjin",
+                "yeongdo-haenyeochon"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "르컬렉티브 해운대 패러그라프 (1박 200,000원)",
+          "amount": 400000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "해운대 해수욕장, 해운대 블루라인파크 (미포)",
+          "amount": 131000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "르컬렉티브 해운대 패러그라프 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,442,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "광안리 해수욕장",
+          "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지."
         }
       ],
       "kml": null,
@@ -332,7 +955,8 @@
       "metrics": {
         "stops": 5,
         "indoor": 0,
-        "kid": 2.2
+        "kid": 2.2,
+        "meals": 8
       }
     },
     {
@@ -349,6 +973,7 @@
         "전망대·요트",
         "알찬 하루"
       ],
+      "recommended_for": "풀코스、전망대·요트",
       "days": [
         {
           "day": 1,
@@ -374,6 +999,26 @@
               "time": "16:30",
               "note": "물놀이·저녁"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "부산엑스더스카이",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-gelatteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 해수욕장",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki",
+                "gwangalli-donkatsu"
+              ]
+            }
           ]
         },
         {
@@ -389,6 +1034,34 @@
               "ref": "lotteworld",
               "time": "13:00",
               "note": "종일권"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "롯데월드 어드벤처 부산",
+              "candidates": [
+                "gijang-handasot",
+                "gijang-jangeo",
+                "gijang-cafe220"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "롯데월드 어드벤처 부산",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
             }
           ]
         },
@@ -412,7 +1085,117 @@
               "time": "16:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "광안리 요트투어",
+              "candidates": [
+                "gwangalli-jogae",
+                "gwangalli-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "광안리 요트투어",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "haeundae-hotteok",
+                "seomyeon-yeonui"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "플레아드블랑 해운대 (1박 230,000원)",
+          "amount": 460000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "부산엑스더스카이, 해운대 해수욕장, 롯데월드 어드벤처 부산, 해운대 블루라인파크 (미포), 광안리 요트투어",
+          "amount": 493000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "플레아드블랑 해운대 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,864,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "엑스더스카이 전망대 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "롯데월드 종일권 온라인 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "광안리 요트투어 사전예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "롯데월드 어드벤처 부산",
+          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         }
       ],
       "kml": null,
@@ -420,7 +1203,8 @@
       "metrics": {
         "stops": 6,
         "indoor": 2,
-        "kid": 2.3
+        "kid": 2.3,
+        "meals": 8
       }
     },
     {
@@ -437,6 +1221,7 @@
         "포토·감성",
         "문화+바다"
       ],
+      "recommended_for": "감천마을、포토·감성",
       "days": [
         {
           "day": 1,
@@ -457,6 +1242,26 @@
               "time": "16:00",
               "note": "해운대 체크인"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "감천문화마을",
+              "candidates": [
+                "nampo-gukbap",
+                "nampo-jagalchi",
+                "nampo-wandang"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "감천문화마을",
+              "candidates": [
+                "yeongdo-momos",
+                "yeongdo-samjin",
+                "yeongdo-haenyeochon"
+              ]
+            }
           ]
         },
         {
@@ -472,6 +1277,34 @@
               "ref": "sealife",
               "time": "15:00",
               "note": "아쿠아리움"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "SEA LIFE 부산아쿠아리움",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "SEA LIFE 부산아쿠아리움",
+              "candidates": [
+                "gwangalli-donkatsu",
+                "gwangalli-jogae",
+                "gijang-handasot"
+              ]
             }
           ]
         },
@@ -489,7 +1322,109 @@
               "time": "15:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "부산역",
+              "candidates": [
+                "nampo-gukbap",
+                "nampo-wandang",
+                "nampo-jagalchi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 블루라인파크 (미포)",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "W 레지던스호텔 해운대 (1박 225,000원)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "해운대 해수욕장, SEA LIFE 부산아쿠아리움, 해운대 블루라인파크 (미포)",
+          "amount": 217000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "W 레지던스호텔 해운대 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,578,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         }
       ],
       "kml": null,
@@ -497,7 +1432,8 @@
       "metrics": {
         "stops": 4,
         "indoor": 1,
-        "kid": 2.2
+        "kid": 2.2,
+        "meals": 8
       }
     },
     {
@@ -514,6 +1450,7 @@
         "물놀이",
         "액티브"
       ],
+      "recommended_for": "요트·해변열차、물놀이",
       "days": [
         {
           "day": 1,
@@ -539,6 +1476,26 @@
               "time": "15:30",
               "note": "해수욕"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "해운대 블루라인파크 (미포)",
+              "candidates": [
+                "haeundae-choil6-gogi",
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 해수욕장",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki",
+                "gwangalli-donkatsu"
+              ]
+            }
           ]
         },
         {
@@ -554,6 +1511,34 @@
               "ref": "gwangalli",
               "time": "17:00",
               "note": "광안리 저녁·야경"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "광안리 해수욕장",
+              "candidates": [
+                "gwangalli-jogae",
+                "gwangalli-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "광안리 해수욕장",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "haeundae-choil6-gogi",
+                "seomyeon-yeonui"
+              ]
             }
           ]
         },
@@ -571,7 +1556,109 @@
               "time": "14:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "부산역",
+              "candidates": [
+                "nampo-gukbap",
+                "nampo-wandang",
+                "nampo-jagalchi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해동용궁사",
+              "candidates": [
+                "gijang-cafe220",
+                "gijang-handasot",
+                "gijang-jangeo"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "씨클라우드 호텔앤레지던스 (1박 230,000원)",
+          "amount": 460000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "해운대 블루라인파크 (미포), 해운대 해수욕장, 광안리 요트투어",
+          "amount": 231000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "씨클라우드 호텔앤레지던스 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,602,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "광안리 요트투어 사전예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "광안리 요트투어",
+          "blurb": "블로거 다수가 '아이들이 여행 중 제일 재밌어함'으로 꼽은 체험. 광안대교 야경·드론쇼."
         }
       ],
       "kml": null,
@@ -579,7 +1666,8 @@
       "metrics": {
         "stops": 5,
         "indoor": 0,
-        "kid": 2.3
+        "kid": 2.3,
+        "meals": 8
       }
     },
     {
@@ -596,6 +1684,7 @@
         "과학관·어묵",
         "실내 많음"
       ],
+      "recommended_for": "체험·학습、과학관·어묵",
       "days": [
         {
           "day": 1,
@@ -616,6 +1705,26 @@
               "time": "17:00",
               "note": "체크인"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "SEA LIFE 부산아쿠아리움",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "SEA LIFE 부산아쿠아리움",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki",
+                "gwangalli-donkatsu"
+              ]
+            }
           ]
         },
         {
@@ -631,6 +1740,34 @@
               "ref": "samjin",
               "time": "15:00",
               "note": "어묵 만들기 체험"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "삼진어묵 체험역사관",
+              "candidates": [
+                "yeongdo-momos",
+                "yeongdo-samjin",
+                "yeongdo-haenyeochon"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "삼진어묵 체험역사관",
+              "candidates": [
+                "nampo-jagalchi",
+                "nampo-wandang",
+                "nampo-gukbap"
+              ]
             }
           ]
         },
@@ -648,7 +1785,113 @@
               "time": "14:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "부산역",
+              "candidates": [
+                "nampo-gukbap",
+                "nampo-wandang",
+                "nampo-jagalchi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 블루라인파크 (미포)",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "뉴시즈 해운대 레지던스 (1박 260,000원)",
+          "amount": 520000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "SEA LIFE 부산아쿠아리움, 국립부산과학관, 삼진어묵 체험역사관, 해운대 블루라인파크 (미포)",
+          "amount": 257000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "뉴시즈 해운대 레지던스 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,688,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "삼진어묵 만들기 체험 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
+        },
+        {
+          "name": "삼진어묵 체험역사관",
+          "blurb": "직접 어묵 만들고 시식. 블로거 아이 만족 상위 체험."
         }
       ],
       "kml": null,
@@ -656,7 +1899,8 @@
       "metrics": {
         "stops": 4,
         "indoor": 2,
-        "kid": 2.4
+        "kid": 2.4,
+        "meals": 8
       }
     },
     {
@@ -673,6 +1917,7 @@
         "여유·휴식",
         "저부담"
       ],
+      "recommended_for": "적은 이동、여유·휴식",
       "days": [
         {
           "day": 1,
@@ -693,6 +1938,26 @@
               "time": "15:00",
               "note": "바다 산책·물놀이"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "해운대 해수욕장",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 해수욕장",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki",
+                "gwangalli-donkatsu"
+              ]
+            }
           ]
         },
         {
@@ -708,6 +1973,34 @@
               "ref": "gwangalli",
               "time": "17:00",
               "note": "저녁·야경"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "광안리 해수욕장",
+              "candidates": [
+                "gwangalli-jogae",
+                "gwangalli-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "광안리 해수욕장",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "haeundae-choil6-gogi",
+                "seomyeon-yeonui"
+              ]
             }
           ]
         },
@@ -725,7 +2018,109 @@
               "time": "14:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "부산역",
+              "candidates": [
+                "nampo-gukbap",
+                "nampo-wandang",
+                "nampo-jagalchi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 블루라인파크 (미포)",
+              "candidates": [
+                "haeundae-choil6-gogi",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "르컬렉티브 해운대 패러그라프 (1박 200,000원)",
+          "amount": 400000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "해운대 해수욕장, SEA LIFE 부산아쿠아리움, 해운대 블루라인파크 (미포)",
+          "amount": 217000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "르컬렉티브 해운대 패러그라프 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,528,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
+        },
+        {
+          "name": "SEA LIFE 부산아쿠아리움",
+          "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안."
         }
       ],
       "kml": null,
@@ -733,7 +2128,8 @@
       "metrics": {
         "stops": 4,
         "indoor": 1,
-        "kid": 2.4
+        "kid": 2.4,
+        "meals": 8
       }
     },
     {
@@ -750,6 +2146,7 @@
         "놀이기구",
         "아이 최애"
       ],
+      "recommended_for": "롯데월드 종일、놀이기구",
       "days": [
         {
           "day": 1,
@@ -770,6 +2167,26 @@
               "time": "14:30",
               "note": "아쿠아리움"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "SEA LIFE 부산아쿠아리움",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "SEA LIFE 부산아쿠아리움",
+              "candidates": [
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki",
+                "gwangalli-donkatsu"
+              ]
+            }
           ]
         },
         {
@@ -780,6 +2197,34 @@
               "ref": "lotteworld",
               "time": "10:00",
               "note": "오픈런~야간쇼까지 종일"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "롯데월드 어드벤처 부산",
+              "candidates": [
+                "gijang-handasot",
+                "gijang-jangeo",
+                "gijang-cafe220"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "롯데월드 어드벤처 부산",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
             }
           ]
         },
@@ -802,7 +2247,113 @@
               "time": "15:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeundae-hotteok",
+                "haeundae-choil6-gogi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "해운대 해수욕장",
+              "candidates": [
+                "haeundae-gelatteok",
+                "haeundae-marine-donkatsu",
+                "gwangalli-tteokbokki"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "해운대 해수욕장",
+              "candidates": [
+                "gwangalli-donkatsu",
+                "gwangalli-jogae",
+                "gijang-handasot"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "SRT 왕복",
+          "detail": "수서↔부산 일반실 어른2+어린이2",
+          "amount": 311200,
+          "type": "확정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "지하철·택시 3일 (원도심 날은 시티투어버스 1일권 대안)",
+          "amount": 80000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "W 레지던스호텔 해운대 (1박 225,000원)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "SEA LIFE 부산아쿠아리움, 롯데월드 어드벤처 부산, 해운대 블루라인파크 (미포), 해운대 해수욕장",
+          "amount": 377000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 420000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "SRT 왕복 예매",
+          "note": "SRT 예매 오픈 즉시(성수기 조기 매진, D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "W 레지던스호텔 해운대 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,738,200원 · 예산 3,000,000원"
+        },
+        {
+          "label": "롯데월드 종일권 온라인 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "블루라인파크 스카이캡슐 시간대 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아리움 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "해운대 해수욕장",
+          "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스."
+        },
+        {
+          "name": "롯데월드 어드벤처 부산",
+          "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상."
+        },
+        {
+          "name": "해운대 블루라인파크 (미포)",
+          "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정)."
         }
       ],
       "kml": null,
@@ -810,7 +2361,8 @@
       "metrics": {
         "stops": 4,
         "indoor": 2,
-        "kid": 2.4
+        "kid": 2.4,
+        "meals": 8
       }
     }
   ]

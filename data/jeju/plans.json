@@ -14,6 +14,7 @@
         "동부 핵심",
         "자연+체험"
       ],
+      "recommended_for": "기본 추천、동부 핵심",
       "days": [
         {
           "day": 1,
@@ -33,6 +34,26 @@
               "ref": "hamdeok",
               "time": "14:30",
               "note": "에메랄드빛 물놀이"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "함덕해수욕장",
+              "candidates": [
+                "haeoban",
+                "delmoondo",
+                "tteulchae"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "함덕해수욕장",
+              "candidates": [
+                "ujin",
+                "jaemae-noodles",
+                "kimanbok"
+              ]
             }
           ]
         },
@@ -55,6 +76,34 @@
               "time": "14:00",
               "note": "돌고래 공연·대형 수조"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeoban",
+                "delmoondo"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "섭지코지",
+              "candidates": [
+                "baekgi-haenyeo",
+                "myeonghee-noodles",
+                "childdonga-seongsan"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "아쿠아플라넷 제주",
+              "candidates": [
+                "tteulchae",
+                "ujin",
+                "kimanbok"
+              ]
+            }
           ]
         },
         {
@@ -76,15 +125,118 @@
               "time": "16:30",
               "note": "렌터카 반납·귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeoban",
+                "delmoondo"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "에코랜드 테마파크",
+              "candidates": [
+                "tteulchae",
+                "kimanbok",
+                "ujin"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "jaemae-noodles",
+                "sukseongdo",
+                "hyeopjaesinguksu"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "소노벨 제주 (1박 280,000원)",
+          "amount": 560000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "성산일출봉, 섭지코지, 아쿠아플라넷 제주, 만장굴, 에코랜드 테마파크",
+          "amount": 242000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "소노벨 제주 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,862,000원 · 예산 3,000,000원"
+        },
+        {
+          "label": "에코랜드 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아플라넷 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "함덕해수욕장",
+          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
+        },
+        {
+          "name": "에코랜드 테마파크",
+          "blurb": "곶자왈 꼬마기차+오리배, 걷기 부담 없이 자연."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 8,
+        "stops": 7,
         "indoor": 3,
-        "kid": 2.9
+        "kid": 2.9,
+        "meals": 8
       }
     },
     {
@@ -101,6 +253,7 @@
         "꽃·차밭",
         "공항 근접"
       ],
+      "recommended_for": "서부 코스、꽃·차밭",
       "days": [
         {
           "day": 1,
@@ -120,6 +273,26 @@
               "ref": "hyeopjae",
               "time": "14:30",
               "note": "협재 물놀이"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "협재해수욕장",
+              "candidates": [
+                "swimpyo",
+                "daemunjip",
+                "hyeopjaesinguksu"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "협재해수욕장",
+              "candidates": [
+                "donhaesang",
+                "yeongsilguksu",
+                "saekdal"
+              ]
             }
           ]
         },
@@ -142,6 +315,34 @@
               "time": "15:30",
               "note": "폭포·생태연못"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "sukseongdo",
+                "kimanbok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "오설록 티뮤지엄",
+              "candidates": [
+                "daemunjip",
+                "swimpyo",
+                "hyeopjaesinguksu"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "카멜리아힐",
+              "candidates": [
+                "yeongsilguksu",
+                "saekdal",
+                "hallagalchi"
+              ]
+            }
           ]
         },
         {
@@ -158,15 +359,122 @@
               "time": "13:30",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "sukseongdo",
+                "kimanbok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "제주국제공항",
+              "candidates": [
+                "jaemae-noodles",
+                "ujin",
+                "haeoban"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "delmoondo",
+                "tteulchae",
+                "hyeopjaesinguksu"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "메종글래드 제주 (1박 320,000원)",
+          "amount": 640000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "한림공원, 카멜리아힐, 제주항공우주박물관",
+          "amount": 126000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "메종글래드 제주 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,826,000원 · 예산 3,000,000원"
+        },
+        {
+          "label": "카멜리아힐 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "한림공원 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "항공우주박물관 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "한림공원",
+          "blurb": "용암동굴+아열대 식물원+공작새, 오래 걸어도 안 지루."
+        },
+        {
+          "name": "제주항공우주박물관",
+          "blurb": "실물 조종석·우주선 체험, 비행기 좋아하면 최고."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 7,
+        "stops": 6,
         "indoor": 2,
-        "kid": 2.7
+        "kid": 2.7,
+        "meals": 8
       }
     },
     {
@@ -183,6 +491,7 @@
         "바다·동굴",
         "완만한 동선"
       ],
+      "recommended_for": "동부 코스、바다·동굴",
       "days": [
         {
           "day": 1,
@@ -203,6 +512,26 @@
               "time": "17:00",
               "note": "체크인"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "함덕해수욕장",
+              "candidates": [
+                "haeoban",
+                "delmoondo",
+                "tteulchae"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "함덕해수욕장",
+              "candidates": [
+                "ujin",
+                "jaemae-noodles",
+                "kimanbok"
+              ]
+            }
           ]
         },
         {
@@ -218,6 +547,34 @@
               "ref": "seopjikoji",
               "time": "12:00",
               "note": "바다 언덕"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeoban",
+                "delmoondo"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "섭지코지",
+              "candidates": [
+                "baekgi-haenyeo",
+                "myeonghee-noodles",
+                "childdonga-seongsan"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "섭지코지",
+              "candidates": [
+                "tteulchae",
+                "ujin",
+                "kimanbok"
+              ]
             }
           ]
         },
@@ -240,15 +597,114 @@
               "time": "16:30",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "haeoban",
+                "delmoondo"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "만장굴",
+              "candidates": [
+                "tteulchae",
+                "childdonga-seongsan",
+                "myeonghee-noodles"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "jaemae-noodles",
+                "sukseongdo",
+                "kimanbok"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "소노벨 제주 (1박 280,000원)",
+          "amount": 560000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "성산일출봉, 섭지코지, 아쿠아플라넷 제주, 만장굴",
+          "amount": 178000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "소노벨 제주 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,798,000원 · 예산 3,000,000원"
+        },
+        {
+          "label": "아쿠아플라넷 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "함덕해수욕장",
+          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
+        },
+        {
+          "name": "성산일출봉",
+          "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 7,
+        "stops": 6,
         "indoor": 2,
-        "kid": 2.8
+        "kid": 2.8,
+        "meals": 8
       }
     },
     {
@@ -265,6 +721,7 @@
         "실내 많음",
         "박물관·수족관"
       ],
+      "recommended_for": "날씨 무관、실내 많음",
       "days": [
         {
           "day": 1,
@@ -285,6 +742,26 @@
               "time": "18:00",
               "note": "체크인·수영장"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "아쿠아플라넷 제주",
+              "candidates": [
+                "baekgi-haenyeo",
+                "myeonghee-noodles",
+                "childdonga-seongsan"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "아쿠아플라넷 제주",
+              "candidates": [
+                "tteulchae",
+                "delmoondo",
+                "haeoban"
+              ]
+            }
           ]
         },
         {
@@ -300,6 +777,34 @@
               "ref": "teddybear",
               "time": "14:00",
               "note": "곰인형 전시·공연"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "sukseongdo",
+                "kimanbok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "테디베어뮤지엄",
+              "candidates": [
+                "hallagalchi",
+                "hawonga",
+                "yeongsilguksu"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "테디베어뮤지엄",
+              "candidates": [
+                "saekdal",
+                "hyeopjaesinguksu",
+                "daemunjip"
+              ]
             }
           ]
         },
@@ -317,15 +822,122 @@
               "time": "13:30",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "sukseongdo",
+                "kimanbok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "제주국제공항",
+              "candidates": [
+                "jaemae-noodles",
+                "ujin",
+                "haeoban"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "delmoondo",
+                "tteulchae",
+                "hyeopjaesinguksu"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "메종글래드 제주 (1박 320,000원)",
+          "amount": 640000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "아쿠아플라넷 제주, 제주항공우주박물관, 테디베어뮤지엄",
+          "amount": 228000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "메종글래드 제주 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,928,000원 · 예산 3,000,000원"
+        },
+        {
+          "label": "테디베어뮤지엄 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아플라넷 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "항공우주박물관 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "테디베어뮤지엄",
+          "blurb": "실내 곰인형 전시·공연, 날씨 무관."
+        },
+        {
+          "name": "아쿠아플라넷 제주",
+          "blurb": "돌고래 공연+대형 수조, 하루 종일 실내."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 6,
+        "stops": 5,
         "indoor": 4,
-        "kid": 2.8
+        "kid": 2.8,
+        "meals": 8
       }
     },
     {
@@ -342,6 +954,7 @@
         "무료·저렴 스팟",
         "함덕 도보"
       ],
+      "recommended_for": "가성비、무료·저렴 스팟",
       "days": [
         {
           "day": 1,
@@ -361,6 +974,26 @@
               "ref": "hamdeok",
               "time": "14:00",
               "note": "무료 물놀이"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "함덕해수욕장",
+              "candidates": [
+                "haeoban",
+                "delmoondo",
+                "tteulchae"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "함덕해수욕장",
+              "candidates": [
+                "ujin",
+                "jaemae-noodles",
+                "kimanbok"
+              ]
             }
           ]
         },
@@ -383,6 +1016,34 @@
               "time": "15:00",
               "note": "저렴한 폭포"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "delmoondo",
+                "haeoban"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "성산일출봉",
+              "candidates": [
+                "baekgi-haenyeo",
+                "myeonghee-noodles",
+                "childdonga-seongsan"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "천지연폭포",
+              "candidates": [
+                "hawonga",
+                "hallagalchi",
+                "yeongsilguksu"
+              ]
+            }
           ]
         },
         {
@@ -399,15 +1060,110 @@
               "time": "13:30",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "delmoondo",
+                "haeoban"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "제주국제공항",
+              "candidates": [
+                "jaemae-noodles",
+                "sukseongdo",
+                "kimanbok"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "ujin",
+                "tteulchae",
+                "hyeopjaesinguksu"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "에벤에셀 제주 함덕호텔 (1박 160,000원)",
+          "amount": 320000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "섭지코지, 성산일출봉, 천지연폭포, 만장굴",
+          "amount": 36000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "에벤에셀 제주 함덕호텔 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,416,000원 · 예산 3,000,000원"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "천지연폭포",
+          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
+        },
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "함덕해수욕장",
+          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 7,
+        "stops": 6,
         "indoor": 1,
-        "kid": 2.8
+        "kid": 2.8,
+        "meals": 8
       }
     },
     {
@@ -424,6 +1180,7 @@
         "풀코스",
         "여유"
       ],
+      "recommended_for": "중문 리조트、풀코스",
       "days": [
         {
           "day": 1,
@@ -443,6 +1200,26 @@
               "ref": "jungmun",
               "time": "15:00",
               "note": "중문 해변 산책"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "중문색달해수욕장",
+              "candidates": [
+                "hallagalchi",
+                "hawonga",
+                "saekdal"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "중문색달해수욕장",
+              "candidates": [
+                "yeongsilguksu",
+                "hyeopjaesinguksu",
+                "daemunjip"
+              ]
             }
           ]
         },
@@ -465,6 +1242,34 @@
               "time": "14:00",
               "note": "아쿠아리움"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "hawonga",
+                "hallagalchi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "섭지코지",
+              "candidates": [
+                "baekgi-haenyeo",
+                "myeonghee-noodles",
+                "childdonga-seongsan"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "아쿠아플라넷 제주",
+              "candidates": [
+                "tteulchae",
+                "delmoondo",
+                "haeoban"
+              ]
+            }
           ]
         },
         {
@@ -486,15 +1291,118 @@
               "time": "15:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "hawonga",
+                "hallagalchi"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "테디베어뮤지엄",
+              "candidates": [
+                "yeongsilguksu",
+                "saekdal",
+                "hyeopjaesinguksu"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "jaemae-noodles",
+                "sukseongdo",
+                "kimanbok"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "제주신라호텔 (1박 850,000원)",
+          "amount": 1700000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "성산일출봉, 섭지코지, 아쿠아플라넷 제주, 천지연폭포, 테디베어뮤지엄",
+          "amount": 216000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "제주신라호텔 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 2,976,000원 · 예산 3,000,000원"
+        },
+        {
+          "label": "테디베어뮤지엄 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아플라넷 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "천지연폭포",
+          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
+        },
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "테디베어뮤지엄",
+          "blurb": "실내 곰인형 전시·공연, 날씨 무관."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 8,
+        "stops": 7,
         "indoor": 2,
-        "kid": 2.9
+        "kid": 2.9,
+        "meals": 8
       }
     },
     {
@@ -511,6 +1419,7 @@
         "카트 레이싱",
         "꼬마기차"
       ],
+      "recommended_for": "액티브、카트 레이싱",
       "days": [
         {
           "day": 1,
@@ -531,6 +1440,26 @@
               "time": "14:00",
               "note": "곶자왈 꼬마기차"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "에코랜드 테마파크",
+              "candidates": [
+                "haeoban",
+                "delmoondo",
+                "tteulchae"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "에코랜드 테마파크",
+              "candidates": [
+                "kimanbok",
+                "ujin",
+                "jaemae-noodles"
+              ]
+            }
           ]
         },
         {
@@ -546,6 +1475,34 @@
               "ref": "hallim",
               "time": "13:30",
               "note": "동굴+식물원"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "sukseongdo",
+                "kimanbok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "한림공원",
+              "candidates": [
+                "daemunjip",
+                "swimpyo",
+                "hyeopjaesinguksu"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "한림공원",
+              "candidates": [
+                "donhaesang",
+                "yeongsilguksu",
+                "saekdal"
+              ]
             }
           ]
         },
@@ -563,15 +1520,126 @@
               "time": "14:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "sukseongdo",
+                "kimanbok"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "제주국제공항",
+              "candidates": [
+                "jaemae-noodles",
+                "ujin",
+                "haeoban"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "delmoondo",
+                "tteulchae",
+                "hyeopjaesinguksu"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "메종글래드 제주 (1박 320,000원)",
+          "amount": 640000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "에코랜드 테마파크, 9.81파크, 한림공원, 아쿠아플라넷 제주",
+          "amount": 380000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "메종글래드 제주 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 2,080,000원 · 예산 3,000,000원"
+        },
+        {
+          "label": "에코랜드 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "9.81파크 레이싱 예약",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "한림공원 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "아쿠아플라넷 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "에코랜드 테마파크",
+          "blurb": "곶자왈 꼬마기차+오리배, 걷기 부담 없이 자연."
+        },
+        {
+          "name": "한림공원",
+          "blurb": "용암동굴+아열대 식물원+공작새, 오래 걸어도 안 지루."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 6,
+        "stops": 5,
         "indoor": 2,
-        "kid": 2.8
+        "kid": 2.8,
+        "meals": 8
       }
     },
     {
@@ -588,6 +1656,7 @@
         "물놀이",
         "여름 최적"
       ],
+      "recommended_for": "해변 3곳、물놀이",
       "days": [
         {
           "day": 1,
@@ -608,6 +1677,26 @@
               "time": "17:00",
               "note": "체크인"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "함덕해수욕장",
+              "candidates": [
+                "haeoban",
+                "delmoondo",
+                "tteulchae"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "함덕해수욕장",
+              "candidates": [
+                "ujin",
+                "jaemae-noodles",
+                "kimanbok"
+              ]
+            }
           ]
         },
         {
@@ -623,6 +1712,34 @@
               "ref": "jungmun",
               "time": "15:00",
               "note": "중문(얕은 구간)"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "delmoondo",
+                "haeoban"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "중문색달해수욕장",
+              "candidates": [
+                "hallagalchi",
+                "hawonga",
+                "saekdal"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "중문색달해수욕장",
+              "candidates": [
+                "yeongsilguksu",
+                "hyeopjaesinguksu",
+                "daemunjip"
+              ]
             }
           ]
         },
@@ -640,15 +1757,110 @@
               "time": "13:30",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "delmoondo",
+                "haeoban"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "제주국제공항",
+              "candidates": [
+                "jaemae-noodles",
+                "sukseongdo",
+                "kimanbok"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "ujin",
+                "tteulchae",
+                "hyeopjaesinguksu"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "에벤에셀 제주 함덕호텔 (1박 160,000원)",
+          "amount": 320000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "섭지코지",
+          "amount": 3000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "에벤에셀 제주 함덕호텔 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,383,000원 · 예산 3,000,000원"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "함덕해수욕장",
+          "blurb": "에메랄드빛 얕은 바다, 아이 물놀이 최적."
+        },
+        {
+          "name": "협재해수욕장",
+          "blurb": "얕고 완만한 수심, 저학년도 안전한 물놀이."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 6,
+        "stops": 5,
         "indoor": 0,
-        "kid": 2.8
+        "kid": 2.8,
+        "meals": 8
       }
     },
     {
@@ -665,6 +1877,7 @@
         "여유·휴식",
         "표선 리조트"
       ],
+      "recommended_for": "적은 이동、여유·휴식",
       "days": [
         {
           "day": 1,
@@ -685,6 +1898,26 @@
               "time": "15:30",
               "note": "가까운 바다 언덕"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "섭지코지",
+              "candidates": [
+                "baekgi-haenyeo",
+                "myeonghee-noodles",
+                "childdonga-seongsan"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "섭지코지",
+              "candidates": [
+                "tteulchae",
+                "delmoondo",
+                "haeoban"
+              ]
+            }
           ]
         },
         {
@@ -700,6 +1933,34 @@
               "ref": "aquaplanet",
               "time": "13:00",
               "note": "아쿠아리움"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "childdonga-seongsan",
+                "myeonghee-noodles"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "아쿠아플라넷 제주",
+              "candidates": [
+                "baekgi-haenyeo",
+                "tteulchae",
+                "delmoondo"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "아쿠아플라넷 제주",
+              "candidates": [
+                "haeoban",
+                "ujin",
+                "kimanbok"
+              ]
             }
           ]
         },
@@ -717,15 +1978,114 @@
               "time": "14:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "childdonga-seongsan",
+                "myeonghee-noodles"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "제주국제공항",
+              "candidates": [
+                "jaemae-noodles",
+                "sukseongdo",
+                "kimanbok"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "ujin",
+                "haeoban",
+                "delmoondo"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "해비치 호텔앤드리조트 제주 (1박 550,000원)",
+          "amount": 1100000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "섭지코지, 성산일출봉, 아쿠아플라넷 제주, 천지연폭포",
+          "amount": 172000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "해비치 호텔앤드리조트 제주 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 2,332,000원 · 예산 3,000,000원"
+        },
+        {
+          "label": "아쿠아플라넷 온라인권 예매",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "천지연폭포",
+          "blurb": "짧고 평탄한 산책로 끝 폭포, 야간 조명도."
+        },
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "성산일출봉",
+          "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 6,
+        "stops": 5,
         "indoor": 1,
-        "kid": 3.0
+        "kid": 3.0,
+        "meals": 8
       }
     },
     {
@@ -742,6 +2102,7 @@
         "동굴·분화구",
         "제주시 베이스"
       ],
+      "recommended_for": "자연·학습、동굴·분화구",
       "days": [
         {
           "day": 1,
@@ -762,6 +2123,26 @@
               "time": "14:00",
               "note": "곶자왈 생태 기차"
             }
+          ],
+          "meals": [
+            {
+              "slot": "점심",
+              "near": "에코랜드 테마파크",
+              "candidates": [
+                "haeoban",
+                "delmoondo",
+                "tteulchae"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "에코랜드 테마파크",
+              "candidates": [
+                "kimanbok",
+                "ujin",
+                "jaemae-noodles"
+              ]
+            }
           ]
         },
         {
@@ -777,6 +2158,34 @@
               "ref": "seongsan",
               "time": "13:30",
               "note": "분화구 트레킹"
+            }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "ujin",
+                "jaemae-noodles"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "성산일출봉",
+              "candidates": [
+                "baekgi-haenyeo",
+                "myeonghee-noodles",
+                "childdonga-seongsan"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "성산일출봉",
+              "candidates": [
+                "tteulchae",
+                "delmoondo",
+                "haeoban"
+              ]
             }
           ]
         },
@@ -799,15 +2208,118 @@
               "time": "16:00",
               "note": "귀가"
             }
+          ],
+          "meals": [
+            {
+              "slot": "아침",
+              "near": "숙소 근처",
+              "candidates": [
+                "ujin",
+                "jaemae-noodles"
+              ]
+            },
+            {
+              "slot": "점심",
+              "near": "카멜리아힐",
+              "candidates": [
+                "yeongsilguksu",
+                "saekdal",
+                "hallagalchi"
+              ]
+            },
+            {
+              "slot": "저녁",
+              "near": "제주국제공항",
+              "candidates": [
+                "sukseongdo",
+                "kimanbok",
+                "haeoban"
+              ]
+            }
           ]
+        }
+      ],
+      "cost": [
+        {
+          "cat": "항공 왕복",
+          "detail": "김포/김해↔제주 어른2+어린이2 (추정)",
+          "amount": 360000,
+          "type": "추정"
+        },
+        {
+          "cat": "현지 교통",
+          "detail": "렌터카 2일 or 구간별 택시/버스",
+          "amount": 150000,
+          "type": "추정"
+        },
+        {
+          "cat": "숙박 2박",
+          "detail": "제주 오리엔탈호텔 (1박 200,000원)",
+          "amount": 400000,
+          "type": "추정"
+        },
+        {
+          "cat": "입장·체험",
+          "detail": "에코랜드 테마파크, 만장굴, 성산일출봉, 카멜리아힐",
+          "amount": 133000,
+          "type": "추정"
+        },
+        {
+          "cat": "식비",
+          "detail": "4인·3일 (끼니별 맛집 참고)",
+          "amount": 450000,
+          "type": "추정"
+        },
+        {
+          "cat": "예비·기념품",
+          "detail": "버퍼",
+          "amount": 100000,
+          "type": "추정"
+        }
+      ],
+      "decisions": [
+        {
+          "label": "항공 왕복 예매",
+          "note": "항공권+렌터카 조기 예약(성수기 D-30 전후)"
+        },
+        {
+          "label": "숙소 최종 예약",
+          "note": "제주 오리엔탈호텔 또는 대안, 8월말 4인"
+        },
+        {
+          "label": "예산 상한 확정",
+          "note": "현재 예상 총액 1,593,000원 · 예산 3,000,000원"
+        },
+        {
+          "label": "카멜리아힐 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        },
+        {
+          "label": "에코랜드 입장권",
+          "note": "온라인 예매가 현장보다 저렴/시간지정"
+        }
+      ],
+      "highlights": [
+        {
+          "name": "제주국제공항",
+          "blurb": "렌터카·수하물 동선이 짧아 어린 자매와도 지치지 않게 시작."
+        },
+        {
+          "name": "에코랜드 테마파크",
+          "blurb": "곶자왈 꼬마기차+오리배, 걷기 부담 없이 자연."
+        },
+        {
+          "name": "성산일출봉",
+          "blurb": "완만한 계단 왕복 1시간, 유네스코 분화구. 성취감+자연학습."
         }
       ],
       "kml": null,
       "mymaps": null,
       "metrics": {
-        "stops": 7,
+        "stops": 6,
         "indoor": 3,
-        "kid": 2.5
+        "kid": 2.5,
+        "meals": 8
       }
     }
   ]

@@ -19,8 +19,10 @@ if not cities or "cities" not in cities:
 for c in cities["cities"]:
     d = c["dir"]
     plans = load(p(d,"plans.json")); hotels = load(p(d,"hotels.json")); at = load(p(d,"attractions.json"))
+    rest = load(p(d,"restaurants.json")) or {}
     if plans is None or hotels is None or at is None:
         errs.append(f"[{c['id']}] missing data files"); continue
+    if len(rest) < 6: warns.append(f"[{c['id']}] only {len(rest)} restaurants")
     n = len(plans.get("plans",[]))
     if n < 10: errs.append(f"[{c['id']}] only {n} plans (need >=10)")
     # numeric fields
@@ -40,6 +42,11 @@ for c in cities["cities"]:
                 if r.startswith("hotel:"):
                     if r[6:] not in hotels: errs.append(f"[{c['id']}] {pl['id']} ref {r} missing")
                 elif r not in at: errs.append(f"[{c['id']}] {pl['id']} ref {r} missing")
+            for mm in day.get("meals",[]):
+                for rid in mm.get("candidates",[]):
+                    if rid not in rest: errs.append(f"[{c['id']}] {pl['id']} meal ref {rid} missing")
+        if not any(day.get("meals") for day in pl["days"]):
+            warns.append(f"[{c['id']}] {pl['id']} has no meals")
 
 # app.js syntax
 r = subprocess.run(["node","--check",p("assets","app.js")], capture_output=True, text=True)
