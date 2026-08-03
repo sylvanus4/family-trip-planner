@@ -41,6 +41,24 @@
     };
   }
 
+  /** 같은 조건(날짜·인원)이 박힌 타 사이트 비교 링크.
+   *  ⚠️ 이 사이트들은 헤드리스 크롤이 막혀 있어(봇차단·SPA) 숫자를 자동 수집하지 못한다.
+   *     지어내지 않고, 클릭 한 번으로 직접 확인하도록 딥링크만 제공한다. */
+  function compareLinks(hotelName) {
+    const d = C.data[C.city.id];
+    const w = d.prices?.meta?.date_windows?.[C.win];
+    if (!w) return [];
+    const ci = w.checkin, co = w.checkout, q = encodeURIComponent(hotelName);
+    const rooms = C.cfg === 'two-room' ? 2 : 1;
+    return [
+      { n: '구글 호텔', u: `https://www.google.com/travel/search?q=${q}&hl=ko&gl=KR&curr=KRW` },
+      { n: '네이버 호텔', u: `https://hotels.naver.com/list?keyword=${q}&checkIn=${ci}&checkOut=${co}&adultCnt=2` },
+      { n: '아고다', u: `https://www.agoda.com/ko-kr/search?textToSearch=${q}&checkIn=${ci}&los=2&adults=2&children=2&childAges=10,8&rooms=${rooms}` },
+      { n: '트립닷컴', u: `https://kr.trip.com/hotels/list?keyword=${q}&checkin=${ci.replace(/-/g, '')}&checkout=${co.replace(/-/g, '')}&adult=2&children=2&ages=10,8&curr=KRW` },
+      { n: '네이버 검색', u: `https://search.naver.com/search.naver?query=${q}+${ci}+숙박` },
+    ];
+  }
+
   /** 도시별 도시간 교통비 */
   function intercity() {
     const d = C.data[C.city.id];
@@ -105,6 +123,9 @@
           <td class="note">${r.note || ''}
             ${(r.badges || []).map((b) => `<span class="bdg${b.startsWith('특가') ? ' deal' : b.startsWith('▼') ? ' down' : b.startsWith('▲') ? ' up' : ''}">${b}</span>`).join('')}
             ${r.url ? ` <a href="${r.url}" target="_blank" rel="noopener">확인</a>` : ''}</td></tr>`).join('')}
+        <tr class="cmp"><td>다른 곳 가격 확인</td><td class="amt">—</td>
+          <td class="note">같은 날짜·인원이 적용된 링크입니다. 이 사이트들은 자동 수집이 막혀 있어 숫자를 싣지 않았습니다 — 직접 눌러 최저가를 확인하세요.
+            ${compareLinks(d.hotels?.[C.hotel]?.name || '').map((l) => `<a class="cmp-lnk" href="${l.u}" target="_blank" rel="noopener">${l.n}</a>`).join('')}</td></tr>
       </tbody><tfoot>
         <tr class="tot"><td>합계</td><td class="amt">${won(total)}원</td>
           <td>${missing.length ? `<span class="unk">${missing.length}개 항목 미확인 — 실제 총액은 더 커집니다</span>` : '전 항목 반영'}</td></tr>

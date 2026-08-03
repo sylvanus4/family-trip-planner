@@ -439,6 +439,12 @@ table.cmp td.cat{max-width:230px; white-space:normal}
 .bdg.down{background:#E8F5E9; color:#1B7A3D}
 .bdg.up{background:#FDECE6; color:#B4341A}
 
+.calc-tbl tr.cmp td{background:#FBFAF6}
+.cmp-lnk{display:inline-block; margin:4px 6px 0 0; padding:4px 10px; border-radius:999px;
+  border:1px solid var(--line); background:var(--card); color:var(--sea-deep);
+  font-size:.78rem; text-decoration:none; white-space:nowrap}
+.cmp-lnk:hover{background:var(--sea-tint); border-color:var(--sea)}
+
 .calc-grid{margin-top:var(--s8)}
 .calc-grid h3{margin:0 0 var(--s3); font-size:1.05rem; color:var(--ink)}
 .calc-grid h3 small{font-weight:400; color:var(--soft); font-size:.8rem}
