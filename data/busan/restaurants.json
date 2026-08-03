@@ -10,7 +10,8 @@
     "naver": "https://map.naver.com/p/search/%EB%A7%88%EB%A6%B0%EB%8F%88%EA%B9%8C%EC%8A%A4",
     "phone": null,
     "kid_note": "뽀로로 음료 등 아이 메뉴, 특 사이즈",
-    "wait": "주말 점심 대기, 오픈런 권장"
+    "wait": "주말 점심 대기, 오픈런 권장",
+    "sentiment": "겉바속촉 돈까스, 다양한 세대가 편하게 즐기는 맛"
   },
   "haeundae-choil6-gogi": {
     "name": "초일육 해운대본점",
@@ -23,7 +24,8 @@
     "naver": "https://map.naver.com/p/search/%EC%B4%88%EC%9D%BC%EC%9C%A1%20%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B3%B8%EC%A0%90",
     "phone": null,
     "kid_note": "별도 룸 있어 가족 프라이빗",
-    "wait": "저녁 웨이팅, 네이버 예약 권장"
+    "wait": "저녁 웨이팅, 네이버 예약 권장",
+    "sentiment": "직접 구워주는 숙성 돼지고기, 예약 권장"
   },
   "haeundae-hotteok": {
     "name": "원조찹쌀씨앗호떡",
@@ -36,7 +38,11 @@
     "naver": "https://map.naver.com/p/search/%EC%9B%90%EC%A1%B0%EC%B0%B9%EC%8C%80%EC%94%A8%EC%95%97%ED%98%B8%EB%96%A1",
     "phone": null,
     "kid_note": "해운대시장 달콤 간식, 좌석 제한적",
-    "wait": "평일 오전 추천"
+    "wait": "평일 오전 추천",
+    "rating": 3.9,
+    "reviews": null,
+    "rsource": "diningcode",
+    "sentiment": "겉바속촉 씨앗호떡, 가성비 좋다는 평"
   },
   "haeundae-gelatteok": {
     "name": "호랑이젤라떡",
@@ -49,7 +55,8 @@
     "naver": "https://map.naver.com/p/search/%ED%98%B8%EB%9E%91%EC%9D%B4%EC%A0%A4%EB%9D%BC%EB%96%A1",
     "phone": null,
     "kid_note": "떡 안에 아이스크림, 아이 인기",
-    "wait": "주말 줄서기"
+    "wait": "주말 줄서기",
+    "sentiment": "젤라또+인절미 식감 디저트, 주말 대기"
   },
   "gijang-jangeo": {
     "name": "명품장어 오시리아점",
@@ -62,7 +69,8 @@
     "naver": "https://map.naver.com/p/search/%EB%AA%85%ED%92%88%EC%9E%A5%EC%96%B4%20%EC%98%A4%EC%8B%9C%EB%A6%AC%EC%95%84%EC%A0%90",
     "phone": null,
     "kid_note": "아기의자, 정갈해 아이 동반 후기 다수",
-    "wait": "롯데월드 전후 붐빔, 식사시간 피해서"
+    "wait": "롯데월드 전후 붐빔, 식사시간 피해서",
+    "sentiment": "국내산 장어, 깔끔·아늑해 가족 방문 적합"
   },
   "gijang-cafe220": {
     "name": "카페드220볼트 오시리아",
@@ -75,7 +83,8 @@
     "naver": "https://map.naver.com/p/search/%EC%B9%B4%ED%8E%98%EB%93%9C220%EB%B3%BC%ED%8A%B8%20%EC%98%A4%EC%8B%9C%EB%A6%AC%EC%95%84",
     "phone": null,
     "kid_note": "대형 오션뷰, 실외서 아이 뛰놀기 좋음",
-    "wait": "주차 넓음, 주말 오후 좌석 대기"
+    "wait": "주차 넓음, 주말 오후 좌석 대기",
+    "sentiment": "넓은 공간·오션뷰 대형 베이커리 카페"
   },
   "gijang-handasot": {
     "name": "한다솥 오시리아점",
@@ -88,7 +97,8 @@
     "naver": "https://map.naver.com/p/search/%ED%95%9C%EB%8B%A4%EC%86%A5%20%EC%98%A4%EC%8B%9C%EB%A6%AC%EC%95%84%EC%A0%90",
     "phone": null,
     "kid_note": "솥밥정식, 아이 입맛 반찬",
-    "wait": "점심 혼잡, 전화 확인"
+    "wait": "점심 혼잡, 전화 확인",
+    "sentiment": "솥밥·구이 가성비, 아이 동반 좋음"
   },
   "gwangalli-jogae": {
     "name": "갯벌의조개 광안리점",
@@ -101,7 +111,11 @@
     "naver": "https://map.naver.com/p/search/%EA%B0%AF%EB%B2%8C%EC%9D%98%EC%A1%B0%EA%B0%9C%20%EA%B4%91%EC%95%88%EB%A6%AC%EC%A0%90",
     "phone": null,
     "kid_note": "광안대교 오션뷰 창가석",
-    "wait": "저녁 오션뷰석 대기, 전화 문의"
+    "wait": "저녁 오션뷰석 대기, 전화 문의",
+    "rating": 5,
+    "reviews": 4,
+    "rsource": "diningcode",
+    "sentiment": "신선한 재료·오션뷰 조개전골 만족"
   },
   "gwangalli-donkatsu": {
     "name": "돈까스의 정원 광안본점",
@@ -114,7 +128,11 @@
     "naver": "https://map.naver.com/p/search/%EB%8F%88%EA%B9%8C%EC%8A%A4%EC%9D%98%EC%A0%95%EC%9B%90%20%EA%B4%91%EC%95%88%EB%B3%B8%EC%A0%90",
     "phone": null,
     "kid_note": "정원형 좌석·밝은 인테리어, 아이 동반 많음",
-    "wait": "주말 웨이팅, 오픈 직후"
+    "wait": "주말 웨이팅, 오픈 직후",
+    "rating": 4.4,
+    "reviews": 4,
+    "rsource": "diningcode",
+    "sentiment": "부드러운 닭안심, 웨이팅 있어도 만족"
   },
   "gwangalli-tteokbokki": {
     "name": "광안리 원조 떡볶이",
@@ -127,7 +145,8 @@
     "naver": "https://map.naver.com/p/search/%EA%B4%91%EC%95%88%EB%A6%AC%20%EC%9B%90%EC%A1%B0%20%EB%96%A1%EB%B3%B6%EC%9D%B4",
     "phone": null,
     "kid_note": "단짠 분식, 아이 부담 없음",
-    "wait": "저녁 포장 대기"
+    "wait": "저녁 포장 대기",
+    "sentiment": "옛날 맛 그대로, 가성비 호평"
   },
   "yeongdo-haenyeochon": {
     "name": "영도해녀촌",
@@ -140,7 +159,11 @@
     "naver": "https://map.naver.com/p/search/%EC%98%81%EB%8F%84%ED%95%B4%EB%85%80%EC%B4%8C",
     "phone": null,
     "kid_note": "바다 앞 좌판, 흰여울·태종대 길목",
-    "wait": "주말 낮 붐빔, 현장 대기"
+    "wait": "주말 낮 붐빔, 현장 대기",
+    "rating": 4.1,
+    "reviews": 12,
+    "rsource": "diningcode",
+    "sentiment": "바다뷰 해산물, 소박한 분위기 호평"
   },
   "yeongdo-samjin": {
     "name": "삼진어묵당 영도본점",
@@ -153,7 +176,11 @@
     "naver": "https://map.naver.com/p/search/%EC%82%BC%EC%A7%84%EC%96%B4%EB%AC%B5%EB%8B%B9%20%EC%98%81%EB%8F%84%EB%B3%B8%EC%A0%90",
     "phone": "051-715-5865",
     "kid_note": "시식 코너 많아 골라먹는 재미, 주차 넓음",
-    "wait": "단체 시간대(10~11시) 혼잡"
+    "wait": "단체 시간대(10~11시) 혼잡",
+    "rating": 4.3,
+    "reviews": 15,
+    "rsource": "diningcode",
+    "sentiment": "프리미엄 매장, 핫바 맛 호평"
   },
   "yeongdo-momos": {
     "name": "모모스커피 영도점",
@@ -166,7 +193,11 @@
     "naver": "https://map.naver.com/p/search/%EB%AA%A8%EB%AA%A8%EC%8A%A4%EC%BB%A4%ED%94%BC%20%EC%98%81%EB%8F%84%EC%A0%90",
     "phone": null,
     "kid_note": "넓은 통유리, 삼진어묵과 도보",
-    "wait": "주말 좌석 대기"
+    "wait": "주말 좌석 대기",
+    "rating": 4.4,
+    "reviews": 70,
+    "rsource": "diningcode",
+    "sentiment": "항구뷰 창고형 공간, 원두 향미 호평"
   },
   "nampo-jagalchi": {
     "name": "자갈치시장 회센터",
@@ -179,7 +210,8 @@
     "naver": "https://map.naver.com/p/search/%EC%9E%90%EA%B0%88%EC%B9%98%EC%8B%9C%EC%9E%A5%20%ED%9A%8C%EC%84%BC%ED%84%B0",
     "phone": "051-245-2594",
     "kid_note": "회 대신 새우튀김·생선구이 가능, 활어 구경 체험",
-    "wait": "저녁 붐빔"
+    "wait": "저녁 붐빔",
+    "sentiment": "저녁 할인, 신선한 회 위주 긍정 평"
   },
   "nampo-wandang": {
     "name": "18번완당집",
@@ -192,7 +224,8 @@
     "naver": "https://map.naver.com/p/search/18%EB%B2%88%EC%99%84%EB%8B%B9%EC%A7%91",
     "phone": "051-245-0018",
     "kid_note": "부드러운 완당, 초등도 잘 먹음, BIFF광장 옆",
-    "wait": "점심 대기, 회전 빠름"
+    "wait": "점심 대기, 회전 빠름",
+    "sentiment": "국물 깔끔·완당 부드러움, 아이엔 슴슴"
   },
   "nampo-gukbap": {
     "name": "원조최가네돼지국밥",
@@ -205,7 +238,11 @@
     "naver": "https://map.naver.com/p/search/%EC%9B%90%EC%A1%B0%EC%B5%9C%EA%B0%80%EB%84%A4%EB%8F%BC%EC%A7%80%EA%B5%AD%EB%B0%A5",
     "phone": null,
     "kid_note": "다대기 빼고 순한 국물 주문 가능",
-    "wait": "점심 대기, 15시 이후 한산"
+    "wait": "점심 대기, 15시 이후 한산",
+    "rating": 4.38,
+    "reviews": 1063,
+    "rsource": "naver",
+    "sentiment": "수육 부드럽고 잡내 없음, 양 많고 친절"
   },
   "seomyeon-milmyeon": {
     "name": "가야밀면 부전본점",
@@ -218,7 +255,11 @@
     "naver": "https://map.naver.com/p/search/%EA%B0%80%EC%95%BC%EB%B0%80%EB%A9%B4%20%EB%B6%80%EC%A0%84%EB%B3%B8%EC%A0%90",
     "phone": "051-804-4599",
     "kid_note": "물밀면은 아이 부담 없음, 서면 중심",
-    "wait": "피크 줄, 회전 빠름"
+    "wait": "피크 줄, 회전 빠름",
+    "rating": 4.42,
+    "reviews": 2765,
+    "rsource": "naver",
+    "sentiment": "아이 동반 만족, 면발·육수 시원"
   },
   "seomyeon-yeonui": {
     "name": "연의양과",
@@ -231,6 +272,10 @@
     "naver": "https://map.naver.com/p/search/%EC%97%B0%EC%9D%98%EC%96%91%EA%B3%BC%20%EC%84%9C%EB%A9%B4%EC%A0%90",
     "phone": "0507-1479-0928",
     "kid_note": "디저트 다양, 아이 간식 코스",
-    "wait": "주말 오후 대기"
+    "wait": "주말 오후 대기",
+    "rating": 4.73,
+    "reviews": 5549,
+    "rsource": "naver",
+    "sentiment": "까눌레·디저트 맛있고 친절, 인기"
   }
 }

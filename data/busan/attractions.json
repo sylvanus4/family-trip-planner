@@ -24,7 +24,11 @@
     "official": "https://www.visitbusan.net",
     "blurb": "넓은 백사장·완만한 수심으로 물놀이·모래놀이 최적. 블로거 공통 아이 만족 코스.",
     "kid_fit": "상",
-    "price4": 20000
+    "price4": 20000,
+    "rating": 4.34,
+    "reviews": 21027,
+    "rsource": "naver",
+    "sentiment": "모래축제·경치 좋고 사진 잘 나옴"
   },
   "sealife": {
     "name": "SEA LIFE 부산아쿠아리움",
@@ -38,7 +42,11 @@
     "official": "https://www.visitsealife.com/busan/",
     "blurb": "해변 바로 앞 실내. 상어터널·펭귄, 더운 날/비 오는 날 완벽한 대안.",
     "kid_fit": "상",
-    "price4": 86000
+    "price4": 86000,
+    "rating": 4.31,
+    "reviews": 43710,
+    "rsource": "naver",
+    "sentiment": "체험·공연 재밌어 아이들이 좋아함"
   },
   "gwangalli": {
     "name": "광안리 해수욕장",
@@ -52,7 +60,11 @@
     "official": null,
     "blurb": "광안대교 야경 명소. 저녁 산책·간식, 요트투어 출발지.",
     "kid_fit": "상",
-    "price4": 0
+    "price4": 0,
+    "rating": 4.38,
+    "reviews": 42787,
+    "rsource": "naver",
+    "sentiment": "드론쇼·야경·바다 풍경 좋음"
   },
   "yonggungsa": {
     "name": "해동용궁사",
@@ -66,7 +78,11 @@
     "official": null,
     "blurb": "바다 절벽 위 사찰. 계단 많지만 초등 이상에게 인상적. 아침 일찍이 덜 붐빔.",
     "kid_fit": "중",
-    "price4": 0
+    "price4": 0,
+    "rating": 4.17,
+    "reviews": 240,
+    "rsource": "naver",
+    "sentiment": "계단 많지만 바다 전망 아름다움"
   },
   "lotteworld": {
     "name": "롯데월드 어드벤처 부산",
@@ -80,7 +96,11 @@
     "official": "https://adventurebusan.lotteworld.com/",
     "blurb": "기장 오시리아. 실내외 놀이기구·캐릭터쇼로 하루 종일. 여아 만족 최상.",
     "kid_fit": "상",
-    "price4": 160000
+    "price4": 160000,
+    "rating": 4.62,
+    "reviews": 8408,
+    "rsource": "naver",
+    "sentiment": "아이용 놀이기구 위주, 가족 만족 높음"
   },
   "blueline": {
     "name": "해운대 블루라인파크 (미포)",
@@ -94,7 +114,11 @@
     "official": "https://www.bluelinepark.com/",
     "blurb": "블로거 아이 만족 1위 코스. 바다 위 파스텔 캡슐·해변열차(미포→청사포→송정).",
     "kid_fit": "상",
-    "price4": 111000
+    "price4": 111000,
+    "rating": 4.35,
+    "reviews": 18565,
+    "rsource": "naver",
+    "sentiment": "앉아서 즐기는 해변열차·캡슐, 아이 동반 무난"
   },
   "yacht": {
     "name": "광안리 요트투어",
@@ -136,7 +160,11 @@
     "official": null,
     "blurb": "알록달록 골목·포토존. 보물찾기하듯 산책. 오르막 계단 많음.",
     "kid_fit": "중",
-    "price4": 0
+    "price4": 0,
+    "rating": 4.4,
+    "reviews": 796,
+    "rsource": "naver",
+    "sentiment": "언덕·계단 많아 아이 동반 체력 소모"
   },
   "xthesky": {
     "name": "부산엑스더스카이",
@@ -150,7 +178,11 @@
     "official": "https://www.busanxthesky.com/",
     "blurb": "최고층급 전망대 오션뷰. (블로거는 야간 가성비엔 호불호) 우천 대안으로 유용.",
     "kid_fit": "중",
-    "price4": 102000
+    "price4": 102000,
+    "rating": 4.32,
+    "reviews": 9520,
+    "rsource": "naver",
+    "sentiment": "100층 전망 즐거워하나 흔들림 놀랄 수"
   },
   "science": {
     "name": "국립부산과학관",
@@ -164,7 +196,11 @@
     "official": "https://www.sciport.or.kr/",
     "blurb": "만지고 체험하는 전시. 기장(용궁사 근처) 실내 — 폭염·우천 대안 최적.",
     "kid_fit": "상",
-    "price4": 20000
+    "price4": 20000,
+    "rating": 4.55,
+    "reviews": 3759,
+    "rsource": "naver",
+    "sentiment": "체험 전시 풍부해 아이가 신나게 놀이"
   },
   "centum": {
     "name": "신세계 센텀시티",
@@ -178,7 +214,11 @@
     "official": "https://www.shinsegae.com/store/main.do?storeCd=SC00008",
     "blurb": "아이스링크·아쿠아필드 등 실내 복합. 더운 날/비 오는 날 아이와 시간 보내기 좋음.",
     "kid_fit": "상",
-    "price4": 80000
+    "price4": 80000,
+    "rating": 4.47,
+    "reviews": 17826,
+    "rsource": "naver",
+    "sentiment": "식당·카페 등 아이와 먹고 쉬기 좋음"
   },
   "taejongdae": {
     "name": "태종대(다누비열차·유람선)",
