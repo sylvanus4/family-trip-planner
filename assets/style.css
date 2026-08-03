@@ -6,6 +6,7 @@
   --shadow:0 1px 2px rgba(24,53,51,.05), 0 8px 24px rgba(24,53,51,.06);
   --shadow-sm:0 1px 2px rgba(24,53,51,.06);
   --r:16px; --r-sm:10px;
+  --unk-ink:#6B7B78;   /* 미확인 텍스트 — --faint 는 흰 배경에서 2.9:1 로 AA 미달 */
   /* spacing scale (4/8) */
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:20px; --s6:24px; --s8:32px; --s10:40px;
 }
@@ -410,40 +411,70 @@ table.cmp td.cat{max-width:230px; white-space:normal}
 .rest.buffet .rest-nm{color:#4C1D95}
 
 /* ── 💰 예산 계산기 ─────────────────────────────────────── */
-.calc{max-width:1180px; margin:var(--s8) auto 0; padding:0 var(--s5)}
+.calc{max-width:1180px; margin:var(--s8) auto 0; padding:0 var(--s5) var(--s8)}
 .calc-hd h2{margin:0 0 var(--s1); font-size:1.35rem; color:var(--ink)}
-.calc-sub{margin:0 0 var(--s5); color:var(--soft); font-size:.9rem}
-.calc-stamp{display:inline-block; margin-left:var(--s2); padding:2px 8px; border-radius:999px;
-  background:var(--sea-tint); color:var(--sea-deep); font-size:.78rem}
-.calc-ctrl{display:flex; flex-wrap:wrap; gap:var(--s3); margin-bottom:var(--s5)}
-.calc-ctrl label{display:flex; flex-direction:column; gap:4px; font-size:.78rem; color:var(--soft)}
-.calc-ctrl select{padding:9px 12px; border:1px solid var(--line); border-radius:var(--r-sm);
-  background:var(--card); color:var(--ink); font-size:.92rem; min-width:150px}
-.calc-ctrl select:focus{outline:2px solid var(--sea); outline-offset:1px}
+.calc-sub{margin:0 0 var(--s3); color:var(--soft); font-size:.9rem}
+.calc-stamp{display:inline-block; margin-left:var(--s2); padding:2px var(--s2); border-radius:999px;
+  background:var(--sea-tint); color:var(--sea-deep); font-size:.78rem; font-weight:600}
+.calc-err{margin:0 0 var(--s4); padding:var(--s3) var(--s4); border-radius:var(--r-sm);
+  background:#FDECE6; color:#B23A1F; font-size:.86rem; font-weight:600}
 
-.calc-tbl{width:100%; border-collapse:collapse; background:var(--card);
-  border:1px solid var(--line); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-sm)}
-.calc-tbl th,.calc-tbl td{padding:var(--s3) var(--s4); text-align:left; border-bottom:1px solid var(--line-2); font-size:.9rem}
+/* 컨트롤을 하나의 면으로 묶어 '설정 폼'이 아니라 조작 패널로 읽히게 */
+.calc-ctrl{display:flex; flex-wrap:wrap; gap:var(--s3); margin-bottom:var(--s5);
+  padding:var(--s4); background:var(--card); border:1px solid var(--line);
+  border-radius:var(--r); box-shadow:var(--shadow-sm)}
+.calc-ctrl label{display:flex; flex-direction:column; gap:var(--s1); font-size:.78rem; color:var(--soft)}
+.calc-ctrl select{min-height:44px; padding:9px var(--s3); border:1px solid var(--line); border-radius:var(--r-sm);
+  background:var(--card); color:var(--ink); font-size:.92rem; min-width:150px;
+  transition:background .15s,border-color .15s}
+.calc-ctrl select:hover{border-color:var(--sea)}
+.calc-ctrl select:active{background:var(--sea-tint)}
+.calc-ctrl select:focus-visible{outline:2px solid var(--sea); outline-offset:1px}
+.calc-ctrl select:disabled{opacity:.5; cursor:not-allowed}
+
+/* 좁은 화면에서 표가 페이지를 가로로 밀지 않도록 스크롤 컨테이너로 격리 */
+.calc-tblwrap{overflow-x:auto; -webkit-overflow-scrolling:touch;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow)}
+.calc-tbl{width:100%; border-collapse:collapse}
+.calc-tbl th,.calc-tbl td{padding:var(--s3) var(--s4); text-align:left;
+  border-bottom:1px solid var(--line-2); font-size:.9rem; overflow-wrap:anywhere}
+.calc-tbl tbody th,.calc-tbl tfoot th{font-weight:600; color:var(--ink)}
 .calc-tbl thead th{background:var(--sea-tint); color:var(--sea-deep); font-size:.8rem; letter-spacing:.02em}
 .calc-tbl .amt{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:600}
 .calc-tbl .note{color:var(--soft); font-size:.82rem; line-height:1.5}
 .calc-tbl tr.warn td{background:#FFF8EC}
-.calc-tbl tr.miss .amt{color:var(--faint)}
-.calc-tbl tfoot .tot td{background:#FBF7EE; font-weight:700; font-size:1rem; border-top:2px solid var(--line)}
-.calc-tbl tfoot .bud td{background:var(--card); color:var(--soft)}
-.unk{color:var(--faint); font-style:italic}
+.calc-tbl tr.miss .amt{color:var(--unk-ink)}
+.calc-tbl a:focus-visible{outline:2px solid var(--sea); outline-offset:1px}
+/* 합계는 이 페이지에서 가장 큰 숫자여야 한다 — 사용자가 계산기를 여는 이유 */
+.calc-tbl tfoot .tot th,.calc-tbl tfoot .tot td{background:#FBF7EE; font-weight:700; border-top:2px solid var(--line)}
+.calc-tbl tfoot .tot .amt{font-size:1.6rem; color:var(--sea-deep); letter-spacing:-.01em}
+.calc-tbl tfoot .bud th,.calc-tbl tfoot .bud td{color:var(--soft)}
+.calc-tbl tfoot .bud.under th,.calc-tbl tfoot .bud.under td{background:#E8F5E9}
+.calc-tbl tfoot .bud.over th,.calc-tbl tfoot .bud.over td{background:#FDECE6}
+.unk{color:var(--unk-ink); font-style:italic}
 
-.bdg{display:inline-block; margin-left:6px; padding:2px 8px; border-radius:999px;
+/* 비교 링크는 금액 표 밖으로 — '금액 열엔 항상 원화'라는 스캔 규칙을 깨지 않게 */
+.calc-cmp{margin-top:var(--s5); padding:var(--s4); background:var(--card);
+  border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow-sm)}
+.calc-cmp h3{margin:0 0 var(--s1); font-size:.95rem; color:var(--ink)}
+.calc-cmp p{margin:0 0 var(--s2); color:var(--soft); font-size:.82rem; line-height:1.5}
+.cmp-links{display:flex; flex-wrap:wrap; gap:var(--s2)}
+
+.bdg{display:inline-block; margin-left:6px; padding:2px var(--s2); border-radius:999px;
   font-size:.74rem; font-weight:600; background:var(--sea-tint); color:var(--sea-deep); white-space:nowrap}
-.bdg.deal{background:#FDECE6; color:var(--coral)}
-.bdg.down{background:#E8F5E9; color:#1B7A3D}
-.bdg.up{background:#FDECE6; color:#B4341A}
+/* 대비 AA(4.5:1) 확보 — coral(#E15A38)은 연한 배경에서 3.2:1로 미달이라 어둡게 */
+.bdg.deal{background:#FDECE6; color:#A8331A}
+.bdg.down{background:#E8F5E9; color:#14682F}
+.bdg.up{background:#FDECE6; color:#A8331A}
 
-.calc-tbl tr.cmp td{background:#FBFAF6}
-.cmp-lnk{display:inline-block; margin:4px 6px 0 0; padding:4px 10px; border-radius:999px;
-  border:1px solid var(--line); background:var(--card); color:var(--sea-deep);
-  font-size:.78rem; text-decoration:none; white-space:nowrap}
+/* WCAG 2.5.8 — 터치 타깃 44px 확보 */
+.cmp-lnk{display:inline-flex; align-items:center; min-height:44px; padding:0 var(--s4);
+  border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--sea-deep);
+  font-size:.82rem; font-weight:600; text-decoration:none; white-space:nowrap;
+  transition:background .15s,border-color .15s,transform .1s}
 .cmp-lnk:hover{background:var(--sea-tint); border-color:var(--sea)}
+.cmp-lnk:active{transform:scale(.97)}
+.cmp-lnk:focus-visible{outline:2px solid var(--sea); outline-offset:1px}
 
 .calc-grid{margin-top:var(--s8)}
 .calc-grid h3{margin:0 0 var(--s3); font-size:1.05rem; color:var(--ink)}
@@ -456,15 +487,41 @@ table.cmp td.cat{max-width:230px; white-space:normal}
 .calc-matrix tbody th{text-align:left; font-weight:600; color:var(--ink); white-space:nowrap}
 .calc-matrix td b{display:block; font-variant-numeric:tabular-nums}
 .calc-matrix td span{display:block; color:var(--faint); font-size:.72rem; margin-top:2px}
+.calc-matrix td.pick{cursor:pointer; transition:background .15s}
+.calc-matrix td.pick:hover{background:var(--line-2)}
+.calc-matrix td.pick:focus-visible{outline:2px solid var(--sea); outline-offset:-2px}
 .calc-matrix td.sel{background:var(--sea-tint); outline:2px solid var(--sea); outline-offset:-2px}
-.calc-matrix td.deal b{color:var(--coral)}
-.calc-matrix td.unk{color:var(--faint)}
+.calc-matrix td.best{background:#E8F5E9}
+.calc-matrix td.best b{color:#14682F}
+.calc-matrix td.best .best-tag{display:block; margin-top:2px; font-style:normal;
+  font-size:.66rem; font-weight:700; color:#14682F; letter-spacing:.04em}
+.calc-matrix td.deal b{color:#A8331A}
+.calc-matrix td.unk{color:var(--unk-ink)}
+.calc-hint{margin:0 0 var(--s2); color:var(--soft); font-size:.8rem}
 .calc-best{margin-top:var(--s3); padding:var(--s3) var(--s4); border-radius:var(--r-sm);
   background:#E8F5E9; color:#1B5E20; font-size:.9rem}
+/* 로딩 스켈레톤 — 3개 JSON 받는 동안 빈 화면 방지 */
+.calc-skel{display:flex; flex-direction:column; gap:var(--s3)}
+.calc-skel span{display:block; height:52px; border-radius:var(--r-sm);
+  background:linear-gradient(90deg,var(--line-2) 25%,var(--card) 50%,var(--line-2) 75%);
+  background-size:200% 100%; animation:calcShimmer 1.6s var(--ease,ease-out) infinite}
+@keyframes calcShimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){ .calc-skel span{animation:none} }
+
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0}
+
 @media (max-width:768px){
-  .calc{padding:0 12px}
+  .calc{padding:0 12px var(--s6)}
+  .calc-ctrl{padding:var(--s3)}
   .calc-ctrl select{min-width:0; width:100%}
-  .calc-ctrl label{flex:1 1 45%}
+  .calc-ctrl label{flex:1 1 45%; min-width:140px}
   .calc-tbl th,.calc-tbl td{padding:10px}
   .calc-tbl .note{font-size:.76rem}
+  .calc-tbl tfoot .tot .amt{font-size:1.3rem}
+}
+@media (max-width:480px){
+  .calc-ctrl label{flex:1 1 100%}
+  .calc-tbl{min-width:420px}       /* 이보다 좁으면 3열이 뭉개짐 → 래퍼가 가로 스크롤 */
+  .cmp-lnk{flex:1 1 auto; justify-content:center}
 }

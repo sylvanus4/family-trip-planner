@@ -4,6 +4,9 @@
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const won = (n) => (n == null ? null : n.toLocaleString('ko-KR'));
+  /** innerHTML 로 들어가는 모든 데이터 문자열은 반드시 이걸 거친다(속성 탈출 방지) */
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const C = { cities: [], city: null, hotel: null, win: 'A', cfg: 'one-room', bf: 'without_breakfast', data: {} };
 
   const CFG_LABEL = { 'one-room': '1객실 (4인 한 방)', 'two-room': '2객실' };
@@ -11,9 +14,16 @@
 
   async function loadCity(id) {
     if (C.data[id]) return C.data[id];
-    const g = async (f) => { try { const r = await fetch(`data/${id}/${f}?t=${Date.now()}`); return r.ok ? await r.json() : null; } catch { return null; } };
+    let failed = 0;
+    const g = async (f) => {
+      try {
+        const r = await fetch(`data/${id}/${f}?t=${Date.now()}`);
+        if (!r.ok) { failed++; return null; }        // 404 등은 "실패"로 센다
+        return await r.json();
+      } catch { failed++; return null; }             // 네트워크·파싱 실패도 무음으로 삼키지 않는다
+    };
     const [hotels, prices, transport] = await Promise.all([g('hotels.json'), g('hotel-prices.json'), g('transport-prices.json')]);
-    return (C.data[id] = { hotels, prices, transport });
+    return (C.data[id] = { hotels, prices, transport, _partial: failed > 0 });
   }
 
   /** 선택 조합의 숙박비 + 근거 */
@@ -80,6 +90,8 @@
   function render() {
     const el = $('#calc');
     if (!el || !C.city) return;
+    // innerHTML 재생성이 포커스를 body 로 떨어뜨리므로, 렌더 전후로 복원한다
+    const focusedId = document.activeElement?.id || null;
     const d = C.data[C.city.id];
     const cc = C.city.cost || {};
     const lo = lodging(), ic = intercity();
@@ -106,7 +118,7 @@
       .map(([id, h]) => `<option value="${id}"${id === C.hotel ? ' selected' : ''}>${h.name}</option>`).join('');
 
     el.innerHTML = `
-      <div class="calc-hd"><h2>💰 예산 계산기</h2>
+      <div class="calc-hd"><h2 id="calcHeading">💰 예산 계산기</h2>
         <p class="calc-sub">날짜·호텔·객실구성·조식을 고르면 실측가로 최종 총액이 계산됩니다.
         <span class="calc-stamp">가격 조회 ${(d.prices?.meta?.fetched_at || '').slice(0, 10) || '-'}</span></p></div>
       <div class="calc-ctrl">
@@ -116,26 +128,43 @@
         <label>객실 <select id="cCfg">${Object.entries(CFG_LABEL).map(([k, v]) => `<option value="${k}"${k === C.cfg ? ' selected' : ''}>${v}</option>`).join('')}</select></label>
         <label>조식 <select id="cBf">${Object.entries(BF_LABEL).map(([k, v]) => `<option value="${k}"${k === C.bf ? ' selected' : ''}>${v}</option>`).join('')}</select></label>
       </div>
-      <table class="calc-tbl"><thead><tr><th>항목</th><th>금액</th><th>근거</th></tr></thead><tbody>
-        ${rows.map((r) => `<tr${r.warn ? ' class="warn"' : ''}${r.amt == null ? ' class="miss"' : ''}>
-          <td>${r.cat}</td>
+      ${d._partial ? '<p class="calc-err">일부 가격 데이터를 불러오지 못했습니다 — 아래 금액이 불완전할 수 있습니다.</p>' : ''}
+      <div class="calc-tblwrap"><table class="calc-tbl"><thead><tr>
+        <th scope="col">항목</th><th scope="col">금액</th><th scope="col">근거</th></tr></thead><tbody>
+        ${rows.map((r) => `<tr class="${r.warn ? 'warn' : ''}${r.amt == null ? ' miss' : ''}">
+          <th scope="row">${esc(r.cat)}</th>
           <td class="amt">${r.amt == null ? '<span class="unk">미확인</span>' : won(r.amt) + '원'}</td>
-          <td class="note">${r.note || ''}
-            ${(r.badges || []).map((b) => `<span class="bdg${b.startsWith('특가') ? ' deal' : b.startsWith('▼') ? ' down' : b.startsWith('▲') ? ' up' : ''}">${b}</span>`).join('')}
-            ${r.url ? ` <a href="${r.url}" target="_blank" rel="noopener">확인</a>` : ''}</td></tr>`).join('')}
-        <tr class="cmp"><td>다른 곳 가격 확인</td><td class="amt">—</td>
-          <td class="note">같은 날짜·인원이 적용된 링크입니다. 이 사이트들은 자동 수집이 막혀 있어 숫자를 싣지 않았습니다 — 직접 눌러 최저가를 확인하세요.
-            ${compareLinks(d.hotels?.[C.hotel]?.name || '').map((l) => `<a class="cmp-lnk" href="${l.u}" target="_blank" rel="noopener">${l.n}</a>`).join('')}</td></tr>
+          <td class="note">${esc(r.note || '')}
+            ${(r.badges || []).map((b) => `<span class="bdg${b.startsWith('특가') ? ' deal' : b.startsWith('▼') ? ' down' : b.startsWith('▲') ? ' up' : ''}">${esc(b)}</span>`).join('')}
+            ${r.url ? ` <a href="${esc(r.url)}" target="_blank" rel="noopener">확인</a>` : ''}</td></tr>`).join('')}
       </tbody><tfoot>
-        <tr class="tot"><td>합계</td><td class="amt">${won(total)}원</td>
+        <tr class="tot"><th scope="row">합계</th><td class="amt">${won(total)}원</td>
           <td>${missing.length ? `<span class="unk">${missing.length}개 항목 미확인 — 실제 총액은 더 커집니다</span>` : '전 항목 반영'}</td></tr>
-        ${budget ? `<tr class="bud"><td>예산</td><td class="amt">${won(budget)}원</td>
+        ${budget ? `<tr class="bud ${over ? 'over' : 'under'}"><th scope="row">예산</th><td class="amt">${won(budget)}원</td>
           <td>${over ? `<span class="bdg up">${won(total - budget)}원 초과</span>` : `<span class="bdg down">${won(budget - total)}원 여유</span>`}</td></tr>` : ''}
-      </tfoot></table>
+      </tfoot></table></div>
+      <div class="calc-cmp">
+        <h3>다른 곳 가격 확인</h3>
+        <p>같은 날짜·인원이 적용된 링크입니다. 이 사이트들은 자동 수집이 막혀 있어 숫자를 싣지 않았습니다 — 눌러서 직접 확인하세요.</p>
+        <div class="cmp-links">${compareLinks(d.hotels?.[C.hotel]?.name || '')
+          .map((l) => `<a class="cmp-lnk" href="${esc(l.u)}" target="_blank" rel="noopener"
+            aria-label="${esc(l.n)}에서 ${esc(d.hotels?.[C.hotel]?.name || '')} 가격 확인">${esc(l.n)}</a>`).join('')}</div>
+      </div>
       <div class="calc-grid" id="calcGrid"></div>`;
 
     renderGrid();
-    $('#cCity').onchange = async (e) => { C.city = C.cities.find((c) => c.id === e.target.value); await loadCity(C.city.id); C.hotel = Object.keys(C.data[C.city.id].hotels || {})[0]; render(); };
+    if (focusedId) { const back = document.getElementById(focusedId); if (back) back.focus(); }
+    // 총액 변경을 스크린리더에 알린다(내용이 통째로 교체되므로 별도 status 노드로)
+    const live = $('#calcLive');
+    if (live) live.textContent = `합계 ${won(total)}원, 예산 대비 ${over ? `${won(total - budget)}원 초과` : `${won(budget - total)}원 여유`}`;
+    $('#cCity').onchange = async (e) => {
+      const sels = [...document.querySelectorAll('.calc-ctrl select')];
+      sels.forEach((s) => { s.disabled = true; });          // 재조회 동안 stale 표를 계속 만지지 못하게
+      C.city = C.cities.find((c) => c.id === e.target.value);
+      await loadCity(C.city.id);
+      C.hotel = Object.keys(C.data[C.city.id].hotels || {})[0];
+      render();                                              // render 가 컨트롤을 새로 그리므로 disabled 는 자동 해제
+    };
     $('#cWin').onchange = (e) => { C.win = e.target.value; render(); };
     $('#cHotel').onchange = (e) => { C.hotel = e.target.value; render(); };
     $('#cCfg').onchange = (e) => { C.cfg = e.target.value; render(); };
@@ -153,32 +182,64 @@
     wins.forEach(([k]) => { const save = C.win; C.win = k; ics[k] = intercity().amount; C.win = save; });
 
     let best = { total: Infinity };
-    const body = Object.entries(d.hotels || {}).map(([hid, h]) => {
+    const cells = Object.entries(d.hotels || {}).map(([hid, h]) => {
       const tds = wins.map(([k]) => {
         const c = d.prices?.hotels?.[hid]?.windows?.[k]?.configs?.[C.cfg];
         const p = c?.lowest?.[C.bf] || c?.lowest?.without_breakfast || c?.lowest?.with_breakfast;
-        if (!p) return '<td class="unk">-</td>';
+        if (!p) return { hid, k, html: '<td class="unk">-</td>' };
         const tot = p.family_total + (ics[k] || 0) + fixedSide;
         if (tot < best.total) best = { total: tot, hid, k, name: h.name };
         const deal = (p.tracking?.badges || []).some((b) => b.startsWith('특가'));
-        return `<td class="${hid === C.hotel && k === C.win ? 'sel' : ''}${deal ? ' deal' : ''}"
-          title="숙박 ${won(p.family_total)} + 교통 ${won(ics[k])} + 기타 ${won(fixedSide)}">
-          <b>${won(tot)}</b><span>숙박 ${won(p.family_total)}</span></td>`;
+        return { hid, k, tot, deal, lodging: p.family_total, name: h.name };
+      });
+      return { hid, name: h.name, tds };
+    });
+
+    const body = cells.map(({ name, tds }) => {
+      const row = tds.map((c) => {
+        if (c.html) return c.html;
+        const isSel = c.hid === C.hotel && c.k === C.win;
+        const isBest = c.hid === best.hid && c.k === best.k;
+        return `<td class="pick${isSel ? ' sel' : ''}${isBest ? ' best' : ''}${c.deal ? ' deal' : ''}"
+          data-h="${c.hid}" data-w="${c.k}" tabindex="0" role="button"
+          aria-pressed="${isSel}"
+          aria-label="${c.name} ${wins.find(([k]) => k === c.k)[1].label} 총 ${won(c.tot)}원${isBest ? ', 최저 조합' : ''}"
+          title="숙박 ${won(c.lodging)} + 교통 ${won(ics[c.k])} + 기타 ${won(fixedSide)}">
+          <b>${won(c.tot)}</b><span>숙박 ${won(c.lodging)}</span>${isBest ? '<i class="best-tag">최저</i>' : ''}</td>`;
       }).join('');
-      return `<tr><th>${h.name}</th>${tds}</tr>`;
+      return `<tr><th scope="row">${name}</th>${row}</tr>`;
     }).join('');
 
-    $('#calcGrid').innerHTML = `
+    const grid = $('#calcGrid');
+    grid.innerHTML = `
       <h3>📅 날짜 × 숙소 최종 총액 <small>(${CFG_LABEL[C.cfg]} · ${BF_LABEL[C.bf]} · 교통·식비·예비 포함)</small></h3>
+      <p class="calc-hint">칸을 누르면 위 계산기가 그 조합으로 바뀝니다.</p>
       <div class="calc-scroll"><table class="calc-matrix">
-        <thead><tr><th>숙소</th>${wins.map(([, w]) => `<th>${w.label}</th>`).join('')}</tr></thead>
+        <thead><tr><th scope="col">숙소</th>${wins.map(([, w]) => `<th scope="col">${w.label}</th>`).join('')}</tr></thead>
         <tbody>${body}</tbody></table></div>
       ${best.hid ? `<p class="calc-best">최저 조합 — <b>${best.name}</b> · ${d.prices.meta.date_windows[best.k].label} · <b>${won(best.total)}원</b></p>` : ''}`;
+
+    // 셀을 실제로 선택 가능하게 (보이기만 하고 눌리지 않던 문제 수정)
+    const choose = (td) => {
+      if (!td?.dataset?.h) return;
+      C.hotel = td.dataset.h; C.win = td.dataset.w; render();
+      $('#calcGrid')?.scrollIntoView({ block: 'nearest' });
+    };
+    grid.querySelectorAll('td.pick').forEach((td) => {
+      td.addEventListener('click', () => choose(td));
+      td.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(td); }
+      });
+    });
   }
 
   async function init() {
     const host = $('#calc');
     if (!host) return;
+    // 로딩 상태 — 3개 JSON을 받는 동안 빈 화면을 보이지 않는다
+    host.innerHTML = '<div class="calc-hd"><h2>💰 예산 계산기</h2>'
+      + '<p class="calc-sub" role="status">가격 정보를 불러오는 중…</p></div>'
+      + '<div class="calc-skel"><span></span><span></span><span></span></div>';
     try {
       const cities = await (await fetch(`data/cities.json?t=${Date.now()}`)).json();
       C.cities = Array.isArray(cities) ? cities : cities.cities || [];
