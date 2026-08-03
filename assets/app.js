@@ -362,57 +362,77 @@ function openPrint(p){
   setTimeout(()=>window.print(),200);
 }
 
-/* ---------- LIVE: 실시간 날씨(open-meteo, 무키) + 혼잡 예상(요일·시간·유형) ---------- */
-const WX={};
+/* ---------- LIVE: 실시간 날씨/미세먼지·UV/해변 수온·파고 (open-meteo, 무키) + 혼잡 예상 ---------- */
+const WX={}, AQ={}, MAR={};
 const wkey=p=>`${(+p.lat).toFixed(3)},${(+p.lon).toFixed(3)}`;
+const hm=iso=>{ try{ const d=new Date(iso); return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`; }catch(e){ return ""; } };
 function wcode(c){ if(c===0)return["☀️","맑음"]; if([1,2].includes(c))return["🌤️","대체로 맑음"]; if(c===3)return["☁️","흐림"];
   if([45,48].includes(c))return["🌫️","안개"]; if([51,53,55,56,57].includes(c))return["🌦️","이슬비"];
   if([61,63,65,66,67,80,81,82].includes(c))return["🌧️","비"]; if([71,73,75,77,85,86].includes(c))return["🌨️","눈"];
   if([95,96,99].includes(c))return["⛈️","뇌우"]; return["🌡️","-"]; }
-async function fetchWeather(points){
-  const uniq={}; points.forEach(p=>{ if(p&&p.lat) uniq[wkey(p)]=p; });
-  const need=Object.values(uniq).filter(p=>!WX[wkey(p)]);
+function pmLvl(v){ if(v==null)return null; v=Math.round(v); return v<=15?["좋음","c-ok"]:v<=35?["보통","c-mid"]:v<=75?["나쁨","c-hi"]:["매우나쁨","c-hi"]; }
+function uvLvl(v){ if(v==null)return null; v=Math.round(v); return v<=2?["낮음","c-ok"]:v<=5?["보통","c-mid"]:v<=7?["높음","c-mid"]:["매우높음","c-hi"]; }
+function waveLbl(w){ if(w==null)return null; return w<0.5?"물놀이 좋음":w<1.2?"파도 주의":"파도 큼"; }
+async function _fetch(base,params,need,store,pick){
   if(!need.length) return;
   const lat=need.map(p=>(+p.lat).toFixed(3)).join(","), lon=need.map(p=>(+p.lon).toFixed(3)).join(",");
-  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,precipitation,wind_speed_10m&hourly=precipitation_probability&forecast_days=1&timezone=Asia%2FSeoul`;
-  try{ const r=await fetch(u).then(x=>x.json()); const arr=Array.isArray(r)?r:[r]; const hh=new Date().getHours();
-    need.forEach((p,i)=>{ const d=arr[i]||arr[0]; if(!d||!d.current)return;
-      WX[wkey(p)]={t:Math.round(d.current.temperature_2m),code:d.current.weather_code,wind:Math.round(d.current.wind_speed_10m),
-        pp:(d.hourly&&d.hourly.precipitation_probability)?d.hourly.precipitation_probability[hh]:null}; }); }catch(e){}
+  try{ const r=await fetch(`${base}?latitude=${lat}&longitude=${lon}&${params}&timezone=Asia%2FSeoul`).then(x=>x.json());
+    const arr=Array.isArray(r)?r:[r]; need.forEach((p,i)=>{ const d=arr[i]||arr[0]; if(d) store[wkey(p)]=pick(d); }); }catch(e){}
 }
+function _uniqNeed(points,cache,filter){ const u={}; points.forEach(p=>{ if(p&&p.lat&&(!filter||filter(p))) u[wkey(p)]=p; });
+  return Object.values(u).filter(p=>!cache[wkey(p)]); }
+async function fetchWeather(points){ await _fetch("https://api.open-meteo.com/v1/forecast",
+  "current=temperature_2m,weather_code,wind_speed_10m&hourly=temperature_2m,precipitation_probability&daily=sunrise,sunset&forecast_days=1",
+  _uniqNeed(points,WX), WX, d=>{ const hh=new Date().getHours(); return {t:Math.round(d.current.temperature_2m),code:d.current.weather_code,
+    wind:Math.round(d.current.wind_speed_10m), pp:d.hourly?.precipitation_probability?.[hh]??null,
+    sr:d.daily?.sunrise?.[0], ss:d.daily?.sunset?.[0], hT:d.hourly?.temperature_2m, hP:d.hourly?.precipitation_probability }; }); }
+async function fetchAir(points){ await _fetch("https://air-quality-api.open-meteo.com/v1/air-quality",
+  "current=pm2_5,pm10,uv_index", _uniqNeed(points,AQ), AQ, d=>({pm25:d.current.pm2_5,pm10:d.current.pm10,uv:d.current.uv_index})); }
+async function fetchMarine(points){ await _fetch("https://marine-api.open-meteo.com/v1/marine",
+  "current=wave_height,sea_surface_temperature", _uniqNeed(points,MAR,p=>["beach","island"].includes(p.category)), MAR,
+  d=>({wave:d.current.wave_height,sst:d.current.sea_surface_temperature})); }
+async function fetchLiveAll(points){ await Promise.all([fetchWeather(points),fetchAir(points),fetchMarine(points)]); }
 function crowdLvl(cat,dt){ dt=dt||new Date(); const wd=dt.getDay(), we=wd===0||wd===6, h=dt.getHours(); const pm=h>=11&&h<=17; let b=0;
   if(["beach","themepark","experience","aquarium","island"].includes(cat)) b=pm?2:1;
   else if(["nature","village","view","waterfall","temple","drive","cave"].includes(cat)) b=pm?1:0; else b=pm?1:0;
   if(we) b=Math.min(2,b+1); if(h<9||h>=20) b=Math.max(0,b-1); return b; }
 const CROWD=[["여유","c-ok"],["보통","c-mid"],["붐빔","c-hi"]];
-function liveChip(a){ const w=WX[wkey(a)], cl=crowdLvl(a.category);
+function liveChip(a){ const w=WX[wkey(a)], cl=crowdLvl(a.category), aq=AQ[wkey(a)], mr=MAR[wkey(a)];
   const wx=w?`${wcode(w.code)[0]} ${w.t}°${w.pp!=null?` · 비 ${w.pp}%`:""}`:"날씨 …";
-  return `<span class="lc"><span class="lc-wx">${wx}</span><span class="lc-cr ${CROWD[cl][1]}">지금 ${CROWD[cl][0]} 예상</span></span>`; }
-async function fillLive(p){
-  const pts=[]; p.days.forEach(d=>d.stops.forEach(s=>{ const a=S.at[s.ref]; if(a&&a.lat&&!TRANSIT.has(a.category)) pts.push(a); }));
-  await fetchWeather(pts);
-  document.querySelectorAll(".livewrap").forEach(el=>{ el.innerHTML=liveChip({lat:el.dataset.lat,lon:el.dataset.lon,category:el.dataset.cat}); });
-}
+  const pm=aq?pmLvl(aq.pm25):null, uv=aq?uvLvl(aq.uv):null;
+  const extra=[ pm?`<span class="lc-cr ${pm[1]}">미세 ${pm[0]}</span>`:"",
+    (uv&&uv[1]!=="c-ok")?`<span class="lc-cr ${uv[1]}">UV ${uv[0]}</span>`:"",
+    mr?`<span class="lc-wx">🌊 ${Math.round(mr.sst)}°${mr.wave!=null?` 파고 ${mr.wave}m`:""}</span>`:"" ].join("");
+  return `<span class="lc"><span class="lc-wx">${wx}</span><span class="lc-cr ${CROWD[cl][1]}">지금 ${CROWD[cl][0]} 예상</span>${extra}</span>`; }
+async function fillLive(p){ const pts=[]; p.days.forEach(d=>d.stops.forEach(s=>{ const a=S.at[s.ref]; if(a&&a.lat&&!TRANSIT.has(a.category)) pts.push(a); }));
+  await fetchLiveAll(pts);
+  document.querySelectorAll(".livewrap").forEach(el=>{ el.innerHTML=liveChip({lat:el.dataset.lat,lon:el.dataset.lon,category:el.dataset.cat}); }); }
 function wxScore(w){ if(!w) return 1; const [,l]=wcode(w.code); if(["비","뇌우","눈"].includes(l)) return 0; if((w.pp||0)>=60) return 0; if(l==="흐림"||l==="이슬비"||l==="안개") return 1; return 2; }
+function hourStrip(w){ if(!w||!w.hT) return ""; const now=new Date().getHours();
+  let bars=""; for(let h=6;h<=22;h++){ const t=w.hT[h], pp=w.hP?w.hP[h]:0; const hh=Math.max(6,Math.min(34,t))-6;
+    const col=pp>=60?"#3B82F6":pp>=30?"#8EC5F0":"#DE9A2E"; bars+=`<div class="hb${h===now?' now':''}" style="height:${8+hh*3}px;background:${col}" title="${h}시 ${Math.round(t)}° 비${pp}%"></div>`; }
+  return `<div class="hstrip"><div class="hs-h">오늘 시간대 (6~22시) · 파랑=비 확률 높음</div><div class="hbars">${bars}</div></div>`; }
 async function openLive(){ const el=$("#live"); $("#compare").hidden=true; $("#builder").hidden=true; if(!el.hidden){ el.hidden=true; return; }
-  el.innerHTML=`<div class="card"><div class="cmp-head"><h3>🔴 지금 상황 <span class="deck-sub">${S.city.name} · 실시간 날씨 + 혼잡 예상</span></h3><button class="cmp-x" id="lX">닫기 ✕</button></div><p class="cmp-tip">불러오는 중…</p></div>`;
+  el.innerHTML=`<div class="card"><div class="cmp-head"><h3>🔴 지금 상황 <span class="deck-sub">${S.city.name} · 실시간 날씨·미세먼지 + 혼잡 예상</span></h3><button class="cmp-x" id="lX">닫기 ✕</button></div><p class="cmp-tip">불러오는 중…</p></div>`;
   el.hidden=false; el.scrollIntoView({behavior:"smooth"});
   const spots=Object.entries(S.at).filter(([id,a])=>a.lat&&!TRANSIT.has(a.category)).map(([id,a])=>({id,...a}));
-  await fetchWeather(spots);
-  const now=new Date(); let mode="best";
+  await fetchLiveAll(spots);
+  const now=new Date(); let mode="best"; const rep=WX[wkey(spots[0])]||{};
   const render=()=>{
-    const rows=spots.map(a=>{ const w=WX[wkey(a)], cl=crowdLvl(a.category), sc=wxScore(w)*2-cl+ ({상:1,중:0,하:-1}[a.kid_fit]||0);
-      return {a,w,cl,sc}; });
+    const rows=spots.map(a=>{ const w=WX[wkey(a)], cl=crowdLvl(a.category), sc=wxScore(w)*2-cl+({상:1,중:0,하:-1}[a.kid_fit]||0); return {a,w,cl,sc}; });
     rows.sort((x,y)=> mode==="best"? y.sc-x.sc : mode==="calm"? x.cl-y.cl : x.a.name.localeCompare(y.a.name,"ko"));
-    const list=rows.map(({a,w,cl})=>`<div class="lrow"><img class="lthumb" src="${resolveImg(a)||""}" alt="" onerror="this.style.visibility='hidden'">
+    const list=rows.map(({a,w,cl})=>{ const aq=AQ[wkey(a)], mr=MAR[wkey(a)], pm=aq?pmLvl(aq.pm25):null, uv=aq?uvLvl(aq.uv):null;
+      return `<div class="lrow"><img class="lthumb" src="${resolveImg(a)||""}" alt="" onerror="this.style.visibility='hidden'">
       <div class="lg1"><div class="lnm">${a.name} <span class="lcat">${(CATLABEL[a.category]||a.category)}</span></div>
-        <div class="lmeta">${w?`${wcode(w.code)[0]} ${wcode(w.code)[1]} ${w.t}°${w.pp!=null?` · 강수 ${w.pp}%`:""}${w.wind!=null?` · 바람 ${w.wind}m/s`:""}`:"날씨 정보 없음"}</div></div>
-      <div class="lg2"><span class="lc-cr ${CROWD[cl][1]}">${CROWD[cl][0]}</span><a class="lnk" href="${a.naver}" target="_blank" rel="noopener">지도</a></div></div>`).join("");
+        <div class="lmeta">${w?`${wcode(w.code)[0]} ${wcode(w.code)[1]} ${w.t}°${w.pp!=null?` · 강수 ${w.pp}%`:""}${w.wind!=null?` · 바람 ${w.wind}m/s`:""}`:"날씨 정보 없음"}${pm?` · 미세먼지 ${pm[0]}`:""}${uv?` · UV ${uv[0]}`:""}${mr?` · 🌊 수온 ${Math.round(mr.sst)}°${mr.wave!=null?` 파고 ${mr.wave}m(${waveLbl(mr.wave)})`:""}`:""}</div></div>
+      <div class="lg2"><span class="lc-cr ${CROWD[cl][1]}">${CROWD[cl][0]}</span><a class="lnk" href="${a.naver}" target="_blank" rel="noopener">지도</a></div></div>`; }).join("");
     el.querySelector(".card").innerHTML=`<div class="cmp-head"><h3>🔴 지금 상황 <span class="deck-sub">${S.city.name} · ${now.getHours()}시 ${String(now.getMinutes()).padStart(2,'0')}분 기준</span></h3><button class="cmp-x" id="lX">닫기 ✕</button></div>
+      <div class="lsun">${rep.sr?`🌅 일출 ${hm(rep.sr)}`:""}${rep.ss?` · 🌇 일몰 ${hm(rep.ss)}`:""}</div>
+      ${hourStrip(rep)}
       <div class="lsort"><button data-m="best" class="${mode==='best'?'on':''}">지금 좋은 순</button><button data-m="calm" class="${mode==='calm'?'on':''}">여유 순</button><button data-m="name" class="${mode==='name'?'on':''}">이름순</button>
-        <span class="lleg"><i class="c-ok"></i>여유 <i class="c-mid"></i>보통 <i class="c-hi"></i>붐빔</span></div>
+        <span class="lleg"><i class="c-ok"></i>여유·좋음 <i class="c-mid"></i>보통 <i class="c-hi"></i>붐빔·나쁨</span></div>
       <div class="llist">${list}</div>
-      <p class="cmp-tip">🌤️ 날씨는 open-meteo 실시간입니다. 혼잡도는 요일·시간·장소 유형으로 추정한 <b>예상</b>이라 실제와 다를 수 있어요. 물놀이·야외는 강수확률과 바람을 함께 보세요.</p>`;
+      <p class="cmp-tip">🌤️ 날씨·미세먼지·UV·해변 수온/파고는 open-meteo <b>실시간</b>(무키)입니다. 혼잡도는 요일·시간·유형 기반 <b>예상</b>이라 실제와 다를 수 있어요. 미세먼지 나쁨·UV 매우높음·파고 큼이면 아이 야외활동을 조절하세요.</p>`;
     el.querySelector("#lX").onclick=()=>el.hidden=true;
     el.querySelectorAll(".lsort button").forEach(b=>b.onclick=()=>{ mode=b.dataset.m; render(); });
   };
