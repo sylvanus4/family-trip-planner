@@ -25,7 +25,11 @@
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89",
     "review": "https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89",
-    "price4": 15000
+    "price4": 15000,
+    "rating": 4.44,
+    "reviews": 20000,
+    "rsource": "naver",
+    "sentiment": "완만한 코스로 아이와 오르기 쉽고 경관 인상적"
   },
   "seopjikoji": {
     "name": "섭지코지",
@@ -39,7 +43,11 @@
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%EC%84%AD%EC%A7%80%EC%BD%94%EC%A7%80",
     "review": "https://map.naver.com/p/search/%EC%84%AD%EC%A7%80%EC%BD%94%EC%A7%80",
-    "price4": 3000
+    "price4": 3000,
+    "rating": 4.46,
+    "reviews": 14000,
+    "rsource": "naver",
+    "sentiment": "평탄한 산책로, 등대·해안 전망 좋음"
   },
   "hyeopjae": {
     "name": "협재해수욕장",
@@ -53,7 +61,11 @@
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5",
     "review": "https://map.naver.com/p/search/%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5",
-    "price4": 0
+    "price4": 0,
+    "rating": 4.36,
+    "reviews": 15000,
+    "rsource": "naver",
+    "sentiment": "수심 얕고 넓어 물놀이 적합, 성수기 혼잡"
   },
   "hallim": {
     "name": "한림공원",
@@ -95,7 +107,11 @@
     "kid_fit": "중",
     "naver": "https://map.naver.com/p/search/%EC%B9%B4%EB%A9%9C%EB%A6%AC%EC%95%84%ED%9E%90",
     "review": "https://map.naver.com/p/search/%EC%B9%B4%EB%A9%9C%EB%A6%AC%EC%95%84%ED%9E%90",
-    "price4": 42000
+    "price4": 42000,
+    "rating": 4.34,
+    "reviews": 71000,
+    "rsource": "naver",
+    "sentiment": "유모차 가능 정원, 사진·꽃 볼거리 풍부"
   },
   "manjanggul": {
     "name": "만장굴",
@@ -123,7 +139,11 @@
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%EC%95%84%EC%BF%A0%EC%95%84%ED%94%8C%EB%9D%BC%EB%84%B7%20%EC%A0%9C%EC%A3%BC",
     "review": "https://map.naver.com/p/search/%EC%95%84%EC%BF%A0%EC%95%84%ED%94%8C%EB%9D%BC%EB%84%B7%20%EC%A0%9C%EC%A3%BC",
-    "price4": 148000
+    "price4": 148000,
+    "rating": 4.5,
+    "reviews": 67000,
+    "rsource": "naver",
+    "sentiment": "대형 수족관·공연, 실내 명소"
   },
   "ecoland": {
     "name": "에코랜드 테마파크",
@@ -137,7 +157,11 @@
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%EC%97%90%EC%BD%94%EB%9E%9C%EB%93%9C%20%ED%85%8C%EB%A7%88%ED%8C%8C%ED%81%AC",
     "review": "https://map.naver.com/p/search/%EC%97%90%EC%BD%94%EB%9E%9C%EB%93%9C%20%ED%85%8C%EB%A7%88%ED%8C%8C%ED%81%AC",
-    "price4": 64000
+    "price4": 64000,
+    "rating": 4.2,
+    "reviews": 357,
+    "rsource": "tripadvisor",
+    "sentiment": "숲길 기차라 아이도 편하게"
   },
   "park981": {
     "name": "9.81파크",
@@ -151,7 +175,11 @@
     "kid_fit": "중",
     "naver": "https://map.naver.com/p/search/9.81%ED%8C%8C%ED%81%AC",
     "review": "https://map.naver.com/p/search/9.81%ED%8C%8C%ED%81%AC",
-    "price4": 120000
+    "price4": 120000,
+    "rating": 3.8,
+    "reviews": 370,
+    "rsource": "kakao",
+    "sentiment": "카트 스릴, 미취학 탑승 제한 확인"
   },
   "aerospace": {
     "name": "제주항공우주박물관",
@@ -165,7 +193,11 @@
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%ED%95%AD%EA%B3%B5%EC%9A%B0%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80",
     "review": "https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%ED%95%AD%EA%B3%B5%EC%9A%B0%EC%A3%BC%EB%B0%95%EB%AC%BC%EA%B4%80",
-    "price4": 36000
+    "price4": 36000,
+    "rating": 4.3,
+    "reviews": 68,
+    "rsource": "tripadvisor",
+    "sentiment": "실내 전시, 비 오는 날 좋음"
   },
   "hamdeok": {
     "name": "함덕해수욕장",
@@ -179,7 +211,11 @@
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5",
     "review": "https://map.naver.com/p/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5",
-    "price4": 0
+    "price4": 0,
+    "rating": 4.4,
+    "reviews": 532,
+    "rsource": "tripadvisor",
+    "sentiment": "얕고 잔잔해 어린이 물놀이 안전"
   },
   "cheonjiyeon": {
     "name": "천지연폭포",
@@ -193,7 +229,11 @@
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%EC%B2%9C%EC%A7%80%EC%97%B0%ED%8F%AD%ED%8F%AC",
     "review": "https://map.naver.com/p/search/%EC%B2%9C%EC%A7%80%EC%97%B0%ED%8F%AD%ED%8F%AC",
-    "price4": 6000
+    "price4": 6000,
+    "rating": 4.1,
+    "reviews": 1156,
+    "rsource": "tripadvisor",
+    "sentiment": "짧은 산책로로 유아 동반 부담 없음"
   },
   "jungmun": {
     "name": "중문색달해수욕장",
@@ -207,7 +247,11 @@
     "kid_fit": "중",
     "naver": "https://map.naver.com/p/search/%EC%A4%91%EB%AC%B8%EC%83%89%EB%8B%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5",
     "review": "https://map.naver.com/p/search/%EC%A4%91%EB%AC%B8%EC%83%89%EB%8B%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5",
-    "price4": 0
+    "price4": 0,
+    "rating": 4.1,
+    "reviews": 178,
+    "rsource": "tripadvisor",
+    "sentiment": "파도 있어 아이는 보호자 주의"
   },
   "teddybear": {
     "name": "테디베어뮤지엄",
@@ -221,6 +265,52 @@
     "kid_fit": "상",
     "naver": "https://map.naver.com/p/search/%ED%85%8C%EB%94%94%EB%B2%A0%EC%96%B4%EB%AE%A4%EC%A7%80%EC%97%84",
     "review": "https://map.naver.com/p/search/%ED%85%8C%EB%94%94%EB%B2%A0%EC%96%B4%EB%AE%A4%EC%A7%80%EC%97%84",
-    "price4": 44000
+    "price4": 44000,
+    "rating": 4.7,
+    "reviews": 648,
+    "rsource": "kakao",
+    "sentiment": "실내 전시, 사진 좋아 아이들이 좋아함"
+  },
+  "udo": {
+    "name": "우도(성산항 도항선)",
+    "lat": 33.5007,
+    "lon": 126.953,
+    "category": "island",
+    "img": null,
+    "price4": 28000,
+    "price_hours": "성산항→우도 배 약 15분, 왕복 4인 약 28,000원+터미널이용료 [추정] · 섬 안 전기차/자전거",
+    "official": "https://www.udoferry.com/",
+    "blurb": "배 타고 들어가는 섬 여행. 홍조단괴 백사장·등대, 전기차로 섬 한 바퀴.",
+    "kid_fit": "상",
+    "naver": "https://map.naver.com/p/search/%EC%9A%B0%EB%8F%84%20%EC%84%B1%EC%82%B0%ED%95%AD%20%EB%8F%84%ED%95%AD%EC%84%A0",
+    "review": "https://map.naver.com/p/search/%EC%9A%B0%EB%8F%84"
+  },
+  "gapado": {
+    "name": "가파도(운진항 배)",
+    "lat": 33.1683,
+    "lon": 126.268,
+    "category": "island",
+    "img": null,
+    "price4": 42000,
+    "price_hours": "모슬포 운진항→가파도 배 약 15분, 왕복 4인 약 42,000원 [추정] · 청보리는 4~5월, 여름엔 해안 산책",
+    "official": null,
+    "blurb": "납작한 섬을 걸어서 한 바퀴. 여름엔 파란 바다와 돌담길 산책.",
+    "kid_fit": "중",
+    "naver": "https://map.naver.com/p/search/%EA%B0%80%ED%8C%8C%EB%8F%84%20%EC%9A%B4%EC%A7%84%ED%95%AD",
+    "review": "https://map.naver.com/p/search/%EA%B0%80%ED%8C%8C%EB%8F%84"
+  },
+  "aewol-drive": {
+    "name": "애월 해안도로 드라이브",
+    "lat": 33.463,
+    "lon": 126.308,
+    "category": "drive",
+    "img": null,
+    "price4": 0,
+    "price_hours": "무료 · 한담해안산책로·애월 카페거리, 렌터카 드라이브 [추정]",
+    "official": null,
+    "blurb": "에메랄드 바다를 끼고 달리는 인생 드라이브. 중간중간 카페·포토존.",
+    "kid_fit": "상",
+    "naver": "https://map.naver.com/p/search/%EC%95%A0%EC%9B%94%20%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C",
+    "review": "https://map.naver.com/p/search/%EC%95%A0%EC%9B%94%20%ED%95%B4%EC%95%88%EB%8F%84%EB%A1%9C"
   }
 }

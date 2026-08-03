@@ -10,7 +10,11 @@
     "naver": "https://map.naver.com/p/search/%EC%9E%90%EB%A7%A4%EA%B5%AD%EC%88%98",
     "phone": "064-746-2222",
     "kid_note": "36개월 미만 아기국수 서비스, 주차 넓음, 공항 근처",
-    "wait": "점심 웨이팅, 브레이크 14:30-16:10, 수요일 휴무"
+    "wait": "점심 웨이팅, 브레이크 14:30-16:10, 수요일 휴무",
+    "rating": 4.38,
+    "reviews": 11032,
+    "rsource": "naver",
+    "sentiment": "돔베고기·고기국수 인기라 웨이팅 잦지만 아기국수 메뉴 있어 아이 동반도 무난함"
   },
   "sukseongdo": {
     "name": "숙성도 제주본점",
@@ -23,7 +27,11 @@
     "naver": "https://map.naver.com/p/search/%EC%88%99%EC%84%B1%EB%8F%84%20%EC%A0%9C%EC%A3%BC%EB%B3%B8%EC%A0%90",
     "phone": "064-743-8877",
     "kid_note": "대형 매장 좌석 여유, 순한 부위 소량",
-    "wait": "저녁 웨이팅, 캐치테이블 예약 권장"
+    "wait": "저녁 웨이팅, 캐치테이블 예약 권장",
+    "rating": 4.67,
+    "reviews": 8103,
+    "rsource": "naver",
+    "sentiment": "숙성 돼지고기구이 평이 좋아 가족 외식 만족도 높은 편"
   },
   "ujin": {
     "name": "우진해장국",
@@ -36,7 +44,11 @@
     "naver": "https://map.naver.com/p/search/%EC%9A%B0%EC%A7%84%ED%95%B4%EC%9E%A5%EA%B5%AD",
     "phone": "064-757-3393",
     "kid_note": "자극 없는 국물, 밥 말면 순함",
-    "wait": "아침·점심 웨이팅, 화요일 휴무, 포장 가능"
+    "wait": "아침·점심 웨이팅, 화요일 휴무, 포장 가능",
+    "rating": 4.41,
+    "reviews": 23695,
+    "rsource": "naver",
+    "sentiment": "구수한 몸국·해장국, 편안한 분위기라 아이와 가기도 좋음"
   },
   "kimanbok": {
     "name": "제주김만복 본점",
@@ -49,7 +61,11 @@
     "naver": "https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B9%80%EB%A7%8C%EB%B3%B5%20%EB%B3%B8%EC%A0%90",
     "phone": "064-759-8582",
     "kid_note": "김밥·떡볶이 아이 안전 메뉴, 24시간",
-    "wait": "본점 포장 전용(차·숙소서 취식)"
+    "wait": "본점 포장 전용(차·숙소서 취식)",
+    "rating": 4.32,
+    "reviews": 7559,
+    "rsource": "naver",
+    "sentiment": "전복김밥 등 분식 다양해 아이와 가볍게 먹기 좋음"
   },
   "tteulchae": {
     "name": "뜰채",
@@ -62,7 +78,11 @@
     "naver": "https://map.naver.com/p/search/%EB%9C%B0%EC%B1%84",
     "phone": "064-784-9044",
     "kid_note": "밥 위주로 아이도 무난, 함덕해변 앞",
-    "wait": "주말 점심 웨이팅, 공용주차장"
+    "wait": "주말 점심 웨이팅, 공용주차장",
+    "rating": 4.35,
+    "reviews": 888,
+    "rsource": "naver",
+    "sentiment": "함덕 신선한 해산물·물회, 가격대 있어 특별한 날 추천"
   },
   "delmoondo": {
     "name": "카페 델문도 함덕점",
@@ -75,7 +95,11 @@
     "naver": "https://map.naver.com/p/search/%EC%B9%B4%ED%8E%98%20%EB%8D%B8%EB%AC%B8%EB%8F%84%20%ED%95%A8%EB%8D%95%EC%A0%90",
     "phone": null,
     "kid_note": "함덕해변 도보 1분 오션뷰, 빵 다양",
-    "wait": "주말 오후 오션뷰석 대기, 주차 넓음"
+    "wait": "주말 오후 오션뷰석 대기, 주차 넓음",
+    "rating": 4.36,
+    "reviews": 22356,
+    "rsource": "naver",
+    "sentiment": "함덕해변 근처 베이커리 카페, 아이와 쉬어가기 좋음"
   },
   "haeoban": {
     "name": "해오반 함덕점",
@@ -88,7 +112,11 @@
     "naver": "https://map.naver.com/p/search/%ED%95%B4%EC%98%A4%EB%B0%98%20%ED%95%A8%EB%8D%95%EC%A0%90",
     "phone": "064-784-4544",
     "kid_note": "짜지 않게 조리, 생선구이·조림 밥반찬",
-    "wait": "점심 몰림, 11:30 추천"
+    "wait": "점심 몰림, 11:30 추천",
+    "rating": 3.4,
+    "reviews": 6,
+    "rsource": "diningcode",
+    "sentiment": "바다뷰 좋지만 후기 적어 방문은 신중히"
   },
   "childdonga-seongsan": {
     "name": "칠돈가 성산점",
@@ -101,7 +129,11 @@
     "naver": "https://map.naver.com/p/search/%EC%B9%A0%EB%8F%88%EA%B0%80%20%EC%84%B1%EC%82%B0%EC%A0%90",
     "phone": "0507-1364-7814",
     "kid_note": "어린이 볶음밥 등 곁들이, 주문 단순",
-    "wait": "저녁 대기, 브레이크 14-17시, 2·4째 수요일 휴무"
+    "wait": "저녁 대기, 브레이크 14-17시, 2·4째 수요일 휴무",
+    "rating": 4.5,
+    "reviews": 16,
+    "rsource": "diningcode",
+    "sentiment": "직접 구워주는 흑돼지, 아이 동반 편안"
   },
   "baekgi-haenyeo": {
     "name": "백기해녀의집",
@@ -114,7 +146,11 @@
     "naver": "https://map.naver.com/p/search/%EB%B0%B1%EA%B8%B0%ED%95%B4%EB%85%80%EC%9D%98%EC%A7%91",
     "phone": null,
     "kid_note": "전복죽 부드러워 아이 무난, 일출봉 근처",
-    "wait": "07:30-18:00, 오후 5시 이전 권장"
+    "wait": "07:30-18:00, 오후 5시 이전 권장",
+    "rating": 4.1,
+    "reviews": 15,
+    "rsource": "diningcode",
+    "sentiment": "전복죽·성게칼국수 담백해 아이도 무난"
   },
   "myeonghee-noodles": {
     "name": "명희네 고기국수 성산일출봉점",
@@ -140,7 +176,11 @@
     "naver": "https://map.naver.com/p/search/%ED%95%98%EC%9B%90%EA%B0%80%20%EC%A4%91%EB%AC%B8",
     "phone": null,
     "kid_note": "아기의자·기저귀갈이대, 바다·한라산 조망",
-    "wait": "주말 저녁 대기, 평일 이른 저녁"
+    "wait": "주말 저녁 대기, 평일 이른 저녁",
+    "rating": 3.9,
+    "reviews": 14,
+    "rsource": "diningcode",
+    "sentiment": "흑돼지 인기, 대기 감안 필요"
   },
   "yeongsilguksu": {
     "name": "영실국수 서귀포중문본점",
@@ -153,7 +193,11 @@
     "naver": "https://map.naver.com/p/search/%EC%98%81%EC%8B%A4%EA%B5%AD%EC%88%98%20%EC%84%9C%EA%B7%80%ED%8F%AC%EC%A4%91%EB%AC%B8%EB%B3%B8%EC%A0%90",
     "phone": "064-739-8370",
     "kid_note": "애기국수 무료, 서빙로봇·넓은 간격 유모차 편함",
-    "wait": "식사시간 줄, 회전 빠름"
+    "wait": "식사시간 줄, 회전 빠름",
+    "rating": 4.4,
+    "reviews": 3,
+    "rsource": "diningcode",
+    "sentiment": "좌석 넉넉해 가족 방문 좋음"
   },
   "saekdal": {
     "name": "색달식당",
@@ -166,7 +210,11 @@
     "naver": "https://map.naver.com/p/search/%EC%83%89%EB%8B%AC%EC%8B%9D%EB%8B%B9%20%EC%A4%91%EB%AC%B8%EB%B3%B8%EC%A0%90",
     "phone": "064-738-1741",
     "kid_note": "통갈치조림 나눠먹기 좋음, 논짓물 앞 산책",
-    "wait": "웨이팅 잦음, 오픈(10시) 권장"
+    "wait": "웨이팅 잦음, 오픈(10시) 권장",
+    "rating": 4.4,
+    "reviews": 142,
+    "rsource": "diningcode",
+    "sentiment": "갈치조림 푸짐·밝고 깔끔해 아이 동반 편안"
   },
   "hallagalchi": {
     "name": "한라갈치 중문점",
@@ -179,7 +227,11 @@
     "naver": "https://map.naver.com/p/search/%ED%95%9C%EB%9D%BC%EA%B0%88%EC%B9%98%20%EC%A4%91%EB%AC%B8%EC%A0%90",
     "phone": null,
     "kid_note": "유아의자·셀프바, 갈치+흑돼지 한 상",
-    "wait": "저녁 대기, 예약 권장"
+    "wait": "저녁 대기, 예약 권장",
+    "rating": 4.9,
+    "reviews": 31,
+    "rsource": "diningcode",
+    "sentiment": "세트 다양·쾌적, 아이 갈치정식 만족"
   },
   "donhaesang": {
     "name": "돈해상 한림협재흑돼지",
@@ -192,7 +244,11 @@
     "naver": "https://map.naver.com/p/search/%EB%8F%88%ED%95%B4%EC%83%81%20%EC%A0%9C%EC%A3%BC%ED%95%9C%EB%A6%BC%ED%98%91%EC%9E%AC%ED%9D%91%EB%8F%BC%EC%A7%80",
     "phone": "064-796-4936",
     "kid_note": "매장 내 키즈존, 오션뷰",
-    "wait": "저녁 대기, 평일 낮 여유"
+    "wait": "저녁 대기, 평일 낮 여유",
+    "rating": 3.9,
+    "reviews": 6,
+    "rsource": "diningcode",
+    "sentiment": "흑돼지·바다뷰 인기, 리뷰 적음"
   },
   "hyeopjaesinguksu": {
     "name": "협재신국수",
@@ -205,7 +261,11 @@
     "naver": "https://map.naver.com/p/search/%ED%98%91%EC%9E%AC%EC%8B%A0%EA%B5%AD%EC%88%98",
     "phone": "0507-1353-2500",
     "kid_note": "회전 빨라 대기 부담 적음",
-    "wait": "점심 몰림"
+    "wait": "점심 몰림",
+    "rating": 4.5,
+    "reviews": 15,
+    "rsource": "diningcode",
+    "sentiment": "국물 깔끔해 아이와 가볍게 먹기 좋음"
   },
   "daemunjip": {
     "name": "대문집",
@@ -218,7 +278,11 @@
     "naver": "https://map.naver.com/p/search/%EB%8C%80%EB%AC%B8%EC%A7%91%20%ED%98%91%EC%9E%AC",
     "phone": "064-796-3770",
     "kid_note": "협재해수욕장 도보권, 뚝배기 국물 아이 무난",
-    "wait": "화요일 휴무, 성수기 저녁 대기"
+    "wait": "화요일 휴무, 성수기 저녁 대기",
+    "rating": 4.1,
+    "reviews": 17,
+    "rsource": "diningcode",
+    "sentiment": "가정식 정갈, 아이와 편안"
   },
   "swimpyo": {
     "name": "쉼표 협재",

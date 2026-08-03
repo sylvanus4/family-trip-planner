@@ -728,6 +728,142 @@
           ]
         }
       ]
+    },
+    {
+      "id": "busan-cruise",
+      "short": "유람선·해상",
+      "title": "부산 2박3일 · 유람선 & 해상 케이블카",
+      "subtitle": "태종대 다누비열차·유람선, 오륙도 스카이워크, 송도 해상케이블카 — 바다 위에서 노는 코스",
+      "base_hotel": "seacloud",
+      "chips": [
+        "배·케이블카",
+        "해상 절경",
+        "바다 스릴"
+      ],
+      "recommended_for": "바다 위 액티비티를 좋아하는 가족",
+      "days": [
+        {
+          "day": 1,
+          "label": "도착 · 태종대",
+          "stops": [
+            {
+              "ref": "busan-station",
+              "time": "10:00",
+              "note": "도착→해운대"
+            },
+            {
+              "ref": "hotel:seacloud",
+              "time": "12:00",
+              "note": "체크인"
+            },
+            {
+              "ref": "taejongdae",
+              "time": "14:00",
+              "note": "다누비열차·유람선"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "label": "오륙도 · 광안리",
+          "stops": [
+            {
+              "ref": "oryukdo",
+              "time": "10:00",
+              "note": "스카이워크·유람선"
+            },
+            {
+              "ref": "gwangalli",
+              "time": "16:00",
+              "note": "광안리 저녁·야경"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "label": "송도 케이블카 · 귀가",
+          "stops": [
+            {
+              "ref": "songdo-cable",
+              "time": "10:00",
+              "note": "해상케이블카"
+            },
+            {
+              "ref": "busan-station",
+              "time": "15:00",
+              "note": "귀가"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "busan-coast-drive",
+      "short": "해안 드라이브",
+      "title": "부산 2박3일 · 해안 드라이브",
+      "subtitle": "이기대 해안 드라이브 + 기장 해동용궁사 + 블루라인파크 + 송도 케이블카",
+      "base_hotel": "w-residence",
+      "chips": [
+        "드라이브 경치",
+        "해안도로",
+        "바다뷰"
+      ],
+      "recommended_for": "차로 경치 보며 다니는 가족",
+      "days": [
+        {
+          "day": 1,
+          "label": "도착 · 이기대",
+          "stops": [
+            {
+              "ref": "busan-station",
+              "time": "10:00",
+              "note": "도착→해운대"
+            },
+            {
+              "ref": "hotel:w-residence",
+              "time": "12:00",
+              "note": "체크인"
+            },
+            {
+              "ref": "igidae-drive",
+              "time": "14:00",
+              "note": "이기대 해안 드라이브·산책"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "label": "기장 해안 · 블루라인",
+          "stops": [
+            {
+              "ref": "yonggungsa",
+              "time": "09:00",
+              "note": "바다 위 용궁사"
+            },
+            {
+              "ref": "blueline",
+              "time": "13:00",
+              "note": "해변 캡슐"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "label": "송도 케이블카 · 귀가",
+          "stops": [
+            {
+              "ref": "songdo-cable",
+              "time": "10:00",
+              "note": "해상케이블카"
+            },
+            {
+              "ref": "busan-station",
+              "time": "15:00",
+              "note": "귀가"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

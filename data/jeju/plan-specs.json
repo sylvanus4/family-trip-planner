@@ -724,6 +724,142 @@
           ]
         }
       ]
+    },
+    {
+      "id": "jeju-udo-island",
+      "short": "우도 섬",
+      "title": "제주 2박3일 · 우도 섬 여행",
+      "subtitle": "성산항에서 배 타고 우도 한 바퀴 + 동부 바다·동굴",
+      "base_hotel": "sonobel-jeju",
+      "chips": [
+        "배 타고 섬",
+        "우도 전기차",
+        "동부"
+      ],
+      "recommended_for": "섬·배 경험을 원하는 가족",
+      "days": [
+        {
+          "day": 1,
+          "label": "도착 · 함덕",
+          "stops": [
+            {
+              "ref": "airport",
+              "time": "11:00",
+              "note": "도착·렌터카"
+            },
+            {
+              "ref": "hotel:sonobel-jeju",
+              "time": "13:00",
+              "note": "함덕 체크인"
+            },
+            {
+              "ref": "hamdeok",
+              "time": "14:30",
+              "note": "함덕 물놀이"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "label": "성산 · 우도 섬",
+          "stops": [
+            {
+              "ref": "seongsan",
+              "time": "09:00",
+              "note": "일출봉"
+            },
+            {
+              "ref": "udo",
+              "time": "11:30",
+              "note": "성산항→우도 배, 전기차로 섬 일주"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "label": "동굴 · 귀가",
+          "stops": [
+            {
+              "ref": "manjanggul",
+              "time": "09:30",
+              "note": "용암동굴"
+            },
+            {
+              "ref": "airport",
+              "time": "13:30",
+              "note": "귀가"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jeju-coast-drive",
+      "short": "해안 드라이브",
+      "title": "제주 2박3일 · 해안 드라이브 & 가파도",
+      "subtitle": "애월 해안도로 드라이브 + 가파도 배 + 서부 바다",
+      "base_hotel": "maison-glad-jeju",
+      "chips": [
+        "드라이브 경치",
+        "가파도 배",
+        "서부"
+      ],
+      "recommended_for": "드라이브·경치를 즐기는 가족",
+      "days": [
+        {
+          "day": 1,
+          "label": "도착 · 애월 드라이브",
+          "stops": [
+            {
+              "ref": "airport",
+              "time": "11:00",
+              "note": "도착·렌터카"
+            },
+            {
+              "ref": "hotel:maison-glad-jeju",
+              "time": "12:30",
+              "note": "제주시 체크인"
+            },
+            {
+              "ref": "aewol-drive",
+              "time": "15:00",
+              "note": "애월 해안도로·한담산책로"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "label": "협재 · 가파도",
+          "stops": [
+            {
+              "ref": "hyeopjae",
+              "time": "10:00",
+              "note": "협재 물놀이"
+            },
+            {
+              "ref": "gapado",
+              "time": "14:00",
+              "note": "모슬포 운진항→가파도 산책"
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "label": "차밭 · 귀가",
+          "stops": [
+            {
+              "ref": "osulloc",
+              "time": "10:00",
+              "note": "오설록 차밭"
+            },
+            {
+              "ref": "airport",
+              "time": "13:30",
+              "note": "귀가"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -4,7 +4,9 @@
       "id": "busan", "name": "부산", "emoji": "🌊",
       "arrival": "SRT 수서 출발 · 약 2시간 50분",
       "dir": "data/busan",
+      "arrival_ref": "busan-station",
       "transport": { "has_subway": true, "subway4": 4800, "taxi_base": 4800, "taxi_per_km": 900 },
+      "cost": { "intercity": 311200, "intercity_label": "SRT 왕복", "food": 420000, "misc": 100000, "local": 80000, "budget": 3000000 },
       "city_tour": {
         "name": "부산 시티투어버스",
         "note": "레드(부산역↔해운대)·그린(부산역↔태종대)·오렌지(부산역↔다대포) 1일권 공용 hop-on/hop-off. 뚜벅이 가족이 원도심·태종대를 묶는 날 택시 대신 추천. 야경투어 성인 20,000·소인 10,000원.",
@@ -17,10 +19,12 @@
       "id": "jeju", "name": "제주", "emoji": "🍊",
       "arrival": "김포/김해 → 제주 항공 · 약 1시간 · 섬 안은 렌터카 추천",
       "dir": "data/jeju",
+      "arrival_ref": "airport",
       "transport": { "has_subway": false, "taxi_base": 4800, "taxi_per_km": 800, "bus4": 4600 },
+      "cost": { "intercity": 360000, "intercity_label": "항공 왕복", "food": 450000, "misc": 100000, "local": 150000, "budget": 3000000 },
       "city_tour": {
         "name": "제주 이동 안내 (렌터카/버스)",
-        "note": "제주는 지하철이 없어 렌터카가 가장 편합니다(공항 렌터카 사전예약 권장). 대중교통은 간선·지선 버스가 저렴하나 배차 간격이 길어 아이 동반엔 렌터카가 현실적입니다.",
+        "note": "제주는 지하철이 없어 렌터카가 가장 편합니다(공항 렌터카 사전예약 권장). 우도·가파도는 성산항·운진항에서 배로 들어갑니다. 대중교통 버스는 저렴하나 배차가 길어 아이 동반엔 렌터카가 현실적입니다.",
         "url": "https://www.jejuair.net",
         "booking": null,
         "phone": null

@@ -9,6 +9,7 @@ Writes: <dir>/plans.json
 """
 import json, sys, math
 
+TRANSIT={'station','airport'}
 def won(n): return f"{n:,}"
 def hav(a, b):
     R=6371; r=math.radians
@@ -57,24 +58,39 @@ def main():
           {"cat":"예비·기념품","detail":"버퍼","amount":m["misc"],"type":"추정"}]
         total=sum(c["amount"] for c in cost)
 
-        # ---- meals per day (nearest kid-friendly restaurants) ----
+        # ---- meals wired INTO route order (each meal has `after` = stop index) ----
         hp=hotel if hotel.get("lat") else None
+        def tmin(s):
+            try: h,m=s.get("time","").split(":"); return int(h)*60+int(m)
+            except Exception: return None
         for day in p["days"]:
-            pois=[at[s["ref"]] for s in day["stops"] if not s["ref"].startswith("hotel:") and at.get(s["ref"]) and at[s["ref"]].get("lat")]
+            stops=day["stops"]
+            # candidate anchor stops = real POIs (not hotel/station), keep index
+            anc=[(i,at[st["ref"]]) for i,st in enumerate(stops)
+                 if not st["ref"].startswith("hotel:") and at.get(st["ref"]) and at[st["ref"]].get("lat") and at[st["ref"]].get("category") not in TRANSIT]
+            def pick(target):
+                best=None
+                for i,a in anc:
+                    t=tmin(stops[i]); score=abs((t or 720)-target)
+                    if best is None or score<best[0]: best=(score,i,a)
+                return (best[1],best[2]) if best else (None,None)
             used=set(); meals=[]
             if day["day"]>1 and hp:
                 b=nearest(hp,2,used); used|=set(b)
-                if b: meals.append({"slot":"아침","near":"숙소 근처","candidates":b})
-            lunch_anchor=pois[len(pois)//2] if pois else hp
-            l=nearest(lunch_anchor,3,used); used|=set(l)
-            if l: meals.append({"slot":"점심","near":(lunch_anchor or {}).get("name","동선 중간"),"candidates":l})
-            din_anchor=None
-            for s in reversed(day["stops"]):
-                a=at.get(s["ref"])
-                if a and a.get("lat") and a.get("category")!="station": din_anchor=a; break
-            din_anchor=din_anchor or hp
-            dn=nearest(din_anchor,3,used)
-            if dn: meals.append({"slot":"저녁","near":(din_anchor or {}).get("name","숙소 근처"),"candidates":dn})
+                if b: meals.append({"slot":"아침","after":-1,"near":hotel.get("name","숙소"),"candidates":b})
+            li,la=pick(750)   # ~12:30 lunch
+            if la:
+                c=nearest(la,3,used); used|=set(c)
+                if c: meals.append({"slot":"점심","after":li,"near":la["name"],"candidates":c})
+            # dinner: latest POI after lunch; else near hotel; skip on departure day
+            last_station = at.get(stops[-1]["ref"],{}).get("category") in TRANSIT
+            after_lunch=[(i,a) for i,a in anc if la and i>li]
+            di,da,near=None,None,None
+            if after_lunch: di,da=after_lunch[-1]; near=da["name"]
+            elif hp and not last_station: di,da=len(stops)-1,hp; near=hotel.get("name","숙소")
+            if da:
+                c=nearest(da,3,used)
+                if c: meals.append({"slot":"저녁","after":di,"near":near,"candidates":c})
             day["meals"]=meals
 
         # ---- decision checklist ----
@@ -86,12 +102,12 @@ def main():
 
         # ---- family highlights (top kid-fit stops) ----
         kid={"상":3,"중":2,"하":1}
-        hi=sorted([at[r] for r in seen if at.get(r) and at[r].get("category")!="station"],
+        hi=sorted([at[r] for r in seen if at.get(r) and at[r].get("category") not in TRANSIT],
                   key=lambda a:-kid.get(a.get("kid_fit"),0))[:3]
         highlights=[{"name":a["name"],"blurb":a.get("blurb","")} for a in hi]
 
         indoor={"aquarium","museum","science","mall","view","cave","themepark"}
-        n_stops=sum(1 for r in seen if at.get(r) and at[r].get("category")!="station")
+        n_stops=sum(1 for r in seen if at.get(r) and at[r].get("category") not in TRANSIT)
         n_indoor=sum(1 for r in seen if at.get(r,{}).get("category") in indoor)
         kv=[kid.get(at[r].get("kid_fit"),0) for r in seen if at.get(r)]
         out.append({"id":p["id"],"short":p["short"],"title":p["title"],"subtitle":p["subtitle"],
