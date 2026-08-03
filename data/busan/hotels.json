@@ -1,6 +1,7 @@
 {
   "grand-josun-busan": {
     "name": "그랜드 조선 부산",
+    "booking_slug": "grand-josun-busan",
     "area": "해운대",
     "lat": 35.1585,
     "lon": 129.1585,
@@ -21,6 +22,7 @@
   },
   "paradise-busan": {
     "name": "파라다이스 호텔 부산",
+    "booking_slug": "paradise-busan",
     "area": "해운대",
     "lat": 35.1595,
     "lon": 129.161,
@@ -40,6 +42,7 @@
   },
   "signiel-busan": {
     "name": "시그니엘 부산",
+    "booking_slug": "signiel-busan",
     "area": "해운대",
     "lat": 35.162,
     "lon": 129.169,
@@ -60,6 +63,7 @@
   },
   "westin-josun-busan": {
     "name": "웨스틴 조선 부산",
+    "booking_slug": "the-westin-chosun-busan",
     "area": "해운대",
     "lat": 35.156,
     "lon": 129.152,
@@ -80,6 +84,7 @@
   },
   "ananti-hilton-busan": {
     "name": "아난티 힐튼 부산",
+    "booking_slug": "hilton-busan",
     "area": "기장",
     "lat": 35.236,
     "lon": 129.227,
@@ -99,6 +104,7 @@
   },
   "lotte-busan": {
     "name": "롯데호텔 부산",
+    "booking_slug": "lotte-busan",
     "area": "서면",
     "lat": 35.1585,
     "lon": 129.059,

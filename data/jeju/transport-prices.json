@@ -1,0 +1,798 @@
+{
+  "meta": {
+    "adults": 2,
+    "children": 2,
+    "date_windows": {
+      "A": {
+        "checkin": "2026-08-24",
+        "checkout": "2026-08-26",
+        "label": "8/24(월)~8/26(수)"
+      },
+      "B": {
+        "checkin": "2026-08-25",
+        "checkout": "2026-08-27",
+        "label": "8/25(화)~8/27(목)"
+      },
+      "C": {
+        "checkin": "2026-08-26",
+        "checkout": "2026-08-28",
+        "label": "8/26(수)~8/28(금)"
+      },
+      "D": {
+        "checkin": "2026-08-28",
+        "checkout": "2026-08-30",
+        "label": "8/28(금)~8/30(일)"
+      }
+    },
+    "fetched_at": "2026-08-03T11:54:51.860Z",
+    "note": "실측값만 기록. 못 읽은 항목은 null.",
+    "price_basis": "per_person",
+    "price_basis_evidence": {
+      "adult1_min": 61180,
+      "adult2_min": 61180
+    },
+    "tracked_at": "2026-08-03"
+  },
+  "windows": {
+    "A": {
+      "checkin": "2026-08-24",
+      "checkout": "2026-08-26",
+      "label": "8/24(월)~8/26(수)",
+      "source": "naver-flight",
+      "url": "https://flight.naver.com/flights/domestic/GMP-CJU-20260824/CJU-GMP-20260826?adult=2&child=2",
+      "checked_at": "2026-08-03T11:55:40.931Z",
+      "rows_found": 45,
+      "by_airline": {
+        "이스타항공": {
+          "airline": "이스타항공",
+          "depart": "06:05",
+          "arrive": "07:20",
+          "price": 65500,
+          "raw": "이스타항공 06:05GMP 07:20CJU 01시간 15분 할인석편도 65,500원~ KB국민카드(이용실적 충족시) 결제 8% 청구할인 시64,088원~ 1% 적립",
+          "tracking": {
+            "value": 65500,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 68000,
+            "below_median_pct": 3.7,
+            "deal": false,
+            "peer_group": "flight|A",
+            "badges": []
+          }
+        },
+        "제주항공": {
+          "airline": "제주항공",
+          "depart": "06:20",
+          "arrive": "07:35",
+          "price": 62100,
+          "raw": "제주항공 06:20GMP 07:35CJU 01시간 15분 할인석편도 62,100원~ 롯데카드 결제 2천원 캐시백 시60,400원~ 1% 적립",
+          "tracking": {
+            "value": 62100,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 68000,
+            "below_median_pct": 8.7,
+            "deal": false,
+            "peer_group": "flight|A",
+            "badges": []
+          }
+        },
+        "진에어": {
+          "airline": "진에어",
+          "depart": "06:30",
+          "arrive": "07:45",
+          "price": 60700,
+          "raw": "진에어 06:30GMP 07:45CJU 01시간 15분 할인석편도 60,700원~ 1% 적립",
+          "tracking": {
+            "value": 60700,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 68000,
+            "below_median_pct": 10.7,
+            "deal": false,
+            "peer_group": "flight|A",
+            "badges": []
+          }
+        },
+        "대한항공": {
+          "airline": "대한항공",
+          "depart": "06:15",
+          "arrive": "07:30",
+          "price": 70500,
+          "raw": "대한항공 진에어 공동운항 06:15GMP 07:30CJU 01시간 15분 할인석편도 70,500원~ 1% 적립",
+          "tracking": {
+            "value": 70500,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 68000,
+            "below_median_pct": -3.7,
+            "deal": false,
+            "peer_group": "flight|A",
+            "badges": []
+          }
+        },
+        "티웨이항공": {
+          "airline": "티웨이항공",
+          "depart": "06:25",
+          "arrive": "07:40",
+          "price": 61180,
+          "raw": "티웨이항공 06:25GMP 07:40CJU 01시간 15분 할인석편도 61,180원~ 롯데카드 결제 1.5천원 캐시백 시60,900원~ 1% 적립",
+          "tracking": {
+            "value": 61180,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 68000,
+            "below_median_pct": 10,
+            "deal": false,
+            "peer_group": "flight|A",
+            "badges": []
+          }
+        },
+        "아시아나항공": {
+          "airline": "아시아나항공",
+          "depart": "06:30",
+          "arrive": "07:45",
+          "price": 70500,
+          "raw": "아시아나항공 06:30GMP 07:45CJU 01시간 15분 할인석편도 70,500원~ 1% 적립",
+          "tracking": {
+            "value": 70500,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 68000,
+            "below_median_pct": -3.7,
+            "deal": false,
+            "peer_group": "flight|A",
+            "badges": []
+          }
+        },
+        "에어부산": {
+          "airline": "에어부산",
+          "depart": "07:10",
+          "arrive": "08:30",
+          "price": 74800,
+          "raw": "에어부산 07:10GMP 08:30CJU 01시간 20분 할인석편도 74,800원~ 롯데카드 결제 3.3천원 캐시백 시73,700원~ 1% 적립",
+          "tracking": {
+            "value": 74800,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 68000,
+            "below_median_pct": -10,
+            "deal": false,
+            "peer_group": "flight|A",
+            "badges": []
+          }
+        }
+      },
+      "lowest_leg": {
+        "airline": "진에어",
+        "depart": "06:30",
+        "arrive": "07:45",
+        "price": 60700,
+        "raw": "진에어 06:30GMP 07:45CJU 01시간 15분 할인석편도 60,700원~ 1% 적립"
+      },
+      "roundtrip_per_person_estimate": 121880,
+      "family_total_estimate": 487520,
+      "caveat": "어린이 운임 할인은 네이버 표기에 반영 여부가 항공사별로 달라 예매 직전 재확인 필요.",
+      "tracking": {
+        "value": 487520,
+        "prev": null,
+        "prev_date": null,
+        "delta": null,
+        "delta_pct": null,
+        "observations": 1,
+        "lowest_ever": false,
+        "highest_ever": false,
+        "peer_median": 68000,
+        "below_median_pct": -616.9,
+        "deal": false,
+        "peer_group": "flight|A",
+        "badges": []
+      }
+    },
+    "B": {
+      "checkin": "2026-08-25",
+      "checkout": "2026-08-27",
+      "label": "8/25(화)~8/27(목)",
+      "source": "naver-flight",
+      "url": "https://flight.naver.com/flights/domestic/GMP-CJU-20260825/CJU-GMP-20260827?adult=2&child=2",
+      "checked_at": "2026-08-03T11:55:59.233Z",
+      "rows_found": 45,
+      "by_airline": {
+        "이스타항공": {
+          "airline": "이스타항공",
+          "depart": "06:05",
+          "arrive": "07:20",
+          "price": 44000,
+          "raw": "이스타항공 06:05GMP 07:20CJU 01시간 15분 할인석편도 44,000원~ KB국민카드(이용실적 충족시) 결제 8% 청구할인 시43,848원~ 1% 적립",
+          "tracking": {
+            "value": 44000,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 49850,
+            "below_median_pct": 11.7,
+            "deal": false,
+            "peer_group": "flight|B",
+            "badges": []
+          }
+        },
+        "진에어": {
+          "airline": "진에어",
+          "depart": "06:15",
+          "arrive": "07:30",
+          "price": 46400,
+          "raw": "진에어 06:15GMP 07:30CJU 01시간 15분 할인석편도 46,400원~ 롯데카드 결제 1.8천원 캐시백 시45,600원~ 1% 적립",
+          "tracking": {
+            "value": 46400,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 49850,
+            "below_median_pct": 6.9,
+            "deal": false,
+            "peer_group": "flight|B",
+            "badges": []
+          }
+        },
+        "제주항공": {
+          "airline": "제주항공",
+          "depart": "06:15",
+          "arrive": "07:30",
+          "price": 49400,
+          "raw": "제주항공 06:15GMP 07:30CJU 01시간 15분 할인석편도 49,400원~ 롯데카드 결제 2천원 캐시백 시48,400원~ 1% 적립",
+          "tracking": {
+            "value": 49400,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 49850,
+            "below_median_pct": 0.9,
+            "deal": false,
+            "peer_group": "flight|B",
+            "badges": []
+          }
+        },
+        "대한항공": {
+          "airline": "대한항공",
+          "depart": "06:35",
+          "arrive": "07:50",
+          "price": 53500,
+          "raw": "대한항공 06:35GMP 07:50CJU 01시간 15분 특가석편도 53,500원~ 1% 적립",
+          "tracking": {
+            "value": 53500,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 49850,
+            "below_median_pct": -7.3,
+            "deal": false,
+            "peer_group": "flight|B",
+            "badges": []
+          }
+        },
+        "티웨이항공": {
+          "airline": "티웨이항공",
+          "depart": "06:25",
+          "arrive": "07:40",
+          "price": 48400,
+          "raw": "티웨이항공 06:25GMP 07:40CJU 01시간 15분 할인석편도 48,400원~ 롯데카드 결제 1.5천원 캐시백 시47,900원~ 1% 적립",
+          "tracking": {
+            "value": 48400,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 49850,
+            "below_median_pct": 2.9,
+            "deal": false,
+            "peer_group": "flight|B",
+            "badges": []
+          }
+        },
+        "아시아나항공": {
+          "airline": "아시아나항공",
+          "depart": "06:30",
+          "arrive": "07:45",
+          "price": 53500,
+          "raw": "아시아나항공 06:30GMP 07:45CJU 01시간 15분 특가석편도 53,500원~ 1% 적립",
+          "tracking": {
+            "value": 53500,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 49850,
+            "below_median_pct": -7.3,
+            "deal": false,
+            "peer_group": "flight|B",
+            "badges": []
+          }
+        },
+        "에어부산": {
+          "airline": "에어부산",
+          "depart": "07:05",
+          "arrive": "08:30",
+          "price": 50300,
+          "raw": "에어부산 07:05GMP 08:30CJU 01시간 25분 할인석편도 50,300원~ 롯데카드 결제 3.3천원 캐시백 시49,200원~ 1% 적립",
+          "tracking": {
+            "value": 50300,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 49850,
+            "below_median_pct": -0.9,
+            "deal": false,
+            "peer_group": "flight|B",
+            "badges": []
+          }
+        }
+      },
+      "lowest_leg": {
+        "airline": "이스타항공",
+        "depart": "06:05",
+        "arrive": "07:20",
+        "price": 44000,
+        "raw": "이스타항공 06:05GMP 07:20CJU 01시간 15분 할인석편도 44,000원~ KB국민카드(이용실적 충족시) 결제 8% 청구할인 시43,848원~ 1% 적립"
+      },
+      "roundtrip_per_person_estimate": 90400,
+      "family_total_estimate": 361600,
+      "caveat": "어린이 운임 할인은 네이버 표기에 반영 여부가 항공사별로 달라 예매 직전 재확인 필요.",
+      "tracking": {
+        "value": 361600,
+        "prev": null,
+        "prev_date": null,
+        "delta": null,
+        "delta_pct": null,
+        "observations": 1,
+        "lowest_ever": false,
+        "highest_ever": false,
+        "peer_median": 49850,
+        "below_median_pct": -625.4,
+        "deal": false,
+        "peer_group": "flight|B",
+        "badges": []
+      }
+    },
+    "C": {
+      "checkin": "2026-08-26",
+      "checkout": "2026-08-28",
+      "label": "8/26(수)~8/28(금)",
+      "source": "naver-flight",
+      "url": "https://flight.naver.com/flights/domestic/GMP-CJU-20260826/CJU-GMP-20260828?adult=2&child=2",
+      "checked_at": "2026-08-03T11:56:17.494Z",
+      "rows_found": 45,
+      "by_airline": {
+        "이스타항공": {
+          "airline": "이스타항공",
+          "depart": "06:05",
+          "arrive": "07:20",
+          "price": 49100,
+          "raw": "이스타항공 06:05GMP 07:20CJU 01시간 15분 할인석편도 49,100원~ 1% 적립",
+          "tracking": {
+            "value": 49100,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 54950,
+            "below_median_pct": 10.6,
+            "deal": false,
+            "peer_group": "flight|C",
+            "badges": []
+          }
+        },
+        "진에어": {
+          "airline": "진에어",
+          "depart": "06:15",
+          "arrive": "07:30",
+          "price": 48800,
+          "raw": "진에어 06:15GMP 07:30CJU 01시간 15분 할인석편도 48,800원~ 롯데카드 결제 1.8천원 캐시백 시48,600원~ 1% 적립",
+          "tracking": {
+            "value": 48800,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 54950,
+            "below_median_pct": 11.2,
+            "deal": false,
+            "peer_group": "flight|C",
+            "badges": []
+          }
+        },
+        "제주항공": {
+          "airline": "제주항공",
+          "depart": "06:15",
+          "arrive": "07:30",
+          "price": 52400,
+          "raw": "제주항공 06:15GMP 07:30CJU 01시간 15분 할인석편도 52,400원~ 롯데카드 결제 2천원 캐시백 시51,400원~ 1% 적립",
+          "tracking": {
+            "value": 52400,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 54950,
+            "below_median_pct": 4.6,
+            "deal": false,
+            "peer_group": "flight|C",
+            "badges": []
+          }
+        },
+        "대한항공": {
+          "airline": "대한항공",
+          "depart": "06:35",
+          "arrive": "07:50",
+          "price": 60500,
+          "raw": "대한항공 06:35GMP 07:50CJU 01시간 15분 특가석편도 60,500원~ 1% 적립",
+          "tracking": {
+            "value": 60500,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 54950,
+            "below_median_pct": -10.1,
+            "deal": false,
+            "peer_group": "flight|C",
+            "badges": []
+          }
+        },
+        "티웨이항공": {
+          "airline": "티웨이항공",
+          "depart": "06:25",
+          "arrive": "07:40",
+          "price": 48400,
+          "raw": "티웨이항공 06:25GMP 07:40CJU 01시간 15분 할인석편도 48,400원~ 롯데카드 결제 1.5천원 캐시백 시47,900원~ 1% 적립",
+          "tracking": {
+            "value": 48400,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 54950,
+            "below_median_pct": 11.9,
+            "deal": false,
+            "peer_group": "flight|C",
+            "badges": []
+          }
+        },
+        "아시아나항공": {
+          "airline": "아시아나항공",
+          "depart": "06:30",
+          "arrive": "07:45",
+          "price": 57500,
+          "raw": "아시아나항공 06:30GMP 07:45CJU 01시간 15분 특가석편도 57,500원~ 1% 적립",
+          "tracking": {
+            "value": 57500,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 54950,
+            "below_median_pct": -4.6,
+            "deal": false,
+            "peer_group": "flight|C",
+            "badges": []
+          }
+        },
+        "에어부산": {
+          "airline": "에어부산",
+          "depart": "07:05",
+          "arrive": "08:30",
+          "price": 60400,
+          "raw": "에어부산 07:05GMP 08:30CJU 01시간 25분 할인석편도 60,400원~ 롯데카드 결제 3.3천원 캐시백 시59,300원~ 1% 적립",
+          "tracking": {
+            "value": 60400,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 54950,
+            "below_median_pct": -9.9,
+            "deal": false,
+            "peer_group": "flight|C",
+            "badges": []
+          }
+        }
+      },
+      "lowest_leg": {
+        "airline": "티웨이항공",
+        "depart": "06:25",
+        "arrive": "07:40",
+        "price": 48400,
+        "raw": "티웨이항공 06:25GMP 07:40CJU 01시간 15분 할인석편도 48,400원~ 롯데카드 결제 1.5천원 캐시백 시47,900원~ 1% 적립"
+      },
+      "roundtrip_per_person_estimate": 97200,
+      "family_total_estimate": 388800,
+      "caveat": "어린이 운임 할인은 네이버 표기에 반영 여부가 항공사별로 달라 예매 직전 재확인 필요.",
+      "tracking": {
+        "value": 388800,
+        "prev": null,
+        "prev_date": null,
+        "delta": null,
+        "delta_pct": null,
+        "observations": 1,
+        "lowest_ever": false,
+        "highest_ever": false,
+        "peer_median": 54950,
+        "below_median_pct": -607.6,
+        "deal": false,
+        "peer_group": "flight|C",
+        "badges": []
+      }
+    },
+    "D": {
+      "checkin": "2026-08-28",
+      "checkout": "2026-08-30",
+      "label": "8/28(금)~8/30(일)",
+      "source": "naver-flight",
+      "url": "https://flight.naver.com/flights/domestic/GMP-CJU-20260828/CJU-GMP-20260830?adult=2&child=2",
+      "checked_at": "2026-08-03T11:56:35.748Z",
+      "rows_found": 44,
+      "by_airline": {
+        "이스타항공": {
+          "airline": "이스타항공",
+          "depart": "06:05",
+          "arrive": "07:20",
+          "price": 76300,
+          "raw": "이스타항공 06:05GMP 07:20CJU 01시간 15분 할인석편도 76,300원~ KB국민카드(이용실적 충족시) 결제 8% 청구할인 시74,208원~ 1% 적립",
+          "tracking": {
+            "value": 76300,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 86100,
+            "below_median_pct": 11.4,
+            "deal": false,
+            "peer_group": "flight|D",
+            "badges": []
+          }
+        },
+        "진에어": {
+          "airline": "진에어",
+          "depart": "06:15",
+          "arrive": "07:30",
+          "price": 77000,
+          "raw": "진에어 06:15GMP 07:30CJU 01시간 15분 할인석편도 77,000원~ 1% 적립",
+          "tracking": {
+            "value": 77000,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 86100,
+            "below_median_pct": 10.6,
+            "deal": false,
+            "peer_group": "flight|D",
+            "badges": []
+          }
+        },
+        "제주항공": {
+          "airline": "제주항공",
+          "depart": "06:15",
+          "arrive": "07:30",
+          "price": 87100,
+          "raw": "제주항공 06:15GMP 07:30CJU 01시간 15분 할인석편도 87,100원~ 롯데카드 결제 2천원 캐시백 시85,400원~ 1% 적립",
+          "tracking": {
+            "value": 87100,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 86100,
+            "below_median_pct": -1.2,
+            "deal": false,
+            "peer_group": "flight|D",
+            "badges": []
+          }
+        },
+        "대한항공": {
+          "airline": "대한항공",
+          "depart": "06:15",
+          "arrive": "07:30",
+          "price": 114500,
+          "raw": "대한항공 진에어 공동운항 06:15GMP 07:30CJU 01시간 15분 일반석편도 114,500원~ 1% 적립",
+          "tracking": {
+            "value": 114500,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 86100,
+            "below_median_pct": -33,
+            "deal": false,
+            "peer_group": "flight|D",
+            "badges": []
+          }
+        },
+        "티웨이항공": {
+          "airline": "티웨이항공",
+          "depart": "06:25",
+          "arrive": "07:40",
+          "price": 76700,
+          "raw": "티웨이항공 06:25GMP 07:40CJU 01시간 15분 할인석편도 76,700원~ 1% 적립",
+          "tracking": {
+            "value": 76700,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 86100,
+            "below_median_pct": 10.9,
+            "deal": false,
+            "peer_group": "flight|D",
+            "badges": []
+          }
+        },
+        "아시아나항공": {
+          "airline": "아시아나항공",
+          "depart": "06:30",
+          "arrive": "07:45",
+          "price": 93500,
+          "raw": "아시아나항공 06:30GMP 07:45CJU 01시간 15분 할인석편도 93,500원~ 1% 적립",
+          "tracking": {
+            "value": 93500,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 86100,
+            "below_median_pct": -8.6,
+            "deal": false,
+            "peer_group": "flight|D",
+            "badges": []
+          }
+        },
+        "에어부산": {
+          "airline": "에어부산",
+          "depart": "07:05",
+          "arrive": "08:30",
+          "price": 85100,
+          "raw": "에어부산 07:05GMP 08:30CJU 01시간 25분 할인석편도 85,100원~ 롯데카드 결제 3.3천원 캐시백 시85,000원~ 1% 적립",
+          "tracking": {
+            "value": 85100,
+            "prev": null,
+            "prev_date": null,
+            "delta": null,
+            "delta_pct": null,
+            "observations": 1,
+            "lowest_ever": false,
+            "highest_ever": false,
+            "peer_median": 86100,
+            "below_median_pct": 1.2,
+            "deal": false,
+            "peer_group": "flight|D",
+            "badges": []
+          }
+        }
+      },
+      "lowest_leg": {
+        "airline": "이스타항공",
+        "depart": "06:05",
+        "arrive": "07:20",
+        "price": 76300,
+        "raw": "이스타항공 06:05GMP 07:20CJU 01시간 15분 할인석편도 76,300원~ KB국민카드(이용실적 충족시) 결제 8% 청구할인 시74,208원~ 1% 적립"
+      },
+      "roundtrip_per_person_estimate": 153000,
+      "family_total_estimate": 612000,
+      "caveat": "어린이 운임 할인은 네이버 표기에 반영 여부가 항공사별로 달라 예매 직전 재확인 필요.",
+      "tracking": {
+        "value": 612000,
+        "prev": null,
+        "prev_date": null,
+        "delta": null,
+        "delta_pct": null,
+        "observations": 1,
+        "lowest_ever": false,
+        "highest_ever": false,
+        "peer_median": 86100,
+        "below_median_pct": -610.8,
+        "deal": false,
+        "peer_group": "flight|D",
+        "badges": []
+      }
+    }
+  }
+}

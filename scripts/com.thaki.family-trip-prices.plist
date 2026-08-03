@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.thaki.family-trip-prices</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>$HOME/thaki/family-trip-planner/scripts/daily_price_update.sh</string>
+  </array>
+
+  <!-- 매일 07:30 KST 1회. 크롤이 느려도 lock 파일이 중복 실행을 막는다. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>7</integer>
+    <key>Minute</key><integer>30</integer>
+  </dict>
+
+  <!-- 맥이 꺼져 있어 놓친 fire 는 다음 기동 시 1회 실행 -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/family-trip-prices.out</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/family-trip-prices.err</string>
+
+  <key>ProcessType</key>
+  <string>Background</string>
+  <key>LowPriorityIO</key>
+  <true/>
+</dict>
+</plist>

@@ -1,6 +1,7 @@
 {
   "shilla-jeju": {
     "name": "제주신라호텔",
+    "booking_slug": "the-shilla-jeju",
     "area": "중문",
     "lat": 33.2444,
     "lon": 126.4131,
@@ -21,6 +22,7 @@
   },
   "lotte-jeju": {
     "name": "롯데호텔 제주",
+    "booking_slug": "lotte-jeju",
     "area": "중문",
     "lat": 33.2469,
     "lon": 126.411,
@@ -41,6 +43,7 @@
   },
   "grand-hyatt-jeju": {
     "name": "그랜드 하얏트 제주",
+    "booking_slug": "grand-hyatt-jeju",
     "area": "제주시",
     "lat": 33.489,
     "lon": 126.498,
@@ -61,6 +64,7 @@
   },
   "parnas-jeju": {
     "name": "파르나스 호텔 제주",
+    "booking_slug": "parnas-hotel-jeju",
     "area": "서귀포",
     "lat": 33.245,
     "lon": 126.405,
@@ -81,6 +85,7 @@
   },
   "haevichi-jeju": {
     "name": "해비치 호텔앤드리조트 제주",
+    "booking_slug": "haevichi-resort-jeju",
     "area": "표선",
     "lat": 33.3247,
     "lon": 126.8347,
@@ -101,6 +106,7 @@
   },
   "shinhwa-landing-jeju": {
     "name": "랜딩관 제주신화월드",
+    "booking_slug": "jeju-shinhwa-world-landing-resort",
     "area": "서귀포",
     "lat": 33.308,
     "lon": 126.305,

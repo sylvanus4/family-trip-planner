@@ -308,7 +308,7 @@ function buildCustomPlan(ids,hotelId,ndays,people,date){
   }
   const cc=S.city.cost, pf=people/4, sc=v=>Math.round(v*pf/100)*100;
   const paid=sc([...new Set(ids)].reduce((s,id)=>s+((S.at[id]||{}).price4||0),0));
-  const rooms=Math.max(1,Math.ceil(people/4));
+  const rooms=Math.max(1,Math.ceil(people/2));   // 4인 = 2객실 (침대 4개 or 3개+킹 요구조건)
   const lodging=(hotel&&hotel.nightly?hotel.nightly:220000)*ndays*rooms;
   const cost=[{cat:cc.intercity_label,detail:`왕복 ${people}인`,amount:sc(cc.intercity),type:"추정"},
     ...(cc.home_transfer?[{cat:"집↔출발지 이동",detail:"잠실↔수서/공항 벤 왕복",amount:cc.home_transfer,type:"추정"}]:[]),

@@ -15,6 +15,33 @@
 - ✅ **결정 체크리스트**(와이프 컨펌용: 예매·숙소·예산·입장권) + ✨ 하이라이트 + 👨‍👩‍👧‍👧 추천 대상
 - 🚌 **시티투어버스/렌터카 안내** · 👍 컨펌 + 🔗 링크 공유 · 🧭 구글맵 길찾기 · ⬇️ KML(구글 마이맵)
 
+## 💰 실측 가격 · 예산 계산기
+
+성수기(8월 말) 가격을 **실제로 조회해서** 반영합니다. 숫자는 전부 수집기가 화면에서 읽은 값이고, 손으로 쓰지 않습니다.
+
+- **날짜 4안**: A 8/24(월) · B 8/25(화) · C 8/26(수) · D 8/28(금), 각 2박
+- **객실 2구성**: 1객실(4인 한 방, 큰 침대 필수) / 2객실 — 조식 포함·미포함 각각
+- **계산기**: 날짜·숙소·객실·조식을 고르면 교통·숙박·식비·예비까지 더한 **최종 총액**과 예산 대비 여유를 보여주고, 날짜×숙소 매트릭스로 어느 조합이 싼지 한눈에 비교합니다.
+- **매일 07:30 자동 갱신**: 가격을 다시 조회해 **전일 대비 변동량**과 특가 배지를 붙이고, 게이트를 통과하면 자동 배포합니다.
+
+```bash
+node scripts/fetch_hotel_prices.mjs data/busan --dates A,B,C,D   # 호텔 실측(객실·침대·조식·세금)
+node scripts/fetch_transport_prices.mjs jeju                     # 항공 실측(네이버, 전 항공사)
+node scripts/price_track.mjs data/busan                          # 이력·변동량·특가 배지
+bash scripts/daily_price_update.sh                               # 위 전부 + 빌드·게이트·배포
+```
+
+설치(1회): `cp scripts/com.thaki.family-trip-prices.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.thaki.family-trip-prices.plist`
+
+> ⛔ SRT 예매 시스템은 약관상 자동 조회가 금지돼 있어 **크롤링하지 않습니다**. SRT는 고정 운임이라 사람이 한 번 확인한 값을 상수로 씁니다(일반실 왕복 4인 31만원).
+
+## 새 도시 추가
+
+```bash
+python3 scripts/new_city.py <city> --name <이름> --emoji 🌅 --arrival "..." --intercity-label "KTX 왕복"
+```
+그다음 `--resolve-only` 로 booking_slug를 **검증해 고정**하고(이름검색은 다른 호텔로 잘못 잡힙니다), 수집 → 추적 → 빌드 → 게이트 순으로 돌리면 부산·제주와 똑같은 구성이 그대로 재현됩니다. 상세 순서는 `scripts/new_city.py` 상단 주석에 있습니다.
+
 ## 여행안 추가·수정 (누구나, 코드 수정 불필요)
 
 `data/<도시>/`(busan, jeju) 안의 JSON만 편집합니다.

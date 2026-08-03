@@ -408,3 +408,57 @@ table.cmp td.cat{max-width:230px; white-space:normal}
 .rest.buffet{background:#F3F0FA; border-color:#E2DAF3}
 .rest.buffet .rest-cat{background:#6D28D9; color:#fff}
 .rest.buffet .rest-nm{color:#4C1D95}
+
+/* ── 💰 예산 계산기 ─────────────────────────────────────── */
+.calc{max-width:1180px; margin:var(--s8) auto 0; padding:0 var(--s5)}
+.calc-hd h2{margin:0 0 var(--s1); font-size:1.35rem; color:var(--ink)}
+.calc-sub{margin:0 0 var(--s5); color:var(--soft); font-size:.9rem}
+.calc-stamp{display:inline-block; margin-left:var(--s2); padding:2px 8px; border-radius:999px;
+  background:var(--sea-tint); color:var(--sea-deep); font-size:.78rem}
+.calc-ctrl{display:flex; flex-wrap:wrap; gap:var(--s3); margin-bottom:var(--s5)}
+.calc-ctrl label{display:flex; flex-direction:column; gap:4px; font-size:.78rem; color:var(--soft)}
+.calc-ctrl select{padding:9px 12px; border:1px solid var(--line); border-radius:var(--r-sm);
+  background:var(--card); color:var(--ink); font-size:.92rem; min-width:150px}
+.calc-ctrl select:focus{outline:2px solid var(--sea); outline-offset:1px}
+
+.calc-tbl{width:100%; border-collapse:collapse; background:var(--card);
+  border:1px solid var(--line); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-sm)}
+.calc-tbl th,.calc-tbl td{padding:var(--s3) var(--s4); text-align:left; border-bottom:1px solid var(--line-2); font-size:.9rem}
+.calc-tbl thead th{background:var(--sea-tint); color:var(--sea-deep); font-size:.8rem; letter-spacing:.02em}
+.calc-tbl .amt{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:600}
+.calc-tbl .note{color:var(--soft); font-size:.82rem; line-height:1.5}
+.calc-tbl tr.warn td{background:#FFF8EC}
+.calc-tbl tr.miss .amt{color:var(--faint)}
+.calc-tbl tfoot .tot td{background:#FBF7EE; font-weight:700; font-size:1rem; border-top:2px solid var(--line)}
+.calc-tbl tfoot .bud td{background:var(--card); color:var(--soft)}
+.unk{color:var(--faint); font-style:italic}
+
+.bdg{display:inline-block; margin-left:6px; padding:2px 8px; border-radius:999px;
+  font-size:.74rem; font-weight:600; background:var(--sea-tint); color:var(--sea-deep); white-space:nowrap}
+.bdg.deal{background:#FDECE6; color:var(--coral)}
+.bdg.down{background:#E8F5E9; color:#1B7A3D}
+.bdg.up{background:#FDECE6; color:#B4341A}
+
+.calc-grid{margin-top:var(--s8)}
+.calc-grid h3{margin:0 0 var(--s3); font-size:1.05rem; color:var(--ink)}
+.calc-grid h3 small{font-weight:400; color:var(--soft); font-size:.8rem}
+.calc-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch}
+.calc-matrix{width:100%; min-width:620px; border-collapse:collapse; background:var(--card);
+  border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+.calc-matrix th,.calc-matrix td{padding:var(--s3); border-bottom:1px solid var(--line-2); font-size:.86rem; text-align:center}
+.calc-matrix thead th{background:var(--sea-tint); color:var(--sea-deep); font-size:.8rem}
+.calc-matrix tbody th{text-align:left; font-weight:600; color:var(--ink); white-space:nowrap}
+.calc-matrix td b{display:block; font-variant-numeric:tabular-nums}
+.calc-matrix td span{display:block; color:var(--faint); font-size:.72rem; margin-top:2px}
+.calc-matrix td.sel{background:var(--sea-tint); outline:2px solid var(--sea); outline-offset:-2px}
+.calc-matrix td.deal b{color:var(--coral)}
+.calc-matrix td.unk{color:var(--faint)}
+.calc-best{margin-top:var(--s3); padding:var(--s3) var(--s4); border-radius:var(--r-sm);
+  background:#E8F5E9; color:#1B5E20; font-size:.9rem}
+@media (max-width:768px){
+  .calc{padding:0 12px}
+  .calc-ctrl select{min-width:0; width:100%}
+  .calc-ctrl label{flex:1 1 45%}
+  .calc-tbl th,.calc-tbl td{padding:10px}
+  .calc-tbl .note{font-size:.76rem}
+}

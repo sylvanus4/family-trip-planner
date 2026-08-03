@@ -25,7 +25,44 @@ def main():
     d=sys.argv[1].rstrip("/")
     at=load(f"{d}/attractions.json"); ho=load(f"{d}/hotels.json")
     spec=load(f"{d}/plan-specs.json"); rest=load(f"{d}/restaurants.json", {}) or {}
+    prices=load(f"{d}/hotel-prices.json", {}) or {}
     m=spec["meta"]; out=[]
+
+    # 기본 날짜창/객실구성/조식 — plan-specs.meta 로 덮어쓸 수 있다
+    PW = m.get("price_window", "A")
+    PCFG = m.get("price_config", "one-room")
+    PBF = m.get("price_breakfast", "without_breakfast")
+
+    def measured_lodging(hid, hotel):
+        """실측 우선. (금액, 표기문구, 확정/추정) 반환. 실측 없으면 nightly 추정치로 폴백."""
+        c = (((prices.get("hotels") or {}).get(hid) or {}).get("windows") or {}).get(PW, {})
+        lo = ((c.get("configs") or {}).get(PCFG) or {}).get("lowest") or {}
+        pick = lo.get(PBF) or lo.get("without_breakfast") or lo.get("with_breakfast")
+        if pick and pick.get("family_total"):
+            wlabel = (prices.get("meta", {}).get("date_windows", {}).get(PW, {}) or {}).get("label", PW)
+            rooms = pick.get("rooms", 1)
+            bits = [hotel.get("name", ""), pick.get("name") or "", f"{rooms}객실" if rooms > 1 else "1객실",
+                    "조식 포함" if PBF == "with_breakfast" else "조식 미포함", wlabel]
+            return pick["family_total"], " · ".join(b for b in bits if b), "실측"
+        nightly = hotel.get("nightly", 220000)
+        return nightly * 2, f"{hotel.get('name','')} (1박 {won(nightly)}원)", "추정"
+
+    def measured_intercity():
+        """도시간 교통비도 실측 우선(항공=날짜창별, SRT=고정운임). 없으면 plan-specs.meta 값 유지."""
+        t = load(f"{d}/transport-prices.json", {}) or {}
+        base = dict(m["intercity"])
+        srt = t.get("srt") or {}
+        if srt.get("family_roundtrip_krw"):
+            base.update(amount=srt["family_roundtrip_krw"], type="확정",
+                        detail=f"{srt.get('route','')} {srt.get('grade','')} · {srt.get('party','')}")
+            return base
+        w = (t.get("windows") or {}).get(PW) or {}
+        if w.get("family_total_estimate"):
+            lo = w.get("lowest_leg") or {}
+            wl = w.get("label", PW)
+            base.update(amount=w["family_total_estimate"], type="실측",
+                        detail=f"항공 왕복 4인 · {wl} · 최저 {lo.get('airline','')} 편도 {won(lo.get('price',0))}원")
+        return base
 
     def nearest(target, k, exclude):
         if not rest or not target: return []
@@ -65,11 +102,13 @@ def main():
                 if r.startswith("hotel:") or r in seen: continue
                 seen.add(r); a=at.get(r)
                 if a and a.get("price4",0)>0: paid_sum+=a["price4"]; paid_names.append(a["name"])
-        hotel=ho.get(p["base_hotel"],{}); nightly=hotel.get("nightly",220000); lodging=nightly*2
-        cost=[{**m["intercity"]},
+        hotel=ho.get(p["base_hotel"],{})
+        # 숙박비: 실측(hotel-prices.json)이 있으면 그것을 쓰고, 없을 때만 nightly 추정치로 폴백.
+        lodging, lodge_detail, lodge_type = measured_lodging(p["base_hotel"], hotel)
+        cost=[measured_intercity(),
           *([{"cat":"집↔출발지 이동","detail":"잠실↔수서/공항 벤 왕복(4인+짐)","amount":m["home_transfer"],"type":"추정"}] if m.get("home_transfer") else []),
           {"cat":"현지 교통","detail":m.get("local_note","지하철·택시·버스 3일(구간별 표시)"),"amount":m["local"],"type":"추정"},
-          {"cat":"숙박 2박","detail":f"{hotel.get('name','')} (1박 {won(nightly)}원)","amount":lodging,"type":"추정"},
+          {"cat":"숙박 2박","detail":lodge_detail,"amount":lodging,"type":lodge_type},
           {"cat":"입장·체험","detail":", ".join(paid_names) or "무료 위주","amount":paid_sum,"type":"추정"},
           {"cat":"식비","detail":"4인·3일 (끼니별 맛집 참고)","amount":m["food"],"type":"추정"},
           {"cat":"예비·기념품","detail":"버퍼","amount":m["misc"],"type":"추정"}]
