@@ -177,6 +177,7 @@ function renderMapActions(p){ const el=$("#mapActions"); el.innerHTML="";
   const g=gmapsDir(p.days.flatMap(d=>d.stops));
   if(g) el.insertAdjacentHTML("beforeend",`<a href="${g}" target="_blank" rel="noopener">🧭 구글맵 전체 길찾기</a>`);
   if(p.kml) el.insertAdjacentHTML("beforeend",`<a href="${p.kml}" download>⬇️ KML(구글 마이맵)</a>`);
+  el.insertAdjacentHTML("beforeend",`<a href="${S.city.dir}/all.kml" download title="다운로드 후 구글 마이맵(mymaps.google.com)에서 가져오기→업로드">🗺️ 구글 마이맵용 KML (${S.city.name} 전체)</a>`);
   el.insertAdjacentHTML("beforeend",`<button id="printBtn">🖨️ PDF·인쇄</button>`);
   $("#printBtn").onclick=()=>openPrint(p); }
 
